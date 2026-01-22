@@ -27,25 +27,25 @@ Identity-online-repo/
 │   ├── Dockerfile           # Docker configuration for deployment
 │   ├── docker-compose.yml   # Docker Compose configuration
 │   └── package.json         # NPM dependencies
+│
+├── scripts/                 # All scripts organized by function
+│   ├── data-generation/    # Data generation scripts
+│   ├── analysis/           # Repository analysis scripts
+│   └── utilities/          # Shell utility scripts
+│
 ├── data/                    # Data storage
-│   ├── generated/          # Generated data files
+│   ├── generated/          # Generated JSON data files
 │   └── schemas/            # Data schemas
+│
+├── docs/                    # Documentation
+│   ├── DOCUMENTATION.md    # Complete project documentation
+│   └── archive/            # Archived documentation
+│
 ├── output/                  # Analysis output files
-├── Readme Files/           # Documentation files
-├── Python Scripts:
-│   ├── generate_service_inventory.py      # Service inventory analyzer
-│   ├── generate_security_data.py          # Security analysis
-│   ├── generate_dependencies_data.py      # Dependency analysis
-│   ├── generate_technologies_data.py      # Technology detection
-│   ├── generate_base_images_data.py       # Container image analysis
-│   ├── generate_service_owner_data.py     # Service ownership tracking
-│   ├── fetch_repo_activity.py             # Repository activity fetcher
-│   └── analyze_repository.py              # Main analysis script
-└── Shell Scripts:
-    ├── run_react_dashboard.sh             # Start dashboard
-    ├── run_service_owner_workspace.sh     # Service owner workspace
-    └── setup_react_dashboard.sh           # Setup script
-
+├── README.md               # This file
+├── DEPLOYMENT_GUIDE.md     # Detailed deployment instructions
+├── LICENSE                 # MIT License
+└── .gitignore             # Git ignore rules
 ```
 
 ## 🛠️ Technology Stack
@@ -100,16 +100,16 @@ The dashboard will be available at `http://localhost:3000`
 
 ```bash
 # Setup the dashboard (first time only)
-./setup_react_dashboard.sh
+./scripts/utilities/setup_react_dashboard.sh
 
 # Run the dashboard
-./run_react_dashboard.sh
+./scripts/utilities/run_react_dashboard.sh
 
 # Run with fresh data generation
-./run_updated_dashboard.sh
+./scripts/utilities/run_updated_dashboard.sh
 
 # Run service owner workspace
-./run_service_owner_workspace.sh
+./scripts/utilities/run_service_owner_workspace.sh
 ```
 
 ## 🐳 Docker Deployment
@@ -137,19 +137,19 @@ The dashboard uses various Python scripts to analyze and generate data:
 
 ### Generate All Data
 ```bash
-python3 generate_service_inventory.py
-python3 generate_security_data.py
-python3 generate_dependencies_data.py
-python3 generate_technologies_data.py
-python3 generate_base_images_data.py
-python3 generate_service_owner_data.py
-python3 fetch_repo_activity.py
+python3 scripts/data-generation/generate_service_inventory.py
+python3 scripts/data-generation/generate_security_data.py
+python3 scripts/data-generation/generate_dependencies_data.py
+python3 scripts/data-generation/generate_technologies_data.py
+python3 scripts/data-generation/generate_base_images_data.py
+python3 scripts/data-generation/generate_service_owner_data.py
+python3 scripts/analysis/fetch_repo_activity.py
 ```
 
 ### Quick Data Generation
 ```bash
 # Generate sample data for testing
-python3 data/generate_sample_data.py
+python3 scripts/data-generation/generate_sample_data.py
 ```
 
 ## 🔧 Configuration
@@ -279,12 +279,11 @@ Deploy the `build/` folder to:
 
 ## 📝 Documentation
 
-Detailed documentation is available in the `Readme Files/` directory:
-- `MICROSERVICES_DASHBOARD_README.md`: Dashboard features
-- `CI_CD_SETUP.md`: CI/CD pipeline configuration
-- `DEPLOYMENT.md`: Deployment guide (in react-dashboard/)
-- `BRANDING_GUIDE.md`: Branding and UI guidelines
-- `PROJECT_SUMMARY.md`: Project overview
+For complete documentation, see:
+- **[docs/DOCUMENTATION.md](docs/DOCUMENTATION.md)**: Comprehensive project documentation
+- **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)**: Detailed deployment instructions
+- **[react-dashboard/DEPLOYMENT.md](react-dashboard/DEPLOYMENT.md)**: React-specific deployment
+- **[docs/archive/](docs/archive/)**: Archived documentation and guides
 
 ## 🤝 Contributing
 
