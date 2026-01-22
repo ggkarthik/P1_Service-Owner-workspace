@@ -1,0 +1,2775 @@
+{
+  "summary": {
+    "total_packages": 34,
+    "vulnerable_packages": 13,
+    "outdated_packages": 14,
+    "total_images": 20,
+    "vulnerable_images": 11,
+    "vulnerabilities": {
+      "critical": 25,
+      "high": 21,
+      "medium": 13,
+      "low": 21,
+      "total": 80
+    },
+    "vulnerability_types": {
+      "Information Disclosure": 4,
+      "XML External Entity": 5,
+      "SQL Injection": 7,
+      "Cryptographic Issues": 5,
+      "Remote Code Execution": 15,
+      "Server-Side Request Forgery": 5,
+      "Command Injection": 6,
+      "Denial of Service": 3,
+      "Insecure Deserialization": 7,
+      "Buffer Overflow": 4,
+      "Privilege Escalation": 6,
+      "Memory Leak": 6,
+      "Authentication Bypass": 2,
+      "Path Traversal": 3,
+      "Cross-Site Scripting": 2
+    },
+    "license_distribution": {
+      "Apache-2.0": 10,
+      "MPL-2.0": 3,
+      "Unlicense": 2,
+      "BSD-3-Clause": 3,
+      "MIT": 2,
+      "GPL-3.0": 3,
+      "AGPL-3.0": 2,
+      "EPL-2.0": 4,
+      "ISC": 2,
+      "LGPL-2.1": 3
+    },
+    "remediation_progress": {
+      "fixed": 23,
+      "in_progress": 0,
+      "not_started": 57
+    }
+  },
+  "packages": [
+    {
+      "name": "retrofit-60",
+      "version": "0.14.20",
+      "latest_version": "0.16.22",
+      "language": "PHP",
+      "license": "Apache-2.0",
+      "license_compliance": "Non-Compliant",
+      "package_manager": "npm",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "security_score": 95.2,
+      "usage": [
+        {
+          "service": "queue",
+          "file": "src/controllers.js",
+          "type": "Direct"
+        },
+        {
+          "service": "cache",
+          "file": "src/helpers.go",
+          "type": "Transitive"
+        }
+      ],
+      "source": "crates.io",
+      "last_updated": "2025-09-29"
+    },
+    {
+      "name": "bootstrap-49",
+      "version": "4.16.22",
+      "latest_version": "4.19.30",
+      "language": "Swift",
+      "license": "MPL-2.0",
+      "license_compliance": "Review Needed",
+      "package_manager": "npm",
+      "is_vulnerable": true,
+      "is_outdated": false,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-15280",
+          "title": "Information Disclosure in bootstrap-49",
+          "description": "A low severity cross-site scripting vulnerability was found in bootstrap-49 version 4.16.22 that allows attackers to bypass authentication.",
+          "severity": "Low",
+          "cvss_score": 1.8,
+          "affected_versions": "<= 4.16.22",
+          "fixed_version": "4.16.26",
+          "published_date": "2025-06-16",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-15280",
+            "https://github.com/advisories/cve-2020-15280"
+          ],
+          "remediation": "Remove unused dependency",
+          "exploit_available": false,
+          "exploit_maturity": null
+        }
+      ],
+      "security_score": 85.4,
+      "usage": [
+        {
+          "service": "auth",
+          "file": "src/app.ts",
+          "type": "Transitive"
+        },
+        {
+          "service": "worker",
+          "file": "src/server.php",
+          "type": "Transitive"
+        },
+        {
+          "service": "frontend",
+          "file": "src/utils.java",
+          "type": "Transitive"
+        },
+        {
+          "service": "worker",
+          "file": "src/main.rb",
+          "type": "Direct"
+        }
+      ],
+      "source": "PyPI",
+      "last_updated": "2025-04-20"
+    },
+    {
+      "name": "bootstrap-20",
+      "version": "1.11.44",
+      "latest_version": "1.14.50",
+      "language": "Ruby",
+      "license": "Unlicense",
+      "license_compliance": "Non-Compliant",
+      "package_manager": "npm",
+      "is_vulnerable": false,
+      "is_outdated": false,
+      "vulnerabilities": [],
+      "security_score": 99.7,
+      "usage": [
+        {
+          "service": "backend",
+          "file": "src/controllers.ts",
+          "type": "Direct"
+        },
+        {
+          "service": "worker",
+          "file": "src/client.go",
+          "type": "Transitive"
+        }
+      ],
+      "source": "Docker Hub",
+      "last_updated": "2025-09-17"
+    },
+    {
+      "name": "moq-52",
+      "version": "5.1.5",
+      "latest_version": "5.2.8",
+      "language": "Ruby",
+      "license": "BSD-3-Clause",
+      "license_compliance": "Review Needed",
+      "package_manager": "cargo",
+      "is_vulnerable": true,
+      "is_outdated": false,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-24289",
+          "title": "XML External Entity in moq-52",
+          "description": "A high severity buffer overflow vulnerability was found in moq-52 version 5.1.5 that allows attackers to execute arbitrary code.",
+          "severity": "High",
+          "cvss_score": 7.8,
+          "affected_versions": "<= 5.1.5",
+          "fixed_version": null,
+          "published_date": "2024-12-07",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-24289",
+            "https://github.com/advisories/cve-2020-24289"
+          ],
+          "remediation": "Upgrade to latest version",
+          "exploit_available": true,
+          "exploit_maturity": null
+        },
+        {
+          "id": "CVE-2022-77658",
+          "title": "SQL Injection in moq-52",
+          "description": "A high severity path traversal vulnerability was found in moq-52 version 5.1.5 that allows attackers to cause denial of service.",
+          "severity": "High",
+          "cvss_score": 8.0,
+          "affected_versions": "<= 5.1.5",
+          "fixed_version": "5.1.10",
+          "published_date": "2025-07-23",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-77658",
+            "https://github.com/advisories/cve-2022-77658"
+          ],
+          "remediation": "Upgrade to latest version",
+          "exploit_available": true,
+          "exploit_maturity": "Functional"
+        }
+      ],
+      "security_score": 93.8,
+      "usage": [
+        {
+          "service": "database",
+          "file": "src/app.cs",
+          "type": "Transitive"
+        },
+        {
+          "service": "scheduler",
+          "file": "src/models.js",
+          "type": "Transitive"
+        },
+        {
+          "service": "auth",
+          "file": "src/app.swift",
+          "type": "Transitive"
+        },
+        {
+          "service": "database",
+          "file": "src/views.go",
+          "type": "Direct"
+        },
+        {
+          "service": "cache",
+          "file": "src/helpers.rs",
+          "type": "Direct"
+        }
+      ],
+      "source": "crates.io",
+      "last_updated": "2025-09-22"
+    },
+    {
+      "name": "react-56",
+      "version": "5.4.48",
+      "latest_version": "5.5.52",
+      "language": "Rust",
+      "license": "BSD-3-Clause",
+      "license_compliance": "Compliant",
+      "package_manager": "docker",
+      "is_vulnerable": false,
+      "is_outdated": false,
+      "vulnerabilities": [],
+      "security_score": 85.4,
+      "usage": [
+        {
+          "service": "notification",
+          "file": "src/views.js",
+          "type": "Direct"
+        },
+        {
+          "service": "cache",
+          "file": "src/server.java",
+          "type": "Direct"
+        },
+        {
+          "service": "notification",
+          "file": "src/index.cs",
+          "type": "Transitive"
+        },
+        {
+          "service": "queue",
+          "file": "src/app.cs",
+          "type": "Transitive"
+        },
+        {
+          "service": "cache",
+          "file": "src/server.rs",
+          "type": "Direct"
+        }
+      ],
+      "source": "Maven Central",
+      "last_updated": "2025-07-17"
+    },
+    {
+      "name": "guava-14",
+      "version": "0.3.18",
+      "latest_version": "0.6.23",
+      "language": "Ruby",
+      "license": "Apache-2.0",
+      "license_compliance": "Review Needed",
+      "package_manager": "npm",
+      "is_vulnerable": true,
+      "is_outdated": false,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-75149",
+          "title": "Cryptographic Issues in guava-14",
+          "description": "A low severity buffer overflow vulnerability was found in guava-14 version 0.3.18 that allows attackers to escalate privileges.",
+          "severity": "Low",
+          "cvss_score": 2.1,
+          "affected_versions": "<= 0.3.18",
+          "fixed_version": null,
+          "published_date": "2025-04-12",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-75149",
+            "https://github.com/advisories/cve-2020-75149"
+          ],
+          "remediation": "Apply security patch",
+          "exploit_available": false,
+          "exploit_maturity": "Not Defined"
+        },
+        {
+          "id": "CVE-2020-88678",
+          "title": "Remote Code Execution in guava-14",
+          "description": "A critical severity path traversal vulnerability was found in guava-14 version 0.3.18 that allows attackers to access sensitive information.",
+          "severity": "Critical",
+          "cvss_score": 9.9,
+          "affected_versions": "<= 0.3.18",
+          "fixed_version": null,
+          "published_date": "2025-01-01",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-88678",
+            "https://github.com/advisories/cve-2020-88678"
+          ],
+          "remediation": "Implement input validation",
+          "exploit_available": false,
+          "exploit_maturity": "Proof of Concept"
+        },
+        {
+          "id": "CVE-2023-77465",
+          "title": "XML External Entity in guava-14",
+          "description": "A medium severity privilege escalation vulnerability was found in guava-14 version 0.3.18 that allows attackers to access sensitive information.",
+          "severity": "Medium",
+          "cvss_score": 6.5,
+          "affected_versions": "<= 0.3.18",
+          "fixed_version": "0.3.23",
+          "published_date": "2024-12-07",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-77465",
+            "https://github.com/advisories/cve-2023-77465"
+          ],
+          "remediation": "Replace with secure alternative",
+          "exploit_available": false,
+          "exploit_maturity": null
+        }
+      ],
+      "security_score": 81.1,
+      "usage": [
+        {
+          "service": "worker",
+          "file": "src/app.ts",
+          "type": "Transitive"
+        },
+        {
+          "service": "notification",
+          "file": "src/server.swift",
+          "type": "Transitive"
+        }
+      ],
+      "source": "NuGet",
+      "last_updated": "2025-05-23"
+    },
+    {
+      "name": "okhttp-51",
+      "version": "3.19.15",
+      "latest_version": "3.22.18",
+      "language": "PHP",
+      "license": "BSD-3-Clause",
+      "license_compliance": "Compliant",
+      "package_manager": "nuget",
+      "is_vulnerable": false,
+      "is_outdated": false,
+      "vulnerabilities": [],
+      "security_score": 96.0,
+      "usage": [
+        {
+          "service": "auth",
+          "file": "src/server.rb",
+          "type": "Direct"
+        },
+        {
+          "service": "database",
+          "file": "src/main.ts",
+          "type": "Transitive"
+        }
+      ],
+      "source": "NuGet",
+      "last_updated": "2025-04-27"
+    },
+    {
+      "name": "django-99",
+      "version": "1.1.40",
+      "latest_version": "1.4.41",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "license_compliance": "Review Needed",
+      "package_manager": "cargo",
+      "is_vulnerable": false,
+      "is_outdated": false,
+      "vulnerabilities": [],
+      "security_score": 82.7,
+      "usage": [
+        {
+          "service": "queue",
+          "file": "src/views.go",
+          "type": "Direct"
+        },
+        {
+          "service": "backend",
+          "file": "src/app.rb",
+          "type": "Transitive"
+        }
+      ],
+      "source": "npm",
+      "last_updated": "2025-09-09"
+    },
+    {
+      "name": "react-59",
+      "version": "5.2.22",
+      "latest_version": "5.2.28",
+      "language": "Swift",
+      "license": "MIT",
+      "license_compliance": "Review Needed",
+      "package_manager": "maven",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "security_score": 94.6,
+      "usage": [
+        {
+          "service": "notification",
+          "file": "src/main.go",
+          "type": "Transitive"
+        },
+        {
+          "service": "scheduler",
+          "file": "src/main.go",
+          "type": "Transitive"
+        },
+        {
+          "service": "frontend",
+          "file": "src/server.ts",
+          "type": "Direct"
+        },
+        {
+          "service": "scheduler",
+          "file": "src/helpers.rs",
+          "type": "Transitive"
+        },
+        {
+          "service": "cache",
+          "file": "src/controllers.swift",
+          "type": "Direct"
+        }
+      ],
+      "source": "Packagist",
+      "last_updated": "2025-06-02"
+    },
+    {
+      "name": "tensorflow-1",
+      "version": "1.2.6",
+      "latest_version": "1.3.11",
+      "language": "Go",
+      "license": "GPL-3.0",
+      "license_compliance": "Non-Compliant",
+      "package_manager": "nuget",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "security_score": 98.9,
+      "usage": [
+        {
+          "service": "backend",
+          "file": "src/controllers.ts",
+          "type": "Transitive"
+        },
+        {
+          "service": "backend",
+          "file": "src/views.py",
+          "type": "Transitive"
+        }
+      ],
+      "source": "npm",
+      "last_updated": "2025-08-05"
+    },
+    {
+      "name": "vue-96",
+      "version": "0.19.39",
+      "latest_version": "0.20.42",
+      "language": "PHP",
+      "license": "Apache-2.0",
+      "license_compliance": "Compliant",
+      "package_manager": "gradle",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2022-45960",
+          "title": "Cryptographic Issues in vue-96",
+          "description": "A low severity authentication bypass vulnerability was found in vue-96 version 0.19.39 that allows attackers to escalate privileges.",
+          "severity": "Low",
+          "cvss_score": 1.5,
+          "affected_versions": "<= 0.19.39",
+          "fixed_version": null,
+          "published_date": "2024-12-03",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-45960",
+            "https://github.com/advisories/cve-2022-45960"
+          ],
+          "remediation": "Configure security settings",
+          "exploit_available": true,
+          "exploit_maturity": null
+        },
+        {
+          "id": "CVE-2022-44126",
+          "title": "Remote Code Execution in vue-96",
+          "description": "A critical severity authentication bypass vulnerability was found in vue-96 version 0.19.39 that allows attackers to access sensitive information.",
+          "severity": "Critical",
+          "cvss_score": 9.5,
+          "affected_versions": "<= 0.19.39",
+          "fixed_version": null,
+          "published_date": "2025-05-04",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-44126",
+            "https://github.com/advisories/cve-2022-44126"
+          ],
+          "remediation": "Remove unused dependency",
+          "exploit_available": true,
+          "exploit_maturity": null
+        }
+      ],
+      "security_score": 12.0,
+      "usage": [
+        {
+          "service": "notification",
+          "file": "src/server.rb",
+          "type": "Transitive"
+        },
+        {
+          "service": "worker",
+          "file": "src/app.rs",
+          "type": "Direct"
+        },
+        {
+          "service": "queue",
+          "file": "src/index.js",
+          "type": "Transitive"
+        },
+        {
+          "service": "api",
+          "file": "src/app.go",
+          "type": "Transitive"
+        }
+      ],
+      "source": "Go Modules",
+      "last_updated": "2025-08-04"
+    },
+    {
+      "name": "angular-75",
+      "version": "2.12.36",
+      "latest_version": "2.15.40",
+      "language": "C#",
+      "license": "AGPL-3.0",
+      "license_compliance": "Review Needed",
+      "package_manager": "gradle",
+      "is_vulnerable": true,
+      "is_outdated": false,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2022-52078",
+          "title": "Server-Side Request Forgery in angular-75",
+          "description": "A critical severity cross-site scripting vulnerability was found in angular-75 version 2.12.36 that allows attackers to access sensitive information.",
+          "severity": "Critical",
+          "cvss_score": 9.3,
+          "affected_versions": "<= 2.12.36",
+          "fixed_version": "2.12.40",
+          "published_date": "2025-06-10",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-52078",
+            "https://github.com/advisories/cve-2022-52078"
+          ],
+          "remediation": "Apply security patch",
+          "exploit_available": false,
+          "exploit_maturity": null
+        },
+        {
+          "id": "CVE-2022-71222",
+          "title": "Remote Code Execution in angular-75",
+          "description": "A high severity cross-site scripting vulnerability was found in angular-75 version 2.12.36 that allows attackers to bypass authentication.",
+          "severity": "High",
+          "cvss_score": 7.8,
+          "affected_versions": "<= 2.12.36",
+          "fixed_version": null,
+          "published_date": "2024-12-02",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-71222",
+            "https://github.com/advisories/cve-2022-71222"
+          ],
+          "remediation": "Configure security settings",
+          "exploit_available": true,
+          "exploit_maturity": null
+        }
+      ],
+      "security_score": 69.9,
+      "usage": [
+        {
+          "service": "auth",
+          "file": "src/index.js",
+          "type": "Transitive"
+        },
+        {
+          "service": "auth",
+          "file": "src/views.cs",
+          "type": "Direct"
+        }
+      ],
+      "source": "NuGet",
+      "last_updated": "2025-06-21"
+    },
+    {
+      "name": "moq-58",
+      "version": "4.10.31",
+      "latest_version": "4.13.32",
+      "language": "PHP",
+      "license": "AGPL-3.0",
+      "license_compliance": "Non-Compliant",
+      "package_manager": "docker",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "security_score": 93.3,
+      "usage": [
+        {
+          "service": "frontend",
+          "file": "src/main.rs",
+          "type": "Direct"
+        },
+        {
+          "service": "frontend",
+          "file": "src/helpers.rb",
+          "type": "Transitive"
+        },
+        {
+          "service": "scheduler",
+          "file": "src/models.js",
+          "type": "Direct"
+        },
+        {
+          "service": "api",
+          "file": "src/app.cs",
+          "type": "Direct"
+        }
+      ],
+      "source": "npm",
+      "last_updated": "2025-07-27"
+    },
+    {
+      "name": "retrofit-20",
+      "version": "4.11.43",
+      "latest_version": "4.14.51",
+      "language": "Rust",
+      "license": "GPL-3.0",
+      "license_compliance": "Review Needed",
+      "package_manager": "go",
+      "is_vulnerable": true,
+      "is_outdated": false,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-37580",
+          "title": "Command Injection in retrofit-20",
+          "description": "A critical severity cryptographic issues vulnerability was found in retrofit-20 version 4.11.43 that allows attackers to bypass authentication.",
+          "severity": "Critical",
+          "cvss_score": 9.2,
+          "affected_versions": "<= 4.11.43",
+          "fixed_version": "4.11.45",
+          "published_date": "2024-11-08",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-37580",
+            "https://github.com/advisories/cve-2023-37580"
+          ],
+          "remediation": "Update dependencies",
+          "exploit_available": false,
+          "exploit_maturity": null
+        },
+        {
+          "id": "CVE-2023-92354",
+          "title": "Command Injection in retrofit-20",
+          "description": "A critical severity remote code execution vulnerability was found in retrofit-20 version 4.11.43 that allows attackers to bypass authentication.",
+          "severity": "Critical",
+          "cvss_score": 9.5,
+          "affected_versions": "<= 4.11.43",
+          "fixed_version": null,
+          "published_date": "2025-03-07",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-92354",
+            "https://github.com/advisories/cve-2023-92354"
+          ],
+          "remediation": "Implement input validation",
+          "exploit_available": true,
+          "exploit_maturity": "Functional"
+        }
+      ],
+      "security_score": 20.3,
+      "usage": [
+        {
+          "service": "cache",
+          "file": "src/helpers.swift",
+          "type": "Direct"
+        },
+        {
+          "service": "database",
+          "file": "src/controllers.java",
+          "type": "Direct"
+        },
+        {
+          "service": "cache",
+          "file": "src/views.swift",
+          "type": "Transitive"
+        }
+      ],
+      "source": "Maven Central",
+      "last_updated": "2025-06-28"
+    },
+    {
+      "name": "react-2",
+      "version": "4.4.40",
+      "latest_version": "4.7.44",
+      "language": "JavaScript",
+      "license": "MPL-2.0",
+      "license_compliance": "Non-Compliant",
+      "package_manager": "pip",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2022-63762",
+          "title": "Server-Side Request Forgery in react-2",
+          "description": "A critical severity xml external entity vulnerability was found in react-2 version 4.4.40 that allows attackers to execute arbitrary code.",
+          "severity": "Critical",
+          "cvss_score": 9.5,
+          "affected_versions": "<= 4.4.40",
+          "fixed_version": null,
+          "published_date": "2024-10-30",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-63762",
+            "https://github.com/advisories/cve-2022-63762"
+          ],
+          "remediation": "Replace with secure alternative",
+          "exploit_available": false,
+          "exploit_maturity": null
+        },
+        {
+          "id": "CVE-2020-22945",
+          "title": "SQL Injection in react-2",
+          "description": "A high severity sql injection vulnerability was found in react-2 version 4.4.40 that allows attackers to execute arbitrary code.",
+          "severity": "High",
+          "cvss_score": 7.8,
+          "affected_versions": "<= 4.4.40",
+          "fixed_version": null,
+          "published_date": "2025-03-13",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-22945",
+            "https://github.com/advisories/cve-2020-22945"
+          ],
+          "remediation": "Apply security patch",
+          "exploit_available": false,
+          "exploit_maturity": "High"
+        },
+        {
+          "id": "CVE-2020-33254",
+          "title": "Information Disclosure in react-2",
+          "description": "A high severity remote code execution vulnerability was found in react-2 version 4.4.40 that allows attackers to access sensitive information.",
+          "severity": "High",
+          "cvss_score": 7.7,
+          "affected_versions": "<= 4.4.40",
+          "fixed_version": null,
+          "published_date": "2025-07-05",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-33254",
+            "https://github.com/advisories/cve-2020-33254"
+          ],
+          "remediation": "Apply security patch",
+          "exploit_available": true,
+          "exploit_maturity": null
+        }
+      ],
+      "security_score": 35.8,
+      "usage": [
+        {
+          "service": "database",
+          "file": "src/utils.rs",
+          "type": "Transitive"
+        }
+      ],
+      "source": "Packagist",
+      "last_updated": "2025-04-25"
+    },
+    {
+      "name": "tensorflow-20",
+      "version": "3.13.42",
+      "latest_version": "3.14.46",
+      "language": "C#",
+      "license": "EPL-2.0",
+      "license_compliance": "Compliant",
+      "package_manager": "gradle",
+      "is_vulnerable": false,
+      "is_outdated": false,
+      "vulnerabilities": [],
+      "security_score": 97.4,
+      "usage": [
+        {
+          "service": "auth",
+          "file": "src/helpers.go",
+          "type": "Direct"
+        },
+        {
+          "service": "worker",
+          "file": "src/client.rs",
+          "type": "Transitive"
+        },
+        {
+          "service": "notification",
+          "file": "src/app.rs",
+          "type": "Direct"
+        },
+        {
+          "service": "database",
+          "file": "src/models.java",
+          "type": "Transitive"
+        },
+        {
+          "service": "database",
+          "file": "src/helpers.cs",
+          "type": "Transitive"
+        }
+      ],
+      "source": "RubyGems",
+      "last_updated": "2025-07-09"
+    },
+    {
+      "name": "moment-52",
+      "version": "5.8.7",
+      "latest_version": "5.10.14",
+      "language": "Java",
+      "license": "Apache-2.0",
+      "license_compliance": "Compliant",
+      "package_manager": "docker",
+      "is_vulnerable": false,
+      "is_outdated": false,
+      "vulnerabilities": [],
+      "security_score": 93.4,
+      "usage": [
+        {
+          "service": "worker",
+          "file": "src/helpers.java",
+          "type": "Direct"
+        }
+      ],
+      "source": "PyPI",
+      "last_updated": "2025-04-23"
+    },
+    {
+      "name": "axios-16",
+      "version": "1.9.4",
+      "latest_version": "1.10.14",
+      "language": "Go",
+      "license": "ISC",
+      "license_compliance": "Compliant",
+      "package_manager": "maven",
+      "is_vulnerable": false,
+      "is_outdated": false,
+      "vulnerabilities": [],
+      "security_score": 87.5,
+      "usage": [
+        {
+          "service": "frontend",
+          "file": "src/client.cs",
+          "type": "Transitive"
+        },
+        {
+          "service": "queue",
+          "file": "src/helpers.rb",
+          "type": "Transitive"
+        }
+      ],
+      "source": "npm",
+      "last_updated": "2025-09-14"
+    },
+    {
+      "name": "jquery-13",
+      "version": "1.19.29",
+      "latest_version": "1.21.30",
+      "language": "Swift",
+      "license": "EPL-2.0",
+      "license_compliance": "Review Needed",
+      "package_manager": "go",
+      "is_vulnerable": false,
+      "is_outdated": false,
+      "vulnerabilities": [],
+      "security_score": 91.8,
+      "usage": [
+        {
+          "service": "worker",
+          "file": "src/utils.rs",
+          "type": "Transitive"
+        }
+      ],
+      "source": "npm",
+      "last_updated": "2025-09-13"
+    },
+    {
+      "name": "jackson-100",
+      "version": "4.9.42",
+      "latest_version": "4.9.48",
+      "language": "PHP",
+      "license": "Apache-2.0",
+      "license_compliance": "Non-Compliant",
+      "package_manager": "docker",
+      "is_vulnerable": true,
+      "is_outdated": false,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2022-23819",
+          "title": "Denial of Service in jackson-100",
+          "description": "A medium severity memory leak vulnerability was found in jackson-100 version 4.9.42 that allows attackers to execute arbitrary code.",
+          "severity": "Medium",
+          "cvss_score": 6.3,
+          "affected_versions": "<= 4.9.42",
+          "fixed_version": null,
+          "published_date": "2025-07-20",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-23819",
+            "https://github.com/advisories/cve-2022-23819"
+          ],
+          "remediation": "Add security wrapper",
+          "exploit_available": false,
+          "exploit_maturity": "Functional"
+        }
+      ],
+      "security_score": 97.8,
+      "usage": [
+        {
+          "service": "notification",
+          "file": "src/models.rs",
+          "type": "Transitive"
+        },
+        {
+          "service": "scheduler",
+          "file": "src/app.rs",
+          "type": "Transitive"
+        },
+        {
+          "service": "api",
+          "file": "src/main.ts",
+          "type": "Direct"
+        },
+        {
+          "service": "auth",
+          "file": "src/views.rb",
+          "type": "Transitive"
+        },
+        {
+          "service": "frontend",
+          "file": "src/models.php",
+          "type": "Transitive"
+        }
+      ],
+      "source": "Maven Central",
+      "last_updated": "2025-05-25"
+    },
+    {
+      "name": "angular-90",
+      "version": "4.6.39",
+      "latest_version": "4.6.48",
+      "language": "Go",
+      "license": "Apache-2.0",
+      "license_compliance": "Compliant",
+      "package_manager": "maven",
+      "is_vulnerable": false,
+      "is_outdated": false,
+      "vulnerabilities": [],
+      "security_score": 83.5,
+      "usage": [
+        {
+          "service": "database",
+          "file": "src/index.php",
+          "type": "Transitive"
+        },
+        {
+          "service": "auth",
+          "file": "src/utils.js",
+          "type": "Direct"
+        }
+      ],
+      "source": "crates.io",
+      "last_updated": "2025-10-02"
+    },
+    {
+      "name": "okhttp-44",
+      "version": "5.15.18",
+      "latest_version": "5.17.19",
+      "language": "PHP",
+      "license": "MPL-2.0",
+      "license_compliance": "Compliant",
+      "package_manager": "npm",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "security_score": 84.7,
+      "usage": [
+        {
+          "service": "api",
+          "file": "src/server.java",
+          "type": "Transitive"
+        },
+        {
+          "service": "database",
+          "file": "src/views.ts",
+          "type": "Direct"
+        },
+        {
+          "service": "auth",
+          "file": "src/utils.rb",
+          "type": "Direct"
+        }
+      ],
+      "source": "crates.io",
+      "last_updated": "2025-04-09"
+    },
+    {
+      "name": "hibernate-55",
+      "version": "4.13.13",
+      "latest_version": "4.15.21",
+      "language": "PHP",
+      "license": "LGPL-2.1",
+      "license_compliance": "Non-Compliant",
+      "package_manager": "docker",
+      "is_vulnerable": false,
+      "is_outdated": false,
+      "vulnerabilities": [],
+      "security_score": 98.3,
+      "usage": [
+        {
+          "service": "api",
+          "file": "src/models.py",
+          "type": "Transitive"
+        }
+      ],
+      "source": "PyPI",
+      "last_updated": "2025-06-24"
+    },
+    {
+      "name": "moment-76",
+      "version": "0.16.32",
+      "latest_version": "0.16.38",
+      "language": "PHP",
+      "license": "EPL-2.0",
+      "license_compliance": "Compliant",
+      "package_manager": "gradle",
+      "is_vulnerable": true,
+      "is_outdated": false,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-62454",
+          "title": "Insecure Deserialization in moment-76",
+          "description": "A low severity information disclosure vulnerability was found in moment-76 version 0.16.32 that allows attackers to execute arbitrary code.",
+          "severity": "Low",
+          "cvss_score": 3.4,
+          "affected_versions": "<= 0.16.32",
+          "fixed_version": "0.16.37",
+          "published_date": "2024-11-01",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-62454",
+            "https://github.com/advisories/cve-2020-62454"
+          ],
+          "remediation": "Apply security patch",
+          "exploit_available": true,
+          "exploit_maturity": "Functional"
+        },
+        {
+          "id": "CVE-2020-11797",
+          "title": "Information Disclosure in moment-76",
+          "description": "A low severity authentication bypass vulnerability was found in moment-76 version 0.16.32 that allows attackers to bypass authentication.",
+          "severity": "Low",
+          "cvss_score": 0.3,
+          "affected_versions": "<= 0.16.32",
+          "fixed_version": "0.16.37",
+          "published_date": "2025-07-30",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-11797",
+            "https://github.com/advisories/cve-2020-11797"
+          ],
+          "remediation": "Remove unused dependency",
+          "exploit_available": false,
+          "exploit_maturity": "Functional"
+        },
+        {
+          "id": "CVE-2020-70927",
+          "title": "Remote Code Execution in moment-76",
+          "description": "A critical severity path traversal vulnerability was found in moment-76 version 0.16.32 that allows attackers to execute arbitrary code.",
+          "severity": "Critical",
+          "cvss_score": 9.5,
+          "affected_versions": "<= 0.16.32",
+          "fixed_version": "0.16.37",
+          "published_date": "2024-12-01",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-70927",
+            "https://github.com/advisories/cve-2020-70927"
+          ],
+          "remediation": "Replace with secure alternative",
+          "exploit_available": true,
+          "exploit_maturity": "Functional"
+        }
+      ],
+      "security_score": 61.1,
+      "usage": [
+        {
+          "service": "auth",
+          "file": "src/index.php",
+          "type": "Direct"
+        },
+        {
+          "service": "worker",
+          "file": "src/app.php",
+          "type": "Transitive"
+        }
+      ],
+      "source": "Packagist",
+      "last_updated": "2025-08-06"
+    },
+    {
+      "name": "tensorflow-50",
+      "version": "2.20.21",
+      "latest_version": "2.22.23",
+      "language": "Go",
+      "license": "LGPL-2.1",
+      "license_compliance": "Non-Compliant",
+      "package_manager": "cargo",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2021-18658",
+          "title": "Buffer Overflow in tensorflow-50",
+          "description": "A medium severity information disclosure vulnerability was found in tensorflow-50 version 2.20.21 that allows attackers to escalate privileges.",
+          "severity": "Medium",
+          "cvss_score": 4.4,
+          "affected_versions": "<= 2.20.21",
+          "fixed_version": "2.20.26",
+          "published_date": "2025-04-14",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-18658",
+            "https://github.com/advisories/cve-2021-18658"
+          ],
+          "remediation": "Apply security patch",
+          "exploit_available": false,
+          "exploit_maturity": "Proof of Concept"
+        }
+      ],
+      "security_score": 6.8,
+      "usage": [
+        {
+          "service": "api",
+          "file": "src/helpers.php",
+          "type": "Direct"
+        },
+        {
+          "service": "queue",
+          "file": "src/index.rb",
+          "type": "Transitive"
+        },
+        {
+          "service": "api",
+          "file": "src/utils.rs",
+          "type": "Transitive"
+        },
+        {
+          "service": "backend",
+          "file": "src/client.rb",
+          "type": "Direct"
+        },
+        {
+          "service": "frontend",
+          "file": "src/views.cs",
+          "type": "Transitive"
+        }
+      ],
+      "source": "Docker Hub",
+      "last_updated": "2025-05-12"
+    },
+    {
+      "name": "entity-framework-1",
+      "version": "0.7.18",
+      "latest_version": "0.7.27",
+      "language": "PHP",
+      "license": "LGPL-2.1",
+      "license_compliance": "Review Needed",
+      "package_manager": "npm",
+      "is_vulnerable": true,
+      "is_outdated": false,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2021-95003",
+          "title": "Command Injection in entity-framework-1",
+          "description": "A critical severity information disclosure vulnerability was found in entity-framework-1 version 0.7.18 that allows attackers to cause denial of service.",
+          "severity": "Critical",
+          "cvss_score": 9.6,
+          "affected_versions": "<= 0.7.18",
+          "fixed_version": null,
+          "published_date": "2025-08-22",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-95003",
+            "https://github.com/advisories/cve-2021-95003"
+          ],
+          "remediation": "Configure security settings",
+          "exploit_available": true,
+          "exploit_maturity": null
+        },
+        {
+          "id": "CVE-2022-73077",
+          "title": "Buffer Overflow in entity-framework-1",
+          "description": "A critical severity privilege escalation vulnerability was found in entity-framework-1 version 0.7.18 that allows attackers to access sensitive information.",
+          "severity": "Critical",
+          "cvss_score": 9.9,
+          "affected_versions": "<= 0.7.18",
+          "fixed_version": "0.7.23",
+          "published_date": "2025-07-22",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-73077",
+            "https://github.com/advisories/cve-2022-73077"
+          ],
+          "remediation": "Apply security patch",
+          "exploit_available": true,
+          "exploit_maturity": "Functional"
+        }
+      ],
+      "security_score": 43.5,
+      "usage": [
+        {
+          "service": "frontend",
+          "file": "src/app.rs",
+          "type": "Transitive"
+        }
+      ],
+      "source": "Go Modules",
+      "last_updated": "2025-04-18"
+    },
+    {
+      "name": "retrofit-68",
+      "version": "4.5.4",
+      "latest_version": "4.6.8",
+      "language": "PHP",
+      "license": "EPL-2.0",
+      "license_compliance": "Non-Compliant",
+      "package_manager": "gradle",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "security_score": 98.8,
+      "usage": [
+        {
+          "service": "notification",
+          "file": "src/app.php",
+          "type": "Transitive"
+        },
+        {
+          "service": "scheduler",
+          "file": "src/models.go",
+          "type": "Direct"
+        },
+        {
+          "service": "worker",
+          "file": "src/index.swift",
+          "type": "Transitive"
+        }
+      ],
+      "source": "crates.io",
+      "last_updated": "2025-06-26"
+    },
+    {
+      "name": "express-96",
+      "version": "5.3.15",
+      "latest_version": "5.4.25",
+      "language": "Rust",
+      "license": "ISC",
+      "license_compliance": "Non-Compliant",
+      "package_manager": "maven",
+      "is_vulnerable": false,
+      "is_outdated": false,
+      "vulnerabilities": [],
+      "security_score": 89.3,
+      "usage": [
+        {
+          "service": "cache",
+          "file": "src/app.ts",
+          "type": "Direct"
+        },
+        {
+          "service": "auth",
+          "file": "src/main.rb",
+          "type": "Transitive"
+        }
+      ],
+      "source": "Docker Hub",
+      "last_updated": "2025-06-07"
+    },
+    {
+      "name": "express-60",
+      "version": "1.20.22",
+      "latest_version": "1.22.25",
+      "language": "Rust",
+      "license": "Unlicense",
+      "license_compliance": "Review Needed",
+      "package_manager": "docker",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "security_score": 99.1,
+      "usage": [
+        {
+          "service": "backend",
+          "file": "src/server.py",
+          "type": "Direct"
+        },
+        {
+          "service": "auth",
+          "file": "src/controllers.rb",
+          "type": "Transitive"
+        },
+        {
+          "service": "worker",
+          "file": "src/client.ts",
+          "type": "Transitive"
+        }
+      ],
+      "source": "PyPI",
+      "last_updated": "2025-08-25"
+    },
+    {
+      "name": "hibernate-96",
+      "version": "3.16.12",
+      "latest_version": "3.19.21",
+      "language": "Go",
+      "license": "MIT",
+      "license_compliance": "Compliant",
+      "package_manager": "pip",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-39500",
+          "title": "Denial of Service in hibernate-96",
+          "description": "A low severity buffer overflow vulnerability was found in hibernate-96 version 3.16.12 that allows attackers to escalate privileges.",
+          "severity": "Low",
+          "cvss_score": 1.2,
+          "affected_versions": "<= 3.16.12",
+          "fixed_version": null,
+          "published_date": "2025-02-04",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-39500",
+            "https://github.com/advisories/cve-2020-39500"
+          ],
+          "remediation": "Add security wrapper",
+          "exploit_available": false,
+          "exploit_maturity": null
+        },
+        {
+          "id": "CVE-2021-69988",
+          "title": "Cryptographic Issues in hibernate-96",
+          "description": "A high severity xml external entity vulnerability was found in hibernate-96 version 3.16.12 that allows attackers to bypass authentication.",
+          "severity": "High",
+          "cvss_score": 8.8,
+          "affected_versions": "<= 3.16.12",
+          "fixed_version": "3.16.15",
+          "published_date": "2025-02-07",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-69988",
+            "https://github.com/advisories/cve-2021-69988"
+          ],
+          "remediation": "Add security wrapper",
+          "exploit_available": false,
+          "exploit_maturity": "High"
+        },
+        {
+          "id": "CVE-2023-81817",
+          "title": "Remote Code Execution in hibernate-96",
+          "description": "A critical severity cryptographic issues vulnerability was found in hibernate-96 version 3.16.12 that allows attackers to access sensitive information.",
+          "severity": "Critical",
+          "cvss_score": 9.6,
+          "affected_versions": "<= 3.16.12",
+          "fixed_version": null,
+          "published_date": "2024-11-12",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-81817",
+            "https://github.com/advisories/cve-2023-81817"
+          ],
+          "remediation": "Configure security settings",
+          "exploit_available": true,
+          "exploit_maturity": null
+        }
+      ],
+      "security_score": 17.6,
+      "usage": [
+        {
+          "service": "backend",
+          "file": "src/views.rs",
+          "type": "Direct"
+        },
+        {
+          "service": "worker",
+          "file": "src/models.ts",
+          "type": "Direct"
+        },
+        {
+          "service": "worker",
+          "file": "src/index.go",
+          "type": "Direct"
+        }
+      ],
+      "source": "Go Modules",
+      "last_updated": "2025-04-19"
+    },
+    {
+      "name": "log4j-37",
+      "version": "5.6.47",
+      "latest_version": "5.6.53",
+      "language": "Ruby",
+      "license": "Apache-2.0",
+      "license_compliance": "Compliant",
+      "package_manager": "nuget",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "security_score": 97.6,
+      "usage": [
+        {
+          "service": "notification",
+          "file": "src/main.java",
+          "type": "Transitive"
+        }
+      ],
+      "source": "NuGet",
+      "last_updated": "2025-06-20"
+    },
+    {
+      "name": "log4j-88",
+      "version": "0.12.23",
+      "latest_version": "0.14.30",
+      "language": "Java",
+      "license": "GPL-3.0",
+      "license_compliance": "Review Needed",
+      "package_manager": "cargo",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "security_score": 89.8,
+      "usage": [
+        {
+          "service": "scheduler",
+          "file": "src/client.cs",
+          "type": "Direct"
+        }
+      ],
+      "source": "NuGet",
+      "last_updated": "2025-04-16"
+    },
+    {
+      "name": "react-73",
+      "version": "5.4.6",
+      "latest_version": "5.4.16",
+      "language": "PHP",
+      "license": "Apache-2.0",
+      "license_compliance": "Compliant",
+      "package_manager": "cargo",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "security_score": 81.9,
+      "usage": [
+        {
+          "service": "scheduler",
+          "file": "src/index.rb",
+          "type": "Transitive"
+        },
+        {
+          "service": "notification",
+          "file": "src/views.rb",
+          "type": "Transitive"
+        },
+        {
+          "service": "auth",
+          "file": "src/server.go",
+          "type": "Direct"
+        },
+        {
+          "service": "queue",
+          "file": "src/server.go",
+          "type": "Transitive"
+        },
+        {
+          "service": "backend",
+          "file": "src/main.rb",
+          "type": "Transitive"
+        }
+      ],
+      "source": "npm",
+      "last_updated": "2025-09-10"
+    },
+    {
+      "name": "bootstrap-58",
+      "version": "2.5.15",
+      "latest_version": "2.5.25",
+      "language": "Python",
+      "license": "Apache-2.0",
+      "license_compliance": "Review Needed",
+      "package_manager": "go",
+      "is_vulnerable": true,
+      "is_outdated": false,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-79585",
+          "title": "XML External Entity in bootstrap-58",
+          "description": "A critical severity command injection vulnerability was found in bootstrap-58 version 2.5.15 that allows attackers to bypass authentication.",
+          "severity": "Critical",
+          "cvss_score": 9.2,
+          "affected_versions": "<= 2.5.15",
+          "fixed_version": "2.5.20",
+          "published_date": "2025-03-22",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-79585",
+            "https://github.com/advisories/cve-2020-79585"
+          ],
+          "remediation": "Remove unused dependency",
+          "exploit_available": false,
+          "exploit_maturity": null
+        }
+      ],
+      "security_score": 18.0,
+      "usage": [
+        {
+          "service": "backend",
+          "file": "src/utils.swift",
+          "type": "Direct"
+        }
+      ],
+      "source": "Maven Central",
+      "last_updated": "2025-04-13"
+    }
+  ],
+  "images": [
+    {
+      "name": "nginx",
+      "tag": "15.19",
+      "full_name": "nginx:15.19",
+      "size": "239MB",
+      "layers": 9,
+      "created": "2025-08-11",
+      "registry": "Docker Hub",
+      "vulnerabilities": [
+        {
+          "id": "CVE-2021-55976",
+          "title": "Information Disclosure in nodejs",
+          "description": "A medium severity memory leak vulnerability was found in nodejs version 2.5.27 that allows attackers to execute arbitrary code.",
+          "severity": "Medium",
+          "cvss_score": 6.7,
+          "component": "nodejs",
+          "component_version": "2.5.27",
+          "fixed_version": "2.5.30",
+          "layer_id": "sha256:43459609",
+          "published_date": "2025-04-22",
+          "remediation": "Remove unused dependency",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2021-87671",
+          "title": "Insecure Deserialization in mysql",
+          "description": "A low severity denial of service vulnerability was found in mysql version 1.12.35 that allows attackers to cause denial of service.",
+          "severity": "Low",
+          "cvss_score": 3.2,
+          "component": "mysql",
+          "component_version": "1.12.35",
+          "fixed_version": "1.12.37",
+          "layer_id": "sha256:99543734",
+          "published_date": "2024-10-11",
+          "remediation": "Upgrade to latest version",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2022-30326",
+          "title": "Remote Code Execution in bash",
+          "description": "A high severity cryptographic issues vulnerability was found in bash version 5.7.5 that allows attackers to bypass authentication.",
+          "severity": "High",
+          "cvss_score": 8.6,
+          "component": "bash",
+          "component_version": "5.7.5",
+          "fixed_version": "5.7.8",
+          "layer_id": "sha256:37028375",
+          "published_date": "2024-11-13",
+          "remediation": "Upgrade to latest version",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2020-86641",
+          "title": "Cryptographic Issues in dotnet",
+          "description": "A high severity buffer overflow vulnerability was found in dotnet version 3.1.39 that allows attackers to bypass authentication.",
+          "severity": "High",
+          "cvss_score": 8.8,
+          "component": "dotnet",
+          "component_version": "3.1.39",
+          "fixed_version": "3.1.41",
+          "layer_id": "sha256:90241505",
+          "published_date": "2025-07-12",
+          "remediation": "Remove unused dependency",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2021-16620",
+          "title": "Insecure Deserialization in postgresql",
+          "description": "A high severity privilege escalation vulnerability was found in postgresql version 2.10.10 that allows attackers to cause denial of service.",
+          "severity": "High",
+          "cvss_score": 8.8,
+          "component": "postgresql",
+          "component_version": "2.10.10",
+          "fixed_version": "2.10.14",
+          "layer_id": "sha256:79888987",
+          "published_date": "2025-05-05",
+          "remediation": "Remove unused dependency",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2023-74679",
+          "title": "Privilege Escalation in mysql",
+          "description": "A critical severity remote code execution vulnerability was found in mysql version 5.2.38 that allows attackers to escalate privileges.",
+          "severity": "Critical",
+          "cvss_score": 9.3,
+          "component": "mysql",
+          "component_version": "5.2.38",
+          "fixed_version": "5.2.40",
+          "layer_id": "sha256:13771164",
+          "published_date": "2025-05-01",
+          "remediation": "Configure security settings",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2021-41253",
+          "title": "Cryptographic Issues in mongodb",
+          "description": "A low severity sql injection vulnerability was found in mongodb version 1.1.16 that allows attackers to bypass authentication.",
+          "severity": "Low",
+          "cvss_score": 1.2,
+          "component": "mongodb",
+          "component_version": "1.1.16",
+          "fixed_version": "1.1.20",
+          "layer_id": "sha256:73829081",
+          "published_date": "2025-02-24",
+          "remediation": "Add security wrapper",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2020-76318",
+          "title": "Server-Side Request Forgery in mongodb",
+          "description": "A low severity denial of service vulnerability was found in mongodb version 1.9.27 that allows attackers to execute arbitrary code.",
+          "severity": "Low",
+          "cvss_score": 2.3,
+          "component": "mongodb",
+          "component_version": "1.9.27",
+          "fixed_version": "1.9.28",
+          "layer_id": "sha256:70584762",
+          "published_date": "2025-07-29",
+          "remediation": "Upgrade to latest version",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2020-28003",
+          "title": "Memory Leak in mongodb",
+          "description": "A medium severity sql injection vulnerability was found in mongodb version 3.5.20 that allows attackers to escalate privileges.",
+          "severity": "Medium",
+          "cvss_score": 6.5,
+          "component": "mongodb",
+          "component_version": "3.5.20",
+          "fixed_version": "3.5.21",
+          "layer_id": "sha256:99058973",
+          "published_date": "2025-06-08",
+          "remediation": "Remove unused dependency",
+          "exploit_available": true
+        }
+      ],
+      "vulnerability_counts": {
+        "critical": 1,
+        "high": 3,
+        "medium": 2,
+        "low": 3,
+        "total": 9
+      },
+      "security_score": 55,
+      "scan_date": "2025-09-30",
+      "used_by": [
+        "notification",
+        "database",
+        "scheduler"
+      ]
+    },
+    {
+      "name": "alpine",
+      "tag": "6.2",
+      "full_name": "alpine:6.2",
+      "size": "497MB",
+      "layers": 11,
+      "created": "2025-06-18",
+      "registry": "Amazon ECR",
+      "vulnerabilities": [
+        {
+          "id": "CVE-2022-29623",
+          "title": "Remote Code Execution in mongodb",
+          "description": "A high severity privilege escalation vulnerability was found in mongodb version 0.6.41 that allows attackers to escalate privileges.",
+          "severity": "High",
+          "cvss_score": 7.6,
+          "component": "mongodb",
+          "component_version": "0.6.41",
+          "fixed_version": "0.6.44",
+          "layer_id": "sha256:18570126",
+          "published_date": "2024-10-28",
+          "remediation": "Add security wrapper",
+          "exploit_available": true
+        }
+      ],
+      "vulnerability_counts": {
+        "critical": 0,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "total": 1
+      },
+      "security_score": 93,
+      "scan_date": "2025-10-03",
+      "used_by": [
+        "auth",
+        "cache"
+      ]
+    },
+    {
+      "name": "java",
+      "tag": "10.9",
+      "full_name": "java:10.9",
+      "size": "262MB",
+      "layers": 11,
+      "created": "2025-04-25",
+      "registry": "Google Container Registry",
+      "vulnerabilities": [
+        {
+          "id": "CVE-2021-47734",
+          "title": "Authentication Bypass in postgresql",
+          "description": "A medium severity xml external entity vulnerability was found in postgresql version 0.3.28 that allows attackers to execute arbitrary code.",
+          "severity": "Medium",
+          "cvss_score": 6.3,
+          "component": "postgresql",
+          "component_version": "0.3.28",
+          "fixed_version": "0.3.32",
+          "layer_id": "sha256:29555370",
+          "published_date": "2025-07-20",
+          "remediation": "Configure security settings",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2021-57579",
+          "title": "Memory Leak in curl",
+          "description": "A critical severity insecure deserialization vulnerability was found in curl version 4.14.32 that allows attackers to escalate privileges.",
+          "severity": "Critical",
+          "cvss_score": 9.9,
+          "component": "curl",
+          "component_version": "4.14.32",
+          "fixed_version": "4.14.36",
+          "layer_id": "sha256:54865946",
+          "published_date": "2024-10-07",
+          "remediation": "Upgrade to latest version",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2020-85242",
+          "title": "Command Injection in nodejs",
+          "description": "A low severity insecure deserialization vulnerability was found in nodejs version 4.4.41 that allows attackers to bypass authentication.",
+          "severity": "Low",
+          "cvss_score": 1.8,
+          "component": "nodejs",
+          "component_version": "4.4.41",
+          "fixed_version": "4.4.44",
+          "layer_id": "sha256:81923341",
+          "published_date": "2025-05-12",
+          "remediation": "Upgrade to latest version",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2020-45594",
+          "title": "Buffer Overflow in mysql",
+          "description": "A medium severity command injection vulnerability was found in mysql version 4.6.29 that allows attackers to execute arbitrary code.",
+          "severity": "Medium",
+          "cvss_score": 6.8,
+          "component": "mysql",
+          "component_version": "4.6.29",
+          "fixed_version": "4.6.34",
+          "layer_id": "sha256:62981004",
+          "published_date": "2025-07-02",
+          "remediation": "Replace with secure alternative",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2023-91876",
+          "title": "Privilege Escalation in nginx",
+          "description": "A low severity denial of service vulnerability was found in nginx version 3.16.33 that allows attackers to escalate privileges.",
+          "severity": "Low",
+          "cvss_score": 1.1,
+          "component": "nginx",
+          "component_version": "3.16.33",
+          "fixed_version": "3.16.36",
+          "layer_id": "sha256:23953782",
+          "published_date": "2025-03-17",
+          "remediation": "Add security wrapper",
+          "exploit_available": true
+        }
+      ],
+      "vulnerability_counts": {
+        "critical": 1,
+        "high": 0,
+        "medium": 2,
+        "low": 2,
+        "total": 5
+      },
+      "security_score": 77,
+      "scan_date": "2025-09-25",
+      "used_by": [
+        "cache"
+      ]
+    },
+    {
+      "name": "python",
+      "tag": "1.3",
+      "full_name": "python:1.3",
+      "size": "236MB",
+      "layers": 5,
+      "created": "2025-04-12",
+      "registry": "Docker Hub",
+      "vulnerabilities": [
+        {
+          "id": "CVE-2022-23038",
+          "title": "Memory Leak in mysql",
+          "description": "A low severity remote code execution vulnerability was found in mysql version 2.12.29 that allows attackers to bypass authentication.",
+          "severity": "Low",
+          "cvss_score": 3.0,
+          "component": "mysql",
+          "component_version": "2.12.29",
+          "fixed_version": "2.12.33",
+          "layer_id": "sha256:25305259",
+          "published_date": "2024-12-10",
+          "remediation": "Add security wrapper",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2022-15096",
+          "title": "Path Traversal in mysql",
+          "description": "A high severity command injection vulnerability was found in mysql version 3.2.20 that allows attackers to execute arbitrary code.",
+          "severity": "High",
+          "cvss_score": 7.9,
+          "component": "mysql",
+          "component_version": "3.2.20",
+          "fixed_version": "3.2.25",
+          "layer_id": "sha256:72288290",
+          "published_date": "2025-02-17",
+          "remediation": "Remove unused dependency",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2023-67675",
+          "title": "Remote Code Execution in libxml2",
+          "description": "A medium severity authentication bypass vulnerability was found in libxml2 version 1.1.42 that allows attackers to cause denial of service.",
+          "severity": "Medium",
+          "cvss_score": 5.6,
+          "component": "libxml2",
+          "component_version": "1.1.42",
+          "fixed_version": "1.1.47",
+          "layer_id": "sha256:43891931",
+          "published_date": "2025-01-08",
+          "remediation": "Update dependencies",
+          "exploit_available": true
+        }
+      ],
+      "vulnerability_counts": {
+        "critical": 0,
+        "high": 1,
+        "medium": 1,
+        "low": 1,
+        "total": 3
+      },
+      "security_score": 89,
+      "scan_date": "2025-09-19",
+      "used_by": [
+        "notification",
+        "auth",
+        "frontend"
+      ]
+    },
+    {
+      "name": "php",
+      "tag": "5.6",
+      "full_name": "php:5.6",
+      "size": "435MB",
+      "layers": 15,
+      "created": "2025-08-29",
+      "registry": "Google Container Registry",
+      "vulnerabilities": [],
+      "vulnerability_counts": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "total": 0
+      },
+      "security_score": 100,
+      "scan_date": "2025-09-05",
+      "used_by": [
+        "backend",
+        "notification"
+      ]
+    },
+    {
+      "name": "golang",
+      "tag": "7.3",
+      "full_name": "golang:7.3",
+      "size": "178MB",
+      "layers": 11,
+      "created": "2025-06-11",
+      "registry": "Docker Hub",
+      "vulnerabilities": [
+        {
+          "id": "CVE-2022-20499",
+          "title": "Cross-Site Scripting in curl",
+          "description": "A high severity denial of service vulnerability was found in curl version 4.15.32 that allows attackers to access sensitive information.",
+          "severity": "High",
+          "cvss_score": 7.1,
+          "component": "curl",
+          "component_version": "4.15.32",
+          "fixed_version": "4.15.33",
+          "layer_id": "sha256:49943633",
+          "published_date": "2024-11-25",
+          "remediation": "Add security wrapper",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2023-18121",
+          "title": "Buffer Overflow in curl",
+          "description": "A high severity information disclosure vulnerability was found in curl version 1.2.5 that allows attackers to cause denial of service.",
+          "severity": "High",
+          "cvss_score": 8.8,
+          "component": "curl",
+          "component_version": "1.2.5",
+          "fixed_version": "1.2.6",
+          "layer_id": "sha256:38568575",
+          "published_date": "2025-05-31",
+          "remediation": "Upgrade to latest version",
+          "exploit_available": false
+        }
+      ],
+      "vulnerability_counts": {
+        "critical": 0,
+        "high": 2,
+        "medium": 0,
+        "low": 0,
+        "total": 2
+      },
+      "security_score": 86,
+      "scan_date": "2025-09-12",
+      "used_by": [
+        "cache",
+        "api"
+      ]
+    },
+    {
+      "name": "ruby",
+      "tag": "2.16",
+      "full_name": "ruby:2.16",
+      "size": "157MB",
+      "layers": 15,
+      "created": "2025-06-27",
+      "registry": "Azure Container Registry",
+      "vulnerabilities": [
+        {
+          "id": "CVE-2022-28802",
+          "title": "Server-Side Request Forgery in postgresql",
+          "description": "A critical severity memory leak vulnerability was found in postgresql version 1.6.13 that allows attackers to bypass authentication.",
+          "severity": "Critical",
+          "cvss_score": 9.1,
+          "component": "postgresql",
+          "component_version": "1.6.13",
+          "fixed_version": "1.6.16",
+          "layer_id": "sha256:34957720",
+          "published_date": "2025-07-21",
+          "remediation": "Remove unused dependency",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2021-64966",
+          "title": "Insecure Deserialization in nginx",
+          "description": "A critical severity xml external entity vulnerability was found in nginx version 0.1.49 that allows attackers to cause denial of service.",
+          "severity": "Critical",
+          "cvss_score": 9.7,
+          "component": "nginx",
+          "component_version": "0.1.49",
+          "fixed_version": "0.1.52",
+          "layer_id": "sha256:86325012",
+          "published_date": "2024-12-06",
+          "remediation": "Upgrade to latest version",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2023-91204",
+          "title": "Authentication Bypass in redis",
+          "description": "A critical severity command injection vulnerability was found in redis version 5.15.8 that allows attackers to execute arbitrary code.",
+          "severity": "Critical",
+          "cvss_score": 9.1,
+          "component": "redis",
+          "component_version": "5.15.8",
+          "fixed_version": "5.15.13",
+          "layer_id": "sha256:53892983",
+          "published_date": "2024-12-11",
+          "remediation": "Apply security patch",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2020-70029",
+          "title": "Memory Leak in python",
+          "description": "A high severity remote code execution vulnerability was found in python version 4.20.45 that allows attackers to cause denial of service.",
+          "severity": "High",
+          "cvss_score": 7.8,
+          "component": "python",
+          "component_version": "4.20.45",
+          "fixed_version": "4.20.49",
+          "layer_id": "sha256:82922620",
+          "published_date": "2025-06-24",
+          "remediation": "Apply security patch",
+          "exploit_available": false
+        }
+      ],
+      "vulnerability_counts": {
+        "critical": 3,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "total": 4
+      },
+      "security_score": 48,
+      "scan_date": "2025-09-26",
+      "used_by": [
+        "api",
+        "cache"
+      ]
+    },
+    {
+      "name": "golang",
+      "tag": "15.3",
+      "full_name": "golang:15.3",
+      "size": "93MB",
+      "layers": 13,
+      "created": "2025-07-16",
+      "registry": "Amazon ECR",
+      "vulnerabilities": [],
+      "vulnerability_counts": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "total": 0
+      },
+      "security_score": 100,
+      "scan_date": "2025-09-23",
+      "used_by": [
+        "notification",
+        "frontend",
+        "api"
+      ]
+    },
+    {
+      "name": "amazonlinux",
+      "tag": "7.1",
+      "full_name": "amazonlinux:7.1",
+      "size": "345MB",
+      "layers": 7,
+      "created": "2024-11-24",
+      "registry": "GitHub Container Registry",
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-25180",
+          "title": "Memory Leak in dotnet",
+          "description": "A low severity memory leak vulnerability was found in dotnet version 1.8.34 that allows attackers to access sensitive information.",
+          "severity": "Low",
+          "cvss_score": 3.7,
+          "component": "dotnet",
+          "component_version": "1.8.34",
+          "fixed_version": "1.8.39",
+          "layer_id": "sha256:27978351",
+          "published_date": "2025-07-30",
+          "remediation": "Update dependencies",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2022-42154",
+          "title": "Remote Code Execution in mongodb",
+          "description": "A critical severity cross-site scripting vulnerability was found in mongodb version 1.16.19 that allows attackers to bypass authentication.",
+          "severity": "Critical",
+          "cvss_score": 9.3,
+          "component": "mongodb",
+          "component_version": "1.16.19",
+          "fixed_version": "1.16.22",
+          "layer_id": "sha256:96965879",
+          "published_date": "2025-07-07",
+          "remediation": "Update dependencies",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2021-61552",
+          "title": "Insecure Deserialization in openjdk",
+          "description": "A high severity path traversal vulnerability was found in openjdk version 0.16.5 that allows attackers to access sensitive information.",
+          "severity": "High",
+          "cvss_score": 8.3,
+          "component": "openjdk",
+          "component_version": "0.16.5",
+          "fixed_version": "0.16.8",
+          "layer_id": "sha256:22456807",
+          "published_date": "2025-02-13",
+          "remediation": "Add security wrapper",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2021-52371",
+          "title": "Privilege Escalation in openssh",
+          "description": "A critical severity insecure deserialization vulnerability was found in openssh version 5.6.15 that allows attackers to execute arbitrary code.",
+          "severity": "Critical",
+          "cvss_score": 9.7,
+          "component": "openssh",
+          "component_version": "5.6.15",
+          "fixed_version": "5.6.20",
+          "layer_id": "sha256:80569350",
+          "published_date": "2024-12-23",
+          "remediation": "Configure security settings",
+          "exploit_available": true
+        }
+      ],
+      "vulnerability_counts": {
+        "critical": 2,
+        "high": 1,
+        "medium": 0,
+        "low": 1,
+        "total": 4
+      },
+      "security_score": 62,
+      "scan_date": "2025-09-17",
+      "used_by": [
+        "database",
+        "cache",
+        "auth"
+      ]
+    },
+    {
+      "name": "java",
+      "tag": "12.5",
+      "full_name": "java:12.5",
+      "size": "343MB",
+      "layers": 14,
+      "created": "2025-07-05",
+      "registry": "GitHub Container Registry",
+      "vulnerabilities": [],
+      "vulnerability_counts": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "total": 0
+      },
+      "security_score": 100,
+      "scan_date": "2025-09-12",
+      "used_by": [
+        "backend"
+      ]
+    },
+    {
+      "name": "golang",
+      "tag": "10.4",
+      "full_name": "golang:10.4",
+      "size": "485MB",
+      "layers": 11,
+      "created": "2025-08-04",
+      "registry": "Amazon ECR",
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-37483",
+          "title": "Server-Side Request Forgery in nginx",
+          "description": "A medium severity cryptographic issues vulnerability was found in nginx version 3.10.47 that allows attackers to escalate privileges.",
+          "severity": "Medium",
+          "cvss_score": 4.3,
+          "component": "nginx",
+          "component_version": "3.10.47",
+          "fixed_version": "3.10.49",
+          "layer_id": "sha256:22490597",
+          "published_date": "2024-12-25",
+          "remediation": "Configure security settings",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2022-28804",
+          "title": "Insecure Deserialization in nodejs",
+          "description": "A low severity remote code execution vulnerability was found in nodejs version 4.12.37 that allows attackers to escalate privileges.",
+          "severity": "Low",
+          "cvss_score": 1.7,
+          "component": "nodejs",
+          "component_version": "4.12.37",
+          "fixed_version": "4.12.41",
+          "layer_id": "sha256:98122117",
+          "published_date": "2025-08-28",
+          "remediation": "Implement input validation",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2023-16567",
+          "title": "Path Traversal in mongodb",
+          "description": "A critical severity cryptographic issues vulnerability was found in mongodb version 0.18.25 that allows attackers to execute arbitrary code.",
+          "severity": "Critical",
+          "cvss_score": 9.5,
+          "component": "mongodb",
+          "component_version": "0.18.25",
+          "fixed_version": "0.18.27",
+          "layer_id": "sha256:94756157",
+          "published_date": "2025-01-10",
+          "remediation": "Add security wrapper",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2021-17662",
+          "title": "Remote Code Execution in curl",
+          "description": "A high severity command injection vulnerability was found in curl version 2.15.7 that allows attackers to access sensitive information.",
+          "severity": "High",
+          "cvss_score": 8.2,
+          "component": "curl",
+          "component_version": "2.15.7",
+          "fixed_version": "2.15.12",
+          "layer_id": "sha256:33793230",
+          "published_date": "2025-05-05",
+          "remediation": "Add security wrapper",
+          "exploit_available": true
+        }
+      ],
+      "vulnerability_counts": {
+        "critical": 1,
+        "high": 1,
+        "medium": 1,
+        "low": 1,
+        "total": 4
+      },
+      "security_score": 74,
+      "scan_date": "2025-09-18",
+      "used_by": [
+        "backend"
+      ]
+    },
+    {
+      "name": "ruby",
+      "tag": "19.5",
+      "full_name": "ruby:19.5",
+      "size": "198MB",
+      "layers": 11,
+      "created": "2025-06-19",
+      "registry": "GitHub Container Registry",
+      "vulnerabilities": [],
+      "vulnerability_counts": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "total": 0
+      },
+      "security_score": 100,
+      "scan_date": "2025-09-18",
+      "used_by": [
+        "api"
+      ]
+    },
+    {
+      "name": "java",
+      "tag": "20.2",
+      "full_name": "java:20.2",
+      "size": "353MB",
+      "layers": 15,
+      "created": "2025-07-09",
+      "registry": "Amazon ECR",
+      "vulnerabilities": [
+        {
+          "id": "CVE-2021-33065",
+          "title": "Remote Code Execution in nginx",
+          "description": "A high severity privilege escalation vulnerability was found in nginx version 0.4.48 that allows attackers to escalate privileges.",
+          "severity": "High",
+          "cvss_score": 7.6,
+          "component": "nginx",
+          "component_version": "0.4.48",
+          "fixed_version": "0.4.50",
+          "layer_id": "sha256:83226620",
+          "published_date": "2025-03-26",
+          "remediation": "Upgrade to latest version",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2020-23615",
+          "title": "XML External Entity in postgresql",
+          "description": "A medium severity remote code execution vulnerability was found in postgresql version 3.13.21 that allows attackers to cause denial of service.",
+          "severity": "Medium",
+          "cvss_score": 5.6,
+          "component": "postgresql",
+          "component_version": "3.13.21",
+          "fixed_version": "3.13.23",
+          "layer_id": "sha256:56762440",
+          "published_date": "2025-05-14",
+          "remediation": "Update dependencies",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2023-90906",
+          "title": "SQL Injection in dotnet",
+          "description": "A high severity memory leak vulnerability was found in dotnet version 5.3.12 that allows attackers to access sensitive information.",
+          "severity": "High",
+          "cvss_score": 8.6,
+          "component": "dotnet",
+          "component_version": "5.3.12",
+          "fixed_version": "5.3.16",
+          "layer_id": "sha256:89558325",
+          "published_date": "2024-12-21",
+          "remediation": "Implement input validation",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2021-78882",
+          "title": "XML External Entity in curl",
+          "description": "A critical severity path traversal vulnerability was found in curl version 0.17.13 that allows attackers to cause denial of service.",
+          "severity": "Critical",
+          "cvss_score": 9.9,
+          "component": "curl",
+          "component_version": "0.17.13",
+          "fixed_version": "0.17.15",
+          "layer_id": "sha256:28972743",
+          "published_date": "2025-05-07",
+          "remediation": "Add security wrapper",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2020-56477",
+          "title": "Privilege Escalation in curl",
+          "description": "A high severity sql injection vulnerability was found in curl version 0.13.48 that allows attackers to escalate privileges.",
+          "severity": "High",
+          "cvss_score": 8.6,
+          "component": "curl",
+          "component_version": "0.13.48",
+          "fixed_version": "0.13.49",
+          "layer_id": "sha256:87300446",
+          "published_date": "2024-12-03",
+          "remediation": "Add security wrapper",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2020-47670",
+          "title": "Denial of Service in nginx",
+          "description": "A critical severity remote code execution vulnerability was found in nginx version 2.9.47 that allows attackers to execute arbitrary code.",
+          "severity": "Critical",
+          "cvss_score": 9.7,
+          "component": "nginx",
+          "component_version": "2.9.47",
+          "fixed_version": "2.9.52",
+          "layer_id": "sha256:52607150",
+          "published_date": "2025-07-02",
+          "remediation": "Add security wrapper",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2020-24156",
+          "title": "Insecure Deserialization in openjdk",
+          "description": "A medium severity insecure deserialization vulnerability was found in openjdk version 0.16.31 that allows attackers to bypass authentication.",
+          "severity": "Medium",
+          "cvss_score": 6.3,
+          "component": "openjdk",
+          "component_version": "0.16.31",
+          "fixed_version": "0.16.36",
+          "layer_id": "sha256:29649476",
+          "published_date": "2025-05-19",
+          "remediation": "Implement input validation",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2020-86360",
+          "title": "SQL Injection in curl",
+          "description": "A low severity insecure deserialization vulnerability was found in curl version 4.20.47 that allows attackers to access sensitive information.",
+          "severity": "Low",
+          "cvss_score": 3.1,
+          "component": "curl",
+          "component_version": "4.20.47",
+          "fixed_version": "4.20.51",
+          "layer_id": "sha256:54034423",
+          "published_date": "2024-12-28",
+          "remediation": "Add security wrapper",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2022-13451",
+          "title": "Command Injection in python",
+          "description": "A low severity authentication bypass vulnerability was found in python version 5.1.19 that allows attackers to execute arbitrary code.",
+          "severity": "Low",
+          "cvss_score": 2.1,
+          "component": "python",
+          "component_version": "5.1.19",
+          "fixed_version": "5.1.20",
+          "layer_id": "sha256:55592769",
+          "published_date": "2025-02-06",
+          "remediation": "Implement input validation",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2020-42414",
+          "title": "Privilege Escalation in openssl",
+          "description": "A low severity privilege escalation vulnerability was found in openssl version 5.3.37 that allows attackers to execute arbitrary code.",
+          "severity": "Low",
+          "cvss_score": 0.7,
+          "component": "openssl",
+          "component_version": "5.3.37",
+          "fixed_version": "5.3.41",
+          "layer_id": "sha256:31415754",
+          "published_date": "2025-01-09",
+          "remediation": "Apply security patch",
+          "exploit_available": true
+        }
+      ],
+      "vulnerability_counts": {
+        "critical": 2,
+        "high": 3,
+        "medium": 2,
+        "low": 3,
+        "total": 10
+      },
+      "security_score": 40,
+      "scan_date": "2025-09-10",
+      "used_by": [
+        "auth",
+        "backend"
+      ]
+    },
+    {
+      "name": "java",
+      "tag": "5.18",
+      "full_name": "java:5.18",
+      "size": "123MB",
+      "layers": 13,
+      "created": "2025-08-15",
+      "registry": "Azure Container Registry",
+      "vulnerabilities": [],
+      "vulnerability_counts": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "total": 0
+      },
+      "security_score": 100,
+      "scan_date": "2025-09-15",
+      "used_by": [
+        "backend"
+      ]
+    },
+    {
+      "name": "dotnet",
+      "tag": "4.3",
+      "full_name": "dotnet:4.3",
+      "size": "139MB",
+      "layers": 12,
+      "created": "2025-03-21",
+      "registry": "GitHub Container Registry",
+      "vulnerabilities": [],
+      "vulnerability_counts": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "total": 0
+      },
+      "security_score": 100,
+      "scan_date": "2025-09-26",
+      "used_by": [
+        "frontend",
+        "cache",
+        "notification"
+      ]
+    },
+    {
+      "name": "node",
+      "tag": "10.13",
+      "full_name": "node:10.13",
+      "size": "73MB",
+      "layers": 14,
+      "created": "2025-05-30",
+      "registry": "GitHub Container Registry",
+      "vulnerabilities": [],
+      "vulnerability_counts": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "total": 0
+      },
+      "security_score": 100,
+      "scan_date": "2025-10-03",
+      "used_by": [
+        "frontend"
+      ]
+    },
+    {
+      "name": "amazonlinux",
+      "tag": "17.7",
+      "full_name": "amazonlinux:17.7",
+      "size": "210MB",
+      "layers": 3,
+      "created": "2025-03-02",
+      "registry": "Azure Container Registry",
+      "vulnerabilities": [
+        {
+          "id": "CVE-2022-53103",
+          "title": "SQL Injection in openssh",
+          "description": "A low severity cryptographic issues vulnerability was found in openssh version 2.8.41 that allows attackers to execute arbitrary code.",
+          "severity": "Low",
+          "cvss_score": 2.7,
+          "component": "openssh",
+          "component_version": "2.8.41",
+          "fixed_version": "2.8.42",
+          "layer_id": "sha256:60059524",
+          "published_date": "2025-01-12",
+          "remediation": "Configure security settings",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2023-35468",
+          "title": "SQL Injection in nginx",
+          "description": "A low severity information disclosure vulnerability was found in nginx version 1.11.21 that allows attackers to execute arbitrary code.",
+          "severity": "Low",
+          "cvss_score": 3.5,
+          "component": "nginx",
+          "component_version": "1.11.21",
+          "fixed_version": "1.11.25",
+          "layer_id": "sha256:21829009",
+          "published_date": "2025-01-06",
+          "remediation": "Implement input validation",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2023-79219",
+          "title": "Cross-Site Scripting in nginx",
+          "description": "A critical severity sql injection vulnerability was found in nginx version 4.20.28 that allows attackers to access sensitive information.",
+          "severity": "Critical",
+          "cvss_score": 9.1,
+          "component": "nginx",
+          "component_version": "4.20.28",
+          "fixed_version": "4.20.31",
+          "layer_id": "sha256:55102652",
+          "published_date": "2025-04-30",
+          "remediation": "Remove unused dependency",
+          "exploit_available": false
+        }
+      ],
+      "vulnerability_counts": {
+        "critical": 1,
+        "high": 0,
+        "medium": 0,
+        "low": 2,
+        "total": 3
+      },
+      "security_score": 83,
+      "scan_date": "2025-09-05",
+      "used_by": [
+        "api",
+        "queue"
+      ]
+    },
+    {
+      "name": "fedora",
+      "tag": "9.6",
+      "full_name": "fedora:9.6",
+      "size": "350MB",
+      "layers": 3,
+      "created": "2025-07-14",
+      "registry": "Amazon ECR",
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-47042",
+          "title": "Path Traversal in openssh",
+          "description": "A medium severity buffer overflow vulnerability was found in openssh version 5.5.5 that allows attackers to execute arbitrary code.",
+          "severity": "Medium",
+          "cvss_score": 5.9,
+          "component": "openssh",
+          "component_version": "5.5.5",
+          "fixed_version": "5.5.7",
+          "layer_id": "sha256:96505223",
+          "published_date": "2024-10-09",
+          "remediation": "Replace with secure alternative",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2021-90591",
+          "title": "Remote Code Execution in mysql",
+          "description": "A critical severity denial of service vulnerability was found in mysql version 0.14.8 that allows attackers to bypass authentication.",
+          "severity": "Critical",
+          "cvss_score": 10.0,
+          "component": "mysql",
+          "component_version": "0.14.8",
+          "fixed_version": "0.14.12",
+          "layer_id": "sha256:36478804",
+          "published_date": "2025-04-12",
+          "remediation": "Add security wrapper",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2023-36960",
+          "title": "Remote Code Execution in openjdk",
+          "description": "A low severity denial of service vulnerability was found in openjdk version 4.12.22 that allows attackers to bypass authentication.",
+          "severity": "Low",
+          "cvss_score": 1.7,
+          "component": "openjdk",
+          "component_version": "4.12.22",
+          "fixed_version": "4.12.25",
+          "layer_id": "sha256:58365335",
+          "published_date": "2025-02-01",
+          "remediation": "Replace with secure alternative",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2022-34680",
+          "title": "Memory Leak in libxml2",
+          "description": "A critical severity cross-site scripting vulnerability was found in libxml2 version 0.20.21 that allows attackers to escalate privileges.",
+          "severity": "Critical",
+          "cvss_score": 9.4,
+          "component": "libxml2",
+          "component_version": "0.20.21",
+          "fixed_version": "0.20.26",
+          "layer_id": "sha256:66682927",
+          "published_date": "2024-11-19",
+          "remediation": "Implement input validation",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2022-85881",
+          "title": "Remote Code Execution in mongodb",
+          "description": "A medium severity buffer overflow vulnerability was found in mongodb version 5.3.24 that allows attackers to cause denial of service.",
+          "severity": "Medium",
+          "cvss_score": 5.3,
+          "component": "mongodb",
+          "component_version": "5.3.24",
+          "fixed_version": "5.3.28",
+          "layer_id": "sha256:47106897",
+          "published_date": "2024-11-26",
+          "remediation": "Remove unused dependency",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2021-86850",
+          "title": "Remote Code Execution in python",
+          "description": "A critical severity denial of service vulnerability was found in python version 1.13.34 that allows attackers to escalate privileges.",
+          "severity": "Critical",
+          "cvss_score": 9.5,
+          "component": "python",
+          "component_version": "1.13.34",
+          "fixed_version": "1.13.35",
+          "layer_id": "sha256:85053463",
+          "published_date": "2025-07-19",
+          "remediation": "Configure security settings",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2023-87372",
+          "title": "Privilege Escalation in redis",
+          "description": "A high severity cross-site scripting vulnerability was found in redis version 3.2.34 that allows attackers to execute arbitrary code.",
+          "severity": "High",
+          "cvss_score": 8.0,
+          "component": "redis",
+          "component_version": "3.2.34",
+          "fixed_version": "3.2.36",
+          "layer_id": "sha256:82887258",
+          "published_date": "2024-12-28",
+          "remediation": "Add security wrapper",
+          "exploit_available": false
+        },
+        {
+          "id": "CVE-2020-11634",
+          "title": "Command Injection in dotnet",
+          "description": "A low severity command injection vulnerability was found in dotnet version 3.16.6 that allows attackers to execute arbitrary code.",
+          "severity": "Low",
+          "cvss_score": 2.2,
+          "component": "dotnet",
+          "component_version": "3.16.6",
+          "fixed_version": "3.16.11",
+          "layer_id": "sha256:59176683",
+          "published_date": "2025-04-21",
+          "remediation": "Upgrade to latest version",
+          "exploit_available": true
+        },
+        {
+          "id": "CVE-2021-88335",
+          "title": "SQL Injection in redis",
+          "description": "A high severity remote code execution vulnerability was found in redis version 5.19.9 that allows attackers to access sensitive information.",
+          "severity": "High",
+          "cvss_score": 7.7,
+          "component": "redis",
+          "component_version": "5.19.9",
+          "fixed_version": "5.19.11",
+          "layer_id": "sha256:59975316",
+          "published_date": "2024-12-03",
+          "remediation": "Apply security patch",
+          "exploit_available": true
+        }
+      ],
+      "vulnerability_counts": {
+        "critical": 3,
+        "high": 2,
+        "medium": 2,
+        "low": 2,
+        "total": 9
+      },
+      "security_score": 33,
+      "scan_date": "2025-09-05",
+      "used_by": [
+        "cache",
+        "notification",
+        "scheduler"
+      ]
+    },
+    {
+      "name": "ruby",
+      "tag": "15.7",
+      "full_name": "ruby:15.7",
+      "size": "455MB",
+      "layers": 12,
+      "created": "2024-12-11",
+      "registry": "Amazon ECR",
+      "vulnerabilities": [],
+      "vulnerability_counts": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "total": 0
+      },
+      "security_score": 100,
+      "scan_date": "2025-10-02",
+      "used_by": [
+        "queue"
+      ]
+    },
+    {
+      "name": "php",
+      "tag": "5.12",
+      "full_name": "php:5.12",
+      "size": "375MB",
+      "layers": 4,
+      "created": "2025-09-20",
+      "registry": "Google Container Registry",
+      "vulnerabilities": [],
+      "vulnerability_counts": {
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0,
+        "total": 0
+      },
+      "security_score": 100,
+      "scan_date": "2025-09-16",
+      "used_by": [
+        "scheduler",
+        "notification",
+        "database"
+      ]
+    }
+  ],
+  "timestamp": "2025-10-05T12:21:45.574358"
+}

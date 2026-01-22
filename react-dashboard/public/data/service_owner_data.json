@@ -1,0 +1,3381 @@
+{
+  "summary": {
+    "total_services": 12,
+    "critical_risk_services": 3,
+    "high_risk_services": 2,
+    "medium_risk_services": 2,
+    "low_risk_services": 5,
+    "total_vulnerabilities": 52,
+    "critical_vulnerabilities": 6,
+    "average_risk_score": 54.2,
+    "average_mttr_hours": 140.6,
+    "generated_at": "2025-10-08T14:06:16.681454"
+  },
+  "services": [
+    {
+      "name": "frontend",
+      "description": "Exposes an HTTP server to serve the website",
+      "language": "Go",
+      "business_criticality": "Critical",
+      "user_facing": true,
+      "owner": {
+        "team": "Frontend Team",
+        "lead": "Emma Davis",
+        "email": "frontend-team@example.com",
+        "slack_channel": "#team-frontend"
+      },
+      "risk": {
+        "score": 60,
+        "level": "High",
+        "business_impact": "Critical",
+        "trend_30d": [
+          73,
+          55,
+          75,
+          50,
+          51,
+          51,
+          50,
+          49,
+          48,
+          51,
+          63,
+          72,
+          60,
+          68,
+          74,
+          49,
+          66,
+          72,
+          53,
+          57,
+          49,
+          73,
+          55,
+          61,
+          54,
+          61,
+          68,
+          52,
+          69,
+          53
+        ],
+        "last_updated": "2025-10-08T14:06:16.680095"
+      },
+      "vulnerabilities": {
+        "total": 3,
+        "by_severity": {
+          "Critical": 0,
+          "High": 1,
+          "Medium": 2,
+          "Low": 0
+        },
+        "details": [
+          {
+            "id": "VULN-FRONTEND-001",
+            "type": "SQL Injection",
+            "severity": "High",
+            "cvss_score": 3.0,
+            "cve": "CVE-2024-19353",
+            "package": "dotnet-4.3.11",
+            "description": "Insecure Deserialization vulnerability in frontend",
+            "discovered_date": "2025-07-11T14:06:16.680042",
+            "status": "In Progress",
+            "exploitability": "Low",
+            "business_impact": "Medium",
+            "assigned_team": "DevOps Team",
+            "sla_breach": true
+          },
+          {
+            "id": "VULN-FRONTEND-002",
+            "type": "Outdated Dependencies",
+            "severity": "Medium",
+            "cvss_score": 9.4,
+            "cve": "CVE-2024-37185",
+            "package": "dotnet-4.1.19",
+            "description": "XML External Entities (XXE) vulnerability in frontend",
+            "discovered_date": "2025-07-12T14:06:16.680063",
+            "status": "Open",
+            "exploitability": "Low",
+            "business_impact": "Low",
+            "assigned_team": "Frontend Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-FRONTEND-003",
+            "type": "Broken Access Control",
+            "severity": "Medium",
+            "cvss_score": 7.2,
+            "cve": "CVE-2024-33817",
+            "package": "dotnet-1.8.17",
+            "description": "Outdated Dependencies vulnerability in frontend",
+            "discovered_date": "2025-07-18T14:06:16.680071",
+            "status": "Mitigated",
+            "exploitability": "Medium",
+            "business_impact": "Low",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          }
+        ],
+        "open": 1,
+        "in_progress": 1,
+        "resolved_30d": 5
+      },
+      "exposure": {
+        "total_endpoints": 14,
+        "public_endpoints": 1,
+        "internal_endpoints": 12,
+        "exposed_secrets": 2,
+        "open_ports": 1,
+        "network_exposure": "Internet",
+        "trend_30d": [
+          9,
+          9,
+          8,
+          17,
+          13,
+          19,
+          8,
+          9,
+          13,
+          5,
+          10,
+          9,
+          20,
+          16,
+          18,
+          9,
+          17,
+          18,
+          8,
+          13,
+          16,
+          10,
+          20,
+          8,
+          11,
+          17,
+          11,
+          10,
+          13,
+          20
+        ]
+      },
+      "remediation": {
+        "breaches": 3,
+        "open_vulnerabilities": 18,
+        "in_progress": 3,
+        "resolved_30d": 28,
+        "mttr_hours": 122,
+        "assigned_teams": 2,
+        "overdue_count": 5,
+        "trend_30d": [
+          14,
+          27,
+          25,
+          13,
+          6,
+          24,
+          23,
+          23,
+          29,
+          8,
+          30,
+          5,
+          12,
+          23,
+          21,
+          19,
+          18,
+          14,
+          17,
+          5,
+          5,
+          14,
+          11,
+          13,
+          24,
+          25,
+          9,
+          5,
+          10,
+          18
+        ]
+      },
+      "compliance": {
+        "adherence_score": 71,
+        "applicable_frameworks": [
+          "HIPAA",
+          "ISO 27001"
+        ],
+        "policy_violations": 4,
+        "failed_controls": 7,
+        "last_audit_date": "2025-05-19T14:06:16.680144",
+        "next_audit_date": "2026-01-01T14:06:16.680147",
+        "control_status": {
+          "passed": 49,
+          "failed": 2,
+          "not_applicable": 7
+        }
+      },
+      "composition": {
+        "containers": 1,
+        "pods": 3,
+        "replicas": 6,
+        "dependencies": [
+          "productcatalogservice",
+          "currencyservice",
+          "cartservice",
+          "recommendationservice",
+          "checkoutservice",
+          "adservice",
+          "shippingservice"
+        ],
+        "dependency_count": 7,
+        "language": "Go",
+        "frameworks": [
+          "gRPC",
+          "Gin",
+          "Echo"
+        ],
+        "deployment_type": "Cloud Run",
+        "resource_usage": {
+          "cpu": "44%",
+          "memory": "43%",
+          "disk": "28%"
+        }
+      },
+      "ai_insights": {
+        "insights": [
+          "Dependencies contain 15 known vulnerable packages",
+          "Dependencies contain 20 known vulnerable packages"
+        ],
+        "recommendations": [
+          {
+            "text": "Patch critical assets immediately to reduce risk by 22%",
+            "priority": "Low",
+            "impact": "Low",
+            "effort": "High"
+          },
+          {
+            "text": "Apply network segmentation to isolate this service",
+            "priority": "High",
+            "impact": "Low",
+            "effort": "High"
+          },
+          {
+            "text": "Enable audit logging for all critical operations",
+            "priority": "Medium",
+            "impact": "Medium",
+            "effort": "High"
+          }
+        ],
+        "risk_trend": "stable",
+        "predicted_risk_30d": 59,
+        "confidence_score": 0.81
+      }
+    },
+    {
+      "name": "cartservice",
+      "description": "Stores shopping cart items in Redis",
+      "language": "C#",
+      "business_criticality": "High",
+      "user_facing": false,
+      "owner": {
+        "team": "Cartservice Team",
+        "lead": "David Brown",
+        "email": "cartservice-team@example.com",
+        "slack_channel": "#team-cartservice"
+      },
+      "risk": {
+        "score": 63,
+        "level": "High",
+        "business_impact": "High",
+        "trend_30d": [
+          52,
+          70,
+          56,
+          74,
+          57,
+          62,
+          60,
+          54,
+          69,
+          64,
+          59,
+          56,
+          77,
+          63,
+          58,
+          66,
+          48,
+          52,
+          55,
+          54,
+          58,
+          69,
+          50,
+          48,
+          69,
+          57,
+          54,
+          69,
+          61,
+          69
+        ],
+        "last_updated": "2025-10-08T14:06:16.680227"
+      },
+      "vulnerabilities": {
+        "total": 4,
+        "by_severity": {
+          "Critical": 0,
+          "High": 3,
+          "Medium": 1,
+          "Low": 0
+        },
+        "details": [
+          {
+            "id": "VULN-CARTSERVICE-001",
+            "type": "SQL Injection",
+            "severity": "High",
+            "cvss_score": 4.7,
+            "cve": "CVE-2024-60401",
+            "package": "redis-client-5.9.17",
+            "description": "Security Logging Failures vulnerability in cartservice",
+            "discovered_date": "2025-08-29T14:06:16.680180",
+            "status": "Open",
+            "exploitability": "Low",
+            "business_impact": "High",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-CARTSERVICE-002",
+            "type": "Broken Access Control",
+            "severity": "Medium",
+            "cvss_score": 5.7,
+            "cve": "CVE-2024-73103",
+            "package": "dotnet-4.8.4",
+            "description": "Insecure Deserialization vulnerability in cartservice",
+            "discovered_date": "2025-07-21T14:06:16.680190",
+            "status": "Resolved",
+            "exploitability": "Low",
+            "business_impact": "High",
+            "assigned_team": "Security Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-CARTSERVICE-003",
+            "type": "Security Logging Failures",
+            "severity": "High",
+            "cvss_score": 9.3,
+            "cve": "CVE-2024-14885",
+            "package": "spring-2.2.8",
+            "description": "SQL Injection vulnerability in cartservice",
+            "discovered_date": "2025-08-25T14:06:16.680198",
+            "status": "Open",
+            "exploitability": "Medium",
+            "business_impact": "Low",
+            "assigned_team": "Cartservice Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-CARTSERVICE-004",
+            "type": "Outdated Dependencies",
+            "severity": "High",
+            "cvss_score": 5.5,
+            "cve": "CVE-2024-44548",
+            "package": "spring-5.6.8",
+            "description": "Security Misconfiguration vulnerability in cartservice",
+            "discovered_date": "2025-07-25T14:06:16.680205",
+            "status": "Mitigated",
+            "exploitability": "High",
+            "business_impact": "Medium",
+            "assigned_team": "Cartservice Team",
+            "sla_breach": true
+          }
+        ],
+        "open": 2,
+        "in_progress": 0,
+        "resolved_30d": 17
+      },
+      "exposure": {
+        "total_endpoints": 6,
+        "public_endpoints": 0,
+        "internal_endpoints": 6,
+        "exposed_secrets": 3,
+        "open_ports": 1,
+        "network_exposure": "VPC",
+        "trend_30d": [
+          10,
+          16,
+          15,
+          7,
+          10,
+          9,
+          12,
+          9,
+          13,
+          10,
+          15,
+          6,
+          9,
+          19,
+          9,
+          9,
+          7,
+          19,
+          16,
+          8,
+          5,
+          6,
+          11,
+          13,
+          9,
+          9,
+          17,
+          5,
+          9,
+          8
+        ]
+      },
+      "remediation": {
+        "breaches": 0,
+        "open_vulnerabilities": 28,
+        "in_progress": 12,
+        "resolved_30d": 27,
+        "mttr_hours": 161,
+        "assigned_teams": 2,
+        "overdue_count": 10,
+        "trend_30d": [
+          22,
+          18,
+          5,
+          22,
+          27,
+          25,
+          21,
+          20,
+          7,
+          10,
+          6,
+          14,
+          17,
+          11,
+          30,
+          30,
+          14,
+          16,
+          22,
+          24,
+          29,
+          16,
+          14,
+          15,
+          8,
+          15,
+          19,
+          29,
+          22,
+          19
+        ]
+      },
+      "compliance": {
+        "adherence_score": 70,
+        "applicable_frameworks": [
+          "SOC 2",
+          "GDPR",
+          "ISO 27001"
+        ],
+        "policy_violations": 1,
+        "failed_controls": 6,
+        "last_audit_date": "2025-05-01T14:06:16.680263",
+        "next_audit_date": "2025-12-10T14:06:16.680265",
+        "control_status": {
+          "passed": 40,
+          "failed": 3,
+          "not_applicable": 14
+        }
+      },
+      "composition": {
+        "containers": 5,
+        "pods": 8,
+        "replicas": 5,
+        "dependencies": [
+          "redis"
+        ],
+        "dependency_count": 1,
+        "language": "C#",
+        "frameworks": [
+          ".NET Core",
+          "gRPC-dotnet"
+        ],
+        "deployment_type": "Cloud Run",
+        "resource_usage": {
+          "cpu": "71%",
+          "memory": "37%",
+          "disk": "39%"
+        }
+      },
+      "ai_insights": {
+        "insights": [
+          "Service exposure increased due to new API endpoints",
+          "High correlation between this service and recent incidents",
+          "Vulnerabilities likely to be exploited up 46% in 14 days"
+        ],
+        "recommendations": [
+          {
+            "text": "Implement rate limiting on exposed endpoints",
+            "priority": "High",
+            "impact": "Low",
+            "effort": "Medium"
+          },
+          {
+            "text": "Implement input validation for all user-facing endpoints",
+            "priority": "High",
+            "impact": "Critical",
+            "effort": "Low"
+          },
+          {
+            "text": "Apply network segmentation to isolate this service",
+            "priority": "Medium",
+            "impact": "High",
+            "effort": "Low"
+          }
+        ],
+        "risk_trend": "stable",
+        "predicted_risk_30d": 61,
+        "confidence_score": 0.91
+      }
+    },
+    {
+      "name": "productcatalogservice",
+      "description": "Provides product listings and search",
+      "language": "Go",
+      "business_criticality": "High",
+      "user_facing": false,
+      "owner": {
+        "team": "Productcatalogservice Team",
+        "lead": "Michael Smith",
+        "email": "productcatalogservice-team@example.com",
+        "slack_channel": "#team-productcatalogservice"
+      },
+      "risk": {
+        "score": 100,
+        "level": "Critical",
+        "business_impact": "High",
+        "trend_30d": [
+          100,
+          90,
+          100,
+          99,
+          86,
+          100,
+          100,
+          91,
+          93,
+          85,
+          90,
+          89,
+          88,
+          100,
+          100,
+          87,
+          100,
+          98,
+          85,
+          100,
+          96,
+          91,
+          87,
+          100,
+          99,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "last_updated": "2025-10-08T14:06:16.680374"
+      },
+      "vulnerabilities": {
+        "total": 8,
+        "by_severity": {
+          "Critical": 1,
+          "High": 2,
+          "Medium": 4,
+          "Low": 1
+        },
+        "details": [
+          {
+            "id": "VULN-PRODUCTCATALOGSERVICE-001",
+            "type": "Security Logging Failures",
+            "severity": "Medium",
+            "cvss_score": 8.4,
+            "cve": "CVE-2024-59477",
+            "package": "django-3.3.12",
+            "description": "Security Misconfiguration vulnerability in productcatalogservice",
+            "discovered_date": "2025-09-01T14:06:16.680297",
+            "status": "Mitigated",
+            "exploitability": "Low",
+            "business_impact": "Medium",
+            "assigned_team": "Platform Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-PRODUCTCATALOGSERVICE-002",
+            "type": "XML External Entities (XXE)",
+            "severity": "Critical",
+            "cvss_score": 3.8,
+            "cve": "CVE-2024-76803",
+            "package": "express-2.7.6",
+            "description": "Cross-Site Scripting (XSS) vulnerability in productcatalogservice",
+            "discovered_date": "2025-09-16T14:06:16.680304",
+            "status": "In Progress",
+            "exploitability": "Low",
+            "business_impact": "Low",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-PRODUCTCATALOGSERVICE-003",
+            "type": "Security Logging Failures",
+            "severity": "Medium",
+            "cvss_score": 8.1,
+            "cve": "CVE-2024-11528",
+            "package": "redis-client-1.0.18",
+            "description": "Insecure Deserialization vulnerability in productcatalogservice",
+            "discovered_date": "2025-09-28T14:06:16.680311",
+            "status": "Mitigated",
+            "exploitability": "High",
+            "business_impact": "Medium",
+            "assigned_team": "Security Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-PRODUCTCATALOGSERVICE-004",
+            "type": "Server-Side Request Forgery (SSRF)",
+            "severity": "Medium",
+            "cvss_score": 6.1,
+            "cve": "CVE-2024-60777",
+            "package": "django-4.8.0",
+            "description": "Insecure Deserialization vulnerability in productcatalogservice",
+            "discovered_date": "2025-07-24T14:06:16.680318",
+            "status": "Mitigated",
+            "exploitability": "High",
+            "business_impact": "High",
+            "assigned_team": "Security Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-PRODUCTCATALOGSERVICE-005",
+            "type": "Sensitive Data Exposure",
+            "severity": "High",
+            "cvss_score": 4.5,
+            "cve": "CVE-2024-50595",
+            "package": "spring-5.8.14",
+            "description": "XML External Entities (XXE) vulnerability in productcatalogservice",
+            "discovered_date": "2025-08-09T14:06:16.680325",
+            "status": "Mitigated",
+            "exploitability": "Low",
+            "business_impact": "Critical",
+            "assigned_team": "DevOps Team",
+            "sla_breach": true
+          },
+          {
+            "id": "VULN-PRODUCTCATALOGSERVICE-006",
+            "type": "Security Logging Failures",
+            "severity": "Low",
+            "cvss_score": 7.4,
+            "cve": "CVE-2024-97660",
+            "package": "dotnet-3.4.16",
+            "description": "XML External Entities (XXE) vulnerability in productcatalogservice",
+            "discovered_date": "2025-08-01T14:06:16.680332",
+            "status": "Resolved",
+            "exploitability": "Low",
+            "business_impact": "High",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-PRODUCTCATALOGSERVICE-007",
+            "type": "Broken Access Control",
+            "severity": "High",
+            "cvss_score": 8.9,
+            "cve": "CVE-2024-14993",
+            "package": "spring-5.8.12",
+            "description": "Insecure Deserialization vulnerability in productcatalogservice",
+            "discovered_date": "2025-09-18T14:06:16.680344",
+            "status": "Open",
+            "exploitability": "High",
+            "business_impact": "Medium",
+            "assigned_team": "Productcatalogservice Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-PRODUCTCATALOGSERVICE-008",
+            "type": "Sensitive Data Exposure",
+            "severity": "Medium",
+            "cvss_score": 7.5,
+            "cve": "CVE-2024-28904",
+            "package": "dotnet-4.5.9",
+            "description": "Cross-Site Scripting (XSS) vulnerability in productcatalogservice",
+            "discovered_date": "2025-08-10T14:06:16.680352",
+            "status": "Mitigated",
+            "exploitability": "Low",
+            "business_impact": "Critical",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          }
+        ],
+        "open": 1,
+        "in_progress": 1,
+        "resolved_30d": 20
+      },
+      "exposure": {
+        "total_endpoints": 3,
+        "public_endpoints": 0,
+        "internal_endpoints": 3,
+        "exposed_secrets": 3,
+        "open_ports": 2,
+        "network_exposure": "VPC",
+        "trend_30d": [
+          5,
+          10,
+          13,
+          20,
+          8,
+          17,
+          12,
+          5,
+          16,
+          5,
+          19,
+          12,
+          9,
+          15,
+          5,
+          20,
+          17,
+          7,
+          18,
+          15,
+          6,
+          16,
+          17,
+          9,
+          17,
+          5,
+          12,
+          10,
+          16,
+          6
+        ]
+      },
+      "remediation": {
+        "breaches": 2,
+        "open_vulnerabilities": 36,
+        "in_progress": 8,
+        "resolved_30d": 24,
+        "mttr_hours": 116,
+        "assigned_teams": 2,
+        "overdue_count": 2,
+        "trend_30d": [
+          30,
+          25,
+          14,
+          26,
+          8,
+          20,
+          20,
+          6,
+          18,
+          25,
+          24,
+          18,
+          14,
+          13,
+          30,
+          26,
+          12,
+          25,
+          30,
+          19,
+          9,
+          11,
+          13,
+          25,
+          7,
+          16,
+          15,
+          9,
+          13,
+          23
+        ]
+      },
+      "compliance": {
+        "adherence_score": 86,
+        "applicable_frameworks": [
+          "GDPR",
+          "ISO 27001",
+          "SOC 2"
+        ],
+        "policy_violations": 0,
+        "failed_controls": 0,
+        "last_audit_date": "2025-06-04T14:06:16.680410",
+        "next_audit_date": "2026-02-10T14:06:16.680412",
+        "control_status": {
+          "passed": 29,
+          "failed": 3,
+          "not_applicable": 9
+        }
+      },
+      "composition": {
+        "containers": 1,
+        "pods": 10,
+        "replicas": 5,
+        "dependencies": [],
+        "dependency_count": 0,
+        "language": "Go",
+        "frameworks": [
+          "gRPC",
+          "Gin",
+          "Echo"
+        ],
+        "deployment_type": "Kubernetes",
+        "resource_usage": {
+          "cpu": "20%",
+          "memory": "70%",
+          "disk": "65%"
+        }
+      },
+      "ai_insights": {
+        "insights": [
+          "Remediation velocity decreased by 29% this month",
+          "Attack surface increased by 43% in the last 14 days"
+        ],
+        "recommendations": [
+          {
+            "text": "Conduct security testing before next deployment",
+            "priority": "High",
+            "impact": "Medium",
+            "effort": "High"
+          },
+          {
+            "text": "Rotate credentials found in recent security scan",
+            "priority": "Low",
+            "impact": "High",
+            "effort": "High"
+          },
+          {
+            "text": "Enable audit logging for all critical operations",
+            "priority": "High",
+            "impact": "Critical",
+            "effort": "High"
+          },
+          {
+            "text": "Update redis-client to version 2.6.20 to fix 10 vulnerabilities",
+            "priority": "High",
+            "impact": "Low",
+            "effort": "Low"
+          },
+          {
+            "text": "Review and update access control policies",
+            "priority": "Low",
+            "impact": "Medium",
+            "effort": "High"
+          }
+        ],
+        "risk_trend": "increasing",
+        "predicted_risk_30d": 90,
+        "confidence_score": 0.78
+      }
+    },
+    {
+      "name": "currencyservice",
+      "description": "Converts money amounts between currencies",
+      "language": "Node.js",
+      "business_criticality": "Medium",
+      "user_facing": false,
+      "owner": {
+        "team": "Currencyservice Team",
+        "lead": "David Smith",
+        "email": "currencyservice-team@example.com",
+        "slack_channel": "#team-currencyservice"
+      },
+      "risk": {
+        "score": 43,
+        "level": "Medium",
+        "business_impact": "Medium",
+        "trend_30d": [
+          53,
+          38,
+          43,
+          49,
+          41,
+          45,
+          38,
+          52,
+          38,
+          53,
+          39,
+          55,
+          45,
+          35,
+          35,
+          51,
+          35,
+          49,
+          42,
+          47,
+          58,
+          43,
+          51,
+          38,
+          37,
+          29,
+          56,
+          51,
+          29,
+          55
+        ],
+        "last_updated": "2025-10-08T14:06:16.680510"
+      },
+      "vulnerabilities": {
+        "total": 6,
+        "by_severity": {
+          "Critical": 0,
+          "High": 0,
+          "Medium": 5,
+          "Low": 1
+        },
+        "details": [
+          {
+            "id": "VULN-CURRENCYSERVICE-001",
+            "type": "Broken Access Control",
+            "severity": "Medium",
+            "cvss_score": 5.2,
+            "cve": "CVE-2024-13919",
+            "package": "express-4.5.6",
+            "description": "SQL Injection vulnerability in currencyservice",
+            "discovered_date": "2025-09-05T14:06:16.680450",
+            "status": "Mitigated",
+            "exploitability": "Low",
+            "business_impact": "High",
+            "assigned_team": "Security Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-CURRENCYSERVICE-002",
+            "type": "Insecure Deserialization",
+            "severity": "Medium",
+            "cvss_score": 6.2,
+            "cve": "CVE-2024-75326",
+            "package": "express-5.8.11",
+            "description": "Security Misconfiguration vulnerability in currencyservice",
+            "discovered_date": "2025-09-06T14:06:16.680458",
+            "status": "In Progress",
+            "exploitability": "Low",
+            "business_impact": "Low",
+            "assigned_team": "Platform Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-CURRENCYSERVICE-003",
+            "type": "Security Misconfiguration",
+            "severity": "Medium",
+            "cvss_score": 7.0,
+            "cve": "CVE-2024-37568",
+            "package": "django-2.1.13",
+            "description": "SQL Injection vulnerability in currencyservice",
+            "discovered_date": "2025-07-15T14:06:16.680466",
+            "status": "Resolved",
+            "exploitability": "Medium",
+            "business_impact": "High",
+            "assigned_team": "Currencyservice Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-CURRENCYSERVICE-004",
+            "type": "Sensitive Data Exposure",
+            "severity": "Medium",
+            "cvss_score": 7.8,
+            "cve": "CVE-2024-23010",
+            "package": "spring-4.9.3",
+            "description": "Insecure Deserialization vulnerability in currencyservice",
+            "discovered_date": "2025-09-10T14:06:16.680474",
+            "status": "In Progress",
+            "exploitability": "High",
+            "business_impact": "High",
+            "assigned_team": "Security Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-CURRENCYSERVICE-005",
+            "type": "Insecure Deserialization",
+            "severity": "Low",
+            "cvss_score": 6.3,
+            "cve": "CVE-2024-26361",
+            "package": "spring-2.5.11",
+            "description": "Outdated Dependencies vulnerability in currencyservice",
+            "discovered_date": "2025-08-09T14:06:16.680481",
+            "status": "Mitigated",
+            "exploitability": "Medium",
+            "business_impact": "Low",
+            "assigned_team": "Platform Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-CURRENCYSERVICE-006",
+            "type": "Outdated Dependencies",
+            "severity": "Medium",
+            "cvss_score": 3.6,
+            "cve": "CVE-2024-88256",
+            "package": "redis-client-4.9.6",
+            "description": "Server-Side Request Forgery (SSRF) vulnerability in currencyservice",
+            "discovered_date": "2025-08-27T14:06:16.680488",
+            "status": "Mitigated",
+            "exploitability": "Low",
+            "business_impact": "Medium",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          }
+        ],
+        "open": 0,
+        "in_progress": 2,
+        "resolved_30d": 17
+      },
+      "exposure": {
+        "total_endpoints": 7,
+        "public_endpoints": 0,
+        "internal_endpoints": 7,
+        "exposed_secrets": 2,
+        "open_ports": 3,
+        "network_exposure": "VPC",
+        "trend_30d": [
+          14,
+          12,
+          20,
+          13,
+          11,
+          14,
+          8,
+          6,
+          12,
+          7,
+          15,
+          11,
+          9,
+          5,
+          13,
+          8,
+          14,
+          15,
+          6,
+          19,
+          20,
+          15,
+          13,
+          5,
+          20,
+          8,
+          17,
+          5,
+          5,
+          5
+        ]
+      },
+      "remediation": {
+        "breaches": 0,
+        "open_vulnerabilities": 29,
+        "in_progress": 16,
+        "resolved_30d": 18,
+        "mttr_hours": 129,
+        "assigned_teams": 3,
+        "overdue_count": 8,
+        "trend_30d": [
+          23,
+          5,
+          20,
+          30,
+          13,
+          27,
+          15,
+          16,
+          11,
+          10,
+          27,
+          21,
+          14,
+          9,
+          29,
+          19,
+          30,
+          9,
+          16,
+          9,
+          9,
+          7,
+          25,
+          15,
+          8,
+          30,
+          17,
+          7,
+          16,
+          30
+        ]
+      },
+      "compliance": {
+        "adherence_score": 65,
+        "applicable_frameworks": [
+          "PCI-DSS",
+          "ISO 27001",
+          "HIPAA",
+          "GDPR"
+        ],
+        "policy_violations": 3,
+        "failed_controls": 4,
+        "last_audit_date": "2025-08-19T14:06:16.680546",
+        "next_audit_date": "2026-03-06T14:06:16.680547",
+        "control_status": {
+          "passed": 38,
+          "failed": 1,
+          "not_applicable": 8
+        }
+      },
+      "composition": {
+        "containers": 1,
+        "pods": 8,
+        "replicas": 6,
+        "dependencies": [],
+        "dependency_count": 0,
+        "language": "Node.js",
+        "frameworks": [
+          "Express",
+          "gRPC-js"
+        ],
+        "deployment_type": "Kubernetes",
+        "resource_usage": {
+          "cpu": "11%",
+          "memory": "37%",
+          "disk": "27%"
+        }
+      },
+      "ai_insights": {
+        "insights": [
+          "Vulnerabilities likely to be exploited up 21% in 60 days",
+          "Vulnerabilities likely to be exploited up 32% in 30 days",
+          "High correlation between this service and recent incidents"
+        ],
+        "recommendations": [
+          {
+            "text": "Apply network segmentation to isolate this service",
+            "priority": "High",
+            "impact": "Medium",
+            "effort": "Low"
+          },
+          {
+            "text": "Update express to version 4.4.13 to fix 14 vulnerabilities",
+            "priority": "Low",
+            "impact": "Critical",
+            "effort": "High"
+          }
+        ],
+        "risk_trend": "stable",
+        "predicted_risk_30d": 38,
+        "confidence_score": 0.91
+      }
+    },
+    {
+      "name": "paymentservice",
+      "description": "Processes payments (mock)",
+      "language": "Node.js",
+      "business_criticality": "Critical",
+      "user_facing": false,
+      "owner": {
+        "team": "Paymentservice Team",
+        "lead": "Sarah Davis",
+        "email": "paymentservice-team@example.com",
+        "slack_channel": "#team-paymentservice"
+      },
+      "risk": {
+        "score": 100,
+        "level": "Critical",
+        "business_impact": "Critical",
+        "trend_30d": [
+          100,
+          91,
+          89,
+          86,
+          100,
+          87,
+          99,
+          86,
+          90,
+          96,
+          90,
+          100,
+          100,
+          94,
+          90,
+          95,
+          89,
+          86,
+          94,
+          100,
+          100,
+          95,
+          93,
+          95,
+          93,
+          100,
+          100,
+          100,
+          93,
+          100
+        ],
+        "last_updated": "2025-10-08T14:06:16.680635"
+      },
+      "vulnerabilities": {
+        "total": 6,
+        "by_severity": {
+          "Critical": 1,
+          "High": 2,
+          "Medium": 2,
+          "Low": 1
+        },
+        "details": [
+          {
+            "id": "VULN-PAYMENTSERVICE-001",
+            "type": "Security Misconfiguration",
+            "severity": "Critical",
+            "cvss_score": 7.9,
+            "cve": "CVE-2024-31821",
+            "package": "redis-client-1.0.20",
+            "description": "XML External Entities (XXE) vulnerability in paymentservice",
+            "discovered_date": "2025-09-12T14:06:16.680576",
+            "status": "In Progress",
+            "exploitability": "Low",
+            "business_impact": "High",
+            "assigned_team": "Platform Team",
+            "sla_breach": true
+          },
+          {
+            "id": "VULN-PAYMENTSERVICE-002",
+            "type": "Sensitive Data Exposure",
+            "severity": "High",
+            "cvss_score": 9.6,
+            "cve": "CVE-2024-95380",
+            "package": "spring-2.8.18",
+            "description": "Insecure Deserialization vulnerability in paymentservice",
+            "discovered_date": "2025-09-09T14:06:16.680584",
+            "status": "Resolved",
+            "exploitability": "Low",
+            "business_impact": "Low",
+            "assigned_team": "Paymentservice Team",
+            "sla_breach": true
+          },
+          {
+            "id": "VULN-PAYMENTSERVICE-003",
+            "type": "Broken Access Control",
+            "severity": "High",
+            "cvss_score": 9.1,
+            "cve": "CVE-2024-60583",
+            "package": "dotnet-3.0.17",
+            "description": "SQL Injection vulnerability in paymentservice",
+            "discovered_date": "2025-07-21T14:06:16.680591",
+            "status": "Resolved",
+            "exploitability": "High",
+            "business_impact": "Critical",
+            "assigned_team": "Platform Team",
+            "sla_breach": true
+          },
+          {
+            "id": "VULN-PAYMENTSERVICE-004",
+            "type": "Security Misconfiguration",
+            "severity": "Low",
+            "cvss_score": 7.4,
+            "cve": "CVE-2024-35938",
+            "package": "spring-4.9.15",
+            "description": "SQL Injection vulnerability in paymentservice",
+            "discovered_date": "2025-08-10T14:06:16.680598",
+            "status": "Mitigated",
+            "exploitability": "Low",
+            "business_impact": "Critical",
+            "assigned_team": "Security Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-PAYMENTSERVICE-005",
+            "type": "SQL Injection",
+            "severity": "Medium",
+            "cvss_score": 3.4,
+            "cve": "CVE-2024-44356",
+            "package": "spring-3.7.14",
+            "description": "Security Misconfiguration vulnerability in paymentservice",
+            "discovered_date": "2025-08-04T14:06:16.680605",
+            "status": "Resolved",
+            "exploitability": "Medium",
+            "business_impact": "Low",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-PAYMENTSERVICE-006",
+            "type": "Security Logging Failures",
+            "severity": "Medium",
+            "cvss_score": 5.9,
+            "cve": "CVE-2024-96522",
+            "package": "django-4.2.18",
+            "description": "Insecure Deserialization vulnerability in paymentservice",
+            "discovered_date": "2025-08-09T14:06:16.680612",
+            "status": "Mitigated",
+            "exploitability": "Low",
+            "business_impact": "Critical",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          }
+        ],
+        "open": 0,
+        "in_progress": 1,
+        "resolved_30d": 11
+      },
+      "exposure": {
+        "total_endpoints": 8,
+        "public_endpoints": 0,
+        "internal_endpoints": 8,
+        "exposed_secrets": 3,
+        "open_ports": 1,
+        "network_exposure": "Internal",
+        "trend_30d": [
+          19,
+          15,
+          5,
+          5,
+          13,
+          12,
+          18,
+          11,
+          17,
+          18,
+          10,
+          18,
+          5,
+          18,
+          5,
+          8,
+          17,
+          15,
+          6,
+          16,
+          5,
+          12,
+          16,
+          14,
+          7,
+          18,
+          8,
+          8,
+          19,
+          14
+        ]
+      },
+      "remediation": {
+        "breaches": 3,
+        "open_vulnerabilities": 15,
+        "in_progress": 20,
+        "resolved_30d": 22,
+        "mttr_hours": 197,
+        "assigned_teams": 4,
+        "overdue_count": 7,
+        "trend_30d": [
+          9,
+          13,
+          19,
+          21,
+          8,
+          27,
+          9,
+          15,
+          14,
+          27,
+          21,
+          17,
+          28,
+          6,
+          13,
+          8,
+          6,
+          11,
+          29,
+          30,
+          12,
+          17,
+          20,
+          13,
+          6,
+          24,
+          16,
+          5,
+          15,
+          11
+        ]
+      },
+      "compliance": {
+        "adherence_score": 95,
+        "applicable_frameworks": [
+          "HIPAA",
+          "GDPR",
+          "PCI-DSS"
+        ],
+        "policy_violations": 4,
+        "failed_controls": 8,
+        "last_audit_date": "2025-06-14T14:06:16.680671",
+        "next_audit_date": "2026-04-01T14:06:16.680672",
+        "control_status": {
+          "passed": 26,
+          "failed": 4,
+          "not_applicable": 10
+        }
+      },
+      "composition": {
+        "containers": 2,
+        "pods": 8,
+        "replicas": 4,
+        "dependencies": [],
+        "dependency_count": 0,
+        "language": "Node.js",
+        "frameworks": [
+          "Express",
+          "gRPC-js"
+        ],
+        "deployment_type": "Kubernetes",
+        "resource_usage": {
+          "cpu": "60%",
+          "memory": "66%",
+          "disk": "64%"
+        }
+      },
+      "ai_insights": {
+        "insights": [
+          "Dependencies contain 7 known vulnerable packages",
+          "Mean time to remediate (MTTR) is 30 days above average"
+        ],
+        "recommendations": [
+          {
+            "text": "Enable security headers (CSP, HSTS, X-Frame-Options)",
+            "priority": "High",
+            "impact": "High",
+            "effort": "High"
+          },
+          {
+            "text": "Review and update access control policies",
+            "priority": "High",
+            "impact": "Low",
+            "effort": "Low"
+          },
+          {
+            "text": "Apply network segmentation to isolate this service",
+            "priority": "High",
+            "impact": "Low",
+            "effort": "Low"
+          },
+          {
+            "text": "Implement input validation for all user-facing endpoints",
+            "priority": "Medium",
+            "impact": "Low",
+            "effort": "Medium"
+          }
+        ],
+        "risk_trend": "increasing",
+        "predicted_risk_30d": 100,
+        "confidence_score": 0.9
+      }
+    },
+    {
+      "name": "shippingservice",
+      "description": "Calculates shipping costs",
+      "language": "Go",
+      "business_criticality": "Medium",
+      "user_facing": false,
+      "owner": {
+        "team": "Shippingservice Team",
+        "lead": "David Smith",
+        "email": "shippingservice-team@example.com",
+        "slack_channel": "#team-shippingservice"
+      },
+      "risk": {
+        "score": 33,
+        "level": "Low",
+        "business_impact": "Medium",
+        "trend_30d": [
+          19,
+          37,
+          42,
+          33,
+          36,
+          26,
+          19,
+          31,
+          28,
+          20,
+          41,
+          23,
+          45,
+          21,
+          45,
+          47,
+          27,
+          47,
+          25,
+          28,
+          43,
+          28,
+          44,
+          38,
+          26,
+          24,
+          29,
+          42,
+          31,
+          30
+        ],
+        "last_updated": "2025-10-08T14:06:16.680733"
+      },
+      "vulnerabilities": {
+        "total": 2,
+        "by_severity": {
+          "Critical": 1,
+          "High": 0,
+          "Medium": 1,
+          "Low": 0
+        },
+        "details": [
+          {
+            "id": "VULN-SHIPPINGSERVICE-001",
+            "type": "SQL Injection",
+            "severity": "Medium",
+            "cvss_score": 4.7,
+            "cve": "CVE-2024-61477",
+            "package": "dotnet-5.9.2",
+            "description": "Sensitive Data Exposure vulnerability in shippingservice",
+            "discovered_date": "2025-08-04T14:06:16.680704",
+            "status": "Mitigated",
+            "exploitability": "Low",
+            "business_impact": "Critical",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-SHIPPINGSERVICE-002",
+            "type": "Cross-Site Scripting (XSS)",
+            "severity": "Critical",
+            "cvss_score": 6.6,
+            "cve": "CVE-2024-64937",
+            "package": "django-5.9.4",
+            "description": "Outdated Dependencies vulnerability in shippingservice",
+            "discovered_date": "2025-08-20T14:06:16.680712",
+            "status": "Mitigated",
+            "exploitability": "Medium",
+            "business_impact": "Low",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          }
+        ],
+        "open": 0,
+        "in_progress": 0,
+        "resolved_30d": 14
+      },
+      "exposure": {
+        "total_endpoints": 7,
+        "public_endpoints": 0,
+        "internal_endpoints": 7,
+        "exposed_secrets": 1,
+        "open_ports": 1,
+        "network_exposure": "VPC",
+        "trend_30d": [
+          12,
+          15,
+          8,
+          15,
+          7,
+          8,
+          14,
+          20,
+          13,
+          19,
+          7,
+          15,
+          18,
+          19,
+          15,
+          11,
+          9,
+          18,
+          9,
+          20,
+          19,
+          8,
+          14,
+          11,
+          8,
+          13,
+          16,
+          12,
+          9,
+          17
+        ]
+      },
+      "remediation": {
+        "breaches": 3,
+        "open_vulnerabilities": 48,
+        "in_progress": 15,
+        "resolved_30d": 35,
+        "mttr_hours": 65,
+        "assigned_teams": 2,
+        "overdue_count": 1,
+        "trend_30d": [
+          22,
+          28,
+          23,
+          18,
+          30,
+          22,
+          18,
+          27,
+          9,
+          16,
+          21,
+          25,
+          5,
+          11,
+          27,
+          13,
+          19,
+          21,
+          26,
+          14,
+          16,
+          30,
+          27,
+          20,
+          6,
+          21,
+          25,
+          13,
+          28,
+          7
+        ]
+      },
+      "compliance": {
+        "adherence_score": 80,
+        "applicable_frameworks": [
+          "NIST",
+          "SOC 2",
+          "HIPAA"
+        ],
+        "policy_violations": 4,
+        "failed_controls": 1,
+        "last_audit_date": "2025-08-08T14:06:16.680767",
+        "next_audit_date": "2025-12-15T14:06:16.680769",
+        "control_status": {
+          "passed": 20,
+          "failed": 5,
+          "not_applicable": 15
+        }
+      },
+      "composition": {
+        "containers": 5,
+        "pods": 9,
+        "replicas": 2,
+        "dependencies": [],
+        "dependency_count": 0,
+        "language": "Go",
+        "frameworks": [
+          "gRPC",
+          "Gin",
+          "Echo"
+        ],
+        "deployment_type": "GKE",
+        "resource_usage": {
+          "cpu": "80%",
+          "memory": "23%",
+          "disk": "42%"
+        }
+      },
+      "ai_insights": {
+        "insights": [
+          "Remediation velocity decreased by 29% this month",
+          "Vulnerabilities likely to be exploited up 17% in 7 days",
+          "Attack surface increased by 30% in the last 60 days",
+          "Attack surface increased by 28% in the last 30 days"
+        ],
+        "recommendations": [
+          {
+            "text": "Enable audit logging for all critical operations",
+            "priority": "High",
+            "impact": "Critical",
+            "effort": "Low"
+          },
+          {
+            "text": "Rotate credentials found in recent security scan",
+            "priority": "Low",
+            "impact": "High",
+            "effort": "Low"
+          },
+          {
+            "text": "Rotate credentials found in recent security scan",
+            "priority": "High",
+            "impact": "Medium",
+            "effort": "Medium"
+          },
+          {
+            "text": "Enable security headers (CSP, HSTS, X-Frame-Options)",
+            "priority": "Low",
+            "impact": "Low",
+            "effort": "High"
+          }
+        ],
+        "risk_trend": "decreasing",
+        "predicted_risk_30d": 47,
+        "confidence_score": 0.89
+      }
+    },
+    {
+      "name": "emailservice",
+      "description": "Sends order confirmation emails (mock)",
+      "language": "Python",
+      "business_criticality": "Low",
+      "user_facing": false,
+      "owner": {
+        "team": "Emailservice Team",
+        "lead": "Sarah Davis",
+        "email": "emailservice-team@example.com",
+        "slack_channel": "#team-emailservice"
+      },
+      "risk": {
+        "score": 23,
+        "level": "Low",
+        "business_impact": "Low",
+        "trend_30d": [
+          26,
+          31,
+          31,
+          35,
+          32,
+          16,
+          11,
+          29,
+          27,
+          14,
+          29,
+          23,
+          24,
+          37,
+          20,
+          29,
+          24,
+          25,
+          38,
+          8,
+          30,
+          36,
+          17,
+          13,
+          8,
+          22,
+          31,
+          21,
+          29,
+          10
+        ],
+        "last_updated": "2025-10-08T14:06:16.680832"
+      },
+      "vulnerabilities": {
+        "total": 2,
+        "by_severity": {
+          "Critical": 1,
+          "High": 0,
+          "Medium": 1,
+          "Low": 0
+        },
+        "details": [
+          {
+            "id": "VULN-EMAILSERVICE-001",
+            "type": "Outdated Dependencies",
+            "severity": "Medium",
+            "cvss_score": 4.3,
+            "cve": "CVE-2024-14576",
+            "package": "django-3.3.11",
+            "description": "Cross-Site Scripting (XSS) vulnerability in emailservice",
+            "discovered_date": "2025-07-19T14:06:16.680804",
+            "status": "In Progress",
+            "exploitability": "Low",
+            "business_impact": "Medium",
+            "assigned_team": "Security Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-EMAILSERVICE-002",
+            "type": "Cross-Site Scripting (XSS)",
+            "severity": "Critical",
+            "cvss_score": 6.5,
+            "cve": "CVE-2024-84383",
+            "package": "express-2.4.1",
+            "description": "SQL Injection vulnerability in emailservice",
+            "discovered_date": "2025-08-09T14:06:16.680811",
+            "status": "Resolved",
+            "exploitability": "Low",
+            "business_impact": "Medium",
+            "assigned_team": "Emailservice Team",
+            "sla_breach": true
+          }
+        ],
+        "open": 0,
+        "in_progress": 1,
+        "resolved_30d": 9
+      },
+      "exposure": {
+        "total_endpoints": 10,
+        "public_endpoints": 0,
+        "internal_endpoints": 10,
+        "exposed_secrets": 0,
+        "open_ports": 5,
+        "network_exposure": "Internal",
+        "trend_30d": [
+          18,
+          5,
+          14,
+          5,
+          19,
+          20,
+          8,
+          8,
+          20,
+          9,
+          13,
+          8,
+          11,
+          9,
+          11,
+          6,
+          12,
+          15,
+          16,
+          13,
+          17,
+          16,
+          19,
+          17,
+          13,
+          11,
+          17,
+          5,
+          9,
+          14
+        ]
+      },
+      "remediation": {
+        "breaches": 2,
+        "open_vulnerabilities": 16,
+        "in_progress": 5,
+        "resolved_30d": 12,
+        "mttr_hours": 199,
+        "assigned_teams": 5,
+        "overdue_count": 4,
+        "trend_30d": [
+          19,
+          28,
+          29,
+          14,
+          12,
+          20,
+          13,
+          22,
+          12,
+          22,
+          20,
+          22,
+          7,
+          16,
+          20,
+          28,
+          18,
+          11,
+          28,
+          9,
+          14,
+          13,
+          27,
+          30,
+          23,
+          18,
+          11,
+          29,
+          8,
+          20
+        ]
+      },
+      "compliance": {
+        "adherence_score": 70,
+        "applicable_frameworks": [
+          "PCI-DSS",
+          "SOC 2",
+          "NIST",
+          "GDPR"
+        ],
+        "policy_violations": 5,
+        "failed_controls": 2,
+        "last_audit_date": "2025-04-30T14:06:16.680867",
+        "next_audit_date": "2026-03-25T14:06:16.680868",
+        "control_status": {
+          "passed": 49,
+          "failed": 7,
+          "not_applicable": 7
+        }
+      },
+      "composition": {
+        "containers": 2,
+        "pods": 2,
+        "replicas": 2,
+        "dependencies": [],
+        "dependency_count": 0,
+        "language": "Python",
+        "frameworks": [
+          "gRPC",
+          "Flask",
+          "FastAPI"
+        ],
+        "deployment_type": "Cloud Run",
+        "resource_usage": {
+          "cpu": "78%",
+          "memory": "85%",
+          "disk": "32%"
+        }
+      },
+      "ai_insights": {
+        "insights": [
+          "Attack surface increased by 15% in the last 30 days",
+          "Remediation velocity decreased by 42% this month"
+        ],
+        "recommendations": [
+          {
+            "text": "Enable security headers (CSP, HSTS, X-Frame-Options)",
+            "priority": "Low",
+            "impact": "Low",
+            "effort": "Medium"
+          },
+          {
+            "text": "Enable audit logging for all critical operations",
+            "priority": "Low",
+            "impact": "High",
+            "effort": "Medium"
+          },
+          {
+            "text": "Patch critical assets immediately to reduce risk by 51%",
+            "priority": "Low",
+            "impact": "Critical",
+            "effort": "Medium"
+          },
+          {
+            "text": "Update redis-client to version 4.7.11 to fix 12 vulnerabilities",
+            "priority": "Medium",
+            "impact": "Low",
+            "effort": "High"
+          },
+          {
+            "text": "Apply network segmentation to isolate this service",
+            "priority": "High",
+            "impact": "High",
+            "effort": "High"
+          }
+        ],
+        "risk_trend": "decreasing",
+        "predicted_risk_30d": 20,
+        "confidence_score": 0.73
+      }
+    },
+    {
+      "name": "checkoutservice",
+      "description": "Orchestrates the checkout process",
+      "language": "Go",
+      "business_criticality": "Critical",
+      "user_facing": false,
+      "owner": {
+        "team": "Checkoutservice Team",
+        "lead": "David Williams",
+        "email": "checkoutservice-team@example.com",
+        "slack_channel": "#team-checkoutservice"
+      },
+      "risk": {
+        "score": 51,
+        "level": "Medium",
+        "business_impact": "Critical",
+        "trend_30d": [
+          63,
+          44,
+          51,
+          52,
+          55,
+          58,
+          48,
+          63,
+          60,
+          50,
+          58,
+          45,
+          48,
+          36,
+          56,
+          37,
+          61,
+          56,
+          58,
+          39,
+          55,
+          65,
+          48,
+          60,
+          41,
+          40,
+          41,
+          49,
+          43,
+          63
+        ],
+        "last_updated": "2025-10-08T14:06:16.680946"
+      },
+      "vulnerabilities": {
+        "total": 4,
+        "by_severity": {
+          "Critical": 0,
+          "High": 1,
+          "Medium": 2,
+          "Low": 1
+        },
+        "details": [
+          {
+            "id": "VULN-CHECKOUTSERVICE-001",
+            "type": "Broken Access Control",
+            "severity": "Low",
+            "cvss_score": 9.4,
+            "cve": "CVE-2024-29079",
+            "package": "django-1.7.16",
+            "description": "SQL Injection vulnerability in checkoutservice",
+            "discovered_date": "2025-09-13T14:06:16.680905",
+            "status": "Mitigated",
+            "exploitability": "Low",
+            "business_impact": "Low",
+            "assigned_team": "Security Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-CHECKOUTSERVICE-002",
+            "type": "Cross-Site Scripting (XSS)",
+            "severity": "Medium",
+            "cvss_score": 8.2,
+            "cve": "CVE-2024-93138",
+            "package": "express-4.8.2",
+            "description": "SQL Injection vulnerability in checkoutservice",
+            "discovered_date": "2025-08-08T14:06:16.680912",
+            "status": "Mitigated",
+            "exploitability": "Medium",
+            "business_impact": "Critical",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-CHECKOUTSERVICE-003",
+            "type": "Broken Access Control",
+            "severity": "High",
+            "cvss_score": 9.5,
+            "cve": "CVE-2024-47071",
+            "package": "redis-client-4.8.0",
+            "description": "Sensitive Data Exposure vulnerability in checkoutservice",
+            "discovered_date": "2025-09-07T14:06:16.680919",
+            "status": "Resolved",
+            "exploitability": "High",
+            "business_impact": "High",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-CHECKOUTSERVICE-004",
+            "type": "Insecure Deserialization",
+            "severity": "Medium",
+            "cvss_score": 9.0,
+            "cve": "CVE-2024-24887",
+            "package": "redis-client-4.4.6",
+            "description": "SQL Injection vulnerability in checkoutservice",
+            "discovered_date": "2025-07-23T14:06:16.680925",
+            "status": "In Progress",
+            "exploitability": "Low",
+            "business_impact": "Critical",
+            "assigned_team": "Platform Team",
+            "sla_breach": false
+          }
+        ],
+        "open": 0,
+        "in_progress": 1,
+        "resolved_30d": 20
+      },
+      "exposure": {
+        "total_endpoints": 14,
+        "public_endpoints": 0,
+        "internal_endpoints": 14,
+        "exposed_secrets": 1,
+        "open_ports": 3,
+        "network_exposure": "Internal",
+        "trend_30d": [
+          17,
+          12,
+          19,
+          12,
+          6,
+          19,
+          18,
+          15,
+          6,
+          5,
+          7,
+          12,
+          7,
+          9,
+          8,
+          10,
+          14,
+          9,
+          8,
+          8,
+          6,
+          11,
+          13,
+          10,
+          7,
+          6,
+          6,
+          15,
+          9,
+          14
+        ]
+      },
+      "remediation": {
+        "breaches": 2,
+        "open_vulnerabilities": 31,
+        "in_progress": 16,
+        "resolved_30d": 33,
+        "mttr_hours": 138,
+        "assigned_teams": 4,
+        "overdue_count": 8,
+        "trend_30d": [
+          29,
+          5,
+          18,
+          6,
+          21,
+          8,
+          16,
+          25,
+          27,
+          26,
+          16,
+          14,
+          16,
+          28,
+          18,
+          13,
+          7,
+          28,
+          16,
+          19,
+          26,
+          6,
+          11,
+          24,
+          21,
+          29,
+          10,
+          6,
+          5,
+          30
+        ]
+      },
+      "compliance": {
+        "adherence_score": 93,
+        "applicable_frameworks": [
+          "ISO 27001",
+          "PCI-DSS"
+        ],
+        "policy_violations": 4,
+        "failed_controls": 2,
+        "last_audit_date": "2025-10-07T14:06:16.680978",
+        "next_audit_date": "2025-11-07T14:06:16.680980",
+        "control_status": {
+          "passed": 24,
+          "failed": 7,
+          "not_applicable": 8
+        }
+      },
+      "composition": {
+        "containers": 2,
+        "pods": 6,
+        "replicas": 4,
+        "dependencies": [
+          "productcatalogservice",
+          "shippingservice",
+          "currencyservice",
+          "emailservice",
+          "paymentservice",
+          "cartservice"
+        ],
+        "dependency_count": 6,
+        "language": "Go",
+        "frameworks": [
+          "gRPC",
+          "Gin",
+          "Echo"
+        ],
+        "deployment_type": "Kubernetes",
+        "resource_usage": {
+          "cpu": "27%",
+          "memory": "31%",
+          "disk": "46%"
+        }
+      },
+      "ai_insights": {
+        "insights": [
+          "Similar vulnerabilities exploited in 5 recent breaches",
+          "Attack surface increased by 44% in the last 30 days",
+          "Attack surface increased by 42% in the last 60 days",
+          "Similar vulnerabilities exploited in 7 recent breaches"
+        ],
+        "recommendations": [
+          {
+            "text": "Enable audit logging for all critical operations",
+            "priority": "Low",
+            "impact": "Critical",
+            "effort": "Low"
+          },
+          {
+            "text": "Review and update access control policies",
+            "priority": "Medium",
+            "impact": "High",
+            "effort": "High"
+          },
+          {
+            "text": "Implement input validation for all user-facing endpoints",
+            "priority": "Medium",
+            "impact": "Critical",
+            "effort": "Low"
+          }
+        ],
+        "risk_trend": "stable",
+        "predicted_risk_30d": 44,
+        "confidence_score": 0.87
+      }
+    },
+    {
+      "name": "recommendationservice",
+      "description": "Recommends related products",
+      "language": "Python",
+      "business_criticality": "Low",
+      "user_facing": false,
+      "owner": {
+        "team": "Recommendationservice Team",
+        "lead": "David Brown",
+        "email": "recommendationservice-team@example.com",
+        "slack_channel": "#team-recommendationservice"
+      },
+      "risk": {
+        "score": 16,
+        "level": "Low",
+        "business_impact": "Low",
+        "trend_30d": [
+          27,
+          19,
+          8,
+          14,
+          23,
+          7,
+          17,
+          22,
+          30,
+          4,
+          21,
+          7,
+          3,
+          13,
+          30,
+          8,
+          16,
+          16,
+          15,
+          22,
+          24,
+          23,
+          9,
+          30,
+          31,
+          19,
+          12,
+          26,
+          20,
+          13
+        ],
+        "last_updated": "2025-10-08T14:06:16.681038"
+      },
+      "vulnerabilities": {
+        "total": 2,
+        "by_severity": {
+          "Critical": 0,
+          "High": 1,
+          "Medium": 1,
+          "Low": 0
+        },
+        "details": [
+          {
+            "id": "VULN-RECOMMENDATIONSERVICE-001",
+            "type": "Security Logging Failures",
+            "severity": "Medium",
+            "cvss_score": 3.7,
+            "cve": "CVE-2024-99220",
+            "package": "dotnet-2.9.14",
+            "description": "Server-Side Request Forgery (SSRF) vulnerability in recommendationservice",
+            "discovered_date": "2025-09-28T14:06:16.681010",
+            "status": "Resolved",
+            "exploitability": "Low",
+            "business_impact": "High",
+            "assigned_team": "Recommendationservice Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-RECOMMENDATIONSERVICE-002",
+            "type": "Server-Side Request Forgery (SSRF)",
+            "severity": "High",
+            "cvss_score": 3.9,
+            "cve": "CVE-2024-30022",
+            "package": "spring-1.6.13",
+            "description": "Server-Side Request Forgery (SSRF) vulnerability in recommendationservice",
+            "discovered_date": "2025-09-03T14:06:16.681017",
+            "status": "Resolved",
+            "exploitability": "Low",
+            "business_impact": "High",
+            "assigned_team": "Security Team",
+            "sla_breach": true
+          }
+        ],
+        "open": 0,
+        "in_progress": 0,
+        "resolved_30d": 19
+      },
+      "exposure": {
+        "total_endpoints": 11,
+        "public_endpoints": 0,
+        "internal_endpoints": 11,
+        "exposed_secrets": 2,
+        "open_ports": 2,
+        "network_exposure": "VPC",
+        "trend_30d": [
+          16,
+          20,
+          10,
+          20,
+          12,
+          18,
+          18,
+          7,
+          11,
+          16,
+          14,
+          16,
+          6,
+          5,
+          8,
+          20,
+          18,
+          12,
+          13,
+          18,
+          15,
+          14,
+          12,
+          15,
+          16,
+          7,
+          12,
+          16,
+          9,
+          11
+        ]
+      },
+      "remediation": {
+        "breaches": 0,
+        "open_vulnerabilities": 16,
+        "in_progress": 8,
+        "resolved_30d": 19,
+        "mttr_hours": 172,
+        "assigned_teams": 4,
+        "overdue_count": 3,
+        "trend_30d": [
+          17,
+          10,
+          11,
+          18,
+          11,
+          23,
+          15,
+          14,
+          11,
+          14,
+          22,
+          15,
+          25,
+          28,
+          13,
+          23,
+          21,
+          15,
+          11,
+          27,
+          9,
+          29,
+          11,
+          29,
+          10,
+          11,
+          19,
+          22,
+          8,
+          24
+        ]
+      },
+      "compliance": {
+        "adherence_score": 72,
+        "applicable_frameworks": [
+          "SOC 2",
+          "ISO 27001",
+          "HIPAA",
+          "PCI-DSS"
+        ],
+        "policy_violations": 0,
+        "failed_controls": 6,
+        "last_audit_date": "2025-04-18T14:06:16.681071",
+        "next_audit_date": "2025-12-20T14:06:16.681072",
+        "control_status": {
+          "passed": 42,
+          "failed": 7,
+          "not_applicable": 11
+        }
+      },
+      "composition": {
+        "containers": 1,
+        "pods": 8,
+        "replicas": 2,
+        "dependencies": [
+          "productcatalogservice"
+        ],
+        "dependency_count": 1,
+        "language": "Python",
+        "frameworks": [
+          "gRPC",
+          "Flask",
+          "FastAPI"
+        ],
+        "deployment_type": "Cloud Run",
+        "resource_usage": {
+          "cpu": "69%",
+          "memory": "63%",
+          "disk": "16%"
+        }
+      },
+      "ai_insights": {
+        "insights": [
+          "Attack surface increased by 47% in the last 30 days",
+          "Remediation velocity decreased by 32% this month",
+          "Remediation velocity decreased by 16% this month",
+          "Similar vulnerabilities exploited in 18 recent breaches"
+        ],
+        "recommendations": [
+          {
+            "text": "Apply network segmentation to isolate this service",
+            "priority": "Low",
+            "impact": "Critical",
+            "effort": "High"
+          },
+          {
+            "text": "Implement input validation for all user-facing endpoints",
+            "priority": "High",
+            "impact": "High",
+            "effort": "High"
+          },
+          {
+            "text": "Apply network segmentation to isolate this service",
+            "priority": "High",
+            "impact": "Medium",
+            "effort": "Medium"
+          },
+          {
+            "text": "Enable security headers (CSP, HSTS, X-Frame-Options)",
+            "priority": "High",
+            "impact": "High",
+            "effort": "High"
+          },
+          {
+            "text": "Apply network segmentation to isolate this service",
+            "priority": "Medium",
+            "impact": "Low",
+            "effort": "High"
+          }
+        ],
+        "risk_trend": "decreasing",
+        "predicted_risk_30d": 25,
+        "confidence_score": 0.79
+      }
+    },
+    {
+      "name": "adservice",
+      "description": "Provides text ads based on context",
+      "language": "Java",
+      "business_criticality": "Low",
+      "user_facing": false,
+      "owner": {
+        "team": "Adservice Team",
+        "lead": "Sarah Williams",
+        "email": "adservice-team@example.com",
+        "slack_channel": "#team-adservice"
+      },
+      "risk": {
+        "score": 23,
+        "level": "Low",
+        "business_impact": "Low",
+        "trend_30d": [
+          25,
+          34,
+          20,
+          37,
+          35,
+          27,
+          11,
+          26,
+          21,
+          15,
+          9,
+          13,
+          35,
+          29,
+          27,
+          18,
+          18,
+          22,
+          31,
+          34,
+          21,
+          38,
+          26,
+          35,
+          29,
+          20,
+          13,
+          30,
+          15,
+          17
+        ],
+        "last_updated": "2025-10-08T14:06:16.681158"
+      },
+      "vulnerabilities": {
+        "total": 4,
+        "by_severity": {
+          "Critical": 0,
+          "High": 1,
+          "Medium": 2,
+          "Low": 1
+        },
+        "details": [
+          {
+            "id": "VULN-ADSERVICE-001",
+            "type": "Security Misconfiguration",
+            "severity": "Medium",
+            "cvss_score": 5.0,
+            "cve": "CVE-2024-90729",
+            "package": "spring-1.6.5",
+            "description": "SQL Injection vulnerability in adservice",
+            "discovered_date": "2025-09-10T14:06:16.681111",
+            "status": "Mitigated",
+            "exploitability": "Medium",
+            "business_impact": "High",
+            "assigned_team": "Platform Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-ADSERVICE-002",
+            "type": "Security Misconfiguration",
+            "severity": "Low",
+            "cvss_score": 9.7,
+            "cve": "CVE-2024-12437",
+            "package": "dotnet-1.6.12",
+            "description": "Security Misconfiguration vulnerability in adservice",
+            "discovered_date": "2025-07-11T14:06:16.681122",
+            "status": "Resolved",
+            "exploitability": "Low",
+            "business_impact": "Critical",
+            "assigned_team": "Adservice Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-ADSERVICE-003",
+            "type": "Outdated Dependencies",
+            "severity": "High",
+            "cvss_score": 8.4,
+            "cve": "CVE-2024-65312",
+            "package": "dotnet-1.9.7",
+            "description": "Broken Access Control vulnerability in adservice",
+            "discovered_date": "2025-09-05T14:06:16.681130",
+            "status": "Open",
+            "exploitability": "High",
+            "business_impact": "Critical",
+            "assigned_team": "Security Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-ADSERVICE-004",
+            "type": "Server-Side Request Forgery (SSRF)",
+            "severity": "Medium",
+            "cvss_score": 9.5,
+            "cve": "CVE-2024-70329",
+            "package": "dotnet-2.0.11",
+            "description": "Broken Access Control vulnerability in adservice",
+            "discovered_date": "2025-10-04T14:06:16.681137",
+            "status": "Open",
+            "exploitability": "Low",
+            "business_impact": "Critical",
+            "assigned_team": "DevOps Team",
+            "sla_breach": false
+          }
+        ],
+        "open": 2,
+        "in_progress": 0,
+        "resolved_30d": 20
+      },
+      "exposure": {
+        "total_endpoints": 7,
+        "public_endpoints": 0,
+        "internal_endpoints": 7,
+        "exposed_secrets": 1,
+        "open_ports": 2,
+        "network_exposure": "VPC",
+        "trend_30d": [
+          7,
+          18,
+          18,
+          6,
+          19,
+          7,
+          11,
+          12,
+          14,
+          8,
+          10,
+          9,
+          15,
+          11,
+          13,
+          5,
+          11,
+          18,
+          11,
+          14,
+          20,
+          17,
+          12,
+          6,
+          8,
+          13,
+          5,
+          9,
+          5,
+          5
+        ]
+      },
+      "remediation": {
+        "breaches": 1,
+        "open_vulnerabilities": 29,
+        "in_progress": 6,
+        "resolved_30d": 20,
+        "mttr_hours": 128,
+        "assigned_teams": 2,
+        "overdue_count": 5,
+        "trend_30d": [
+          22,
+          30,
+          27,
+          23,
+          16,
+          13,
+          27,
+          7,
+          5,
+          5,
+          9,
+          12,
+          11,
+          6,
+          27,
+          27,
+          22,
+          13,
+          22,
+          8,
+          5,
+          8,
+          19,
+          13,
+          23,
+          23,
+          11,
+          16,
+          13,
+          16
+        ]
+      },
+      "compliance": {
+        "adherence_score": 68,
+        "applicable_frameworks": [
+          "HIPAA",
+          "PCI-DSS",
+          "ISO 27001"
+        ],
+        "policy_violations": 3,
+        "failed_controls": 1,
+        "last_audit_date": "2025-10-04T14:06:16.681191",
+        "next_audit_date": "2025-11-14T14:06:16.681192",
+        "control_status": {
+          "passed": 35,
+          "failed": 0,
+          "not_applicable": 6
+        }
+      },
+      "composition": {
+        "containers": 3,
+        "pods": 3,
+        "replicas": 5,
+        "dependencies": [],
+        "dependency_count": 0,
+        "language": "Java",
+        "frameworks": [
+          "Spring Boot",
+          "gRPC-Java"
+        ],
+        "deployment_type": "Kubernetes",
+        "resource_usage": {
+          "cpu": "33%",
+          "memory": "70%",
+          "disk": "58%"
+        }
+      },
+      "ai_insights": {
+        "insights": [
+          "Service exposure increased due to new API endpoints",
+          "Similar vulnerabilities exploited in 13 recent breaches",
+          "Similar vulnerabilities exploited in 7 recent breaches"
+        ],
+        "recommendations": [
+          {
+            "text": "Enable security headers (CSP, HSTS, X-Frame-Options)",
+            "priority": "Medium",
+            "impact": "High",
+            "effort": "High"
+          },
+          {
+            "text": "Enable security headers (CSP, HSTS, X-Frame-Options)",
+            "priority": "Low",
+            "impact": "Low",
+            "effort": "Medium"
+          }
+        ],
+        "risk_trend": "decreasing",
+        "predicted_risk_30d": 37,
+        "confidence_score": 0.92
+      }
+    },
+    {
+      "name": "loadgenerator",
+      "description": "Simulates user traffic",
+      "language": "Python",
+      "business_criticality": "Low",
+      "user_facing": false,
+      "owner": {
+        "team": "Loadgenerator Team",
+        "lead": "Michael Smith",
+        "email": "loadgenerator-team@example.com",
+        "slack_channel": "#team-loadgenerator"
+      },
+      "risk": {
+        "score": 39,
+        "level": "Low",
+        "business_impact": "Low",
+        "trend_30d": [
+          31,
+          45,
+          40,
+          29,
+          42,
+          53,
+          42,
+          36,
+          30,
+          25,
+          31,
+          45,
+          42,
+          40,
+          35,
+          34,
+          26,
+          36,
+          34,
+          25,
+          46,
+          43,
+          24,
+          30,
+          50,
+          36,
+          31,
+          27,
+          40,
+          25
+        ],
+        "last_updated": "2025-10-08T14:06:16.681275"
+      },
+      "vulnerabilities": {
+        "total": 6,
+        "by_severity": {
+          "Critical": 0,
+          "High": 2,
+          "Medium": 3,
+          "Low": 1
+        },
+        "details": [
+          {
+            "id": "VULN-LOADGENERATOR-001",
+            "type": "Server-Side Request Forgery (SSRF)",
+            "severity": "Medium",
+            "cvss_score": 9.0,
+            "cve": "CVE-2024-62875",
+            "package": "redis-client-1.1.11",
+            "description": "Broken Access Control vulnerability in loadgenerator",
+            "discovered_date": "2025-10-07T14:06:16.681218",
+            "status": "Mitigated",
+            "exploitability": "Medium",
+            "business_impact": "Critical",
+            "assigned_team": "Security Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-LOADGENERATOR-002",
+            "type": "SQL Injection",
+            "severity": "Medium",
+            "cvss_score": 3.4,
+            "cve": "CVE-2024-70330",
+            "package": "dotnet-5.4.20",
+            "description": "Outdated Dependencies vulnerability in loadgenerator",
+            "discovered_date": "2025-09-18T14:06:16.681224",
+            "status": "Resolved",
+            "exploitability": "High",
+            "business_impact": "Low",
+            "assigned_team": "Platform Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-LOADGENERATOR-003",
+            "type": "Outdated Dependencies",
+            "severity": "High",
+            "cvss_score": 3.0,
+            "cve": "CVE-2024-32187",
+            "package": "django-5.5.7",
+            "description": "Cross-Site Scripting (XSS) vulnerability in loadgenerator",
+            "discovered_date": "2025-09-21T14:06:16.681231",
+            "status": "In Progress",
+            "exploitability": "Medium",
+            "business_impact": "Low",
+            "assigned_team": "Platform Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-LOADGENERATOR-004",
+            "type": "Insecure Deserialization",
+            "severity": "Medium",
+            "cvss_score": 5.1,
+            "cve": "CVE-2024-96370",
+            "package": "spring-4.2.19",
+            "description": "Server-Side Request Forgery (SSRF) vulnerability in loadgenerator",
+            "discovered_date": "2025-09-27T14:06:16.681238",
+            "status": "Open",
+            "exploitability": "High",
+            "business_impact": "High",
+            "assigned_team": "Loadgenerator Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-LOADGENERATOR-005",
+            "type": "SQL Injection",
+            "severity": "High",
+            "cvss_score": 6.9,
+            "cve": "CVE-2024-90532",
+            "package": "redis-client-1.4.10",
+            "description": "Cross-Site Scripting (XSS) vulnerability in loadgenerator",
+            "discovered_date": "2025-08-05T14:06:16.681246",
+            "status": "Resolved",
+            "exploitability": "Low",
+            "business_impact": "High",
+            "assigned_team": "DevOps Team",
+            "sla_breach": true
+          },
+          {
+            "id": "VULN-LOADGENERATOR-006",
+            "type": "Cross-Site Scripting (XSS)",
+            "severity": "Low",
+            "cvss_score": 4.9,
+            "cve": "CVE-2024-28861",
+            "package": "django-3.0.2",
+            "description": "Insecure Deserialization vulnerability in loadgenerator",
+            "discovered_date": "2025-08-06T14:06:16.681254",
+            "status": "In Progress",
+            "exploitability": "Medium",
+            "business_impact": "Critical",
+            "assigned_team": "Platform Team",
+            "sla_breach": false
+          }
+        ],
+        "open": 1,
+        "in_progress": 2,
+        "resolved_30d": 6
+      },
+      "exposure": {
+        "total_endpoints": 5,
+        "public_endpoints": 0,
+        "internal_endpoints": 5,
+        "exposed_secrets": 3,
+        "open_ports": 4,
+        "network_exposure": "VPC",
+        "trend_30d": [
+          18,
+          6,
+          13,
+          9,
+          20,
+          18,
+          5,
+          16,
+          15,
+          10,
+          14,
+          10,
+          15,
+          15,
+          14,
+          13,
+          9,
+          20,
+          20,
+          7,
+          19,
+          13,
+          10,
+          20,
+          10,
+          7,
+          9,
+          15,
+          13,
+          15
+        ]
+      },
+      "remediation": {
+        "breaches": 0,
+        "open_vulnerabilities": 14,
+        "in_progress": 8,
+        "resolved_30d": 30,
+        "mttr_hours": 73,
+        "assigned_teams": 5,
+        "overdue_count": 4,
+        "trend_30d": [
+          10,
+          23,
+          12,
+          8,
+          17,
+          30,
+          25,
+          15,
+          25,
+          26,
+          22,
+          29,
+          20,
+          25,
+          20,
+          6,
+          8,
+          25,
+          18,
+          6,
+          22,
+          17,
+          10,
+          21,
+          26,
+          14,
+          17,
+          25,
+          14,
+          14
+        ]
+      },
+      "compliance": {
+        "adherence_score": 80,
+        "applicable_frameworks": [
+          "ISO 27001",
+          "GDPR"
+        ],
+        "policy_violations": 4,
+        "failed_controls": 2,
+        "last_audit_date": "2025-09-17T14:06:16.681308",
+        "next_audit_date": "2026-02-11T14:06:16.681309",
+        "control_status": {
+          "passed": 47,
+          "failed": 4,
+          "not_applicable": 11
+        }
+      },
+      "composition": {
+        "containers": 1,
+        "pods": 8,
+        "replicas": 3,
+        "dependencies": [
+          "frontend"
+        ],
+        "dependency_count": 1,
+        "language": "Python",
+        "frameworks": [
+          "gRPC",
+          "Flask",
+          "FastAPI"
+        ],
+        "deployment_type": "Cloud Run",
+        "resource_usage": {
+          "cpu": "16%",
+          "memory": "61%",
+          "disk": "40%"
+        }
+      },
+      "ai_insights": {
+        "insights": [
+          "Attack surface increased by 50% in the last 60 days",
+          "Mean time to remediate (MTTR) is 60 days above average",
+          "Dependencies contain 3 known vulnerable packages"
+        ],
+        "recommendations": [
+          {
+            "text": "Patch critical assets immediately to reduce risk by 51%",
+            "priority": "Low",
+            "impact": "Medium",
+            "effort": "High"
+          },
+          {
+            "text": "Enable security headers (CSP, HSTS, X-Frame-Options)",
+            "priority": "Medium",
+            "impact": "High",
+            "effort": "Low"
+          }
+        ],
+        "risk_trend": "decreasing",
+        "predicted_risk_30d": 55,
+        "confidence_score": 0.7
+      }
+    },
+    {
+      "name": "shoppingassistantservice",
+      "description": "AI assistant for product suggestions",
+      "language": "Python",
+      "business_criticality": "Medium",
+      "user_facing": true,
+      "owner": {
+        "team": "Shoppingassistantservice Team",
+        "lead": "David Brown",
+        "email": "shoppingassistantservice-team@example.com",
+        "slack_channel": "#team-shoppingassistantservice"
+      },
+      "risk": {
+        "score": 100,
+        "level": "Critical",
+        "business_impact": "Medium",
+        "trend_30d": [
+          100,
+          99,
+          87,
+          100,
+          97,
+          92,
+          100,
+          90,
+          100,
+          100,
+          94,
+          88,
+          100,
+          100,
+          94,
+          100,
+          100,
+          92,
+          100,
+          91,
+          100,
+          85,
+          85,
+          100,
+          100,
+          100,
+          100,
+          99,
+          100,
+          100
+        ],
+        "last_updated": "2025-10-08T14:06:16.681383"
+      },
+      "vulnerabilities": {
+        "total": 5,
+        "by_severity": {
+          "Critical": 2,
+          "High": 2,
+          "Medium": 0,
+          "Low": 1
+        },
+        "details": [
+          {
+            "id": "VULN-SHOPPINGASSISTANTSERVICE-001",
+            "type": "Cross-Site Scripting (XSS)",
+            "severity": "Low",
+            "cvss_score": 3.3,
+            "cve": "CVE-2024-49732",
+            "package": "express-2.0.7",
+            "description": "Server-Side Request Forgery (SSRF) vulnerability in shoppingassistantservice",
+            "discovered_date": "2025-08-30T14:06:16.681334",
+            "status": "Open",
+            "exploitability": "Medium",
+            "business_impact": "High",
+            "assigned_team": "Platform Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-SHOPPINGASSISTANTSERVICE-002",
+            "type": "SQL Injection",
+            "severity": "Critical",
+            "cvss_score": 4.1,
+            "cve": "CVE-2024-15009",
+            "package": "django-5.3.16",
+            "description": "Security Misconfiguration vulnerability in shoppingassistantservice",
+            "discovered_date": "2025-08-06T14:06:16.681341",
+            "status": "Mitigated",
+            "exploitability": "High",
+            "business_impact": "Critical",
+            "assigned_team": "Shoppingassistantservice Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-SHOPPINGASSISTANTSERVICE-003",
+            "type": "Server-Side Request Forgery (SSRF)",
+            "severity": "Critical",
+            "cvss_score": 8.9,
+            "cve": "CVE-2024-75192",
+            "package": "express-4.6.0",
+            "description": "Sensitive Data Exposure vulnerability in shoppingassistantservice",
+            "discovered_date": "2025-08-20T14:06:16.681348",
+            "status": "Mitigated",
+            "exploitability": "High",
+            "business_impact": "High",
+            "assigned_team": "Platform Team",
+            "sla_breach": false
+          },
+          {
+            "id": "VULN-SHOPPINGASSISTANTSERVICE-004",
+            "type": "SQL Injection",
+            "severity": "High",
+            "cvss_score": 4.8,
+            "cve": "CVE-2024-53771",
+            "package": "dotnet-5.6.10",
+            "description": "SQL Injection vulnerability in shoppingassistantservice",
+            "discovered_date": "2025-08-02T14:06:16.681355",
+            "status": "Mitigated",
+            "exploitability": "Low",
+            "business_impact": "Low",
+            "assigned_team": "DevOps Team",
+            "sla_breach": true
+          },
+          {
+            "id": "VULN-SHOPPINGASSISTANTSERVICE-005",
+            "type": "XML External Entities (XXE)",
+            "severity": "High",
+            "cvss_score": 4.9,
+            "cve": "CVE-2024-24095",
+            "package": "express-3.9.19",
+            "description": "Security Misconfiguration vulnerability in shoppingassistantservice",
+            "discovered_date": "2025-07-15T14:06:16.681362",
+            "status": "Mitigated",
+            "exploitability": "Low",
+            "business_impact": "Medium",
+            "assigned_team": "DevOps Team",
+            "sla_breach": true
+          }
+        ],
+        "open": 1,
+        "in_progress": 0,
+        "resolved_30d": 17
+      },
+      "exposure": {
+        "total_endpoints": 4,
+        "public_endpoints": 0,
+        "internal_endpoints": 1,
+        "exposed_secrets": 3,
+        "open_ports": 4,
+        "network_exposure": "Internet",
+        "trend_30d": [
+          12,
+          20,
+          10,
+          18,
+          15,
+          13,
+          13,
+          20,
+          5,
+          11,
+          6,
+          20,
+          8,
+          14,
+          9,
+          15,
+          8,
+          12,
+          20,
+          18,
+          15,
+          8,
+          8,
+          5,
+          12,
+          13,
+          6,
+          17,
+          18,
+          10
+        ]
+      },
+      "remediation": {
+        "breaches": 2,
+        "open_vulnerabilities": 16,
+        "in_progress": 13,
+        "resolved_30d": 35,
+        "mttr_hours": 187,
+        "assigned_teams": 3,
+        "overdue_count": 6,
+        "trend_30d": [
+          19,
+          5,
+          9,
+          28,
+          18,
+          7,
+          23,
+          25,
+          19,
+          13,
+          24,
+          9,
+          19,
+          19,
+          14,
+          20,
+          26,
+          30,
+          10,
+          25,
+          30,
+          6,
+          24,
+          24,
+          12,
+          11,
+          8,
+          21,
+          6,
+          8
+        ]
+      },
+      "compliance": {
+        "adherence_score": 77,
+        "applicable_frameworks": [
+          "GDPR",
+          "HIPAA"
+        ],
+        "policy_violations": 5,
+        "failed_controls": 6,
+        "last_audit_date": "2025-09-16T14:06:16.681417",
+        "next_audit_date": "2026-03-01T14:06:16.681418",
+        "control_status": {
+          "passed": 40,
+          "failed": 2,
+          "not_applicable": 15
+        }
+      },
+      "composition": {
+        "containers": 1,
+        "pods": 5,
+        "replicas": 4,
+        "dependencies": [
+          "productcatalogservice"
+        ],
+        "dependency_count": 1,
+        "language": "Python",
+        "frameworks": [
+          "gRPC",
+          "Flask",
+          "FastAPI"
+        ],
+        "deployment_type": "Cloud Run",
+        "resource_usage": {
+          "cpu": "62%",
+          "memory": "37%",
+          "disk": "66%"
+        }
+      },
+      "ai_insights": {
+        "insights": [
+          "Attack surface increased by 29% in the last 7 days",
+          "Remediation velocity decreased by 34% this month",
+          "Vulnerabilities likely to be exploited up 32% in 60 days"
+        ],
+        "recommendations": [
+          {
+            "text": "Implement rate limiting on exposed endpoints",
+            "priority": "Low",
+            "impact": "Critical",
+            "effort": "High"
+          },
+          {
+            "text": "Update grpc to version 5.3.17 to fix 14 vulnerabilities",
+            "priority": "High",
+            "impact": "Low",
+            "effort": "Medium"
+          }
+        ],
+        "risk_trend": "increasing",
+        "predicted_risk_30d": 100,
+        "confidence_score": 0.85
+      }
+    }
+  ]
+}

@@ -1,0 +1,686 @@
+{
+  "repository": {
+    "full_name": "ggkarthik/microservices-demo-app",
+    "description": "Sample cloud-first application with 10 microservices showcasing Kubernetes, Istio, and gRPC.",
+    "url": "https://github.com/ggkarthik/microservices-demo-app"
+  },
+  "services": {
+    "services": [
+      {
+        "name": "adservice",
+        "language": "Java",
+        "description": "Provides text ads based on given context words",
+        "dependencies": [
+          {
+            "name": "io.grpc:grpc-core",
+            "version": "1.54.0",
+            "license": "Apache-2.0"
+          },
+          {
+            "name": "io.grpc:grpc-protobuf",
+            "version": "1.54.0",
+            "license": "Apache-2.0"
+          },
+          {
+            "name": "com.google.protobuf:protobuf-java",
+            "version": "3.21.7",
+            "license": "BSD-3-Clause"
+          }
+        ],
+        "apis": []
+      },
+      {
+        "name": "cartservice",
+        "language": "C#",
+        "description": "Stores the items in the user's shopping cart in Redis",
+        "dependencies": [
+          {
+            "name": "Grpc.AspNetCore",
+            "version": "2.52.0",
+            "license": "Apache-2.0"
+          },
+          {
+            "name": "Grpc.Net.Client",
+            "version": "2.52.0",
+            "license": "Apache-2.0"
+          },
+          {
+            "name": "StackExchange.Redis",
+            "version": "2.6.104",
+            "license": "MIT"
+          },
+          {
+            "name": "Microsoft.Extensions.Caching",
+            "version": "7.0.0",
+            "license": "MIT"
+          }
+        ],
+        "apis": [
+          {
+            "path": "/hipstershop.CartService/AddItem",
+            "method": "gRPC",
+            "description": "Add item to cart"
+          },
+          {
+            "path": "/hipstershop.CartService/GetCart",
+            "method": "gRPC",
+            "description": "Get cart contents"
+          },
+          {
+            "path": "/hipstershop.CartService/EmptyCart",
+            "method": "gRPC",
+            "description": "Empty cart"
+          }
+        ]
+      },
+      {
+        "name": "checkoutservice",
+        "language": "Go",
+        "description": "Processes user purchases and coordinates with other services",
+        "dependencies": [
+          {
+            "name": "github.com/golang/protobuf",
+            "version": "v1.5.3",
+            "license": "BSD-3-Clause"
+          },
+          {
+            "name": "google.golang.org/grpc",
+            "version": "v1.54.0",
+            "license": "Apache-2.0"
+          }
+        ],
+        "apis": []
+      },
+      {
+        "name": "currencyservice",
+        "language": "Node.js",
+        "description": "Converts prices between different currencies",
+        "dependencies": [
+          {
+            "name": "@grpc/grpc-js",
+            "version": "^1.8.13",
+            "license": "Apache-2.0"
+          },
+          {
+            "name": "@grpc/proto-loader",
+            "version": "^0.7.6",
+            "license": "Apache-2.0"
+          }
+        ],
+        "apis": []
+      },
+      {
+        "name": "emailservice",
+        "language": "Python",
+        "description": "Sends order confirmation emails to users",
+        "dependencies": [
+          {
+            "name": "grpcio",
+            "version": "1.53.0",
+            "license": "Apache-2.0"
+          },
+          {
+            "name": "protobuf",
+            "version": "4.22.3",
+            "license": "BSD-3-Clause"
+          }
+        ],
+        "apis": []
+      },
+      {
+        "name": "frontend",
+        "language": "Go",
+        "description": "Exposes an HTTP server to serve the website",
+        "dependencies": [
+          {
+            "name": "github.com/golang/protobuf",
+            "version": "v1.5.3",
+            "license": "BSD-3-Clause"
+          },
+          {
+            "name": "google.golang.org/grpc",
+            "version": "v1.54.0",
+            "license": "Apache-2.0"
+          },
+          {
+            "name": "github.com/gorilla/mux",
+            "version": "v1.8.0",
+            "license": "BSD-3-Clause"
+          }
+        ],
+        "apis": [
+          {
+            "path": "/",
+            "method": "GET",
+            "description": "Home page"
+          },
+          {
+            "path": "/product/{id}",
+            "method": "GET",
+            "description": "Product detail page"
+          },
+          {
+            "path": "/cart",
+            "method": "GET",
+            "description": "Shopping cart page"
+          },
+          {
+            "path": "/cart/checkout",
+            "method": "POST",
+            "description": "Checkout endpoint"
+          }
+        ]
+      },
+      {
+        "name": "loadgenerator",
+        "language": "Python",
+        "description": "Continuously sends requests to the frontend service to simulate user traffic",
+        "dependencies": [
+          {
+            "name": "grpcio",
+            "version": "1.53.0",
+            "license": "Apache-2.0"
+          },
+          {
+            "name": "protobuf",
+            "version": "4.22.3",
+            "license": "BSD-3-Clause"
+          }
+        ],
+        "apis": []
+      },
+      {
+        "name": "paymentservice",
+        "language": "Node.js",
+        "description": "Processes payments for user orders",
+        "dependencies": [
+          {
+            "name": "@grpc/grpc-js",
+            "version": "^1.8.13",
+            "license": "Apache-2.0"
+          },
+          {
+            "name": "@grpc/proto-loader",
+            "version": "^0.7.6",
+            "license": "Apache-2.0"
+          }
+        ],
+        "apis": []
+      },
+      {
+        "name": "productcatalogservice",
+        "language": "Go",
+        "description": "Provides the list of products and search capabilities",
+        "dependencies": [
+          {
+            "name": "github.com/golang/protobuf",
+            "version": "v1.5.3",
+            "license": "BSD-3-Clause"
+          },
+          {
+            "name": "google.golang.org/grpc",
+            "version": "v1.54.0",
+            "license": "Apache-2.0"
+          }
+        ],
+        "apis": [
+          {
+            "path": "/hipstershop.ProductCatalogService/ListProducts",
+            "method": "gRPC",
+            "description": "Get all products"
+          },
+          {
+            "path": "/hipstershop.ProductCatalogService/GetProduct",
+            "method": "gRPC",
+            "description": "Get product by ID"
+          },
+          {
+            "path": "/hipstershop.ProductCatalogService/SearchProducts",
+            "method": "gRPC",
+            "description": "Search products"
+          }
+        ]
+      },
+      {
+        "name": "recommendationservice",
+        "language": "Python",
+        "description": "Recommends products based on user requests",
+        "dependencies": [
+          {
+            "name": "grpcio",
+            "version": "1.53.0",
+            "license": "Apache-2.0"
+          },
+          {
+            "name": "protobuf",
+            "version": "4.22.3",
+            "license": "BSD-3-Clause"
+          }
+        ],
+        "apis": []
+      },
+      {
+        "name": "shippingservice",
+        "language": "Go",
+        "description": "Calculates shipping costs for orders",
+        "dependencies": [
+          {
+            "name": "github.com/golang/protobuf",
+            "version": "v1.5.3",
+            "license": "BSD-3-Clause"
+          },
+          {
+            "name": "google.golang.org/grpc",
+            "version": "v1.54.0",
+            "license": "Apache-2.0"
+          }
+        ],
+        "apis": []
+      },
+      {
+        "name": "shoppingassistantservice",
+        "language": "Python",
+        "description": "AI assistant for product suggestions",
+        "dependencies": [
+          {
+            "name": "grpcio",
+            "version": "1.53.0",
+            "license": "Apache-2.0"
+          },
+          {
+            "name": "protobuf",
+            "version": "4.22.3",
+            "license": "BSD-3-Clause"
+          },
+          {
+            "name": "openai",
+            "version": "0.27.0",
+            "license": "MIT"
+          }
+        ],
+        "apis": []
+      }
+    ]
+  },
+  "technologies": {
+    "languages": {
+      "Java": 1,
+      "C#": 1,
+      "Go": 4,
+      "Node.js": 2,
+      "Python": 4
+    }
+  },
+  "dependencies": {
+    "total_count": 29,
+    "dependencies": [
+      {
+        "name": "io.grpc:grpc-core",
+        "version": "1.54.0",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "io.grpc:grpc-protobuf",
+        "version": "1.54.0",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "com.google.protobuf:protobuf-java",
+        "version": "3.21.7",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "Grpc.AspNetCore",
+        "version": "2.52.0",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "Grpc.Net.Client",
+        "version": "2.52.0",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "StackExchange.Redis",
+        "version": "2.6.104",
+        "license": "MIT"
+      },
+      {
+        "name": "Microsoft.Extensions.Caching",
+        "version": "7.0.0",
+        "license": "MIT"
+      },
+      {
+        "name": "github.com/golang/protobuf",
+        "version": "v1.5.3",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.54.0",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "@grpc/grpc-js",
+        "version": "^1.8.13",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "@grpc/proto-loader",
+        "version": "^0.7.6",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "grpcio",
+        "version": "1.53.0",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "protobuf",
+        "version": "4.22.3",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "github.com/golang/protobuf",
+        "version": "v1.5.3",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.54.0",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "github.com/gorilla/mux",
+        "version": "v1.8.0",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "grpcio",
+        "version": "1.53.0",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "protobuf",
+        "version": "4.22.3",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "@grpc/grpc-js",
+        "version": "^1.8.13",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "@grpc/proto-loader",
+        "version": "^0.7.6",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "github.com/golang/protobuf",
+        "version": "v1.5.3",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.54.0",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "grpcio",
+        "version": "1.53.0",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "protobuf",
+        "version": "4.22.3",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "github.com/golang/protobuf",
+        "version": "v1.5.3",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.54.0",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "grpcio",
+        "version": "1.53.0",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "protobuf",
+        "version": "4.22.3",
+        "license": "BSD-3-Clause"
+      },
+      {
+        "name": "openai",
+        "version": "0.27.0",
+        "license": "MIT"
+      }
+    ]
+  },
+  "apis": {
+    "endpoints": [
+      {
+        "path": "/hipstershop.CartService/AddItem",
+        "method": "gRPC",
+        "description": "Add item to cart"
+      },
+      {
+        "path": "/hipstershop.CartService/GetCart",
+        "method": "gRPC",
+        "description": "Get cart contents"
+      },
+      {
+        "path": "/hipstershop.CartService/EmptyCart",
+        "method": "gRPC",
+        "description": "Empty cart"
+      },
+      {
+        "path": "/",
+        "method": "GET",
+        "description": "Home page"
+      },
+      {
+        "path": "/product/{id}",
+        "method": "GET",
+        "description": "Product detail page"
+      },
+      {
+        "path": "/cart",
+        "method": "GET",
+        "description": "Shopping cart page"
+      },
+      {
+        "path": "/cart/checkout",
+        "method": "POST",
+        "description": "Checkout endpoint"
+      },
+      {
+        "path": "/hipstershop.ProductCatalogService/ListProducts",
+        "method": "gRPC",
+        "description": "Get all products"
+      },
+      {
+        "path": "/hipstershop.ProductCatalogService/GetProduct",
+        "method": "gRPC",
+        "description": "Get product by ID"
+      },
+      {
+        "path": "/hipstershop.ProductCatalogService/SearchProducts",
+        "method": "gRPC",
+        "description": "Search products"
+      }
+    ]
+  },
+  "infrastructure": {
+    "pipelines": [
+      {
+        "name": "terraform-validate-ci",
+        "type": "github-actions",
+        "path": ".github/workflows/terraform-validate-ci.yaml",
+        "status": "active"
+      },
+      {
+        "name": "helm-chart-ci",
+        "type": "github-actions",
+        "path": ".github/workflows/helm-chart-ci.yaml",
+        "status": "active"
+      },
+      {
+        "name": "ci-pipeline",
+        "type": "github-actions",
+        "path": ".github/workflows/ci-pipeline.yml",
+        "status": "active"
+      },
+      {
+        "name": "kustomize-build-ci",
+        "type": "github-actions",
+        "path": ".github/workflows/kustomize-build-ci.yaml",
+        "status": "active"
+      },
+      {
+        "name": "security-scan",
+        "type": "github-actions",
+        "path": ".github/workflows/security-scan.yml",
+        "status": "active"
+      },
+      {
+        "name": "kubevious-manifests-ci",
+        "type": "github-actions",
+        "path": ".github/workflows/kubevious-manifests-ci.yaml",
+        "status": "active"
+      },
+      {
+        "name": "build-publish",
+        "type": "github-actions",
+        "path": ".github/workflows/build-publish.yml",
+        "status": "active"
+      }
+    ],
+    "artifacts": [
+      {
+        "name": "adservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/adservice"
+      },
+      {
+        "name": "shoppingassistantservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/shoppingassistantservice"
+      },
+      {
+        "name": "frontend",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/frontend"
+      },
+      {
+        "name": "src",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/src"
+      },
+      {
+        "name": "loadgenerator",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/loadgenerator"
+      },
+      {
+        "name": "productcatalogservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/productcatalogservice"
+      },
+      {
+        "name": "paymentservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/paymentservice"
+      },
+      {
+        "name": "checkoutservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/checkoutservice"
+      },
+      {
+        "name": "emailservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/emailservice"
+      },
+      {
+        "name": "currencyservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/currencyservice"
+      },
+      {
+        "name": "shippingservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/shippingservice"
+      },
+      {
+        "name": "recommendationservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/recommendationservice"
+      }
+    ],
+    "infrastructure": [
+      {
+        "type": "kubernetes",
+        "resources": [
+          "Deployment",
+          "Service",
+          "ServiceAccount",
+          "Kustomization"
+        ],
+        "providers": [
+          "GKE"
+        ],
+        "environments": [
+          "dev",
+          "prod"
+        ]
+      },
+      {
+        "type": "terraform",
+        "resources": [
+          "VPC",
+          "Subnet",
+          "Cluster"
+        ],
+        "providers": [
+          "Google Cloud"
+        ],
+        "environments": [
+          "dev",
+          "prod"
+        ]
+      },
+      {
+        "type": "helm",
+        "resources": [
+          "Charts"
+        ],
+        "providers": [
+          "Kubernetes"
+        ],
+        "environments": [
+          "dev",
+          "prod"
+        ]
+      },
+      {
+        "type": "redis",
+        "resources": [
+          "Cache"
+        ],
+        "providers": [
+          "Redis"
+        ],
+        "environments": [
+          "dev",
+          "prod"
+        ]
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-09-22T21:00:01.418146"
+}

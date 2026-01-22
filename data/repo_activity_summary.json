@@ -1,0 +1,346 @@
+{
+  "repository": {
+    "owner": "GoogleCloudPlatform",
+    "name": "microservices-demo",
+    "full_name": "GoogleCloudPlatform/microservices-demo"
+  },
+  "summary": {
+    "total_pull_requests": 3070,
+    "total_commits": 5432,
+    "latest_pr_count": 5,
+    "latest_pr_commits": 11
+  },
+  "pull_requests": {
+    "count": 5,
+    "details": [
+      {
+        "number": 3001,
+        "title": "Fix bug in checkout service",
+        "state": "closed",
+        "created_at": "2025-08-21T19:58:02.456106",
+        "updated_at": "2025-09-01T19:58:02.456111",
+        "closed_at": "2025-08-31T19:58:02.456113",
+        "merged_at": "2025-08-29T19:58:02.456115",
+        "user": {
+          "login": "developer3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/34567",
+          "html_url": "https://github.com/developer3"
+        },
+        "html_url": "https://github.com/GoogleCloudPlatform/microservices-demo/pull/3001",
+        "body": "This PR fix bug in checkout service.",
+        "commits": [
+          {
+            "sha": "abc123def45610",
+            "message": "Fix bug in checkout service",
+            "author": {
+              "name": "developer3",
+              "email": "developer3@example.com",
+              "date": "2025-08-21T19:58:02.456106"
+            },
+            "committer": {
+              "name": "developer3",
+              "email": "developer3@example.com",
+              "date": "2025-08-21T19:58:02.456106"
+            }
+          }
+        ],
+        "files": [
+          {
+            "filename": "skaffold.yaml",
+            "status": "added",
+            "additions": 22,
+            "deletions": 48,
+            "changes": 117
+          }
+        ],
+        "commit_count": 1,
+        "file_count": 1
+      },
+      {
+        "number": 3002,
+        "title": "Add unit tests",
+        "state": "closed",
+        "created_at": "2025-08-22T19:58:02.456124",
+        "updated_at": "2025-08-30T19:58:02.456126",
+        "closed_at": "2025-08-28T19:58:02.456127",
+        "merged_at": "2025-09-06T19:58:02.456128",
+        "user": {
+          "login": "developer2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/23456",
+          "html_url": "https://github.com/developer2"
+        },
+        "html_url": "https://github.com/GoogleCloudPlatform/microservices-demo/pull/3002",
+        "body": "This PR add unit tests.",
+        "commits": [
+          {
+            "sha": "abc123def45620",
+            "message": "Add unit tests",
+            "author": {
+              "name": "developer2",
+              "email": "developer2@example.com",
+              "date": "2025-08-22T19:58:02.456124"
+            },
+            "committer": {
+              "name": "developer2",
+              "email": "developer2@example.com",
+              "date": "2025-08-22T19:58:02.456124"
+            }
+          }
+        ],
+        "files": [
+          {
+            "filename": "package.json",
+            "status": "removed",
+            "additions": 62,
+            "deletions": 45,
+            "changes": 107
+          },
+          {
+            "filename": "src/currencyservice/server.js",
+            "status": "added",
+            "additions": 19,
+            "deletions": 44,
+            "changes": 69
+          },
+          {
+            "filename": "skaffold.yaml",
+            "status": "removed",
+            "additions": 20,
+            "deletions": 37,
+            "changes": 99
+          }
+        ],
+        "commit_count": 1,
+        "file_count": 3
+      },
+      {
+        "number": 3003,
+        "title": "Update dependencies to v3.2.27",
+        "state": "open",
+        "created_at": "2025-09-02T19:58:02.456139",
+        "updated_at": "2025-08-28T19:58:02.456140",
+        "closed_at": null,
+        "merged_at": null,
+        "user": {
+          "login": "googlebot",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19935",
+          "html_url": "https://github.com/googlebot"
+        },
+        "html_url": "https://github.com/GoogleCloudPlatform/microservices-demo/pull/3003",
+        "body": "This PR update dependencies to v3.2.27.",
+        "commits": [
+          {
+            "sha": "abc123def45630",
+            "message": "Update dependencies to v3.2.27",
+            "author": {
+              "name": "googlebot",
+              "email": "googlebot@example.com",
+              "date": "2025-09-02T19:58:02.456139"
+            },
+            "committer": {
+              "name": "googlebot",
+              "email": "googlebot@example.com",
+              "date": "2025-09-02T19:58:02.456139"
+            }
+          },
+          {
+            "sha": "abc123def45631",
+            "message": "Fix review comments for Update dependencies to v3.2.27",
+            "author": {
+              "name": "googlebot",
+              "email": "googlebot@example.com",
+              "date": "2025-09-02T19:58:02.456139"
+            },
+            "committer": {
+              "name": "googlebot",
+              "email": "googlebot@example.com",
+              "date": "2025-09-02T19:58:02.456139"
+            }
+          },
+          {
+            "sha": "abc123def45632",
+            "message": "Fix review comments for Update dependencies to v3.2.27",
+            "author": {
+              "name": "googlebot",
+              "email": "googlebot@example.com",
+              "date": "2025-09-02T19:58:02.456139"
+            },
+            "committer": {
+              "name": "googlebot",
+              "email": "googlebot@example.com",
+              "date": "2025-09-02T19:58:02.456139"
+            }
+          }
+        ],
+        "files": [
+          {
+            "filename": "README.md",
+            "status": "added",
+            "additions": 41,
+            "deletions": 32,
+            "changes": 128
+          }
+        ],
+        "commit_count": 3,
+        "file_count": 1
+      },
+      {
+        "number": 3004,
+        "title": "Fix security vulnerability",
+        "state": "open",
+        "created_at": "2025-09-04T19:58:02.456149",
+        "updated_at": "2025-08-27T19:58:02.456151",
+        "closed_at": null,
+        "merged_at": null,
+        "user": {
+          "login": "dependabot",
+          "avatar_url": "https://avatars.githubusercontent.com/u/27347476",
+          "html_url": "https://github.com/dependabot"
+        },
+        "html_url": "https://github.com/GoogleCloudPlatform/microservices-demo/pull/3004",
+        "body": "This PR fix security vulnerability.",
+        "commits": [
+          {
+            "sha": "abc123def45640",
+            "message": "Fix security vulnerability",
+            "author": {
+              "name": "dependabot",
+              "email": "dependabot@example.com",
+              "date": "2025-09-04T19:58:02.456149"
+            },
+            "committer": {
+              "name": "dependabot",
+              "email": "dependabot@example.com",
+              "date": "2025-09-04T19:58:02.456149"
+            }
+          },
+          {
+            "sha": "abc123def45641",
+            "message": "Fix review comments for Fix security vulnerability",
+            "author": {
+              "name": "dependabot",
+              "email": "dependabot@example.com",
+              "date": "2025-09-04T19:58:02.456149"
+            },
+            "committer": {
+              "name": "dependabot",
+              "email": "dependabot@example.com",
+              "date": "2025-09-04T19:58:02.456149"
+            }
+          },
+          {
+            "sha": "abc123def45642",
+            "message": "Fix review comments for Fix security vulnerability",
+            "author": {
+              "name": "dependabot",
+              "email": "dependabot@example.com",
+              "date": "2025-09-04T19:58:02.456149"
+            },
+            "committer": {
+              "name": "dependabot",
+              "email": "dependabot@example.com",
+              "date": "2025-09-04T19:58:02.456149"
+            }
+          }
+        ],
+        "files": [
+          {
+            "filename": "src/checkoutservice/main.go",
+            "status": "removed",
+            "additions": 97,
+            "deletions": 2,
+            "changes": 23
+          },
+          {
+            "filename": "docker-compose.yaml",
+            "status": "added",
+            "additions": 35,
+            "deletions": 25,
+            "changes": 76
+          },
+          {
+            "filename": "src/recommendationservice/recommendation_server.py",
+            "status": "removed",
+            "additions": 4,
+            "deletions": 18,
+            "changes": 44
+          }
+        ],
+        "commit_count": 3,
+        "file_count": 3
+      },
+      {
+        "number": 3005,
+        "title": "Fix typo in README",
+        "state": "closed",
+        "created_at": "2025-08-29T19:58:02.456161",
+        "updated_at": "2025-09-03T19:58:02.456163",
+        "closed_at": "2025-08-29T19:58:02.456164",
+        "merged_at": "2025-09-04T19:58:02.456166",
+        "user": {
+          "login": "renovate-bot",
+          "avatar_url": "https://avatars.githubusercontent.com/u/25180681",
+          "html_url": "https://github.com/renovate-bot"
+        },
+        "html_url": "https://github.com/GoogleCloudPlatform/microservices-demo/pull/3005",
+        "body": "This PR fix typo in readme.",
+        "commits": [
+          {
+            "sha": "abc123def45650",
+            "message": "Fix typo in README",
+            "author": {
+              "name": "renovate-bot",
+              "email": "renovate-bot@example.com",
+              "date": "2025-08-29T19:58:02.456161"
+            },
+            "committer": {
+              "name": "renovate-bot",
+              "email": "renovate-bot@example.com",
+              "date": "2025-08-29T19:58:02.456161"
+            }
+          },
+          {
+            "sha": "abc123def45651",
+            "message": "Fix review comments for Fix typo in README",
+            "author": {
+              "name": "renovate-bot",
+              "email": "renovate-bot@example.com",
+              "date": "2025-08-29T19:58:02.456161"
+            },
+            "committer": {
+              "name": "renovate-bot",
+              "email": "renovate-bot@example.com",
+              "date": "2025-08-29T19:58:02.456161"
+            }
+          },
+          {
+            "sha": "abc123def45652",
+            "message": "Fix review comments for Fix typo in README",
+            "author": {
+              "name": "renovate-bot",
+              "email": "renovate-bot@example.com",
+              "date": "2025-08-29T19:58:02.456161"
+            },
+            "committer": {
+              "name": "renovate-bot",
+              "email": "renovate-bot@example.com",
+              "date": "2025-08-29T19:58:02.456161"
+            }
+          }
+        ],
+        "files": [
+          {
+            "filename": "package.json",
+            "status": "added",
+            "additions": 83,
+            "deletions": 47,
+            "changes": 86
+          }
+        ],
+        "commit_count": 3,
+        "file_count": 1
+      }
+    ]
+  },
+  "timestamp": "2025-09-06T19:58:02.456173"
+}

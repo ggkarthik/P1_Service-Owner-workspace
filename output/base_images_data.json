@@ -1,0 +1,495 @@
+{
+  "images": [
+    {
+      "name": "adservice",
+      "baseImage": "eclipse-temurin:21.0.5_11-jdk",
+      "layers": [
+        {
+          "type": "COPY",
+          "command": "[\"build.gradle\", \"gradlew\", \"./\"]",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "gradle gradle",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "chmod +x gradlew",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "./gradlew downloadRepos",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": ". .",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "chmod +x gradlew",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "./gradlew installDist",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "mkdir -p /opt/cprof && \\\n#     wget -q -O- https://storage.googleapis.com/cloud-profiler/java/latest/profiler_java_agent_alpine.tar.gz \\\n#     | tar xzv -C /opt/cprof && \\\n#     rm -rf profiler_java_agent.tar.gz",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /app .",
+          "size_estimate": "varies"
+        }
+      ],
+      "packages": [],
+      "size_estimate": "110MB"
+    },
+    {
+      "name": "shoppingassistantservice",
+      "baseImage": "python:3.12.8-slim",
+      "layers": [
+        {
+          "type": "RUN",
+          "command": "apt-get -qq update \\\n    && apt-get install -y --no-install-recommends g++ \\\n    && rm -rf /var/lib/apt/lists/*\n\n# get packages",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "requirements.txt .",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "pip install -r requirements.txt",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /usr/local/lib/python3.12/ /usr/local/lib/python3.12/\n\n# Add the application",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": ". .\n\n# set listen port",
+          "size_estimate": "varies"
+        }
+      ],
+      "packages": [
+        "requirements.txt",
+        "\\",
+        "g++"
+      ],
+      "size_estimate": "70MB"
+    },
+    {
+      "name": "frontend",
+      "baseImage": "golang:1.23.4-alpine",
+      "layers": [
+        {
+          "type": "COPY",
+          "command": "go.mod go.sum ./",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "go mod download",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": ". .\n\n# Skaffold passes in debug-oriented compiler flags",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "GOOS=${TARGETOS} GOARCH=${TARGETARCH} CGO_ENABLED=0 go build -gcflags=\"${SKAFFOLD_GO_GCFLAGS}\" -o /go/bin/frontend .",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /go/bin/frontend /src/server",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "./templates ./templates",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "./static ./static\n\n# Definition of this variable is used by 'skaffold debug' to identify a golang binary.\n# Default behavior - a failure prints a stack trace for the current goroutine.\n# See https://golang.org/pkg/runtime/",
+          "size_estimate": "varies"
+        }
+      ],
+      "packages": [],
+      "size_estimate": "90MB"
+    },
+    {
+      "name": "src",
+      "baseImage": "mcr.microsoft.com/dotnet/sdk:9.0.101-noble",
+      "layers": [
+        {
+          "type": "COPY",
+          "command": "cartservice.csproj .",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "dotnet restore cartservice.csproj \\\n    -a $TARGETARCH",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": ". .",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "dotnet publish cartservice.csproj \\\n    -p:PublishSingleFile=true \\\n    -a $TARGETARCH \\\n    --self-contained true \\\n    -p:PublishTrimmed=true \\\n    -p:TrimMode=full \\\n    -c release \\\n    -o /cartservice\n\n# https://mcr.microsoft.com/product/dotnet/runtime-deps",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /cartservice .",
+          "size_estimate": "varies"
+        }
+      ],
+      "packages": [],
+      "size_estimate": "70MB"
+    },
+    {
+      "name": "loadgenerator",
+      "baseImage": "python:3.12.8-alpine",
+      "layers": [
+        {
+          "type": "RUN",
+          "command": "apk update \\\n    && apk add --no-cache wget g++ linux-headers \\\n    && rm -rf /var/cache/apk/*",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "requirements.txt .",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "pip install --prefix=\"/install\" -r requirements.txt",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "apk update \\\n    && apk add --no-cache libstdc++ \\\n    && rm -rf /var/cache/apk/*",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /install /usr/local\n\n# Add application code.",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "locustfile.py .\n\n# enable gevent support in debugger",
+          "size_estimate": "varies"
+        }
+      ],
+      "packages": [
+        "requirements.txt"
+      ],
+      "size_estimate": "80MB"
+    },
+    {
+      "name": "productcatalogservice",
+      "baseImage": "golang:1.23.4-alpine",
+      "layers": [
+        {
+          "type": "COPY",
+          "command": "go.mod go.sum ./",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "go mod download",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": ". .\n\n# Skaffold passes in debug-oriented compiler flags",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "GOOS=${TARGETOS} GOARCH=${TARGETARCH} CGO_ENABLED=0 go build -gcflags=\"${SKAFFOLD_GO_GCFLAGS}\" -o /productcatalogservice .",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /productcatalogservice ./server",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "products.json .\n\n# Definition of this variable is used by 'skaffold debug' to identify a golang binary.\n# Default behavior - a failure prints a stack trace for the current goroutine.\n# See https://golang.org/pkg/runtime/",
+          "size_estimate": "varies"
+        }
+      ],
+      "packages": [],
+      "size_estimate": "90MB"
+    },
+    {
+      "name": "paymentservice",
+      "baseImage": "node:20.18.1-alpine",
+      "layers": [
+        {
+          "type": "RUN",
+          "command": "apk add --update --no-cache \\\n    python3 \\\n    make \\\n    g++",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "package*.json ./",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "npm install --only=production",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "apk add --no-cache nodejs",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /usr/src/app/node_modules ./node_modules",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": ". .",
+          "size_estimate": "varies"
+        }
+      ],
+      "packages": [],
+      "size_estimate": "80MB"
+    },
+    {
+      "name": "checkoutservice",
+      "baseImage": "golang:1.23.4-alpine",
+      "layers": [
+        {
+          "type": "COPY",
+          "command": "go.mod go.sum ./",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "go mod download",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": ". .\n\n# Skaffold passes in debug-oriented compiler flags",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "GOOS=${TARGETOS} GOARCH=${TARGETARCH} CGO_ENABLED=0 go build -gcflags=\"${SKAFFOLD_GO_GCFLAGS}\" -o /checkoutservice .",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /checkoutservice /src/checkoutservice\n\n# Definition of this variable is used by 'skaffold debug' to identify a golang binary.\n# Default behavior - a failure prints a stack trace for the current goroutine.\n# See https://golang.org/pkg/runtime/",
+          "size_estimate": "varies"
+        }
+      ],
+      "packages": [],
+      "size_estimate": "70MB"
+    },
+    {
+      "name": "emailservice",
+      "baseImage": "python:3.12.8-alpine",
+      "layers": [
+        {
+          "type": "RUN",
+          "command": "apk update \\\n    && apk add --no-cache g++ linux-headers \\\n    && rm -rf /var/cache/apk/*\n\n# get packages",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "requirements.txt .",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "pip install -r requirements.txt",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "apk update \\\n    && apk add --no-cache libstdc++ \\\n    && rm -rf /var/cache/apk/*",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /usr/local/lib/python3.12/ /usr/local/lib/python3.12/\n\n# Add the application",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": ". .",
+          "size_estimate": "varies"
+        }
+      ],
+      "packages": [
+        "requirements.txt"
+      ],
+      "size_estimate": "80MB"
+    },
+    {
+      "name": "currencyservice",
+      "baseImage": "node:20.18.1-alpine",
+      "layers": [
+        {
+          "type": "RUN",
+          "command": "apk add --update --no-cache \\\n    python3 \\\n    make \\\n    g++",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "package*.json ./",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "npm install --only=production",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "apk add --no-cache nodejs",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /usr/src/app/node_modules ./node_modules",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": ". .",
+          "size_estimate": "varies"
+        }
+      ],
+      "packages": [],
+      "size_estimate": "80MB"
+    },
+    {
+      "name": "shippingservice",
+      "baseImage": "golang:1.23.4-alpine",
+      "layers": [
+        {
+          "type": "COPY",
+          "command": "go.mod go.sum ./",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "go mod download",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": ". .\n\n# Skaffold passes in debug-oriented compiler flags",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "GOOS=${TARGETOS} GOARCH=${TARGETARCH} CGO_ENABLED=0 go build -gcflags=\"${SKAFFOLD_GO_GCFLAGS}\" -o /go/bin/shippingservice .",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /go/bin/shippingservice /src/shippingservice",
+          "size_estimate": "varies"
+        }
+      ],
+      "packages": [],
+      "size_estimate": "70MB"
+    },
+    {
+      "name": "recommendationservice",
+      "baseImage": "python:3.12.8-alpine",
+      "layers": [
+        {
+          "type": "RUN",
+          "command": "apk update \\\n    && apk add --no-cache g++ linux-headers \\\n    && rm -rf /var/cache/apk/*\n\n# get packages",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "requirements.txt .",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "pip install -r requirements.txt",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "RUN",
+          "command": "apk update \\\n    && apk add --no-cache libstdc++ \\\n    && rm -rf /var/cache/apk/*\n\n# get packages",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": "--from=builder /usr/local/lib/python3.12/ /usr/local/lib/python3.12/\n\n# Add the application",
+          "size_estimate": "varies"
+        },
+        {
+          "type": "COPY",
+          "command": ". .\n\n# set listen port",
+          "size_estimate": "varies"
+        }
+      ],
+      "packages": [
+        "requirements.txt"
+      ],
+      "size_estimate": "80MB"
+    }
+  ],
+  "baseImageInsights": {
+    "eclipse-temurin:21.0.5_11-jdk": {
+      "vulnerabilities": []
+    },
+    "python:3.12.8-slim": {
+      "vulnerabilities": []
+    },
+    "golang:1.23.4-alpine": {
+      "vulnerabilities": []
+    },
+    "mcr.microsoft.com/dotnet/sdk:9.0.101-noble": {
+      "vulnerabilities": []
+    },
+    "python:3.12.8-alpine": {
+      "vulnerabilities": []
+    },
+    "node:20.18.1-alpine": {
+      "vulnerabilities": []
+    }
+  }
+}

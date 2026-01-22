@@ -1,0 +1,283 @@
+{
+  "repository": {
+    "owner": "GoogleCloudPlatform",
+    "name": "microservices-demo",
+    "full_name": "GoogleCloudPlatform/microservices-demo"
+  },
+  "summary": {
+    "total_pull_requests": 3070,
+    "total_commits": 5432,
+    "latest_pr_count": 5,
+    "latest_pr_commits": 7
+  },
+  "pull_requests": {
+    "count": 5,
+    "details": [
+      {
+        "number": 3001,
+        "title": "Add new feature to frontend",
+        "state": "open",
+        "created_at": "2025-09-17T19:58:12.955303",
+        "updated_at": "2025-09-15T19:58:12.955307",
+        "closed_at": null,
+        "merged_at": null,
+        "user": {
+          "login": "developer3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/34567",
+          "html_url": "https://github.com/developer3"
+        },
+        "html_url": "https://github.com/GoogleCloudPlatform/microservices-demo/pull/3001",
+        "body": "This PR add new feature to frontend.",
+        "commits": [
+          {
+            "sha": "abc123def45610",
+            "message": "Add new feature to frontend",
+            "author": {
+              "name": "developer3",
+              "email": "developer3@example.com",
+              "date": "2025-09-17T19:58:12.955303"
+            },
+            "committer": {
+              "name": "developer3",
+              "email": "developer3@example.com",
+              "date": "2025-09-17T19:58:12.955303"
+            }
+          },
+          {
+            "sha": "abc123def45611",
+            "message": "Fix review comments for Add new feature to frontend",
+            "author": {
+              "name": "developer3",
+              "email": "developer3@example.com",
+              "date": "2025-09-17T19:58:12.955303"
+            },
+            "committer": {
+              "name": "developer3",
+              "email": "developer3@example.com",
+              "date": "2025-09-17T19:58:12.955303"
+            }
+          },
+          {
+            "sha": "abc123def45612",
+            "message": "Fix review comments for Add new feature to frontend",
+            "author": {
+              "name": "developer3",
+              "email": "developer3@example.com",
+              "date": "2025-09-17T19:58:12.955303"
+            },
+            "committer": {
+              "name": "developer3",
+              "email": "developer3@example.com",
+              "date": "2025-09-17T19:58:12.955303"
+            }
+          }
+        ],
+        "files": [
+          {
+            "filename": "src/frontend/main.go",
+            "status": "removed",
+            "additions": 55,
+            "deletions": 11,
+            "changes": 131
+          }
+        ],
+        "commit_count": 3,
+        "file_count": 1
+      },
+      {
+        "number": 3002,
+        "title": "Refactor code",
+        "state": "open",
+        "created_at": "2025-09-13T19:58:12.955318",
+        "updated_at": "2025-09-17T19:58:12.955320",
+        "closed_at": null,
+        "merged_at": null,
+        "user": {
+          "login": "developer2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/23456",
+          "html_url": "https://github.com/developer2"
+        },
+        "html_url": "https://github.com/GoogleCloudPlatform/microservices-demo/pull/3002",
+        "body": "This PR refactor code.",
+        "commits": [
+          {
+            "sha": "abc123def45620",
+            "message": "Refactor code",
+            "author": {
+              "name": "developer2",
+              "email": "developer2@example.com",
+              "date": "2025-09-13T19:58:12.955318"
+            },
+            "committer": {
+              "name": "developer2",
+              "email": "developer2@example.com",
+              "date": "2025-09-13T19:58:12.955318"
+            }
+          }
+        ],
+        "files": [
+          {
+            "filename": "src/currencyservice/server.js",
+            "status": "added",
+            "additions": 97,
+            "deletions": 17,
+            "changes": 32
+          },
+          {
+            "filename": "src/currencyservice/server.js",
+            "status": "removed",
+            "additions": 63,
+            "deletions": 27,
+            "changes": 94
+          }
+        ],
+        "commit_count": 1,
+        "file_count": 2
+      },
+      {
+        "number": 3003,
+        "title": "Add unit tests",
+        "state": "closed",
+        "created_at": "2025-09-11T19:58:12.955329",
+        "updated_at": "2025-09-23T19:58:12.955330",
+        "closed_at": "2025-09-16T19:58:12.955332",
+        "merged_at": null,
+        "user": {
+          "login": "googlebot",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19935",
+          "html_url": "https://github.com/googlebot"
+        },
+        "html_url": "https://github.com/GoogleCloudPlatform/microservices-demo/pull/3003",
+        "body": "This PR add unit tests.",
+        "commits": [
+          {
+            "sha": "abc123def45630",
+            "message": "Add unit tests",
+            "author": {
+              "name": "googlebot",
+              "email": "googlebot@example.com",
+              "date": "2025-09-11T19:58:12.955329"
+            },
+            "committer": {
+              "name": "googlebot",
+              "email": "googlebot@example.com",
+              "date": "2025-09-11T19:58:12.955329"
+            }
+          }
+        ],
+        "files": [
+          {
+            "filename": "src/productcatalogservice/server.go",
+            "status": "modified",
+            "additions": 31,
+            "deletions": 47,
+            "changes": 130
+          }
+        ],
+        "commit_count": 1,
+        "file_count": 1
+      },
+      {
+        "number": 3004,
+        "title": "Refactor code",
+        "state": "open",
+        "created_at": "2025-09-10T19:58:12.955338",
+        "updated_at": "2025-09-17T19:58:12.955340",
+        "closed_at": null,
+        "merged_at": null,
+        "user": {
+          "login": "developer2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/23456",
+          "html_url": "https://github.com/developer2"
+        },
+        "html_url": "https://github.com/GoogleCloudPlatform/microservices-demo/pull/3004",
+        "body": "This PR refactor code.",
+        "commits": [
+          {
+            "sha": "abc123def45640",
+            "message": "Refactor code",
+            "author": {
+              "name": "developer2",
+              "email": "developer2@example.com",
+              "date": "2025-09-10T19:58:12.955338"
+            },
+            "committer": {
+              "name": "developer2",
+              "email": "developer2@example.com",
+              "date": "2025-09-10T19:58:12.955338"
+            }
+          }
+        ],
+        "files": [
+          {
+            "filename": "src/cartservice/src/CartService.cs",
+            "status": "modified",
+            "additions": 92,
+            "deletions": 44,
+            "changes": 102
+          },
+          {
+            "filename": "package.json",
+            "status": "added",
+            "additions": 96,
+            "deletions": 46,
+            "changes": 145
+          },
+          {
+            "filename": "requirements.txt",
+            "status": "added",
+            "additions": 22,
+            "deletions": 39,
+            "changes": 147
+          }
+        ],
+        "commit_count": 1,
+        "file_count": 3
+      },
+      {
+        "number": 3005,
+        "title": "Fix bug in checkout service",
+        "state": "closed",
+        "created_at": "2025-09-07T19:58:12.955350",
+        "updated_at": "2025-09-17T19:58:12.955352",
+        "closed_at": "2025-09-19T19:58:12.955353",
+        "merged_at": "2025-09-17T19:58:12.955355",
+        "user": {
+          "login": "developer2",
+          "avatar_url": "https://avatars.githubusercontent.com/u/23456",
+          "html_url": "https://github.com/developer2"
+        },
+        "html_url": "https://github.com/GoogleCloudPlatform/microservices-demo/pull/3005",
+        "body": "This PR fix bug in checkout service.",
+        "commits": [
+          {
+            "sha": "abc123def45650",
+            "message": "Fix bug in checkout service",
+            "author": {
+              "name": "developer2",
+              "email": "developer2@example.com",
+              "date": "2025-09-07T19:58:12.955350"
+            },
+            "committer": {
+              "name": "developer2",
+              "email": "developer2@example.com",
+              "date": "2025-09-07T19:58:12.955350"
+            }
+          }
+        ],
+        "files": [
+          {
+            "filename": "package.json",
+            "status": "removed",
+            "additions": 69,
+            "deletions": 4,
+            "changes": 85
+          }
+        ],
+        "commit_count": 1,
+        "file_count": 1
+      }
+    ]
+  },
+  "timestamp": "2025-09-24T19:58:12.955363"
+}

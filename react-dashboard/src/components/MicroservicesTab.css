@@ -1,0 +1,310 @@
+/* MicroservicesTab Styles */
+
+/* Inventory Cards */
+.inventory-card {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.inventory-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.inventory-card h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Service Tree Structure */
+.service-tree-container {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.service-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-tree-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.service-tree-node.root > .service-tree-content {
+  background-color: #343a40;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.service-tree-content {
+  padding: 8px 15px;
+  border-radius: 6px;
+  background-color: #e9ecef;
+  margin-bottom: 10px;
+  min-width: 150px;
+  text-align: center;
+  border: 1px solid #dee2e6;
+}
+
+.service-tree-content.go {
+  background-color: #00ADD8;
+  color: white;
+}
+
+.service-tree-content.c\# {
+  background-color: #512BD4;
+  color: white;
+}
+
+.service-tree-content.node\.js {
+  background-color: #339933;
+  color: white;
+}
+
+.service-tree-content.python {
+  background-color: #3776AB;
+  color: white;
+}
+
+.service-tree-content.python-locust {
+  background-color: #3776AB;
+  color: white;
+}
+
+.service-tree-content.java {
+  background-color: #007396;
+  color: white;
+}
+
+.service-tree-content.dependency {
+  background-color: #f8f9fa;
+  border: 1px dashed #adb5bd;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.service-tree-node.selected-service-node > .service-tree-content {
+  min-width: 250px;
+  padding: 12px 15px;
+}
+
+.service-metrics-summary {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 8px;
+  font-size: 0.85rem;
+}
+
+.service-tree-content.dependency-group,
+.service-tree-content.framework-group,
+.service-tree-content.database-group {
+  background-color: #f0f0f0;
+  border: 1px solid #dee2e6;
+  color: #343a40;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.service-tree-content.framework {
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  color: #0050b3;
+  font-size: 0.9rem;
+}
+
+.service-tree-content.database {
+  background-color: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #135200;
+  font-size: 0.9rem;
+}
+
+.dependency-list,
+.framework-list,
+.database-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.dependency-group-title,
+.framework-group-title,
+.database-group-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-tree-children {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.service-card {
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.service-card.selected-service {
+  border-color: #667eea;
+  border-width: 2px;
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  position: relative;
+}
+
+.service-card.selected-service::before {
+  content: '✓';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 25px;
+  height: 25px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  padding: 12px 15px;
+}
+
+.service-language {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: #e9ecef;
+  color: #495057;
+  font-weight: 600;
+}
+
+.service-language.Go {
+  background: #00ADD8;
+  color: white;
+}
+
+.service-language.C {
+  background: #9B4F96;
+  color: white;
+}
+
+.service-language.Python {
+  background: #3776AB;
+  color: white;
+}
+
+.service-language.Nodejs {
+  background: #339933;
+  color: white;
+}
+
+.service-language.Java {
+  background: #007396;
+  color: white;
+}
+
+.risk-badge {
+  margin-left: 8px;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+/* Service Owner Dashboard Button */
+.service-owner-btn {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #667eea;
+  background: white;
+  color: #667eea;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.service-owner-btn:hover {
+  background: #667eea;
+  color: white;
+}
+
+.service-owner-btn svg {
+  margin-right: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .service-card {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .service-language {
+    margin-top: 5px;
+  }
+}
+
+/* Add styles for risk badges */
+.badge.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.badge.bg-warning {
+  background-color: #fd7e14 !important;
+  color: #212529;
+}
+
+.badge.bg-primary {
+  background-color: #0d6efd !important;
+}
+
+.badge.bg-success {
+  background-color: #28a745 !important;
+}

@@ -1,0 +1,3382 @@
+[
+    {
+        "microservice": "frontend",
+        "language": "Go",
+        "image": "frontend:v1.0.0",
+        "image_sha": "2b1afe024a653fb52f1d14d1825498c33a0731855e4b24e9a2d716aed05ddbfc",
+        "findings": [
+            {
+                "id": "misconfiguration-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "chain_id": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "stage": "runtime",
+                "type": "Misconfiguration",
+                "description": "Resource quota not defined",
+                "severity": "Critical",
+                "source": "Kube-bench",
+                "owner": "Team C",
+                "image": "frontend:v1.0.0",
+                "image_sha": "edce23dee7eaf7f57a70f0b054692fcc865a9e4e",
+                "commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "pod_name": "frontend-pod-5562",
+                "deployment_commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "connected_to": [
+                    "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                ],
+                "vulnerable_package": {
+                    "name": "spring-core",
+                    "version": "5.3.13",
+                    "fixed_version": "5.3.14"
+                }
+            },
+            {
+                "id": "sast-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "chain_id": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "stage": "code",
+                "type": "SAST",
+                "description": "Insecure Deserialization",
+                "severity": "Medium",
+                "source": "CodeQL",
+                "owner": "Security Team",
+                "file": "static/styles.css",
+                "file_commit_sha": "1d4d9011d87c0a6e4f27b9f4a8fc420684c5aec3",
+                "line": 376,
+                "commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "connected_to": [
+                    "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                ],
+                "vulnerable_package": {
+                    "name": "spring-core",
+                    "version": "5.3.13",
+                    "fixed_version": "5.3.14"
+                }
+            },
+            {
+                "id": "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "chain_id": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Malware signature detected",
+                "severity": "High",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "frontend:v1.0.0",
+                "image_sha": "edce23dee7eaf7f57a70f0b054692fcc865a9e4e",
+                "commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "connected_to": [
+                    "sast-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                    "misconfiguration-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                ],
+                "build_commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "vulnerable_package": {
+                    "name": "spring-core",
+                    "version": "5.3.13",
+                    "fixed_version": "5.3.14"
+                }
+            },
+            {
+                "id": "secrets-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "chain_id": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "stage": "code",
+                "type": "Secrets",
+                "description": "Hardcoded API key detected",
+                "severity": "High",
+                "source": "TruffleHog",
+                "owner": "Team B",
+                "file": "static/styles.css",
+                "file_commit_sha": "1d4d9011d87c0a6e4f27b9f4a8fc420684c5aec3",
+                "line": 129,
+                "commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "connected_to": [
+                    "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                ],
+                "vulnerable_package": {
+                    "name": "spring-core",
+                    "version": "5.3.13",
+                    "fixed_version": "5.3.14"
+                }
+            },
+            {
+                "id": "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "chain_id": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Insecure configuration in image",
+                "severity": "Low",
+                "source": "Trivy",
+                "owner": "Security Team",
+                "image": "frontend:v1.0.0",
+                "image_sha": "edce23dee7eaf7f57a70f0b054692fcc865a9e4e",
+                "commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "connected_to": [
+                    "secrets-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                ],
+                "build_commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "vulnerable_package": {
+                    "name": "spring-core",
+                    "version": "5.3.13",
+                    "fixed_version": "5.3.14"
+                }
+            },
+            {
+                "id": "sast-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "chain_id": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "stage": "code",
+                "type": "SAST",
+                "description": "Path Traversal vulnerability",
+                "severity": "High",
+                "source": "CodeQL",
+                "owner": "Team A",
+                "file": "static/styles.css",
+                "file_commit_sha": "1d4d9011d87c0a6e4f27b9f4a8fc420684c5aec3",
+                "line": 220,
+                "commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "connected_to": [
+                    "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                ],
+                "vulnerable_package": {
+                    "name": "@angular/core",
+                    "version": "12.0.0",
+                    "fixed_version": "12.0.1"
+                }
+            },
+            {
+                "id": "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "chain_id": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Unnecessary package increasing attack surface",
+                "severity": "High",
+                "source": "Trivy",
+                "owner": "Security Team",
+                "image": "frontend:v1.0.0",
+                "image_sha": "edce23dee7eaf7f57a70f0b054692fcc865a9e4e",
+                "commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "connected_to": [
+                    "sast-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                ],
+                "build_commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "vulnerable_package": {
+                    "name": "@angular/core",
+                    "version": "12.0.0",
+                    "fixed_version": "12.0.1"
+                }
+            },
+            {
+                "id": "runtime findings-frontend-standalone-0",
+                "stage": "runtime",
+                "type": "Runtime Findings",
+                "description": "Unusual process execution detected",
+                "severity": "Medium",
+                "source": "Falco",
+                "owner": "Security Team",
+                "image": "frontend:v1.0.0",
+                "image_sha": "edce23dee7eaf7f57a70f0b054692fcc865a9e4e",
+                "commit_sha": "05ac94a9d251d8d18d150d32bacadfda7d5bb060",
+                "pod_name": "frontend-pod-6654",
+                "deployment_commit_sha": "05ac94a9d251d8d18d150d32bacadfda7d5bb060",
+                "connected_to": []
+            },
+            {
+                "id": "image-frontend-standalone-1",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Malware signature detected",
+                "severity": "Low",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "frontend:v1.0.0",
+                "image_sha": "09a48071c97865b861872474f58df40ebdb275fd4508b05fa33b057f7718967c",
+                "commit_sha": "d960ee4fb67a74f43606eb6c249d0d93f603d8e1",
+                "build_commit_sha": "d960ee4fb67a74f43606eb6c249d0d93f603d8e1",
+                "connected_to": []
+            },
+            {
+                "id": "image-frontend-standalone-2",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Outdated package in container",
+                "severity": "Critical",
+                "source": "Trivy",
+                "owner": "Team C",
+                "image": "frontend:v1.0.0",
+                "image_sha": "6f41d1d829bae28ff99e17043a6be838b8909f370ff779e0f2ac2bcb4638c02b",
+                "commit_sha": "1c4df1b47887e341e59034b74fe3ec17a85d7eff",
+                "build_commit_sha": "1c4df1b47887e341e59034b74fe3ec17a85d7eff",
+                "connected_to": []
+            }
+        ],
+        "connected_findings": [
+            {
+                "chain_id": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "static/styles.css",
+                            "commit_sha": "5968e3fa2de43929653588c288da621a92cf5ce0",
+                            "findings": [
+                                "sast-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/frontend",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "frontend:v1.0.0",
+                            "sha": "edce23dee7eaf7f57a70f0b054692fcc865a9e4e",
+                            "findings": [
+                                "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/frontend",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "frontend:v1.0.0",
+                            "sha": "edce23dee7eaf7f57a70f0b054692fcc865a9e4e",
+                            "findings": [
+                                "misconfiguration-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                            ]
+                        }
+                    }
+                ],
+                "findings": [
+                    "sast-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                    "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                    "misconfiguration-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T16:10:38.093034",
+                    "end_time": "2025-09-28T10:10:38.093038",
+                    "triggered_by": "push",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            },
+            {
+                "chain_id": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "static/styles.css",
+                            "commit_sha": "5968e3fa2de43929653588c288da621a92cf5ce0",
+                            "findings": [
+                                "secrets-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/frontend",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "frontend:v1.0.0",
+                            "sha": "edce23dee7eaf7f57a70f0b054692fcc865a9e4e",
+                            "findings": [
+                                "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/frontend",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "frontend:v1.0.0",
+                            "sha": "edce23dee7eaf7f57a70f0b054692fcc865a9e4e",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "secrets-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                    "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T19:10:38.093056",
+                    "end_time": "2025-09-28T10:10:38.093059",
+                    "triggered_by": "schedule",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            },
+            {
+                "chain_id": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "commit_sha": "ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "static/styles.css",
+                            "commit_sha": "5968e3fa2de43929653588c288da621a92cf5ce0",
+                            "findings": [
+                                "sast-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/frontend",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "frontend:v1.0.0",
+                            "sha": "edce23dee7eaf7f57a70f0b054692fcc865a9e4e",
+                            "findings": [
+                                "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/frontend",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "frontend:v1.0.0",
+                            "sha": "edce23dee7eaf7f57a70f0b054692fcc865a9e4e",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sast-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02",
+                    "image-frontend-ffcef25f5e1de7f4240a0a499a9ed5ae3d9dec02"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T23:10:38.093073",
+                    "end_time": "2025-09-28T10:10:38.093075",
+                    "triggered_by": "push",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            }
+        ]
+    },
+    {
+        "microservice": "cartservice",
+        "language": "C#",
+        "image": "cartservice:v1.0.0",
+        "image_sha": "91fd47d56a8f23f9b5b6b5274bc5dfa251226c028a9b0005ead5f7481c529956",
+        "findings": [
+            {
+                "id": "misconfiguration-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "chain_id": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "stage": "runtime",
+                "type": "Misconfiguration",
+                "description": "Insecure port exposed",
+                "severity": "Critical",
+                "source": "Kube-bench",
+                "owner": "Team A",
+                "image": "cartservice:v1.0.0",
+                "image_sha": "ec73e344c07f035e27544a335c1954a58b339fc6",
+                "commit_sha": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "pod_name": "cartservice-pod-1750",
+                "deployment_commit_sha": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "connected_to": [
+                    "image-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd"
+                ],
+                "vulnerable_package": {
+                    "name": "commons-text",
+                    "version": "1.9",
+                    "fixed_version": "1.10.0"
+                }
+            },
+            {
+                "id": "secrets-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "chain_id": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "stage": "code",
+                "type": "Secrets",
+                "description": "Potential password in code",
+                "severity": "High",
+                "source": "TruffleHog",
+                "owner": "Team B",
+                "file": "Models/Cart.cs",
+                "file_commit_sha": "632188f4c88db8745c6331edf812c81881b0a094",
+                "line": 155,
+                "commit_sha": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "connected_to": [
+                    "image-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd"
+                ],
+                "vulnerable_package": {
+                    "name": "commons-text",
+                    "version": "1.9",
+                    "fixed_version": "1.10.0"
+                }
+            },
+            {
+                "id": "image-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "chain_id": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Insecure configuration in image",
+                "severity": "Medium",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "cartservice:v1.0.0",
+                "image_sha": "ec73e344c07f035e27544a335c1954a58b339fc6",
+                "commit_sha": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "connected_to": [
+                    "secrets-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd",
+                    "misconfiguration-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd"
+                ],
+                "build_commit_sha": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "vulnerable_package": {
+                    "name": "commons-text",
+                    "version": "1.9",
+                    "fixed_version": "1.10.0"
+                }
+            },
+            {
+                "id": "secrets-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "chain_id": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "stage": "code",
+                "type": "Secrets",
+                "description": "Authentication credentials found",
+                "severity": "Medium",
+                "source": "TruffleHog",
+                "owner": "Security Team",
+                "file": "Models/Cart.cs",
+                "file_commit_sha": "632188f4c88db8745c6331edf812c81881b0a094",
+                "line": 457,
+                "commit_sha": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "connected_to": [
+                    "image-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd"
+                ],
+                "vulnerable_package": {
+                    "name": "@angular/core",
+                    "version": "12.0.0",
+                    "fixed_version": "12.0.1"
+                }
+            },
+            {
+                "id": "image-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "chain_id": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Insecure configuration in image",
+                "severity": "High",
+                "source": "Trivy",
+                "owner": "Security Team",
+                "image": "cartservice:v1.0.0",
+                "image_sha": "ec73e344c07f035e27544a335c1954a58b339fc6",
+                "commit_sha": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "connected_to": [
+                    "secrets-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd"
+                ],
+                "build_commit_sha": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "vulnerable_package": {
+                    "name": "@angular/core",
+                    "version": "12.0.0",
+                    "fixed_version": "12.0.1"
+                }
+            },
+            {
+                "id": "image-cartservice-standalone-0",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "OS vulnerability in base image",
+                "severity": "Medium",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "cartservice:v1.0.0",
+                "image_sha": "2e3c4e0198348b825897fabe296d149a09beae9abf63e78e2a7783c235bb2f78",
+                "commit_sha": "fbffe888ab250d94707f541a78d624d4e428438d",
+                "build_commit_sha": "fbffe888ab250d94707f541a78d624d4e428438d",
+                "connected_to": []
+            },
+            {
+                "id": "image-cartservice-standalone-1",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "OS vulnerability in base image",
+                "severity": "High",
+                "source": "Trivy",
+                "owner": "Team C",
+                "image": "cartservice:v1.0.0",
+                "image_sha": "e29808446ec269d5accef63af69851f4c67bf97792502bb83e88a309f7743d80",
+                "commit_sha": "6fe0499e3800d9e1472d453c384df5071f46d7f0",
+                "build_commit_sha": "6fe0499e3800d9e1472d453c384df5071f46d7f0",
+                "connected_to": []
+            },
+            {
+                "id": "image-cartservice-standalone-2",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "OS vulnerability in base image",
+                "severity": "Medium",
+                "source": "Trivy",
+                "owner": "Team C",
+                "image": "cartservice:v1.0.0",
+                "image_sha": "662bca3ff411221143ead0df1d118678b570b7e1788fc2a52223c11b0d3a3807",
+                "commit_sha": "d15d394b6caa7768a13b07385731a8f9191c3572",
+                "build_commit_sha": "d15d394b6caa7768a13b07385731a8f9191c3572",
+                "connected_to": []
+            },
+            {
+                "id": "image-cartservice-standalone-3",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Insecure configuration in image",
+                "severity": "High",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "cartservice:v1.0.0",
+                "image_sha": "e4be6fde1e8357adc0a56a92a8fe8f5e8c8b728ee724e976e38fff875d33f950",
+                "commit_sha": "28fe248e61fe48822b501de62e3227df1bf640c4",
+                "build_commit_sha": "28fe248e61fe48822b501de62e3227df1bf640c4",
+                "connected_to": []
+            }
+        ],
+        "connected_findings": [
+            {
+                "chain_id": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "commit_sha": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "Models/Cart.cs",
+                            "commit_sha": "9a3d759c9e66b0c59f555474b3ef0823eacc8dd4",
+                            "findings": [
+                                "secrets-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/cartservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "cartservice:v1.0.0",
+                            "sha": "ec73e344c07f035e27544a335c1954a58b339fc6",
+                            "findings": [
+                                "image-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/cartservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "cartservice:v1.0.0",
+                            "sha": "ec73e344c07f035e27544a335c1954a58b339fc6",
+                            "findings": [
+                                "misconfiguration-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd"
+                            ]
+                        }
+                    }
+                ],
+                "findings": [
+                    "secrets-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd",
+                    "image-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd",
+                    "misconfiguration-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-28T09:10:38.093115",
+                    "end_time": "2025-09-28T10:10:38.093117",
+                    "triggered_by": "push",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            },
+            {
+                "chain_id": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "commit_sha": "440ef4cf25171786f28cbe9413ce96d39a523afd",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "Models/Cart.cs",
+                            "commit_sha": "9a3d759c9e66b0c59f555474b3ef0823eacc8dd4",
+                            "findings": [
+                                "secrets-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/cartservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "cartservice:v1.0.0",
+                            "sha": "ec73e344c07f035e27544a335c1954a58b339fc6",
+                            "findings": [
+                                "image-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/cartservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "cartservice:v1.0.0",
+                            "sha": "ec73e344c07f035e27544a335c1954a58b339fc6",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "secrets-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd",
+                    "image-cartservice-440ef4cf25171786f28cbe9413ce96d39a523afd"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T22:10:38.093131",
+                    "end_time": "2025-09-28T10:10:38.093133",
+                    "triggered_by": "pull_request",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            }
+        ]
+    },
+    {
+        "microservice": "productcatalogservice",
+        "language": "Go",
+        "image": "productcatalogservice:v1.0.0",
+        "image_sha": "89dcf73e12e66d758406ad7cea61b71463bccad0e198b8828c55a6e0c907dac3",
+        "findings": [
+            {
+                "id": "sast-productcatalogservice-9025077b5c16f447c33e50bb9d91a256b36a0cc3",
+                "chain_id": "9025077b5c16f447c33e50bb9d91a256b36a0cc3",
+                "stage": "code",
+                "type": "SAST",
+                "description": "Insecure Deserialization",
+                "severity": "Critical",
+                "source": "CodeQL",
+                "owner": "Team A",
+                "file": "server.go",
+                "file_commit_sha": "a9da681acadac6d260e86547bb1079f8225e3780",
+                "line": 184,
+                "commit_sha": "9025077b5c16f447c33e50bb9d91a256b36a0cc3",
+                "connected_to": [
+                    "image-productcatalogservice-9025077b5c16f447c33e50bb9d91a256b36a0cc3"
+                ],
+                "vulnerable_package": {
+                    "name": "commons-text",
+                    "version": "1.9",
+                    "fixed_version": "1.10.0"
+                }
+            },
+            {
+                "id": "image-productcatalogservice-9025077b5c16f447c33e50bb9d91a256b36a0cc3",
+                "chain_id": "9025077b5c16f447c33e50bb9d91a256b36a0cc3",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Outdated package in container",
+                "severity": "Critical",
+                "source": "Trivy",
+                "owner": "Security Team",
+                "image": "productcatalogservice:v1.0.0",
+                "image_sha": "13cd696171432b77b56a073d9502b5437730bf50",
+                "commit_sha": "9025077b5c16f447c33e50bb9d91a256b36a0cc3",
+                "connected_to": [
+                    "sast-productcatalogservice-9025077b5c16f447c33e50bb9d91a256b36a0cc3"
+                ],
+                "build_commit_sha": "9025077b5c16f447c33e50bb9d91a256b36a0cc3",
+                "vulnerable_package": {
+                    "name": "commons-text",
+                    "version": "1.9",
+                    "fixed_version": "1.10.0"
+                }
+            },
+            {
+                "id": "image-productcatalogservice-standalone-0",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Unnecessary package increasing attack surface",
+                "severity": "Critical",
+                "source": "Trivy",
+                "owner": "Security Team",
+                "image": "productcatalogservice:v1.0.0",
+                "image_sha": "e6faf29450b72ec978da0e324b829acd82e86b2f16fca2cbb8dec7e89e86a39a",
+                "commit_sha": "27ec20819979e9e4193b7ced3effacb463fff818",
+                "build_commit_sha": "27ec20819979e9e4193b7ced3effacb463fff818",
+                "connected_to": []
+            },
+            {
+                "id": "sast-productcatalogservice-standalone-1",
+                "stage": "code",
+                "type": "SAST",
+                "description": "Insecure Deserialization",
+                "severity": "High",
+                "source": "CodeQL",
+                "owner": "Security Team",
+                "file": "data/products.json",
+                "file_commit_sha": "7029aa34046525f88e3b981e309637aea387b1c7",
+                "line": 319,
+                "commit_sha": "a01ff0cedcd632e99197813f6563a6dbb5af2ab8",
+                "connected_to": []
+            },
+            {
+                "id": "image-productcatalogservice-standalone-2",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Insecure configuration in image",
+                "severity": "Low",
+                "source": "Trivy",
+                "owner": "Team C",
+                "image": "productcatalogservice:v1.0.0",
+                "image_sha": "abda88acc98a7a00f8451e328f70dd4216e16b6b8e4ff2d7fdc264b7ce6f2cea",
+                "commit_sha": "fa018c163bb08ff776c2706f2bd59dc370eb02fd",
+                "build_commit_sha": "fa018c163bb08ff776c2706f2bd59dc370eb02fd",
+                "connected_to": []
+            },
+            {
+                "id": "runtime findings-productcatalogservice-standalone-3",
+                "stage": "runtime",
+                "type": "Runtime Findings",
+                "description": "File system modification alert",
+                "severity": "Critical",
+                "source": "Falco",
+                "owner": "Team B",
+                "image": "productcatalogservice:v1.0.0",
+                "image_sha": "13cd696171432b77b56a073d9502b5437730bf50",
+                "commit_sha": "8d69a4708ad3a66289ab03fb9111b2eaaa707863",
+                "pod_name": "productcatalogservice-pod-5154",
+                "deployment_commit_sha": "8d69a4708ad3a66289ab03fb9111b2eaaa707863",
+                "connected_to": []
+            }
+        ],
+        "connected_findings": [
+            {
+                "chain_id": "9025077b5c16f447c33e50bb9d91a256b36a0cc3",
+                "commit_sha": "9025077b5c16f447c33e50bb9d91a256b36a0cc3",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "server.go",
+                            "commit_sha": "3bd359453be3f4eaae0ed192c0a2481dd878f67f",
+                            "findings": [
+                                "sast-productcatalogservice-9025077b5c16f447c33e50bb9d91a256b36a0cc3"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/productcatalogservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "productcatalogservice:v1.0.0",
+                            "sha": "13cd696171432b77b56a073d9502b5437730bf50",
+                            "findings": [
+                                "image-productcatalogservice-9025077b5c16f447c33e50bb9d91a256b36a0cc3"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/productcatalogservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "productcatalogservice:v1.0.0",
+                            "sha": "13cd696171432b77b56a073d9502b5437730bf50",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sast-productcatalogservice-9025077b5c16f447c33e50bb9d91a256b36a0cc3",
+                    "image-productcatalogservice-9025077b5c16f447c33e50bb9d91a256b36a0cc3"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-28T08:10:38.093167",
+                    "end_time": "2025-09-28T10:10:38.093169",
+                    "triggered_by": "pull_request",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            }
+        ]
+    },
+    {
+        "microservice": "currencyservice",
+        "language": "Node.js",
+        "image": "currencyservice:v1.0.0",
+        "image_sha": "354b9d957c05ad4950526e0e605535fcf605d553e03b4bad739987e27d2b09e0",
+        "findings": [
+            {
+                "id": "secrets-currencyservice-bc5b817718e692ac0ffb3e85d00bc484e74cfdf7",
+                "chain_id": "bc5b817718e692ac0ffb3e85d00bc484e74cfdf7",
+                "stage": "code",
+                "type": "Secrets",
+                "description": "Token or secret leaked in code",
+                "severity": "Critical",
+                "source": "TruffleHog",
+                "owner": "Team A",
+                "file": "currency_converter.js",
+                "file_commit_sha": "f19dfaa15f38ecae7267cfd40cf228d0d61cad3c",
+                "line": 161,
+                "commit_sha": "bc5b817718e692ac0ffb3e85d00bc484e74cfdf7",
+                "connected_to": [
+                    "image-currencyservice-bc5b817718e692ac0ffb3e85d00bc484e74cfdf7"
+                ],
+                "vulnerable_package": {
+                    "name": "commons-text",
+                    "version": "1.9",
+                    "fixed_version": "1.10.0"
+                }
+            },
+            {
+                "id": "image-currencyservice-bc5b817718e692ac0ffb3e85d00bc484e74cfdf7",
+                "chain_id": "bc5b817718e692ac0ffb3e85d00bc484e74cfdf7",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "OS vulnerability in base image",
+                "severity": "Critical",
+                "source": "Trivy",
+                "owner": "Security Team",
+                "image": "currencyservice:v1.0.0",
+                "image_sha": "ef006d15917e29b0c6a874cab225c1a9fa460e62",
+                "commit_sha": "bc5b817718e692ac0ffb3e85d00bc484e74cfdf7",
+                "connected_to": [
+                    "secrets-currencyservice-bc5b817718e692ac0ffb3e85d00bc484e74cfdf7"
+                ],
+                "build_commit_sha": "bc5b817718e692ac0ffb3e85d00bc484e74cfdf7",
+                "vulnerable_package": {
+                    "name": "commons-text",
+                    "version": "1.9",
+                    "fixed_version": "1.10.0"
+                }
+            },
+            {
+                "id": "sast-currencyservice-4556c36b355f20c1a504dc600b94ca0042ce599e",
+                "chain_id": "4556c36b355f20c1a504dc600b94ca0042ce599e",
+                "stage": "code",
+                "type": "SAST",
+                "description": "SQL Injection vulnerability",
+                "severity": "Low",
+                "source": "CodeQL",
+                "owner": "Team B",
+                "file": "server.js",
+                "file_commit_sha": "e1d651f09e023a2e2d7364830fc7a3cc31b78b59",
+                "line": 222,
+                "commit_sha": "4556c36b355f20c1a504dc600b94ca0042ce599e",
+                "connected_to": [
+                    "image-currencyservice-4556c36b355f20c1a504dc600b94ca0042ce599e"
+                ],
+                "vulnerable_package": {
+                    "name": "golang.org/x/crypto",
+                    "version": "v0.0.1",
+                    "fixed_version": "v0.0.2"
+                }
+            },
+            {
+                "id": "image-currencyservice-4556c36b355f20c1a504dc600b94ca0042ce599e",
+                "chain_id": "4556c36b355f20c1a504dc600b94ca0042ce599e",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Insecure configuration in image",
+                "severity": "Low",
+                "source": "Trivy",
+                "owner": "Team A",
+                "image": "currencyservice:v1.0.0",
+                "image_sha": "25864f48ffc83ae1c7cccdf73ff2e5eb6f64f1a5",
+                "commit_sha": "4556c36b355f20c1a504dc600b94ca0042ce599e",
+                "connected_to": [
+                    "sast-currencyservice-4556c36b355f20c1a504dc600b94ca0042ce599e"
+                ],
+                "build_commit_sha": "4556c36b355f20c1a504dc600b94ca0042ce599e",
+                "vulnerable_package": {
+                    "name": "golang.org/x/crypto",
+                    "version": "v0.0.1",
+                    "fixed_version": "v0.0.2"
+                }
+            },
+            {
+                "id": "runtime findings-currencyservice-standalone-0",
+                "stage": "runtime",
+                "type": "Runtime Findings",
+                "description": "Container escape attempt",
+                "severity": "Low",
+                "source": "Falco",
+                "owner": "Team C",
+                "image": "currencyservice:v1.0.0",
+                "image_sha": "25864f48ffc83ae1c7cccdf73ff2e5eb6f64f1a5",
+                "commit_sha": "b211271cd0c79ae47cd386c0d17f148988fbf183",
+                "pod_name": "currencyservice-pod-9719",
+                "deployment_commit_sha": "b211271cd0c79ae47cd386c0d17f148988fbf183",
+                "connected_to": []
+            },
+            {
+                "id": "sca-currencyservice-standalone-1",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Security patch missing in dependency",
+                "severity": "Medium",
+                "source": "Dependabot",
+                "owner": "Team B",
+                "file": "currency_converter.js",
+                "file_commit_sha": "3668c992ed0108fe997c73c6da176236388ff7de",
+                "line": 153,
+                "commit_sha": "06e6b03d9d30fd7d2e1e089be4f71f9d011a85c4",
+                "connected_to": []
+            },
+            {
+                "id": "image-currencyservice-standalone-2",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Malware signature detected",
+                "severity": "Medium",
+                "source": "Trivy",
+                "owner": "Team A",
+                "image": "currencyservice:v1.0.0",
+                "image_sha": "31e53cfc3d056a570762ac49f7270eddf7b1491b738cf2368c0857771b866d88",
+                "commit_sha": "12539cd754f2da0317d480fc9999333fddbf175d",
+                "build_commit_sha": "12539cd754f2da0317d480fc9999333fddbf175d",
+                "connected_to": []
+            }
+        ],
+        "connected_findings": [
+            {
+                "chain_id": "bc5b817718e692ac0ffb3e85d00bc484e74cfdf7",
+                "commit_sha": "bc5b817718e692ac0ffb3e85d00bc484e74cfdf7",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "currency_converter.js",
+                            "commit_sha": "095a1ee98baf1c2cc090c1b144a044cee94a3c3c",
+                            "findings": [
+                                "secrets-currencyservice-bc5b817718e692ac0ffb3e85d00bc484e74cfdf7"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/currencyservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "currencyservice:v1.0.0",
+                            "sha": "ef006d15917e29b0c6a874cab225c1a9fa460e62",
+                            "findings": [
+                                "image-currencyservice-bc5b817718e692ac0ffb3e85d00bc484e74cfdf7"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/currencyservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "currencyservice:v1.0.0",
+                            "sha": "ef006d15917e29b0c6a874cab225c1a9fa460e62",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "secrets-currencyservice-bc5b817718e692ac0ffb3e85d00bc484e74cfdf7",
+                    "image-currencyservice-bc5b817718e692ac0ffb3e85d00bc484e74cfdf7"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T12:10:38.093204",
+                    "end_time": "2025-09-28T10:10:38.093206",
+                    "triggered_by": "pull_request",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            },
+            {
+                "chain_id": "4556c36b355f20c1a504dc600b94ca0042ce599e",
+                "commit_sha": "4556c36b355f20c1a504dc600b94ca0042ce599e",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "server.js",
+                            "commit_sha": "396e72092bdee9804804ea86915f5157d34586ae",
+                            "findings": [
+                                "sast-currencyservice-4556c36b355f20c1a504dc600b94ca0042ce599e"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/currencyservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "currencyservice:v1.0.0",
+                            "sha": "25864f48ffc83ae1c7cccdf73ff2e5eb6f64f1a5",
+                            "findings": [
+                                "image-currencyservice-4556c36b355f20c1a504dc600b94ca0042ce599e"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/currencyservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "currencyservice:v1.0.0",
+                            "sha": "25864f48ffc83ae1c7cccdf73ff2e5eb6f64f1a5",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sast-currencyservice-4556c36b355f20c1a504dc600b94ca0042ce599e",
+                    "image-currencyservice-4556c36b355f20c1a504dc600b94ca0042ce599e"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T20:10:38.093219",
+                    "end_time": "2025-09-28T10:10:38.093222",
+                    "triggered_by": "pull_request",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            }
+        ]
+    },
+    {
+        "microservice": "paymentservice",
+        "language": "Node.js",
+        "image": "paymentservice:v1.0.0",
+        "image_sha": "7538ab347101fe7634b0246b42393ef46323bdb99acda4b2290b9670535bc5a2",
+        "findings": [
+            {
+                "id": "sast-paymentservice-20d8b6cadd92fe4aa30e320c0fce115f20b936c9",
+                "chain_id": "20d8b6cadd92fe4aa30e320c0fce115f20b936c9",
+                "stage": "code",
+                "type": "SAST",
+                "description": "Command Injection risk",
+                "severity": "Medium",
+                "source": "CodeQL",
+                "owner": "Security Team",
+                "file": "payment_methods.js",
+                "file_commit_sha": "5a71a2254f85ae2cf0546875e5ba349587e78690",
+                "line": 128,
+                "commit_sha": "20d8b6cadd92fe4aa30e320c0fce115f20b936c9",
+                "connected_to": [
+                    "image-paymentservice-20d8b6cadd92fe4aa30e320c0fce115f20b936c9"
+                ],
+                "vulnerable_package": {
+                    "name": "golang.org/x/crypto",
+                    "version": "v0.0.1",
+                    "fixed_version": "v0.0.2"
+                }
+            },
+            {
+                "id": "image-paymentservice-20d8b6cadd92fe4aa30e320c0fce115f20b936c9",
+                "chain_id": "20d8b6cadd92fe4aa30e320c0fce115f20b936c9",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Malware signature detected",
+                "severity": "Medium",
+                "source": "Trivy",
+                "owner": "Team C",
+                "image": "paymentservice:v1.0.0",
+                "image_sha": "3d32d246684f8a1f2e34071b277bb43ffbc4edf6",
+                "commit_sha": "20d8b6cadd92fe4aa30e320c0fce115f20b936c9",
+                "connected_to": [
+                    "sast-paymentservice-20d8b6cadd92fe4aa30e320c0fce115f20b936c9"
+                ],
+                "build_commit_sha": "20d8b6cadd92fe4aa30e320c0fce115f20b936c9",
+                "vulnerable_package": {
+                    "name": "golang.org/x/crypto",
+                    "version": "v0.0.1",
+                    "fixed_version": "v0.0.2"
+                }
+            },
+            {
+                "id": "image-paymentservice-standalone-0",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Unnecessary package increasing attack surface",
+                "severity": "High",
+                "source": "Trivy",
+                "owner": "Security Team",
+                "image": "paymentservice:v1.0.0",
+                "image_sha": "7b7b3d7d95b727a1580ff06e8ba2bb923ba10a0ee77713127f13d5960263020d",
+                "commit_sha": "8bc2c938177d7e567f2cc41f487c7b924bd66096",
+                "build_commit_sha": "8bc2c938177d7e567f2cc41f487c7b924bd66096",
+                "connected_to": []
+            },
+            {
+                "id": "misconfiguration-paymentservice-standalone-1",
+                "stage": "runtime",
+                "type": "Misconfiguration",
+                "description": "Insecure port exposed",
+                "severity": "Low",
+                "source": "Kube-bench",
+                "owner": "Team A",
+                "image": "paymentservice:v1.0.0",
+                "image_sha": "3d32d246684f8a1f2e34071b277bb43ffbc4edf6",
+                "commit_sha": "fab36db5b49baf7300cde0191469d68de8a4fcf0",
+                "pod_name": "paymentservice-pod-7461",
+                "deployment_commit_sha": "fab36db5b49baf7300cde0191469d68de8a4fcf0",
+                "connected_to": []
+            },
+            {
+                "id": "sast-paymentservice-standalone-2",
+                "stage": "code",
+                "type": "SAST",
+                "description": "Path Traversal vulnerability",
+                "severity": "Informational",
+                "source": "CodeQL",
+                "owner": "Team A",
+                "file": "charge.js",
+                "file_commit_sha": "7edff4adb327dd15ff0cf1a584dc17ae9468c158",
+                "line": 51,
+                "commit_sha": "606c0ba3c104b2e3c1c9f8c657feca6ffc239e56",
+                "connected_to": []
+            },
+            {
+                "id": "runtime findings-paymentservice-standalone-3",
+                "stage": "runtime",
+                "type": "Runtime Findings",
+                "description": "Unexpected network connection",
+                "severity": "Critical",
+                "source": "Falco",
+                "owner": "Security Team",
+                "image": "paymentservice:v1.0.0",
+                "image_sha": "3d32d246684f8a1f2e34071b277bb43ffbc4edf6",
+                "commit_sha": "505f238d5c2e887094dfd7455db529ea5e2be84f",
+                "pod_name": "paymentservice-pod-4710",
+                "deployment_commit_sha": "505f238d5c2e887094dfd7455db529ea5e2be84f",
+                "connected_to": []
+            },
+            {
+                "id": "secrets-paymentservice-standalone-4",
+                "stage": "code",
+                "type": "Secrets",
+                "description": "Potential password in code",
+                "severity": "Medium",
+                "source": "TruffleHog",
+                "owner": "Security Team",
+                "file": "charge.js",
+                "file_commit_sha": "a5f17fe604b0b39c5857971494c99fe5027f3c8e",
+                "line": 404,
+                "commit_sha": "3c1d051858e8d353cef79d9b91fabb739f4b007a",
+                "connected_to": []
+            }
+        ],
+        "connected_findings": [
+            {
+                "chain_id": "20d8b6cadd92fe4aa30e320c0fce115f20b936c9",
+                "commit_sha": "20d8b6cadd92fe4aa30e320c0fce115f20b936c9",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "payment_methods.js",
+                            "commit_sha": "2966557e4ede316d20009a723c022e9a1c7f773c",
+                            "findings": [
+                                "sast-paymentservice-20d8b6cadd92fe4aa30e320c0fce115f20b936c9"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/paymentservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "paymentservice:v1.0.0",
+                            "sha": "3d32d246684f8a1f2e34071b277bb43ffbc4edf6",
+                            "findings": [
+                                "image-paymentservice-20d8b6cadd92fe4aa30e320c0fce115f20b936c9"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/paymentservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "paymentservice:v1.0.0",
+                            "sha": "3d32d246684f8a1f2e34071b277bb43ffbc4edf6",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sast-paymentservice-20d8b6cadd92fe4aa30e320c0fce115f20b936c9",
+                    "image-paymentservice-20d8b6cadd92fe4aa30e320c0fce115f20b936c9"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T12:10:38.093251",
+                    "end_time": "2025-09-28T10:10:38.093253",
+                    "triggered_by": "push",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            }
+        ]
+    },
+    {
+        "microservice": "shippingservice",
+        "language": "Go",
+        "image": "shippingservice:v1.0.0",
+        "image_sha": "6b46a78f545bbca190dd68f44f2d1c345c9b64e71f3bf5d201c6b1f41ae157bd",
+        "findings": [
+            {
+                "id": "sast-shippingservice-893990bd391e562b82449b37fa7633f62e7fb649",
+                "chain_id": "893990bd391e562b82449b37fa7633f62e7fb649",
+                "stage": "code",
+                "type": "SAST",
+                "description": "Command Injection risk",
+                "severity": "Medium",
+                "source": "CodeQL",
+                "owner": "Security Team",
+                "file": "main.go",
+                "file_commit_sha": "539cf6a6d4f2b3eb91b07337cc22b46019320627",
+                "line": 323,
+                "commit_sha": "893990bd391e562b82449b37fa7633f62e7fb649",
+                "connected_to": [
+                    "image-shippingservice-893990bd391e562b82449b37fa7633f62e7fb649"
+                ],
+                "vulnerable_package": {
+                    "name": "jackson-databind",
+                    "version": "2.12.3",
+                    "fixed_version": "2.12.6.1"
+                }
+            },
+            {
+                "id": "image-shippingservice-893990bd391e562b82449b37fa7633f62e7fb649",
+                "chain_id": "893990bd391e562b82449b37fa7633f62e7fb649",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Unnecessary package increasing attack surface",
+                "severity": "Medium",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "shippingservice:v1.0.0",
+                "image_sha": "026a1074d7d9a0aa7f8e726a91a98f1f4ad529a3",
+                "commit_sha": "893990bd391e562b82449b37fa7633f62e7fb649",
+                "connected_to": [
+                    "sast-shippingservice-893990bd391e562b82449b37fa7633f62e7fb649"
+                ],
+                "build_commit_sha": "893990bd391e562b82449b37fa7633f62e7fb649",
+                "vulnerable_package": {
+                    "name": "jackson-databind",
+                    "version": "2.12.3",
+                    "fixed_version": "2.12.6.1"
+                }
+            },
+            {
+                "id": "sca-shippingservice-7b58470fe41ec66137fda29fc7040aa7ad17caf6",
+                "chain_id": "7b58470fe41ec66137fda29fc7040aa7ad17caf6",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Critical update required for package",
+                "severity": "Medium",
+                "source": "Dependabot",
+                "owner": "Security Team",
+                "file": "tracking.go",
+                "file_commit_sha": "6aad9da601896d40e769bf1d82d23c0ae4f9d271",
+                "line": 104,
+                "commit_sha": "7b58470fe41ec66137fda29fc7040aa7ad17caf6",
+                "connected_to": [
+                    "image-shippingservice-7b58470fe41ec66137fda29fc7040aa7ad17caf6"
+                ],
+                "vulnerable_package": {
+                    "name": "golang.org/x/crypto",
+                    "version": "v0.0.1",
+                    "fixed_version": "v0.0.2"
+                }
+            },
+            {
+                "id": "image-shippingservice-7b58470fe41ec66137fda29fc7040aa7ad17caf6",
+                "chain_id": "7b58470fe41ec66137fda29fc7040aa7ad17caf6",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Unnecessary package increasing attack surface",
+                "severity": "Critical",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "shippingservice:v1.0.0",
+                "image_sha": "562aa5a668d3ce7883768e1fc85e5f3823aa7557",
+                "commit_sha": "7b58470fe41ec66137fda29fc7040aa7ad17caf6",
+                "connected_to": [
+                    "sca-shippingservice-7b58470fe41ec66137fda29fc7040aa7ad17caf6"
+                ],
+                "build_commit_sha": "7b58470fe41ec66137fda29fc7040aa7ad17caf6",
+                "vulnerable_package": {
+                    "name": "golang.org/x/crypto",
+                    "version": "v0.0.1",
+                    "fixed_version": "v0.0.2"
+                }
+            },
+            {
+                "id": "sast-shippingservice-0016738a0eeed71495c8d53e3acd414e6544d591",
+                "chain_id": "0016738a0eeed71495c8d53e3acd414e6544d591",
+                "stage": "code",
+                "type": "SAST",
+                "description": "SQL Injection vulnerability",
+                "severity": "High",
+                "source": "CodeQL",
+                "owner": "Team C",
+                "file": "shipping.go",
+                "file_commit_sha": "1e8d55aee156c2357c83ba3c0ed859e5e3ae11a4",
+                "line": 95,
+                "commit_sha": "0016738a0eeed71495c8d53e3acd414e6544d591",
+                "connected_to": [
+                    "image-shippingservice-0016738a0eeed71495c8d53e3acd414e6544d591"
+                ],
+                "vulnerable_package": {
+                    "name": "golang.org/x/crypto",
+                    "version": "v0.0.1",
+                    "fixed_version": "v0.0.2"
+                }
+            },
+            {
+                "id": "image-shippingservice-0016738a0eeed71495c8d53e3acd414e6544d591",
+                "chain_id": "0016738a0eeed71495c8d53e3acd414e6544d591",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Insecure configuration in image",
+                "severity": "Critical",
+                "source": "Trivy",
+                "owner": "Team C",
+                "image": "shippingservice:v1.0.0",
+                "image_sha": "9a6c077565c9fbb445f97db315d7f93f8680b0b3",
+                "commit_sha": "0016738a0eeed71495c8d53e3acd414e6544d591",
+                "connected_to": [
+                    "sast-shippingservice-0016738a0eeed71495c8d53e3acd414e6544d591"
+                ],
+                "build_commit_sha": "0016738a0eeed71495c8d53e3acd414e6544d591",
+                "vulnerable_package": {
+                    "name": "golang.org/x/crypto",
+                    "version": "v0.0.1",
+                    "fixed_version": "v0.0.2"
+                }
+            },
+            {
+                "id": "image-shippingservice-standalone-0",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Insecure configuration in image",
+                "severity": "Informational",
+                "source": "Trivy",
+                "owner": "Team A",
+                "image": "shippingservice:v1.0.0",
+                "image_sha": "efd7ac6c157dfa9bd355b35feddc22ce0e09f2825aacbc7f808868becc159b68",
+                "commit_sha": "104cffd2a6089f85f03e564b36790e89228f70c9",
+                "build_commit_sha": "104cffd2a6089f85f03e564b36790e89228f70c9",
+                "connected_to": []
+            },
+            {
+                "id": "secrets-shippingservice-standalone-1",
+                "stage": "code",
+                "type": "Secrets",
+                "description": "Authentication credentials found",
+                "severity": "High",
+                "source": "TruffleHog",
+                "owner": "Team B",
+                "file": "main.go",
+                "file_commit_sha": "21f725314beb4273fdd24c640d49e3607fe3640a",
+                "line": 370,
+                "commit_sha": "b0b585f3d70af505d7b6d9eee9272bf1395527a6",
+                "connected_to": []
+            }
+        ],
+        "connected_findings": [
+            {
+                "chain_id": "893990bd391e562b82449b37fa7633f62e7fb649",
+                "commit_sha": "893990bd391e562b82449b37fa7633f62e7fb649",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "main.go",
+                            "commit_sha": "4ef7c505dfc391bd13a5d5620f45f38cdd077bf2",
+                            "findings": [
+                                "sast-shippingservice-893990bd391e562b82449b37fa7633f62e7fb649"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/shippingservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "shippingservice:v1.0.0",
+                            "sha": "026a1074d7d9a0aa7f8e726a91a98f1f4ad529a3",
+                            "findings": [
+                                "image-shippingservice-893990bd391e562b82449b37fa7633f62e7fb649"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/shippingservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "shippingservice:v1.0.0",
+                            "sha": "026a1074d7d9a0aa7f8e726a91a98f1f4ad529a3",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sast-shippingservice-893990bd391e562b82449b37fa7633f62e7fb649",
+                    "image-shippingservice-893990bd391e562b82449b37fa7633f62e7fb649"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T17:10:38.093293",
+                    "end_time": "2025-09-28T10:10:38.093294",
+                    "triggered_by": "schedule",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            },
+            {
+                "chain_id": "7b58470fe41ec66137fda29fc7040aa7ad17caf6",
+                "commit_sha": "7b58470fe41ec66137fda29fc7040aa7ad17caf6",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "tracking.go",
+                            "commit_sha": "a1db8231de6ecc2aae1d21547a1f04183ae09e44",
+                            "findings": [
+                                "sca-shippingservice-7b58470fe41ec66137fda29fc7040aa7ad17caf6"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/shippingservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "shippingservice:v1.0.0",
+                            "sha": "562aa5a668d3ce7883768e1fc85e5f3823aa7557",
+                            "findings": [
+                                "image-shippingservice-7b58470fe41ec66137fda29fc7040aa7ad17caf6"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/shippingservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "shippingservice:v1.0.0",
+                            "sha": "562aa5a668d3ce7883768e1fc85e5f3823aa7557",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sca-shippingservice-7b58470fe41ec66137fda29fc7040aa7ad17caf6",
+                    "image-shippingservice-7b58470fe41ec66137fda29fc7040aa7ad17caf6"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T13:10:38.093307",
+                    "end_time": "2025-09-28T10:10:38.093309",
+                    "triggered_by": "pull_request",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            },
+            {
+                "chain_id": "0016738a0eeed71495c8d53e3acd414e6544d591",
+                "commit_sha": "0016738a0eeed71495c8d53e3acd414e6544d591",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "shipping.go",
+                            "commit_sha": "ae697ce98d644795b4a10cdc9b147478c26efdc1",
+                            "findings": [
+                                "sast-shippingservice-0016738a0eeed71495c8d53e3acd414e6544d591"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/shippingservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "shippingservice:v1.0.0",
+                            "sha": "9a6c077565c9fbb445f97db315d7f93f8680b0b3",
+                            "findings": [
+                                "image-shippingservice-0016738a0eeed71495c8d53e3acd414e6544d591"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/shippingservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "shippingservice:v1.0.0",
+                            "sha": "9a6c077565c9fbb445f97db315d7f93f8680b0b3",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sast-shippingservice-0016738a0eeed71495c8d53e3acd414e6544d591",
+                    "image-shippingservice-0016738a0eeed71495c8d53e3acd414e6544d591"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T19:10:38.093322",
+                    "end_time": "2025-09-28T10:10:38.093324",
+                    "triggered_by": "pull_request",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            }
+        ]
+    },
+    {
+        "microservice": "emailservice",
+        "language": "Python",
+        "image": "emailservice:v1.0.0",
+        "image_sha": "c66b29b03b6d074797b22355bd3e115d885d019cc235120375b85dd9401fec93",
+        "findings": [
+            {
+                "id": "misconfiguration-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e",
+                "chain_id": "9e794ac9ad649ae87f995099933da80da4f5925e",
+                "stage": "runtime",
+                "type": "Misconfiguration",
+                "description": "Privileged container execution",
+                "severity": "Medium",
+                "source": "Kube-bench",
+                "owner": "Security Team",
+                "image": "emailservice:v1.0.0",
+                "image_sha": "620cca955ce6c70d8cf866e518026ad84be3f0f2",
+                "commit_sha": "9e794ac9ad649ae87f995099933da80da4f5925e",
+                "pod_name": "emailservice-pod-9041",
+                "deployment_commit_sha": "9e794ac9ad649ae87f995099933da80da4f5925e",
+                "connected_to": [
+                    "image-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e"
+                ],
+                "vulnerable_package": {
+                    "name": "spring-core",
+                    "version": "5.3.13",
+                    "fixed_version": "5.3.14"
+                }
+            },
+            {
+                "id": "sca-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e",
+                "chain_id": "9e794ac9ad649ae87f995099933da80da4f5925e",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Security patch missing in dependency",
+                "severity": "Critical",
+                "source": "Dependabot",
+                "owner": "Team B",
+                "file": "templates.py",
+                "file_commit_sha": "e721918ad87de5890fff9686018338ffdb109b27",
+                "line": 267,
+                "commit_sha": "9e794ac9ad649ae87f995099933da80da4f5925e",
+                "connected_to": [
+                    "image-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e"
+                ],
+                "vulnerable_package": {
+                    "name": "spring-core",
+                    "version": "5.3.13",
+                    "fixed_version": "5.3.14"
+                }
+            },
+            {
+                "id": "image-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e",
+                "chain_id": "9e794ac9ad649ae87f995099933da80da4f5925e",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Unnecessary package increasing attack surface",
+                "severity": "High",
+                "source": "Trivy",
+                "owner": "Team A",
+                "image": "emailservice:v1.0.0",
+                "image_sha": "620cca955ce6c70d8cf866e518026ad84be3f0f2",
+                "commit_sha": "9e794ac9ad649ae87f995099933da80da4f5925e",
+                "connected_to": [
+                    "sca-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e",
+                    "misconfiguration-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e"
+                ],
+                "build_commit_sha": "9e794ac9ad649ae87f995099933da80da4f5925e",
+                "vulnerable_package": {
+                    "name": "spring-core",
+                    "version": "5.3.13",
+                    "fixed_version": "5.3.14"
+                }
+            },
+            {
+                "id": "sast-emailservice-standalone-0",
+                "stage": "code",
+                "type": "SAST",
+                "description": "Insecure Deserialization",
+                "severity": "Informational",
+                "source": "CodeQL",
+                "owner": "Team B",
+                "file": "templates.py",
+                "file_commit_sha": "fd1d0ef4d8547d43e4e2c83aa4986cf5cea2981d",
+                "line": 242,
+                "commit_sha": "e2c7aae1d24d0ac0660a4d8dcf45944a75d030ec",
+                "connected_to": []
+            },
+            {
+                "id": "misconfiguration-emailservice-standalone-1",
+                "stage": "runtime",
+                "type": "Misconfiguration",
+                "description": "Excessive permissions in deployment",
+                "severity": "Critical",
+                "source": "Kube-bench",
+                "owner": "Team A",
+                "image": "emailservice:v1.0.0",
+                "image_sha": "620cca955ce6c70d8cf866e518026ad84be3f0f2",
+                "commit_sha": "a41f890702bf7a279159e16ddbcd1e53ed78ac68",
+                "pod_name": "emailservice-pod-8038",
+                "deployment_commit_sha": "a41f890702bf7a279159e16ddbcd1e53ed78ac68",
+                "connected_to": []
+            },
+            {
+                "id": "image-emailservice-standalone-2",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Unnecessary package increasing attack surface",
+                "severity": "High",
+                "source": "Trivy",
+                "owner": "Security Team",
+                "image": "emailservice:v1.0.0",
+                "image_sha": "b3585ebf0948fb65f670b22ef683450d54719275ead9914688c1391e5793cb61",
+                "commit_sha": "7447b98b8e532242ce85a7c7cea5dfd01b417d4f",
+                "build_commit_sha": "7447b98b8e532242ce85a7c7cea5dfd01b417d4f",
+                "connected_to": []
+            },
+            {
+                "id": "secrets-emailservice-standalone-3",
+                "stage": "code",
+                "type": "Secrets",
+                "description": "Token or secret leaked in code",
+                "severity": "Medium",
+                "source": "TruffleHog",
+                "owner": "Security Team",
+                "file": "email_server.py",
+                "file_commit_sha": "4c1d4c6d7031222757cd0e1e88a20a46dfa5ecfa",
+                "line": 301,
+                "commit_sha": "7d38f948e44e54a94b334f027787211ba3d85939",
+                "connected_to": []
+            },
+            {
+                "id": "sca-emailservice-standalone-4",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Vulnerable dependency found",
+                "severity": "Low",
+                "source": "Dependabot",
+                "owner": "Team A",
+                "file": "templates.py",
+                "file_commit_sha": "fd1d0ef4d8547d43e4e2c83aa4986cf5cea2981d",
+                "line": 265,
+                "commit_sha": "c4e7fc3a0e52d347244e387551c519199dbf92ec",
+                "connected_to": []
+            }
+        ],
+        "connected_findings": [
+            {
+                "chain_id": "9e794ac9ad649ae87f995099933da80da4f5925e",
+                "commit_sha": "9e794ac9ad649ae87f995099933da80da4f5925e",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "templates.py",
+                            "commit_sha": "b3aa5acb90d986c6fd0c6f133a93f50a325f0ee0",
+                            "findings": [
+                                "sca-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/emailservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "emailservice:v1.0.0",
+                            "sha": "620cca955ce6c70d8cf866e518026ad84be3f0f2",
+                            "findings": [
+                                "image-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/emailservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "emailservice:v1.0.0",
+                            "sha": "620cca955ce6c70d8cf866e518026ad84be3f0f2",
+                            "findings": [
+                                "misconfiguration-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e"
+                            ]
+                        }
+                    }
+                ],
+                "findings": [
+                    "sca-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e",
+                    "image-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e",
+                    "misconfiguration-emailservice-9e794ac9ad649ae87f995099933da80da4f5925e"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T18:10:38.093350",
+                    "end_time": "2025-09-28T10:10:38.093352",
+                    "triggered_by": "pull_request",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            }
+        ]
+    },
+    {
+        "microservice": "checkoutservice",
+        "language": "Go",
+        "image": "checkoutservice:v1.0.0",
+        "image_sha": "c0f5666f3133202e323287f632365ede1dcf14da3129a4487b4f2ea39f38c5f3",
+        "findings": [
+            {
+                "id": "sca-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "chain_id": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Outdated library with known vulnerabilities",
+                "severity": "High",
+                "source": "Dependabot",
+                "owner": "Team B",
+                "file": "main.go",
+                "file_commit_sha": "539cf6a6d4f2b3eb91b07337cc22b46019320627",
+                "line": 395,
+                "commit_sha": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "connected_to": [
+                    "image-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea"
+                ],
+                "vulnerable_package": {
+                    "name": "commons-text",
+                    "version": "1.9",
+                    "fixed_version": "1.10.0"
+                }
+            },
+            {
+                "id": "image-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "chain_id": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Malware signature detected",
+                "severity": "High",
+                "source": "Trivy",
+                "owner": "Security Team",
+                "image": "checkoutservice:v1.0.0",
+                "image_sha": "c444498f724823c99a0e507433922cf2847b23cc",
+                "commit_sha": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "connected_to": [
+                    "sca-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea"
+                ],
+                "build_commit_sha": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "vulnerable_package": {
+                    "name": "commons-text",
+                    "version": "1.9",
+                    "fixed_version": "1.10.0"
+                }
+            },
+            {
+                "id": "sca-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "chain_id": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Vulnerable dependency found",
+                "severity": "Critical",
+                "source": "Dependabot",
+                "owner": "Team B",
+                "file": "main.go",
+                "file_commit_sha": "539cf6a6d4f2b3eb91b07337cc22b46019320627",
+                "line": 417,
+                "commit_sha": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "connected_to": [
+                    "image-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea"
+                ],
+                "vulnerable_package": {
+                    "name": "jackson-databind",
+                    "version": "2.12.3",
+                    "fixed_version": "2.12.6.1"
+                }
+            },
+            {
+                "id": "image-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "chain_id": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Unnecessary package increasing attack surface",
+                "severity": "Low",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "checkoutservice:v1.0.0",
+                "image_sha": "c444498f724823c99a0e507433922cf2847b23cc",
+                "commit_sha": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "connected_to": [
+                    "sca-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea"
+                ],
+                "build_commit_sha": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "vulnerable_package": {
+                    "name": "jackson-databind",
+                    "version": "2.12.3",
+                    "fixed_version": "2.12.6.1"
+                }
+            },
+            {
+                "id": "misconfiguration-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "chain_id": "a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "stage": "runtime",
+                "type": "Misconfiguration",
+                "description": "Excessive permissions in deployment",
+                "severity": "Low",
+                "source": "Kube-bench",
+                "owner": "Security Team",
+                "image": "checkoutservice:v1.0.0",
+                "image_sha": "5cac74652c51ff7d6144a240798e7c994d58d301",
+                "commit_sha": "a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "pod_name": "checkoutservice-pod-4409",
+                "deployment_commit_sha": "a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "connected_to": [
+                    "image-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517"
+                ],
+                "vulnerable_package": {
+                    "name": "github.com/gorilla/websocket",
+                    "version": "v1.4.0",
+                    "fixed_version": "v1.4.2"
+                }
+            },
+            {
+                "id": "sca-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "chain_id": "a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Vulnerable dependency found",
+                "severity": "High",
+                "source": "Dependabot",
+                "owner": "Security Team",
+                "file": "checkout.go",
+                "file_commit_sha": "524b9b201010c47b8648d2de542b5e83876065a4",
+                "line": 228,
+                "commit_sha": "a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "connected_to": [
+                    "image-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517"
+                ],
+                "vulnerable_package": {
+                    "name": "github.com/gorilla/websocket",
+                    "version": "v1.4.0",
+                    "fixed_version": "v1.4.2"
+                }
+            },
+            {
+                "id": "image-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "chain_id": "a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "OS vulnerability in base image",
+                "severity": "Critical",
+                "source": "Trivy",
+                "owner": "Team C",
+                "image": "checkoutservice:v1.0.0",
+                "image_sha": "5cac74652c51ff7d6144a240798e7c994d58d301",
+                "commit_sha": "a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "connected_to": [
+                    "sca-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517",
+                    "misconfiguration-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517"
+                ],
+                "build_commit_sha": "a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "vulnerable_package": {
+                    "name": "github.com/gorilla/websocket",
+                    "version": "v1.4.0",
+                    "fixed_version": "v1.4.2"
+                }
+            },
+            {
+                "id": "sca-checkoutservice-standalone-0",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Security patch missing in dependency",
+                "severity": "Medium",
+                "source": "Dependabot",
+                "owner": "Team C",
+                "file": "order.go",
+                "file_commit_sha": "6862ce25bf369b6bccec1d944ad25f22ff929c82",
+                "line": 191,
+                "commit_sha": "cb1cff95250af497b3241c40cc84b0e1880d43d1",
+                "connected_to": []
+            },
+            {
+                "id": "misconfiguration-checkoutservice-standalone-1",
+                "stage": "runtime",
+                "type": "Misconfiguration",
+                "description": "Resource quota not defined",
+                "severity": "High",
+                "source": "Kube-bench",
+                "owner": "Team A",
+                "image": "checkoutservice:v1.0.0",
+                "image_sha": "5cac74652c51ff7d6144a240798e7c994d58d301",
+                "commit_sha": "1df532140efe14d6e4e88bda1c29483c456dff9a",
+                "pod_name": "checkoutservice-pod-3081",
+                "deployment_commit_sha": "1df532140efe14d6e4e88bda1c29483c456dff9a",
+                "connected_to": []
+            },
+            {
+                "id": "sast-checkoutservice-standalone-2",
+                "stage": "code",
+                "type": "SAST",
+                "description": "Path Traversal vulnerability",
+                "severity": "Critical",
+                "source": "CodeQL",
+                "owner": "Security Team",
+                "file": "checkout.go",
+                "file_commit_sha": "6862ce25bf369b6bccec1d944ad25f22ff929c82",
+                "line": 98,
+                "commit_sha": "7099c9259903cf1620b2567b0ad9c77c414139ce",
+                "connected_to": []
+            },
+            {
+                "id": "misconfiguration-checkoutservice-standalone-3",
+                "stage": "runtime",
+                "type": "Misconfiguration",
+                "description": "Resource quota not defined",
+                "severity": "Low",
+                "source": "Kube-bench",
+                "owner": "Team C",
+                "image": "checkoutservice:v1.0.0",
+                "image_sha": "5cac74652c51ff7d6144a240798e7c994d58d301",
+                "commit_sha": "3b01cd9a8555b7ad22de66bc449fe792a7b4b3fb",
+                "pod_name": "checkoutservice-pod-2903",
+                "deployment_commit_sha": "3b01cd9a8555b7ad22de66bc449fe792a7b4b3fb",
+                "connected_to": []
+            },
+            {
+                "id": "secrets-checkoutservice-standalone-4",
+                "stage": "code",
+                "type": "Secrets",
+                "description": "Encryption key in source code",
+                "severity": "Informational",
+                "source": "TruffleHog",
+                "owner": "Team B",
+                "file": "checkout.go",
+                "file_commit_sha": "de99b5692a36bc93c4168ebbc340bd98fd47d8f8",
+                "line": 432,
+                "commit_sha": "9472433494f63061e9611d0949022fb08575a9e0",
+                "connected_to": []
+            }
+        ],
+        "connected_findings": [
+            {
+                "chain_id": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "commit_sha": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "main.go",
+                            "commit_sha": "8eb140cd2c0dfdce3deb54d8993099adf405dd8d",
+                            "findings": [
+                                "sca-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/checkoutservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "checkoutservice:v1.0.0",
+                            "sha": "c444498f724823c99a0e507433922cf2847b23cc",
+                            "findings": [
+                                "image-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/checkoutservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "checkoutservice:v1.0.0",
+                            "sha": "c444498f724823c99a0e507433922cf2847b23cc",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sca-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea",
+                    "image-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T22:10:38.093390",
+                    "end_time": "2025-09-28T10:10:38.093391",
+                    "triggered_by": "pull_request",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            },
+            {
+                "chain_id": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "commit_sha": "0fabd43113111c1c8c6c01a63da81626dc867dea",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "main.go",
+                            "commit_sha": "8eb140cd2c0dfdce3deb54d8993099adf405dd8d",
+                            "findings": [
+                                "sca-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/checkoutservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "checkoutservice:v1.0.0",
+                            "sha": "c444498f724823c99a0e507433922cf2847b23cc",
+                            "findings": [
+                                "image-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/checkoutservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "checkoutservice:v1.0.0",
+                            "sha": "c444498f724823c99a0e507433922cf2847b23cc",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sca-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea",
+                    "image-checkoutservice-0fabd43113111c1c8c6c01a63da81626dc867dea"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T12:10:38.093403",
+                    "end_time": "2025-09-28T10:10:38.093405",
+                    "triggered_by": "push",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            },
+            {
+                "chain_id": "a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "commit_sha": "a40286fa636aa177c4d787d7fd716c7cf070b517",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "checkout.go",
+                            "commit_sha": "a7f6a97b75de0beacf7adb8b3bffe0e4af19cdfa",
+                            "findings": [
+                                "sca-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/checkoutservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "checkoutservice:v1.0.0",
+                            "sha": "5cac74652c51ff7d6144a240798e7c994d58d301",
+                            "findings": [
+                                "image-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/checkoutservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "checkoutservice:v1.0.0",
+                            "sha": "5cac74652c51ff7d6144a240798e7c994d58d301",
+                            "findings": [
+                                "misconfiguration-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517"
+                            ]
+                        }
+                    }
+                ],
+                "findings": [
+                    "sca-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517",
+                    "image-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517",
+                    "misconfiguration-checkoutservice-a40286fa636aa177c4d787d7fd716c7cf070b517"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-28T02:10:38.093422",
+                    "end_time": "2025-09-28T10:10:38.093424",
+                    "triggered_by": "schedule",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            }
+        ]
+    },
+    {
+        "microservice": "recommendationservice",
+        "language": "Python",
+        "image": "recommendationservice:v1.0.0",
+        "image_sha": "dfa9b58e4c4a1672e78edcef7f6bbe83f38b6df10e92c52660bd617d3cd02897",
+        "findings": [
+            {
+                "id": "sast-recommendationservice-665db827f34785d8d40aaa83cd2450b6a6a337ec",
+                "chain_id": "665db827f34785d8d40aaa83cd2450b6a6a337ec",
+                "stage": "code",
+                "type": "SAST",
+                "description": "SQL Injection vulnerability",
+                "severity": "Critical",
+                "source": "CodeQL",
+                "owner": "Team B",
+                "file": "recommendation_server.py",
+                "file_commit_sha": "41b4fb5ec8ff998334a5d8bdcb5bd522180660ec",
+                "line": 190,
+                "commit_sha": "665db827f34785d8d40aaa83cd2450b6a6a337ec",
+                "connected_to": [
+                    "image-recommendationservice-665db827f34785d8d40aaa83cd2450b6a6a337ec"
+                ],
+                "vulnerable_package": {
+                    "name": "spring-core",
+                    "version": "5.3.13",
+                    "fixed_version": "5.3.14"
+                }
+            },
+            {
+                "id": "image-recommendationservice-665db827f34785d8d40aaa83cd2450b6a6a337ec",
+                "chain_id": "665db827f34785d8d40aaa83cd2450b6a6a337ec",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Malware signature detected",
+                "severity": "High",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "recommendationservice:v1.0.0",
+                "image_sha": "1df9744cfe7013de7cc81e8e46126422f671478c",
+                "commit_sha": "665db827f34785d8d40aaa83cd2450b6a6a337ec",
+                "connected_to": [
+                    "sast-recommendationservice-665db827f34785d8d40aaa83cd2450b6a6a337ec"
+                ],
+                "build_commit_sha": "665db827f34785d8d40aaa83cd2450b6a6a337ec",
+                "vulnerable_package": {
+                    "name": "spring-core",
+                    "version": "5.3.13",
+                    "fixed_version": "5.3.14"
+                }
+            },
+            {
+                "id": "image-recommendationservice-standalone-0",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "OS vulnerability in base image",
+                "severity": "Low",
+                "source": "Trivy",
+                "owner": "Team C",
+                "image": "recommendationservice:v1.0.0",
+                "image_sha": "7fc4d663a6af60613aadbc2f906b9bc13e1e9b101bd967f5881bf9a7a0083910",
+                "commit_sha": "c37efd07f39126ad2a1f519eb27d8b2a550fb355",
+                "build_commit_sha": "c37efd07f39126ad2a1f519eb27d8b2a550fb355",
+                "connected_to": []
+            },
+            {
+                "id": "image-recommendationservice-standalone-1",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Insecure configuration in image",
+                "severity": "Medium",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "recommendationservice:v1.0.0",
+                "image_sha": "d060cf4380a8767df2e5e0d915be9935b7ed33e13f83da52134dee9f952b489c",
+                "commit_sha": "3cfd1ffea2feb05828229909bfa6dba9390240f8",
+                "build_commit_sha": "3cfd1ffea2feb05828229909bfa6dba9390240f8",
+                "connected_to": []
+            },
+            {
+                "id": "secrets-recommendationservice-standalone-2",
+                "stage": "code",
+                "type": "Secrets",
+                "description": "Hardcoded API key detected",
+                "severity": "Informational",
+                "source": "TruffleHog",
+                "owner": "Team C",
+                "file": "product_catalog.py",
+                "file_commit_sha": "89e7373fd1a782e193e7601dd8c6743a46ad940a",
+                "line": 164,
+                "commit_sha": "d1d14944e21a34d4dbe7fdac9b4236d2b8687b5d",
+                "connected_to": []
+            },
+            {
+                "id": "runtime findings-recommendationservice-standalone-3",
+                "stage": "runtime",
+                "type": "Runtime Findings",
+                "description": "Container escape attempt",
+                "severity": "Low",
+                "source": "Falco",
+                "owner": "Team A",
+                "image": "recommendationservice:v1.0.0",
+                "image_sha": "1df9744cfe7013de7cc81e8e46126422f671478c",
+                "commit_sha": "8d62d60b5f8e477b0ff5e9fadd02337bfbe259c6",
+                "pod_name": "recommendationservice-pod-3971",
+                "deployment_commit_sha": "8d62d60b5f8e477b0ff5e9fadd02337bfbe259c6",
+                "connected_to": []
+            }
+        ],
+        "connected_findings": [
+            {
+                "chain_id": "665db827f34785d8d40aaa83cd2450b6a6a337ec",
+                "commit_sha": "665db827f34785d8d40aaa83cd2450b6a6a337ec",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "recommendation_server.py",
+                            "commit_sha": "f02b6ba122d4bc1a7f16972117ba761eff46ef41",
+                            "findings": [
+                                "sast-recommendationservice-665db827f34785d8d40aaa83cd2450b6a6a337ec"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/recommendationservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "recommendationservice:v1.0.0",
+                            "sha": "1df9744cfe7013de7cc81e8e46126422f671478c",
+                            "findings": [
+                                "image-recommendationservice-665db827f34785d8d40aaa83cd2450b6a6a337ec"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/recommendationservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "recommendationservice:v1.0.0",
+                            "sha": "1df9744cfe7013de7cc81e8e46126422f671478c",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sast-recommendationservice-665db827f34785d8d40aaa83cd2450b6a6a337ec",
+                    "image-recommendationservice-665db827f34785d8d40aaa83cd2450b6a6a337ec"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T15:10:38.093465",
+                    "end_time": "2025-09-28T10:10:38.093467",
+                    "triggered_by": "push",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            }
+        ]
+    },
+    {
+        "microservice": "adservice",
+        "language": "Java",
+        "image": "adservice:v1.0.0",
+        "image_sha": "13b130759df006847334b10ac13601c0176863c5b590eb6000c04bfe9171b546",
+        "findings": [
+            {
+                "id": "runtime findings-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "chain_id": "8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "stage": "runtime",
+                "type": "Runtime Findings",
+                "description": "Unexpected network connection",
+                "severity": "Medium",
+                "source": "Falco",
+                "owner": "Team C",
+                "image": "adservice:v1.0.0",
+                "image_sha": "c1aae6ecabc72cd77dba55688c84e28d0d996a4d",
+                "commit_sha": "8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "pod_name": "adservice-pod-7122",
+                "deployment_commit_sha": "8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "connected_to": [
+                    "image-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1"
+                ],
+                "vulnerable_package": {
+                    "name": "log4j",
+                    "version": "2.14.1",
+                    "fixed_version": "2.15.0"
+                }
+            },
+            {
+                "id": "secrets-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "chain_id": "8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "stage": "code",
+                "type": "Secrets",
+                "description": "Potential password in code",
+                "severity": "Medium",
+                "source": "TruffleHog",
+                "owner": "Team A",
+                "file": "AdCatalog.java",
+                "file_commit_sha": "c9d9386effa235ab5bf529305f486325ad5da679",
+                "line": 415,
+                "commit_sha": "8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "connected_to": [
+                    "image-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1"
+                ],
+                "vulnerable_package": {
+                    "name": "log4j",
+                    "version": "2.14.1",
+                    "fixed_version": "2.15.0"
+                }
+            },
+            {
+                "id": "image-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "chain_id": "8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Outdated package in container",
+                "severity": "High",
+                "source": "Trivy",
+                "owner": "Security Team",
+                "image": "adservice:v1.0.0",
+                "image_sha": "c1aae6ecabc72cd77dba55688c84e28d0d996a4d",
+                "commit_sha": "8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "connected_to": [
+                    "secrets-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                    "runtime findings-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1"
+                ],
+                "build_commit_sha": "8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "vulnerable_package": {
+                    "name": "log4j",
+                    "version": "2.14.1",
+                    "fixed_version": "2.15.0"
+                }
+            },
+            {
+                "id": "sca-adservice-967a67162d56a1573bb6f9d0e8bd8b38200a2aee",
+                "chain_id": "967a67162d56a1573bb6f9d0e8bd8b38200a2aee",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Critical update required for package",
+                "severity": "Low",
+                "source": "Dependabot",
+                "owner": "Team A",
+                "file": "AdServiceClient.java",
+                "file_commit_sha": "7ec1d31745d33889efd54acf3058d9ee31c21bc5",
+                "line": 202,
+                "commit_sha": "967a67162d56a1573bb6f9d0e8bd8b38200a2aee",
+                "connected_to": [
+                    "image-adservice-967a67162d56a1573bb6f9d0e8bd8b38200a2aee"
+                ],
+                "vulnerable_package": {
+                    "name": "spring-core",
+                    "version": "5.3.13",
+                    "fixed_version": "5.3.14"
+                }
+            },
+            {
+                "id": "image-adservice-967a67162d56a1573bb6f9d0e8bd8b38200a2aee",
+                "chain_id": "967a67162d56a1573bb6f9d0e8bd8b38200a2aee",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Malware signature detected",
+                "severity": "Critical",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "adservice:v1.0.0",
+                "image_sha": "1a19c4c37c49d7f23bf3c82202ac07998caed017",
+                "commit_sha": "967a67162d56a1573bb6f9d0e8bd8b38200a2aee",
+                "connected_to": [
+                    "sca-adservice-967a67162d56a1573bb6f9d0e8bd8b38200a2aee"
+                ],
+                "build_commit_sha": "967a67162d56a1573bb6f9d0e8bd8b38200a2aee",
+                "vulnerable_package": {
+                    "name": "spring-core",
+                    "version": "5.3.13",
+                    "fixed_version": "5.3.14"
+                }
+            },
+            {
+                "id": "sca-adservice-7ff8fc4bae5c2896414598f221714e0e36ba69c9",
+                "chain_id": "7ff8fc4bae5c2896414598f221714e0e36ba69c9",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Outdated library with known vulnerabilities",
+                "severity": "Critical",
+                "source": "Dependabot",
+                "owner": "Security Team",
+                "file": "AdService.java",
+                "file_commit_sha": "fefe323bdf2b15529ecbdcbc56214b61ce9bbd31",
+                "line": 12,
+                "commit_sha": "7ff8fc4bae5c2896414598f221714e0e36ba69c9",
+                "connected_to": [
+                    "image-adservice-7ff8fc4bae5c2896414598f221714e0e36ba69c9"
+                ],
+                "vulnerable_package": {
+                    "name": "log4j",
+                    "version": "2.14.1",
+                    "fixed_version": "2.15.0"
+                }
+            },
+            {
+                "id": "image-adservice-7ff8fc4bae5c2896414598f221714e0e36ba69c9",
+                "chain_id": "7ff8fc4bae5c2896414598f221714e0e36ba69c9",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Malware signature detected",
+                "severity": "Low",
+                "source": "Trivy",
+                "owner": "Team C",
+                "image": "adservice:v1.0.0",
+                "image_sha": "39d46c458b2aa8f4ce7aef95c9eacff65655561d",
+                "commit_sha": "7ff8fc4bae5c2896414598f221714e0e36ba69c9",
+                "connected_to": [
+                    "sca-adservice-7ff8fc4bae5c2896414598f221714e0e36ba69c9"
+                ],
+                "build_commit_sha": "7ff8fc4bae5c2896414598f221714e0e36ba69c9",
+                "vulnerable_package": {
+                    "name": "log4j",
+                    "version": "2.14.1",
+                    "fixed_version": "2.15.0"
+                }
+            },
+            {
+                "id": "sca-adservice-standalone-0",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Security patch missing in dependency",
+                "severity": "Low",
+                "source": "Dependabot",
+                "owner": "Team C",
+                "file": "AdServiceClient.java",
+                "file_commit_sha": "0f2d3ec1ba363b430142b7b7ca5dd28670c1191c",
+                "line": 465,
+                "commit_sha": "a19cf587ad40b280b7f624e1ee325082f9b3574f",
+                "connected_to": []
+            },
+            {
+                "id": "sast-adservice-standalone-1",
+                "stage": "code",
+                "type": "SAST",
+                "description": "Command Injection risk",
+                "severity": "Critical",
+                "source": "CodeQL",
+                "owner": "Team B",
+                "file": "AdCatalog.java",
+                "file_commit_sha": "b585c73c5cb82f82c24db29c4945e540b2f9b1e8",
+                "line": 106,
+                "commit_sha": "ab189dd5cbf12f3d78e5cb1a85af3aecbd71e958",
+                "connected_to": []
+            },
+            {
+                "id": "runtime findings-adservice-standalone-2",
+                "stage": "runtime",
+                "type": "Runtime Findings",
+                "description": "Privilege escalation attempt",
+                "severity": "High",
+                "source": "Falco",
+                "owner": "Team A",
+                "image": "adservice:v1.0.0",
+                "image_sha": "39d46c458b2aa8f4ce7aef95c9eacff65655561d",
+                "commit_sha": "f14e6aaea3f6e10f9c9f75b97c4e2accc7965042",
+                "pod_name": "adservice-pod-6230",
+                "deployment_commit_sha": "f14e6aaea3f6e10f9c9f75b97c4e2accc7965042",
+                "connected_to": []
+            }
+        ],
+        "connected_findings": [
+            {
+                "chain_id": "8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "commit_sha": "8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "AdCatalog.java",
+                            "commit_sha": "4f752700cd124e36f970ee097f15c55e91b498bd",
+                            "findings": [
+                                "secrets-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/adservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "adservice:v1.0.0",
+                            "sha": "c1aae6ecabc72cd77dba55688c84e28d0d996a4d",
+                            "findings": [
+                                "image-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/adservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "adservice:v1.0.0",
+                            "sha": "c1aae6ecabc72cd77dba55688c84e28d0d996a4d",
+                            "findings": [
+                                "runtime findings-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1"
+                            ]
+                        }
+                    }
+                ],
+                "findings": [
+                    "secrets-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                    "image-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1",
+                    "runtime findings-adservice-8c7079c7007d5b17ea98af14c57daba8e0c8a8e1"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T20:10:38.093502",
+                    "end_time": "2025-09-28T10:10:38.093504",
+                    "triggered_by": "schedule",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            },
+            {
+                "chain_id": "967a67162d56a1573bb6f9d0e8bd8b38200a2aee",
+                "commit_sha": "967a67162d56a1573bb6f9d0e8bd8b38200a2aee",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "AdServiceClient.java",
+                            "commit_sha": "29144c0fb4a9fc7f481d1eaed9a44ceed38f6fb2",
+                            "findings": [
+                                "sca-adservice-967a67162d56a1573bb6f9d0e8bd8b38200a2aee"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/adservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "adservice:v1.0.0",
+                            "sha": "1a19c4c37c49d7f23bf3c82202ac07998caed017",
+                            "findings": [
+                                "image-adservice-967a67162d56a1573bb6f9d0e8bd8b38200a2aee"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/adservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "adservice:v1.0.0",
+                            "sha": "1a19c4c37c49d7f23bf3c82202ac07998caed017",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sca-adservice-967a67162d56a1573bb6f9d0e8bd8b38200a2aee",
+                    "image-adservice-967a67162d56a1573bb6f9d0e8bd8b38200a2aee"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-28T05:10:38.093520",
+                    "end_time": "2025-09-28T10:10:38.093521",
+                    "triggered_by": "pull_request",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            },
+            {
+                "chain_id": "7ff8fc4bae5c2896414598f221714e0e36ba69c9",
+                "commit_sha": "7ff8fc4bae5c2896414598f221714e0e36ba69c9",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "AdService.java",
+                            "commit_sha": "ecbed2a3b1e7e36b02e5b7482fa2e0e5a72a5900",
+                            "findings": [
+                                "sca-adservice-7ff8fc4bae5c2896414598f221714e0e36ba69c9"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/adservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "adservice:v1.0.0",
+                            "sha": "39d46c458b2aa8f4ce7aef95c9eacff65655561d",
+                            "findings": [
+                                "image-adservice-7ff8fc4bae5c2896414598f221714e0e36ba69c9"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/adservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "adservice:v1.0.0",
+                            "sha": "39d46c458b2aa8f4ce7aef95c9eacff65655561d",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sca-adservice-7ff8fc4bae5c2896414598f221714e0e36ba69c9",
+                    "image-adservice-7ff8fc4bae5c2896414598f221714e0e36ba69c9"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T13:10:38.093534",
+                    "end_time": "2025-09-28T10:10:38.093535",
+                    "triggered_by": "schedule",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            }
+        ]
+    },
+    {
+        "microservice": "loadgenerator",
+        "language": "Python",
+        "image": "loadgenerator:v1.0.0",
+        "image_sha": "5947197211b67fd53e4c8639d614818e9ca1e3e6f80d1e9050b08df00ee282e5",
+        "findings": [
+            {
+                "id": "misconfiguration-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "chain_id": "134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "stage": "runtime",
+                "type": "Misconfiguration",
+                "description": "Insecure port exposed",
+                "severity": "Low",
+                "source": "Kube-bench",
+                "owner": "Team C",
+                "image": "loadgenerator:v1.0.0",
+                "image_sha": "2686d17d8ec91aa9d4a6be8e234955edd485f381",
+                "commit_sha": "134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "pod_name": "loadgenerator-pod-3615",
+                "deployment_commit_sha": "134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "connected_to": [
+                    "image-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0"
+                ],
+                "vulnerable_package": {
+                    "name": "golang.org/x/crypto",
+                    "version": "v0.0.1",
+                    "fixed_version": "v0.0.2"
+                }
+            },
+            {
+                "id": "secrets-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "chain_id": "134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "stage": "code",
+                "type": "Secrets",
+                "description": "Potential password in code",
+                "severity": "Low",
+                "source": "TruffleHog",
+                "owner": "Security Team",
+                "file": "requirements.txt",
+                "file_commit_sha": "720691ae843d9358d1064a09a52e27b898c3f671",
+                "line": 122,
+                "commit_sha": "134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "connected_to": [
+                    "image-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0"
+                ],
+                "vulnerable_package": {
+                    "name": "golang.org/x/crypto",
+                    "version": "v0.0.1",
+                    "fixed_version": "v0.0.2"
+                }
+            },
+            {
+                "id": "image-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "chain_id": "134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Insecure configuration in image",
+                "severity": "Critical",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "loadgenerator:v1.0.0",
+                "image_sha": "2686d17d8ec91aa9d4a6be8e234955edd485f381",
+                "commit_sha": "134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "connected_to": [
+                    "secrets-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                    "misconfiguration-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0"
+                ],
+                "build_commit_sha": "134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "vulnerable_package": {
+                    "name": "golang.org/x/crypto",
+                    "version": "v0.0.1",
+                    "fixed_version": "v0.0.2"
+                }
+            },
+            {
+                "id": "misconfiguration-loadgenerator-standalone-0",
+                "stage": "runtime",
+                "type": "Misconfiguration",
+                "description": "Privileged container execution",
+                "severity": "Informational",
+                "source": "Kube-bench",
+                "owner": "Security Team",
+                "image": "loadgenerator:v1.0.0",
+                "image_sha": "2686d17d8ec91aa9d4a6be8e234955edd485f381",
+                "commit_sha": "ff84161d6fade0c64a940563470ce86b06c6ce28",
+                "pod_name": "loadgenerator-pod-5143",
+                "deployment_commit_sha": "ff84161d6fade0c64a940563470ce86b06c6ce28",
+                "connected_to": []
+            },
+            {
+                "id": "image-loadgenerator-standalone-1",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "OS vulnerability in base image",
+                "severity": "Medium",
+                "source": "Trivy",
+                "owner": "Team A",
+                "image": "loadgenerator:v1.0.0",
+                "image_sha": "a5efa541134d091022e0a6dce0f2160376701eef62e0adb6e58be3254eac885a",
+                "commit_sha": "6fa0dfb2226b44a0170ab84a9101be3bb5fb8196",
+                "build_commit_sha": "6fa0dfb2226b44a0170ab84a9101be3bb5fb8196",
+                "connected_to": []
+            },
+            {
+                "id": "sca-loadgenerator-standalone-2",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Critical update required for package",
+                "severity": "Medium",
+                "source": "Dependabot",
+                "owner": "Security Team",
+                "file": "locustfile.py",
+                "file_commit_sha": "36a6a581097656ba4d153d19dbcf403c18357b2a",
+                "line": 479,
+                "commit_sha": "9edad4969a745b0de7f39f14cf1754de18e5a94e",
+                "connected_to": []
+            }
+        ],
+        "connected_findings": [
+            {
+                "chain_id": "134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "commit_sha": "134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "requirements.txt",
+                            "commit_sha": "554d197e3511d760dbc6890d1c825f90f47b6230",
+                            "findings": [
+                                "secrets-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/loadgenerator",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "loadgenerator:v1.0.0",
+                            "sha": "2686d17d8ec91aa9d4a6be8e234955edd485f381",
+                            "findings": [
+                                "image-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/loadgenerator",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "loadgenerator:v1.0.0",
+                            "sha": "2686d17d8ec91aa9d4a6be8e234955edd485f381",
+                            "findings": [
+                                "misconfiguration-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0"
+                            ]
+                        }
+                    }
+                ],
+                "findings": [
+                    "secrets-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                    "image-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0",
+                    "misconfiguration-loadgenerator-134bb4001482cfd576c7b96b0ed7b28f48fee1d0"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-27T10:10:38.093569",
+                    "end_time": "2025-09-28T10:10:38.093571",
+                    "triggered_by": "schedule",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            }
+        ]
+    },
+    {
+        "microservice": "shoppingassistantservice",
+        "language": "Python",
+        "image": "shoppingassistantservice:v1.0.0",
+        "image_sha": "697d2b425c410db492a3a8606e50330d2acfca8d8bbb6bfc805f231412f4e330",
+        "findings": [
+            {
+                "id": "runtime findings-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "chain_id": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "stage": "runtime",
+                "type": "Runtime Findings",
+                "description": "Unusual process execution detected",
+                "severity": "Medium",
+                "source": "Falco",
+                "owner": "Team C",
+                "image": "shoppingassistantservice:v1.0.0",
+                "image_sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                "commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "pod_name": "shoppingassistantservice-pod-6664",
+                "deployment_commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "connected_to": [
+                    "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                ],
+                "vulnerable_package": {
+                    "name": "jackson-databind",
+                    "version": "2.12.3",
+                    "fixed_version": "2.12.6.1"
+                }
+            },
+            {
+                "id": "sca-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "chain_id": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Outdated library with known vulnerabilities",
+                "severity": "High",
+                "source": "Dependabot",
+                "owner": "Team B",
+                "file": "user_profiles.py",
+                "file_commit_sha": "e412dc3df835b8b7167d2ebb31eef23510b69ca3",
+                "line": 272,
+                "commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "connected_to": [
+                    "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                ],
+                "vulnerable_package": {
+                    "name": "jackson-databind",
+                    "version": "2.12.3",
+                    "fixed_version": "2.12.6.1"
+                }
+            },
+            {
+                "id": "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "chain_id": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Outdated package in container",
+                "severity": "Low",
+                "source": "Trivy",
+                "owner": "Security Team",
+                "image": "shoppingassistantservice:v1.0.0",
+                "image_sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                "commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "connected_to": [
+                    "sca-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                    "runtime findings-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                ],
+                "build_commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "vulnerable_package": {
+                    "name": "jackson-databind",
+                    "version": "2.12.3",
+                    "fixed_version": "2.12.6.1"
+                }
+            },
+            {
+                "id": "runtime findings-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "chain_id": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "stage": "runtime",
+                "type": "Runtime Findings",
+                "description": "File system modification alert",
+                "severity": "Medium",
+                "source": "Falco",
+                "owner": "Team A",
+                "image": "shoppingassistantservice:v1.0.0",
+                "image_sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                "commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "pod_name": "shoppingassistantservice-pod-8933",
+                "deployment_commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "connected_to": [
+                    "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                ],
+                "vulnerable_package": {
+                    "name": "log4j",
+                    "version": "2.14.1",
+                    "fixed_version": "2.15.0"
+                }
+            },
+            {
+                "id": "sca-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "chain_id": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "stage": "code",
+                "type": "SCA",
+                "description": "Vulnerable dependency found",
+                "severity": "Medium",
+                "source": "Dependabot",
+                "owner": "Team C",
+                "file": "user_profiles.py",
+                "file_commit_sha": "e412dc3df835b8b7167d2ebb31eef23510b69ca3",
+                "line": 371,
+                "commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "connected_to": [
+                    "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                ],
+                "vulnerable_package": {
+                    "name": "log4j",
+                    "version": "2.14.1",
+                    "fixed_version": "2.15.0"
+                }
+            },
+            {
+                "id": "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "chain_id": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Unnecessary package increasing attack surface",
+                "severity": "Critical",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "shoppingassistantservice:v1.0.0",
+                "image_sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                "commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "connected_to": [
+                    "sca-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                    "runtime findings-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                ],
+                "build_commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "vulnerable_package": {
+                    "name": "log4j",
+                    "version": "2.14.1",
+                    "fixed_version": "2.15.0"
+                }
+            },
+            {
+                "id": "sast-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "chain_id": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "stage": "code",
+                "type": "SAST",
+                "description": "Cross-Site Scripting (XSS) detected",
+                "severity": "High",
+                "source": "CodeQL",
+                "owner": "Team B",
+                "file": "user_profiles.py",
+                "file_commit_sha": "e412dc3df835b8b7167d2ebb31eef23510b69ca3",
+                "line": 33,
+                "commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "connected_to": [
+                    "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                ],
+                "vulnerable_package": {
+                    "name": "github.com/gorilla/websocket",
+                    "version": "v1.4.0",
+                    "fixed_version": "v1.4.2"
+                }
+            },
+            {
+                "id": "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "chain_id": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Outdated package in container",
+                "severity": "Low",
+                "source": "Trivy",
+                "owner": "Team B",
+                "image": "shoppingassistantservice:v1.0.0",
+                "image_sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                "commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "connected_to": [
+                    "sast-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                ],
+                "build_commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "vulnerable_package": {
+                    "name": "github.com/gorilla/websocket",
+                    "version": "v1.4.0",
+                    "fixed_version": "v1.4.2"
+                }
+            },
+            {
+                "id": "runtime findings-shoppingassistantservice-standalone-0",
+                "stage": "runtime",
+                "type": "Runtime Findings",
+                "description": "Unusual process execution detected",
+                "severity": "Critical",
+                "source": "Falco",
+                "owner": "Security Team",
+                "image": "shoppingassistantservice:v1.0.0",
+                "image_sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                "commit_sha": "89b1fb103af96e29439e883b9f9cf25b86a2a9c2",
+                "pod_name": "shoppingassistantservice-pod-7618",
+                "deployment_commit_sha": "89b1fb103af96e29439e883b9f9cf25b86a2a9c2",
+                "connected_to": []
+            },
+            {
+                "id": "runtime findings-shoppingassistantservice-standalone-1",
+                "stage": "runtime",
+                "type": "Runtime Findings",
+                "description": "Container escape attempt",
+                "severity": "Critical",
+                "source": "Falco",
+                "owner": "Team C",
+                "image": "shoppingassistantservice:v1.0.0",
+                "image_sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                "commit_sha": "9a13280bae0fe495d8555fd72f14b0ee12bcbe85",
+                "pod_name": "shoppingassistantservice-pod-3338",
+                "deployment_commit_sha": "9a13280bae0fe495d8555fd72f14b0ee12bcbe85",
+                "connected_to": []
+            },
+            {
+                "id": "image-shoppingassistantservice-standalone-2",
+                "stage": "build",
+                "type": "Image Scan",
+                "description": "Malware signature detected",
+                "severity": "Low",
+                "source": "Trivy",
+                "owner": "Team C",
+                "image": "shoppingassistantservice:v1.0.0",
+                "image_sha": "687b2073a75a4faa4797a1db50741f3d25964063410a0a8139f1d539c579f4e3",
+                "commit_sha": "0a50f50a7ab9c7e8d1b88fd622a581af1bc85f49",
+                "build_commit_sha": "0a50f50a7ab9c7e8d1b88fd622a581af1bc85f49",
+                "connected_to": []
+            },
+            {
+                "id": "runtime findings-shoppingassistantservice-standalone-3",
+                "stage": "runtime",
+                "type": "Runtime Findings",
+                "description": "Unusual process execution detected",
+                "severity": "Critical",
+                "source": "Falco",
+                "owner": "Team A",
+                "image": "shoppingassistantservice:v1.0.0",
+                "image_sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                "commit_sha": "e4f70bbf08a6211603032716704eb508ec6a33ed",
+                "pod_name": "shoppingassistantservice-pod-2926",
+                "deployment_commit_sha": "e4f70bbf08a6211603032716704eb508ec6a33ed",
+                "connected_to": []
+            }
+        ],
+        "connected_findings": [
+            {
+                "chain_id": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "user_profiles.py",
+                            "commit_sha": "3decf68cfc39b8ebd1bf48f47b7cad4be778810d",
+                            "findings": [
+                                "sca-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/shoppingassistantservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "shoppingassistantservice:v1.0.0",
+                            "sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                            "findings": [
+                                "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/shoppingassistantservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "shoppingassistantservice:v1.0.0",
+                            "sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                            "findings": [
+                                "runtime findings-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                            ]
+                        }
+                    }
+                ],
+                "findings": [
+                    "sca-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                    "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                    "runtime findings-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-28T09:10:38.093605",
+                    "end_time": "2025-09-28T10:10:38.093607",
+                    "triggered_by": "pull_request",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            },
+            {
+                "chain_id": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "user_profiles.py",
+                            "commit_sha": "3decf68cfc39b8ebd1bf48f47b7cad4be778810d",
+                            "findings": [
+                                "sca-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/shoppingassistantservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "shoppingassistantservice:v1.0.0",
+                            "sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                            "findings": [
+                                "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/shoppingassistantservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "shoppingassistantservice:v1.0.0",
+                            "sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                            "findings": [
+                                "runtime findings-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                            ]
+                        }
+                    }
+                ],
+                "findings": [
+                    "sca-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                    "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                    "runtime findings-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-28T09:10:38.093622",
+                    "end_time": "2025-09-28T10:10:38.093623",
+                    "triggered_by": "push",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            },
+            {
+                "chain_id": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "commit_sha": "549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                "name": "Code to Cloud Pipeline",
+                "status": "active",
+                "stages": [
+                    {
+                        "id": "code",
+                        "name": "Unknown Source",
+                        "type": "code",
+                        "status": "completed",
+                        "details": {
+                            "file": "user_profiles.py",
+                            "commit_sha": "3decf68cfc39b8ebd1bf48f47b7cad4be778810d",
+                            "findings": [
+                                "sast-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "store",
+                        "name": "gke.gcr.io/gcp-com/shoppingassistantservice",
+                        "type": "container_repository",
+                        "status": "completed",
+                        "details": {
+                            "image": "shoppingassistantservice:v1.0.0",
+                            "sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                            "findings": [
+                                "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                            ]
+                        }
+                    },
+                    {
+                        "id": "cloud",
+                        "name": "gke.gcr.io/gcp-com/shoppingassistantservice",
+                        "type": "container_image",
+                        "status": "active",
+                        "details": {
+                            "image": "shoppingassistantservice:v1.0.0",
+                            "sha": "f0ca1750befb94c17810bc539ab729f8586862ad",
+                            "findings": []
+                        }
+                    }
+                ],
+                "findings": [
+                    "sast-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca",
+                    "image-shoppingassistantservice-549f207771c89d63a9c3a3fd63781d9a47f6e6ca"
+                ],
+                "metadata": {
+                    "start_time": "2025-09-28T04:10:38.093635",
+                    "end_time": "2025-09-28T10:10:38.093637",
+                    "triggered_by": "pull_request",
+                    "source_branch": "main",
+                    "target_branch": "main"
+                }
+            }
+        ]
+    }
+]

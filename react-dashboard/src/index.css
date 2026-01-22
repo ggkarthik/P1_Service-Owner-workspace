@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header {
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.card {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0 !important;
+}
+
+.metric-card {
+  text-align: center;
+  padding: 15px;
+}
+
+.metric-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.language-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 2px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.service-card {
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-language {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.Go { background-color: #00ADD8; color: white; }
+.Python { background-color: #3776AB; color: white; }
+.Java { background-color: #007396; color: white; }
+.Node { background-color: #339933; color: white; }
+.CSharp { background-color: #512BD4; color: white; }
+
+.tree-view {
+  padding: 10px;
+}
+
+.tree-item {
+  padding: 5px 0;
+}
+
+.tree-toggle {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.tree-content {
+  padding-left: 20px;
+}
+
+.pr-item {
+  border-left: 3px solid #007bff;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.commit-item {
+  border-left: 3px solid #28a745;
+  padding: 8px;
+  margin: 5px 0;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.file-item {
+  border-left: 3px solid #dc3545;
+  padding: 5px;
+  margin: 3px 0;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.badge-additions {
+  background-color: #28a745;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.badge-deletions {
+  background-color: #dc3545;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.state-open {
+  background-color: #28a745;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.state-closed {
+  background-color: #dc3545;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.state-merged {
+  background-color: #6f42c1;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.nav-tabs .nav-link {
+  color: #495057;
+  border: none;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+  color: #007bff;
+  background-color: transparent;
+  border-bottom: 3px solid #007bff;
+}

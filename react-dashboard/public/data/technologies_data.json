@@ -1,0 +1,100 @@
+{
+  "languages": {
+    "Markdown": 115673,
+    "YAML": 226654,
+    "Protocol Buffers": 29436,
+    "Shell": 27811,
+    "Python": 108382,
+    "Java": 11755,
+    "Go": 658517,
+    "CSS": 17857,
+    "HTML": 39126,
+    "C#": 31629,
+    "JSON": 381603,
+    "JavaScript": 15921
+  },
+  "language_distribution": {
+    "Markdown": 6.95,
+    "YAML": 13.62,
+    "Protocol Buffers": 1.77,
+    "Shell": 1.67,
+    "Python": 6.51,
+    "Java": 0.71,
+    "Go": 39.57,
+    "CSS": 1.07,
+    "HTML": 2.35,
+    "C#": 1.9,
+    "JSON": 22.93,
+    "JavaScript": 0.96
+  },
+  "primary_language": "Go",
+  "frameworks": [
+    {
+      "name": "gRPC",
+      "language": "Java",
+      "confidence": 0.9,
+      "usage": 5
+    },
+    {
+      "name": "Flask",
+      "language": "Python",
+      "confidence": 0.9,
+      "usage": 5
+    },
+    {
+      "name": "ASP.NET Core",
+      "language": "C#",
+      "confidence": 0.9,
+      "usage": 5
+    }
+  ],
+  "databases": [
+    {
+      "name": "Redis",
+      "category": "database",
+      "confidence": 0.8,
+      "usage": 5
+    }
+  ],
+  "cloud_platforms": [
+    {
+      "name": "Kubernetes",
+      "category": "cloud",
+      "confidence": 0.8,
+      "usage": 5
+    },
+    {
+      "name": "Docker",
+      "category": "cloud",
+      "confidence": 0.8,
+      "usage": 5
+    },
+    {
+      "name": "Google Cloud",
+      "category": "cloud",
+      "confidence": 0.8,
+      "usage": 5
+    }
+  ],
+  "tools": [
+    {
+      "name": "Skaffold",
+      "category": "Infrastructure",
+      "confidence": 0.9,
+      "usage": 5
+    },
+    {
+      "name": "Terraform",
+      "category": "Infrastructure",
+      "confidence": 0.9,
+      "usage": 5
+    },
+    {
+      "name": "Kustomize",
+      "category": "Infrastructure",
+      "confidence": 0.9,
+      "usage": 5
+    }
+  ],
+  "timestamp": "2025-09-24T15:00:39.856052"
+}

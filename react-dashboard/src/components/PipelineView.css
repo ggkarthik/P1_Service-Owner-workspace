@@ -1,0 +1,71 @@
+.pipeline-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.pipeline-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.stage-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.stage-details {
+  width: 100%;
+}
+
+.stage-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stage-meta {
+  font-size: 0.75rem;
+}
+
+.pipeline-arrow {
+  color: #6c757d;
+  margin: 0 1rem;
+  font-size: 1.25rem;
+}
+
+.pipeline-metadata {
+  border-top: 1px solid #dee2e6;
+  padding-top: 1rem;
+}
+
+/* Status colors */
+.bg-completed {
+  background-color: #198754;
+}
+
+.bg-active {
+  background-color: #0d6efd;
+}
+
+.bg-failed {
+  background-color: #dc3545;
+}
+
+.bg-secondary {
+  background-color: #6c757d;
+}

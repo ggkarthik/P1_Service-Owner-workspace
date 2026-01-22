@@ -1,0 +1,4097 @@
+{
+  "summary": {
+    "total_services": 12,
+    "languages": {
+      "Go": 4,
+      "C#": 1,
+      "Node.js": 2,
+      "Python": 4,
+      "Java": 1
+    },
+    "total_dependencies": 406,
+    "total_endpoints": 110,
+    "total_loc": 18221,
+    "generated_at": "2025-10-08T13:54:03.035016"
+  },
+  "services": [
+    {
+      "name": "frontend",
+      "description": "Exposes an HTTP server to serve the website",
+      "language": "Go",
+      "path": "src/frontend",
+      "dependencies": [
+        {
+          "name": "cloud.google.com/go/compute/metadata",
+          "version": "v0.6.0",
+          "type": "direct"
+        },
+        {
+          "name": "cloud.google.com/go/profiler",
+          "version": "v0.4.2",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/go-playground/validator/v10",
+          "version": "v10.25.0",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/google/uuid",
+          "version": "v1.6.0",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/gorilla/mux",
+          "version": "v1.8.1",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/pkg/errors",
+          "version": "v0.9.1",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/sirupsen/logrus",
+          "version": "v1.9.3",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+          "version": "v0.60.0",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+          "version": "v0.60.0",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/otel",
+          "version": "v1.35.0",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
+          "version": "v1.35.0",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/sdk",
+          "version": "v1.35.0",
+          "type": "direct"
+        },
+        {
+          "name": "google.golang.org/grpc",
+          "version": "v1.71.0",
+          "type": "direct"
+        },
+        {
+          "name": "google.golang.org/protobuf",
+          "version": "v1.36.6",
+          "type": "direct"
+        },
+        {
+          "name": "cloud.google.com/go",
+          "version": "v0.116.0",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/auth",
+          "version": "v0.11.0",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/auth/oauth2adapt",
+          "version": "v0.2.6",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/cenkalti/backoff/v4",
+          "version": "v4.3.0",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/felixge/httpsnoop",
+          "version": "v1.0.4",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/gabriel-vasile/mimetype",
+          "version": "v1.4.8",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/go-logr/logr",
+          "version": "v1.4.2",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/go-logr/stdr",
+          "version": "v1.2.2",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/go-playground/locales",
+          "version": "v0.14.1",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/go-playground/universal-translator",
+          "version": "v0.18.1",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/golang/groupcache",
+          "version": "v0.0.0-20210331224755-41bb18bfe9da",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/google/pprof",
+          "version": "v0.0.0-20240903155634-a8630aee4ab9",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/google/s2a-go",
+          "version": "v0.1.8",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/googleapis/enterprise-certificate-proxy",
+          "version": "v0.3.4",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/googleapis/gax-go/v2",
+          "version": "v2.14.0",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/grpc-ecosystem/grpc-gateway/v2",
+          "version": "v2.26.1",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/leodido/go-urn",
+          "version": "v1.4.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opencensus.io",
+          "version": "v0.24.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/auto/sdk",
+          "version": "v1.1.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace",
+          "version": "v1.35.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/metric",
+          "version": "v1.35.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/trace",
+          "version": "v1.35.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/proto/otlp",
+          "version": "v1.5.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/crypto",
+          "version": "v0.33.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/net",
+          "version": "v0.35.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/oauth2",
+          "version": "v0.27.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/sync",
+          "version": "v0.11.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/sys",
+          "version": "v0.30.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/text",
+          "version": "v0.22.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/time",
+          "version": "v0.8.0",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/api",
+          "version": "v0.210.0",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/genproto",
+          "version": "v0.0.0-20241118233622-e639e219e697",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/genproto/googleapis/api",
+          "version": "v0.0.0-20250218202821-56aae31c358a",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/genproto/googleapis/rpc",
+          "version": "v0.0.0-20250218202821-56aae31c358a",
+          "type": "indirect"
+        }
+      ],
+      "infrastructure": {
+        "deployment": {
+          "type": "Kubernetes",
+          "replicas": 1,
+          "strategy": "RollingUpdate",
+          "containers": [
+            {
+              "name": "server",
+              "image": "frontend",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "name": "http"
+                }
+              ]
+            }
+          ]
+        },
+        "service": {
+          "type": "LoadBalancer",
+          "ports": [
+            {
+              "port": 80,
+              "targetPort": 8080,
+              "name": "http"
+            },
+            {
+              "port": 80,
+              "targetPort": 8080,
+              "name": "http"
+            }
+          ]
+        },
+        "resources": {
+          "requests": {
+            "cpu": "100m",
+            "memory": "64Mi"
+          },
+          "limits": {
+            "cpu": "200m",
+            "memory": "128Mi"
+          }
+        },
+        "security": {
+          "securityContext": {
+            "fsGroup": 1000,
+            "runAsGroup": 1000,
+            "runAsNonRoot": true,
+            "runAsUser": 1000
+          },
+          "serviceAccount": "frontend"
+        },
+        "config": {
+          "env": [
+            {
+              "name": "PORT",
+              "value": "8080"
+            },
+            {
+              "name": "PRODUCT_CATALOG_SERVICE_ADDR",
+              "value": "productcatalogservice:3550"
+            },
+            {
+              "name": "CURRENCY_SERVICE_ADDR",
+              "value": "currencyservice:7000"
+            },
+            {
+              "name": "CART_SERVICE_ADDR",
+              "value": "cartservice:7070"
+            },
+            {
+              "name": "RECOMMENDATION_SERVICE_ADDR",
+              "value": "recommendationservice:8080"
+            },
+            {
+              "name": "SHIPPING_SERVICE_ADDR",
+              "value": "shippingservice:50051"
+            },
+            {
+              "name": "CHECKOUT_SERVICE_ADDR",
+              "value": "checkoutservice:5050"
+            },
+            {
+              "name": "AD_SERVICE_ADDR",
+              "value": "adservice:9555"
+            },
+            {
+              "name": "SHOPPING_ASSISTANT_SERVICE_ADDR",
+              "value": "shoppingassistantservice:80"
+            },
+            {
+              "name": "ENABLE_PROFILER",
+              "value": "0"
+            }
+          ],
+          "volumes": []
+        },
+        "network": {
+          "ingress": false,
+          "egress": [],
+          "ports": [
+            8080
+          ]
+        }
+      },
+      "api": {
+        "protocol": "gRPC",
+        "endpoints": [],
+        "client_connections": [],
+        "server_endpoints": [
+          {
+            "name": "AddItem",
+            "request_type": "AddItemRequest",
+            "response_type": "Empty",
+            "service": "CartService"
+          },
+          {
+            "name": "ListRecommendations",
+            "request_type": "ListRecommendationsRequest",
+            "response_type": "ListRecommendationsResponse",
+            "service": "RecommendationService"
+          },
+          {
+            "name": "ListProducts",
+            "request_type": "Empty",
+            "response_type": "ListProductsResponse",
+            "service": "ProductCatalogService"
+          },
+          {
+            "name": "GetQuote",
+            "request_type": "GetQuoteRequest",
+            "response_type": "GetQuoteResponse",
+            "service": "ShippingService"
+          },
+          {
+            "name": "GetSupportedCurrencies",
+            "request_type": "Empty",
+            "response_type": "GetSupportedCurrenciesResponse",
+            "service": "CurrencyService"
+          },
+          {
+            "name": "Charge",
+            "request_type": "ChargeRequest",
+            "response_type": "ChargeResponse",
+            "service": "PaymentService"
+          },
+          {
+            "name": "SendOrderConfirmation",
+            "request_type": "SendOrderConfirmationRequest",
+            "response_type": "Empty",
+            "service": "EmailService"
+          },
+          {
+            "name": "PlaceOrder",
+            "request_type": "PlaceOrderRequest",
+            "response_type": "PlaceOrderResponse",
+            "service": "CheckoutService"
+          },
+          {
+            "name": "GetAds",
+            "request_type": "AdRequest",
+            "response_type": "AdResponse",
+            "service": "AdService"
+          },
+          {
+            "name": "Check",
+            "request_type": "HealthCheckRequest",
+            "response_type": "HealthCheckResponse",
+            "service": "Health"
+          }
+        ]
+      },
+      "code_metrics": {
+        "loc": 4571,
+        "files": 73,
+        "directories": 10,
+        "file_types": {
+          ".mod": 1,
+          ".go": 12,
+          ".sum": 1,
+          ".md": 1,
+          ".sh": 1,
+          ".ico": 2,
+          ".jpg": 11,
+          ".png": 5,
+          ".txt": 1,
+          ".css": 4,
+          ".svg": 21,
+          ".html": 10
+        },
+        "complexity": "high",
+        "test_coverage": 0.0,
+        "documentation": "moderate"
+      },
+      "deployment": {
+        "container_registry": "frontend",
+        "image_tag": "latest",
+        "deployment_strategy": "rolling-update",
+        "health_checks": {
+          "readiness": true,
+          "liveness": true
+        },
+        "scaling": {
+          "auto_scaling": false,
+          "min_replicas": 1,
+          "max_replicas": 1
+        },
+        "environment": "kubernetes"
+      }
+    },
+    {
+      "name": "cartservice",
+      "description": "Stores shopping cart items in Redis",
+      "language": "C#",
+      "path": "src/cartservice",
+      "dependencies": [
+        {
+          "name": "Grpc.Net.Client",
+          "version": "2.71.0",
+          "type": "production"
+        },
+        {
+          "name": "Microsoft.AspNetCore.TestHost",
+          "version": "9.0.8",
+          "type": "production"
+        },
+        {
+          "name": "Microsoft.NET.Test.Sdk",
+          "version": "17.14.1",
+          "type": "production"
+        },
+        {
+          "name": "xunit",
+          "version": "2.9.3",
+          "type": "production"
+        },
+        {
+          "name": "xunit.runner.visualstudio",
+          "version": "3.1.4",
+          "type": "production"
+        },
+        {
+          "name": "Grpc.AspNetCore",
+          "version": "2.71.0",
+          "type": "production"
+        },
+        {
+          "name": "Grpc.HealthCheck",
+          "version": "2.71.0",
+          "type": "production"
+        },
+        {
+          "name": "Microsoft.Extensions.Caching.StackExchangeRedis",
+          "version": "8.0.8",
+          "type": "production"
+        },
+        {
+          "name": "Google.Cloud.Spanner.Data",
+          "version": "5.1.0",
+          "type": "production"
+        },
+        {
+          "name": "Npgsql",
+          "version": "8.0.3",
+          "type": "production"
+        },
+        {
+          "name": "Google.Cloud.SecretManager.V1",
+          "version": "2.6.0",
+          "type": "production"
+        }
+      ],
+      "infrastructure": {
+        "deployment": {
+          "type": "Kubernetes",
+          "replicas": 1,
+          "strategy": "RollingUpdate",
+          "containers": [
+            {
+              "name": "server",
+              "image": "cartservice",
+              "ports": [
+                {
+                  "containerPort": 7070,
+                  "name": "http"
+                }
+              ]
+            },
+            {
+              "name": "redis",
+              "image": "redis:alpine",
+              "ports": [
+                {
+                  "containerPort": 6379,
+                  "name": "http"
+                }
+              ]
+            }
+          ]
+        },
+        "service": {
+          "type": "ClusterIP",
+          "ports": [
+            {
+              "port": 7070,
+              "targetPort": 7070,
+              "name": "grpc"
+            },
+            {
+              "port": 6379,
+              "targetPort": 6379,
+              "name": "tcp-redis"
+            }
+          ]
+        },
+        "resources": {
+          "requests": {
+            "cpu": "70m",
+            "memory": "200Mi"
+          },
+          "limits": {
+            "cpu": "125m",
+            "memory": "256Mi"
+          }
+        },
+        "security": {
+          "securityContext": {
+            "fsGroup": 1000,
+            "runAsGroup": 1000,
+            "runAsNonRoot": true,
+            "runAsUser": 1000
+          },
+          "serviceAccount": "cartservice"
+        },
+        "config": {
+          "env": [
+            {
+              "name": "REDIS_ADDR",
+              "value": "redis-cart:6379"
+            }
+          ],
+          "volumes": []
+        },
+        "network": {
+          "ingress": false,
+          "egress": [],
+          "ports": [
+            7070,
+            6379
+          ]
+        }
+      },
+      "api": {
+        "protocol": "gRPC",
+        "endpoints": [],
+        "client_connections": [],
+        "server_endpoints": [
+          {
+            "name": "AddItem",
+            "request_type": "AddItemRequest",
+            "response_type": "Empty",
+            "service": "CartService"
+          }
+        ]
+      },
+      "code_metrics": {
+        "loc": 639,
+        "files": 17,
+        "directories": 5,
+        "file_types": {
+          ".sln": 1,
+          ".cs": 9,
+          ".csproj": 2,
+          ".json": 1,
+          ".debug": 1,
+          ".proto": 1
+        },
+        "complexity": "medium",
+        "test_coverage": 0.0,
+        "documentation": "minimal"
+      },
+      "deployment": {
+        "container_registry": "redis",
+        "image_tag": "alpine",
+        "deployment_strategy": "rolling-update",
+        "health_checks": {
+          "readiness": true,
+          "liveness": true
+        },
+        "scaling": {
+          "auto_scaling": false,
+          "min_replicas": 1,
+          "max_replicas": 1
+        },
+        "environment": "kubernetes"
+      }
+    },
+    {
+      "name": "productcatalogservice",
+      "description": "Provides product listings and search",
+      "language": "Go",
+      "path": "src/productcatalogservice",
+      "dependencies": [
+        {
+          "name": "cloud.google.com/go/alloydbconn",
+          "version": "v1.15.0",
+          "type": "direct"
+        },
+        {
+          "name": "cloud.google.com/go/profiler",
+          "version": "v0.4.2",
+          "type": "direct"
+        },
+        {
+          "name": "cloud.google.com/go/secretmanager",
+          "version": "v1.14.6",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/golang/protobuf",
+          "version": "v1.5.4",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/jackc/pgx/v5",
+          "version": "v5.7.4",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/pkg/errors",
+          "version": "v0.9.1",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/sirupsen/logrus",
+          "version": "v1.9.3",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+          "version": "v0.60.0",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/otel",
+          "version": "v1.35.0",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
+          "version": "v1.35.0",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/sdk",
+          "version": "v1.35.0",
+          "type": "direct"
+        },
+        {
+          "name": "google.golang.org/grpc",
+          "version": "v1.71.0",
+          "type": "direct"
+        },
+        {
+          "name": "google.golang.org/protobuf",
+          "version": "v1.36.6",
+          "type": "direct"
+        },
+        {
+          "name": "cloud.google.com/go",
+          "version": "v0.118.3",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/alloydb",
+          "version": "v1.14.1",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/auth",
+          "version": "v0.15.0",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/auth/oauth2adapt",
+          "version": "v0.2.7",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/compute/metadata",
+          "version": "v0.6.0",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/iam",
+          "version": "v1.4.1",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/longrunning",
+          "version": "v0.6.4",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/monitoring",
+          "version": "v1.24.0",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric",
+          "version": "v0.51.0",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping",
+          "version": "v0.51.0",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/cenkalti/backoff/v4",
+          "version": "v4.3.0",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/felixge/httpsnoop",
+          "version": "v1.0.4",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/go-logr/logr",
+          "version": "v1.4.2",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/go-logr/stdr",
+          "version": "v1.2.2",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/golang/groupcache",
+          "version": "v0.0.0-20210331224755-41bb18bfe9da",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/google/pprof",
+          "version": "v0.0.0-20240903155634-a8630aee4ab9",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/google/s2a-go",
+          "version": "v0.1.9",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/google/uuid",
+          "version": "v1.6.0",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/googleapis/enterprise-certificate-proxy",
+          "version": "v0.3.5",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/googleapis/gax-go/v2",
+          "version": "v2.14.1",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/grpc-ecosystem/grpc-gateway/v2",
+          "version": "v2.26.1",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/jackc/pgpassfile",
+          "version": "v1.0.0",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/jackc/pgservicefile",
+          "version": "v0.0.0-20240606120523-5a60cdf6a761",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/jackc/puddle/v2",
+          "version": "v2.2.2",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opencensus.io",
+          "version": "v0.24.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/auto/sdk",
+          "version": "v1.1.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+          "version": "v0.59.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace",
+          "version": "v1.35.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/metric",
+          "version": "v1.35.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/sdk/metric",
+          "version": "v1.35.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/trace",
+          "version": "v1.35.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/proto/otlp",
+          "version": "v1.5.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/crypto",
+          "version": "v0.36.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/net",
+          "version": "v0.38.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/oauth2",
+          "version": "v0.28.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/sync",
+          "version": "v0.12.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/sys",
+          "version": "v0.31.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/text",
+          "version": "v0.23.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/time",
+          "version": "v0.11.0",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/api",
+          "version": "v0.224.0",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/genproto",
+          "version": "v0.0.0-20250303144028-a0af3efb3deb",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/genproto/googleapis/api",
+          "version": "v0.0.0-20250303144028-a0af3efb3deb",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/genproto/googleapis/rpc",
+          "version": "v0.0.0-20250303144028-a0af3efb3deb",
+          "type": "indirect"
+        }
+      ],
+      "infrastructure": {
+        "deployment": {
+          "type": "Kubernetes",
+          "replicas": 1,
+          "strategy": "RollingUpdate",
+          "containers": [
+            {
+              "name": "server",
+              "image": "productcatalogservice",
+              "ports": [
+                {
+                  "containerPort": 3550,
+                  "name": "http"
+                }
+              ]
+            }
+          ]
+        },
+        "service": {
+          "type": "ClusterIP",
+          "ports": [
+            {
+              "port": 3550,
+              "targetPort": 3550,
+              "name": "grpc"
+            }
+          ]
+        },
+        "resources": {
+          "requests": {
+            "cpu": "100m",
+            "memory": "64Mi"
+          },
+          "limits": {
+            "cpu": "200m",
+            "memory": "128Mi"
+          }
+        },
+        "security": {
+          "securityContext": {
+            "fsGroup": 1000,
+            "runAsGroup": 1000,
+            "runAsNonRoot": true,
+            "runAsUser": 1000
+          },
+          "serviceAccount": "productcatalogservice"
+        },
+        "config": {
+          "env": [
+            {
+              "name": "PORT",
+              "value": "3550"
+            },
+            {
+              "name": "DISABLE_PROFILER",
+              "value": "1"
+            }
+          ],
+          "volumes": []
+        },
+        "network": {
+          "ingress": false,
+          "egress": [],
+          "ports": [
+            3550
+          ]
+        }
+      },
+      "api": {
+        "protocol": "gRPC",
+        "endpoints": [],
+        "client_connections": [],
+        "server_endpoints": [
+          {
+            "name": "AddItem",
+            "request_type": "AddItemRequest",
+            "response_type": "Empty",
+            "service": "CartService"
+          },
+          {
+            "name": "ListRecommendations",
+            "request_type": "ListRecommendationsRequest",
+            "response_type": "ListRecommendationsResponse",
+            "service": "RecommendationService"
+          },
+          {
+            "name": "ListProducts",
+            "request_type": "Empty",
+            "response_type": "ListProductsResponse",
+            "service": "ProductCatalogService"
+          },
+          {
+            "name": "GetQuote",
+            "request_type": "GetQuoteRequest",
+            "response_type": "GetQuoteResponse",
+            "service": "ShippingService"
+          },
+          {
+            "name": "GetSupportedCurrencies",
+            "request_type": "Empty",
+            "response_type": "GetSupportedCurrenciesResponse",
+            "service": "CurrencyService"
+          },
+          {
+            "name": "Charge",
+            "request_type": "ChargeRequest",
+            "response_type": "ChargeResponse",
+            "service": "PaymentService"
+          },
+          {
+            "name": "SendOrderConfirmation",
+            "request_type": "SendOrderConfirmationRequest",
+            "response_type": "Empty",
+            "service": "EmailService"
+          },
+          {
+            "name": "PlaceOrder",
+            "request_type": "PlaceOrderRequest",
+            "response_type": "PlaceOrderResponse",
+            "service": "CheckoutService"
+          },
+          {
+            "name": "GetAds",
+            "request_type": "AdRequest",
+            "response_type": "AdResponse",
+            "service": "AdService"
+          },
+          {
+            "name": "Check",
+            "request_type": "HealthCheckRequest",
+            "response_type": "HealthCheckResponse",
+            "service": "Health"
+          }
+        ]
+      },
+      "code_metrics": {
+        "loc": 3481,
+        "files": 13,
+        "directories": 1,
+        "file_types": {
+          ".mod": 1,
+          ".go": 6,
+          ".sum": 1,
+          ".md": 1,
+          ".sh": 1,
+          ".json": 1
+        },
+        "complexity": "high",
+        "test_coverage": 0.0,
+        "documentation": "moderate"
+      },
+      "deployment": {
+        "container_registry": "productcatalogservice",
+        "image_tag": "latest",
+        "deployment_strategy": "rolling-update",
+        "health_checks": {
+          "readiness": true,
+          "liveness": true
+        },
+        "scaling": {
+          "auto_scaling": false,
+          "min_replicas": 1,
+          "max_replicas": 1
+        },
+        "environment": "kubernetes"
+      }
+    },
+    {
+      "name": "currencyservice",
+      "description": "Converts money amounts between currencies",
+      "language": "Node.js",
+      "path": "src/currencyservice",
+      "dependencies": [
+        {
+          "name": "@google-cloud/profiler",
+          "version": "6.0.3",
+          "type": "production"
+        },
+        {
+          "name": "@google-cloud/trace-agent",
+          "version": "8.0.0",
+          "type": "production"
+        },
+        {
+          "name": "@grpc/grpc-js",
+          "version": "1.13.4",
+          "type": "production"
+        },
+        {
+          "name": "@grpc/proto-loader",
+          "version": "0.8.0",
+          "type": "production"
+        },
+        {
+          "name": "async",
+          "version": "3.2.6",
+          "type": "production"
+        },
+        {
+          "name": "google-protobuf",
+          "version": "3.21.4",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/api",
+          "version": "1.9.0",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/exporter-otlp-grpc",
+          "version": "0.26.0",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/instrumentation-grpc",
+          "version": "0.203.0",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/resources",
+          "version": "2.0.1",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/semantic-conventions",
+          "version": "1.36.0",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/sdk-trace-base",
+          "version": "2.0.1",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/sdk-node",
+          "version": "0.203.0",
+          "type": "production"
+        },
+        {
+          "name": "pino",
+          "version": "8.19.0",
+          "type": "production"
+        },
+        {
+          "name": "xml2js",
+          "version": "0.6.2",
+          "type": "production"
+        }
+      ],
+      "infrastructure": {
+        "deployment": {
+          "type": "Kubernetes",
+          "replicas": 1,
+          "strategy": "RollingUpdate",
+          "containers": [
+            {
+              "name": "server",
+              "image": "currencyservice",
+              "ports": [
+                {
+                  "containerPort": 7000,
+                  "name": "grpc"
+                }
+              ]
+            }
+          ]
+        },
+        "service": {
+          "type": "ClusterIP",
+          "ports": [
+            {
+              "port": 7000,
+              "targetPort": 7000,
+              "name": "grpc"
+            }
+          ]
+        },
+        "resources": {
+          "requests": {
+            "cpu": "100m",
+            "memory": "64Mi"
+          },
+          "limits": {
+            "cpu": "200m",
+            "memory": "128Mi"
+          }
+        },
+        "security": {
+          "securityContext": {
+            "fsGroup": 1000,
+            "runAsGroup": 1000,
+            "runAsNonRoot": true,
+            "runAsUser": 1000
+          },
+          "serviceAccount": "currencyservice"
+        },
+        "config": {
+          "env": [
+            {
+              "name": "PORT",
+              "value": "7000"
+            },
+            {
+              "name": "DISABLE_PROFILER",
+              "value": "1"
+            }
+          ],
+          "volumes": []
+        },
+        "network": {
+          "ingress": false,
+          "egress": [],
+          "ports": [
+            7000
+          ]
+        }
+      },
+      "api": {
+        "protocol": "gRPC",
+        "endpoints": [],
+        "client_connections": [],
+        "server_endpoints": [
+          {
+            "name": "AddItem",
+            "request_type": "AddItemRequest",
+            "response_type": "Empty",
+            "service": "CartService"
+          },
+          {
+            "name": "ListRecommendations",
+            "request_type": "ListRecommendationsRequest",
+            "response_type": "ListRecommendationsResponse",
+            "service": "RecommendationService"
+          },
+          {
+            "name": "ListProducts",
+            "request_type": "Empty",
+            "response_type": "ListProductsResponse",
+            "service": "ProductCatalogService"
+          },
+          {
+            "name": "GetQuote",
+            "request_type": "GetQuoteRequest",
+            "response_type": "GetQuoteResponse",
+            "service": "ShippingService"
+          },
+          {
+            "name": "GetSupportedCurrencies",
+            "request_type": "Empty",
+            "response_type": "GetSupportedCurrenciesResponse",
+            "service": "CurrencyService"
+          },
+          {
+            "name": "Charge",
+            "request_type": "ChargeRequest",
+            "response_type": "ChargeResponse",
+            "service": "PaymentService"
+          },
+          {
+            "name": "SendOrderConfirmation",
+            "request_type": "SendOrderConfirmationRequest",
+            "response_type": "Empty",
+            "service": "EmailService"
+          },
+          {
+            "name": "PlaceOrder",
+            "request_type": "PlaceOrderRequest",
+            "response_type": "PlaceOrderResponse",
+            "service": "CheckoutService"
+          },
+          {
+            "name": "GetAds",
+            "request_type": "AdRequest",
+            "response_type": "AdResponse",
+            "service": "AdService"
+          },
+          {
+            "name": "Check",
+            "request_type": "HealthCheckRequest",
+            "response_type": "HealthCheckResponse",
+            "service": "Health"
+          }
+        ]
+      },
+      "code_metrics": {
+        "loc": 170,
+        "files": 11,
+        "directories": 5,
+        "file_types": {
+          ".js": 2,
+          ".json": 3,
+          ".sh": 1,
+          ".proto": 2
+        },
+        "complexity": "low",
+        "test_coverage": 0.0,
+        "documentation": "minimal"
+      },
+      "deployment": {
+        "container_registry": "currencyservice",
+        "image_tag": "latest",
+        "deployment_strategy": "rolling-update",
+        "health_checks": {
+          "readiness": true,
+          "liveness": true
+        },
+        "scaling": {
+          "auto_scaling": false,
+          "min_replicas": 1,
+          "max_replicas": 1
+        },
+        "environment": "kubernetes"
+      }
+    },
+    {
+      "name": "paymentservice",
+      "description": "Processes payments (mock)",
+      "language": "Node.js",
+      "path": "src/paymentservice",
+      "dependencies": [
+        {
+          "name": "@google-cloud/profiler",
+          "version": "6.0.3",
+          "type": "production"
+        },
+        {
+          "name": "@grpc/grpc-js",
+          "version": "1.13.4",
+          "type": "production"
+        },
+        {
+          "name": "@grpc/proto-loader",
+          "version": "0.8.0",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/api",
+          "version": "1.9.0",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/exporter-otlp-grpc",
+          "version": "0.26.0",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/instrumentation-grpc",
+          "version": "0.203.0",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/sdk-trace-base",
+          "version": "2.0.1",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/sdk-node",
+          "version": "0.203.0",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/resources",
+          "version": "2.0.1",
+          "type": "production"
+        },
+        {
+          "name": "@opentelemetry/semantic-conventions",
+          "version": "1.36.0",
+          "type": "production"
+        },
+        {
+          "name": "pino",
+          "version": "8.19.0",
+          "type": "production"
+        },
+        {
+          "name": "simple-card-validator",
+          "version": "1.1.0",
+          "type": "production"
+        },
+        {
+          "name": "uuid",
+          "version": "11.0.0",
+          "type": "production"
+        }
+      ],
+      "infrastructure": {
+        "deployment": {
+          "type": "Kubernetes",
+          "replicas": 1,
+          "strategy": "RollingUpdate",
+          "containers": [
+            {
+              "name": "server",
+              "image": "paymentservice",
+              "ports": [
+                {
+                  "containerPort": 50051,
+                  "name": "http"
+                }
+              ]
+            }
+          ]
+        },
+        "service": {
+          "type": "ClusterIP",
+          "ports": [
+            {
+              "port": 50051,
+              "targetPort": 50051,
+              "name": "grpc"
+            }
+          ]
+        },
+        "resources": {
+          "requests": {
+            "cpu": "100m",
+            "memory": "64Mi"
+          },
+          "limits": {
+            "cpu": "200m",
+            "memory": "128Mi"
+          }
+        },
+        "security": {
+          "securityContext": {
+            "fsGroup": 1000,
+            "runAsGroup": 1000,
+            "runAsNonRoot": true,
+            "runAsUser": 1000
+          },
+          "serviceAccount": "paymentservice"
+        },
+        "config": {
+          "env": [
+            {
+              "name": "PORT",
+              "value": "50051"
+            },
+            {
+              "name": "DISABLE_PROFILER",
+              "value": "1"
+            }
+          ],
+          "volumes": []
+        },
+        "network": {
+          "ingress": false,
+          "egress": [],
+          "ports": [
+            50051
+          ]
+        }
+      },
+      "api": {
+        "protocol": "gRPC",
+        "endpoints": [],
+        "client_connections": [],
+        "server_endpoints": [
+          {
+            "name": "AddItem",
+            "request_type": "AddItemRequest",
+            "response_type": "Empty",
+            "service": "CartService"
+          },
+          {
+            "name": "ListRecommendations",
+            "request_type": "ListRecommendationsRequest",
+            "response_type": "ListRecommendationsResponse",
+            "service": "RecommendationService"
+          },
+          {
+            "name": "ListProducts",
+            "request_type": "Empty",
+            "response_type": "ListProductsResponse",
+            "service": "ProductCatalogService"
+          },
+          {
+            "name": "GetQuote",
+            "request_type": "GetQuoteRequest",
+            "response_type": "GetQuoteResponse",
+            "service": "ShippingService"
+          },
+          {
+            "name": "GetSupportedCurrencies",
+            "request_type": "Empty",
+            "response_type": "GetSupportedCurrenciesResponse",
+            "service": "CurrencyService"
+          },
+          {
+            "name": "Charge",
+            "request_type": "ChargeRequest",
+            "response_type": "ChargeResponse",
+            "service": "PaymentService"
+          },
+          {
+            "name": "SendOrderConfirmation",
+            "request_type": "SendOrderConfirmationRequest",
+            "response_type": "Empty",
+            "service": "EmailService"
+          },
+          {
+            "name": "PlaceOrder",
+            "request_type": "PlaceOrderRequest",
+            "response_type": "PlaceOrderResponse",
+            "service": "CheckoutService"
+          },
+          {
+            "name": "GetAds",
+            "request_type": "AdRequest",
+            "response_type": "AdResponse",
+            "service": "AdService"
+          },
+          {
+            "name": "Check",
+            "request_type": "HealthCheckRequest",
+            "response_type": "HealthCheckResponse",
+            "service": "Health"
+          }
+        ]
+      },
+      "code_metrics": {
+        "loc": 175,
+        "files": 11,
+        "directories": 4,
+        "file_types": {
+          ".js": 4,
+          ".json": 2,
+          ".sh": 1,
+          ".proto": 2
+        },
+        "complexity": "low",
+        "test_coverage": 0.0,
+        "documentation": "minimal"
+      },
+      "deployment": {
+        "container_registry": "paymentservice",
+        "image_tag": "latest",
+        "deployment_strategy": "rolling-update",
+        "health_checks": {
+          "readiness": true,
+          "liveness": true
+        },
+        "scaling": {
+          "auto_scaling": false,
+          "min_replicas": 1,
+          "max_replicas": 1
+        },
+        "environment": "kubernetes"
+      }
+    },
+    {
+      "name": "shippingservice",
+      "description": "Calculates shipping costs and handles shipping (mock)",
+      "language": "Go",
+      "path": "src/shippingservice",
+      "dependencies": [
+        {
+          "name": "cloud.google.com/go/profiler",
+          "version": "v0.4.2",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/sirupsen/logrus",
+          "version": "v1.9.3",
+          "type": "direct"
+        },
+        {
+          "name": "golang.org/x/net",
+          "version": "v0.38.0",
+          "type": "direct"
+        },
+        {
+          "name": "google.golang.org/grpc",
+          "version": "v1.71.0",
+          "type": "direct"
+        },
+        {
+          "name": "google.golang.org/protobuf",
+          "version": "v1.36.6",
+          "type": "direct"
+        },
+        {
+          "name": "cloud.google.com/go",
+          "version": "v0.116.0",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/auth",
+          "version": "v0.11.0",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/auth/oauth2adapt",
+          "version": "v0.2.6",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/compute/metadata",
+          "version": "v0.6.0",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/go-logr/logr",
+          "version": "v1.4.2",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/go-logr/stdr",
+          "version": "v1.2.2",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/golang/groupcache",
+          "version": "v0.0.0-20210331224755-41bb18bfe9da",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/google/pprof",
+          "version": "v0.0.0-20240903155634-a8630aee4ab9",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/google/s2a-go",
+          "version": "v0.1.8",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/googleapis/enterprise-certificate-proxy",
+          "version": "v0.3.4",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/googleapis/gax-go/v2",
+          "version": "v2.14.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opencensus.io",
+          "version": "v0.24.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/auto/sdk",
+          "version": "v1.1.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+          "version": "v0.54.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel",
+          "version": "v1.34.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/metric",
+          "version": "v1.34.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/trace",
+          "version": "v1.34.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/crypto",
+          "version": "v0.36.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/oauth2",
+          "version": "v0.27.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/sync",
+          "version": "v0.12.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/sys",
+          "version": "v0.31.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/text",
+          "version": "v0.23.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/time",
+          "version": "v0.8.0",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/api",
+          "version": "v0.210.0",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/genproto",
+          "version": "v0.0.0-20241118233622-e639e219e697",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/genproto/googleapis/api",
+          "version": "v0.0.0-20250106144421-5f5ef82da422",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/genproto/googleapis/rpc",
+          "version": "v0.0.0-20250115164207-1a7da9e5054f",
+          "type": "indirect"
+        }
+      ],
+      "infrastructure": {
+        "deployment": {
+          "type": "Kubernetes",
+          "replicas": 1,
+          "strategy": "RollingUpdate",
+          "containers": [
+            {
+              "name": "server",
+              "image": "shippingservice",
+              "ports": [
+                {
+                  "containerPort": 50051,
+                  "name": "http"
+                }
+              ]
+            }
+          ]
+        },
+        "service": {
+          "type": "ClusterIP",
+          "ports": [
+            {
+              "port": 50051,
+              "targetPort": 50051,
+              "name": "grpc"
+            }
+          ]
+        },
+        "resources": {
+          "requests": {
+            "cpu": "100m",
+            "memory": "64Mi"
+          },
+          "limits": {
+            "cpu": "200m",
+            "memory": "128Mi"
+          }
+        },
+        "security": {
+          "securityContext": {
+            "fsGroup": 1000,
+            "runAsGroup": 1000,
+            "runAsNonRoot": true,
+            "runAsUser": 1000
+          },
+          "serviceAccount": "shippingservice"
+        },
+        "config": {
+          "env": [
+            {
+              "name": "PORT",
+              "value": "50051"
+            },
+            {
+              "name": "DISABLE_PROFILER",
+              "value": "1"
+            }
+          ],
+          "volumes": []
+        },
+        "network": {
+          "ingress": false,
+          "egress": [],
+          "ports": [
+            50051
+          ]
+        }
+      },
+      "api": {
+        "protocol": "gRPC",
+        "endpoints": [],
+        "client_connections": [],
+        "server_endpoints": [
+          {
+            "name": "AddItem",
+            "request_type": "AddItemRequest",
+            "response_type": "Empty",
+            "service": "CartService"
+          },
+          {
+            "name": "ListRecommendations",
+            "request_type": "ListRecommendationsRequest",
+            "response_type": "ListRecommendationsResponse",
+            "service": "RecommendationService"
+          },
+          {
+            "name": "ListProducts",
+            "request_type": "Empty",
+            "response_type": "ListProductsResponse",
+            "service": "ProductCatalogService"
+          },
+          {
+            "name": "GetQuote",
+            "request_type": "GetQuoteRequest",
+            "response_type": "GetQuoteResponse",
+            "service": "ShippingService"
+          },
+          {
+            "name": "GetSupportedCurrencies",
+            "request_type": "Empty",
+            "response_type": "GetSupportedCurrenciesResponse",
+            "service": "CurrencyService"
+          },
+          {
+            "name": "Charge",
+            "request_type": "ChargeRequest",
+            "response_type": "ChargeResponse",
+            "service": "PaymentService"
+          },
+          {
+            "name": "SendOrderConfirmation",
+            "request_type": "SendOrderConfirmationRequest",
+            "response_type": "Empty",
+            "service": "EmailService"
+          },
+          {
+            "name": "PlaceOrder",
+            "request_type": "PlaceOrderRequest",
+            "response_type": "PlaceOrderResponse",
+            "service": "CheckoutService"
+          },
+          {
+            "name": "GetAds",
+            "request_type": "AdRequest",
+            "response_type": "AdResponse",
+            "service": "AdService"
+          },
+          {
+            "name": "Check",
+            "request_type": "HealthCheckRequest",
+            "response_type": "HealthCheckResponse",
+            "service": "Health"
+          }
+        ]
+      },
+      "code_metrics": {
+        "loc": 3295,
+        "files": 12,
+        "directories": 1,
+        "file_types": {
+          ".go": 6,
+          ".mod": 1,
+          ".sum": 1,
+          ".md": 1,
+          ".sh": 1
+        },
+        "complexity": "high",
+        "test_coverage": 0.0,
+        "documentation": "moderate"
+      },
+      "deployment": {
+        "container_registry": "shippingservice",
+        "image_tag": "latest",
+        "deployment_strategy": "rolling-update",
+        "health_checks": {
+          "readiness": true,
+          "liveness": true
+        },
+        "scaling": {
+          "auto_scaling": false,
+          "min_replicas": 1,
+          "max_replicas": 1
+        },
+        "environment": "kubernetes"
+      }
+    },
+    {
+      "name": "emailservice",
+      "description": "Sends order confirmation emails (mock)",
+      "language": "Python",
+      "path": "src/emailservice",
+      "dependencies": [
+        {
+          "name": "backoff",
+          "version": "2.2.1",
+          "type": "production"
+        },
+        {
+          "name": "cachetools",
+          "version": "5.3.2",
+          "type": "production"
+        },
+        {
+          "name": "certifi",
+          "version": "2023.7.22",
+          "type": "production"
+        },
+        {
+          "name": "charset-normalizer",
+          "version": "3.3.2",
+          "type": "production"
+        },
+        {
+          "name": "deprecated",
+          "version": "1.2.14",
+          "type": "production"
+        },
+        {
+          "name": "google-api-core[grpc]",
+          "version": "2.12.0",
+          "type": "production"
+        },
+        {
+          "name": "google-api-python-client",
+          "version": "2.107.0",
+          "type": "production"
+        },
+        {
+          "name": "google-auth",
+          "version": "2.23.4",
+          "type": "production"
+        },
+        {
+          "name": "google-auth-httplib2",
+          "version": "0.1.1",
+          "type": "production"
+        },
+        {
+          "name": "google-cloud-profiler",
+          "version": "4.1.0",
+          "type": "production"
+        },
+        {
+          "name": "google-cloud-trace",
+          "version": "1.11.3",
+          "type": "production"
+        },
+        {
+          "name": "googleapis-common-protos",
+          "version": "1.61.0",
+          "type": "production"
+        },
+        {
+          "name": "grpcio",
+          "version": "1.59.2",
+          "type": "production"
+        },
+        {
+          "name": "grpcio-health-checking",
+          "version": "1.59.2",
+          "type": "production"
+        },
+        {
+          "name": "grpcio-status",
+          "version": "1.59.2",
+          "type": "production"
+        },
+        {
+          "name": "httplib2",
+          "version": "0.22.0",
+          "type": "production"
+        },
+        {
+          "name": "idna",
+          "version": "3.4",
+          "type": "production"
+        },
+        {
+          "name": "importlib-metadata",
+          "version": "6.8.0",
+          "type": "production"
+        },
+        {
+          "name": "jinja2",
+          "version": "3.1.2",
+          "type": "production"
+        },
+        {
+          "name": "markupsafe",
+          "version": "2.1.3",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-api",
+          "version": "1.20.0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-distro",
+          "version": "0.41b0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-exporter-otlp-proto-common",
+          "version": "1.20.0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-exporter-otlp-proto-grpc",
+          "version": "1.20.0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-instrumentation",
+          "version": "0.41b0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-instrumentation-grpc",
+          "version": "0.41b0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-proto",
+          "version": "1.20.0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-sdk",
+          "version": "1.20.0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-semantic-conventions",
+          "version": "0.41b0",
+          "type": "production"
+        },
+        {
+          "name": "proto-plus",
+          "version": "1.22.3",
+          "type": "production"
+        },
+        {
+          "name": "protobuf",
+          "version": "4.25.0",
+          "type": "production"
+        },
+        {
+          "name": "pyasn1",
+          "version": "0.5.0",
+          "type": "production"
+        },
+        {
+          "name": "pyasn1-modules",
+          "version": "0.3.0",
+          "type": "production"
+        },
+        {
+          "name": "pyparsing",
+          "version": "3.1.1",
+          "type": "production"
+        },
+        {
+          "name": "python-json-logger",
+          "version": "2.0.7",
+          "type": "production"
+        },
+        {
+          "name": "requests",
+          "version": "2.31.0",
+          "type": "production"
+        },
+        {
+          "name": "rsa",
+          "version": "4.9",
+          "type": "production"
+        },
+        {
+          "name": "typing-extensions",
+          "version": "4.8.0",
+          "type": "production"
+        },
+        {
+          "name": "uritemplate",
+          "version": "4.1.1",
+          "type": "production"
+        },
+        {
+          "name": "urllib3",
+          "version": "2.0.7",
+          "type": "production"
+        },
+        {
+          "name": "wrapt",
+          "version": "1.16.0",
+          "type": "production"
+        },
+        {
+          "name": "zipp",
+          "version": "3.17.0",
+          "type": "production"
+        }
+      ],
+      "infrastructure": {
+        "deployment": {
+          "type": "Kubernetes",
+          "replicas": 1,
+          "strategy": "RollingUpdate",
+          "containers": [
+            {
+              "name": "server",
+              "image": "emailservice",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "name": "http"
+                }
+              ]
+            }
+          ]
+        },
+        "service": {
+          "type": "ClusterIP",
+          "ports": [
+            {
+              "port": 5000,
+              "targetPort": 8080,
+              "name": "grpc"
+            }
+          ]
+        },
+        "resources": {
+          "requests": {
+            "cpu": "100m",
+            "memory": "64Mi"
+          },
+          "limits": {
+            "cpu": "200m",
+            "memory": "128Mi"
+          }
+        },
+        "security": {
+          "securityContext": {
+            "fsGroup": 1000,
+            "runAsGroup": 1000,
+            "runAsNonRoot": true,
+            "runAsUser": 1000
+          },
+          "serviceAccount": "emailservice"
+        },
+        "config": {
+          "env": [
+            {
+              "name": "PORT",
+              "value": "8080"
+            },
+            {
+              "name": "DISABLE_PROFILER",
+              "value": "1"
+            }
+          ],
+          "volumes": []
+        },
+        "network": {
+          "ingress": false,
+          "egress": [],
+          "ports": [
+            8080
+          ]
+        }
+      },
+      "api": {
+        "protocol": "gRPC",
+        "endpoints": [],
+        "client_connections": [],
+        "server_endpoints": [
+          {
+            "name": "AddItem",
+            "request_type": "AddItemRequest",
+            "response_type": "Empty",
+            "service": "CartService"
+          },
+          {
+            "name": "ListRecommendations",
+            "request_type": "ListRecommendationsRequest",
+            "response_type": "ListRecommendationsResponse",
+            "service": "RecommendationService"
+          },
+          {
+            "name": "ListProducts",
+            "request_type": "Empty",
+            "response_type": "ListProductsResponse",
+            "service": "ProductCatalogService"
+          },
+          {
+            "name": "GetQuote",
+            "request_type": "GetQuoteRequest",
+            "response_type": "GetQuoteResponse",
+            "service": "ShippingService"
+          },
+          {
+            "name": "GetSupportedCurrencies",
+            "request_type": "Empty",
+            "response_type": "GetSupportedCurrenciesResponse",
+            "service": "CurrencyService"
+          },
+          {
+            "name": "Charge",
+            "request_type": "ChargeRequest",
+            "response_type": "ChargeResponse",
+            "service": "PaymentService"
+          },
+          {
+            "name": "SendOrderConfirmation",
+            "request_type": "SendOrderConfirmationRequest",
+            "response_type": "Empty",
+            "service": "EmailService"
+          },
+          {
+            "name": "PlaceOrder",
+            "request_type": "PlaceOrderRequest",
+            "response_type": "PlaceOrderResponse",
+            "service": "CheckoutService"
+          },
+          {
+            "name": "GetAds",
+            "request_type": "AdRequest",
+            "response_type": "AdResponse",
+            "service": "AdService"
+          },
+          {
+            "name": "Check",
+            "request_type": "HealthCheckRequest",
+            "response_type": "HealthCheckResponse",
+            "service": "Health"
+          }
+        ]
+      },
+      "code_metrics": {
+        "loc": 933,
+        "files": 10,
+        "directories": 1,
+        "file_types": {
+          ".txt": 1,
+          ".py": 5,
+          ".sh": 1,
+          ".in": 1,
+          ".html": 1
+        },
+        "complexity": "medium",
+        "test_coverage": 0.0,
+        "documentation": "minimal"
+      },
+      "deployment": {
+        "container_registry": "emailservice",
+        "image_tag": "latest",
+        "deployment_strategy": "rolling-update",
+        "health_checks": {
+          "readiness": true,
+          "liveness": true
+        },
+        "scaling": {
+          "auto_scaling": false,
+          "min_replicas": 1,
+          "max_replicas": 1
+        },
+        "environment": "kubernetes"
+      }
+    },
+    {
+      "name": "checkoutservice",
+      "description": "Orchestrates the checkout process",
+      "language": "Go",
+      "path": "src/checkoutservice",
+      "dependencies": [
+        {
+          "name": "cloud.google.com/go/profiler",
+          "version": "v0.4.2",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/google/uuid",
+          "version": "v1.6.0",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/pkg/errors",
+          "version": "v0.9.1",
+          "type": "direct"
+        },
+        {
+          "name": "github.com/sirupsen/logrus",
+          "version": "v1.9.3",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+          "version": "v0.60.0",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/otel",
+          "version": "v1.35.0",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
+          "version": "v1.35.0",
+          "type": "direct"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/sdk",
+          "version": "v1.35.0",
+          "type": "direct"
+        },
+        {
+          "name": "google.golang.org/grpc",
+          "version": "v1.71.0",
+          "type": "direct"
+        },
+        {
+          "name": "google.golang.org/protobuf",
+          "version": "v1.36.6",
+          "type": "direct"
+        },
+        {
+          "name": "cloud.google.com/go",
+          "version": "v0.116.0",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/auth",
+          "version": "v0.11.0",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/auth/oauth2adapt",
+          "version": "v0.2.6",
+          "type": "indirect"
+        },
+        {
+          "name": "cloud.google.com/go/compute/metadata",
+          "version": "v0.6.0",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/cenkalti/backoff/v4",
+          "version": "v4.3.0",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/go-logr/logr",
+          "version": "v1.4.2",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/go-logr/stdr",
+          "version": "v1.2.2",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/golang/groupcache",
+          "version": "v0.0.0-20210331224755-41bb18bfe9da",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/google/pprof",
+          "version": "v0.0.0-20240903155634-a8630aee4ab9",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/google/s2a-go",
+          "version": "v0.1.8",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/googleapis/enterprise-certificate-proxy",
+          "version": "v0.3.4",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/googleapis/gax-go/v2",
+          "version": "v2.14.0",
+          "type": "indirect"
+        },
+        {
+          "name": "github.com/grpc-ecosystem/grpc-gateway/v2",
+          "version": "v2.26.1",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opencensus.io",
+          "version": "v0.24.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/auto/sdk",
+          "version": "v1.1.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace",
+          "version": "v1.35.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/metric",
+          "version": "v1.35.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/otel/trace",
+          "version": "v1.35.0",
+          "type": "indirect"
+        },
+        {
+          "name": "go.opentelemetry.io/proto/otlp",
+          "version": "v1.5.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/crypto",
+          "version": "v0.36.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/net",
+          "version": "v0.38.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/oauth2",
+          "version": "v0.27.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/sync",
+          "version": "v0.12.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/sys",
+          "version": "v0.31.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/text",
+          "version": "v0.23.0",
+          "type": "indirect"
+        },
+        {
+          "name": "golang.org/x/time",
+          "version": "v0.8.0",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/api",
+          "version": "v0.210.0",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/genproto",
+          "version": "v0.0.0-20241118233622-e639e219e697",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/genproto/googleapis/api",
+          "version": "v0.0.0-20250218202821-56aae31c358a",
+          "type": "indirect"
+        },
+        {
+          "name": "google.golang.org/genproto/googleapis/rpc",
+          "version": "v0.0.0-20250218202821-56aae31c358a",
+          "type": "indirect"
+        }
+      ],
+      "infrastructure": {
+        "deployment": {
+          "type": "Kubernetes",
+          "replicas": 1,
+          "strategy": "RollingUpdate",
+          "containers": [
+            {
+              "name": "server",
+              "image": "checkoutservice",
+              "ports": [
+                {
+                  "containerPort": 5050,
+                  "name": "http"
+                }
+              ]
+            }
+          ]
+        },
+        "service": {
+          "type": "ClusterIP",
+          "ports": [
+            {
+              "port": 5050,
+              "targetPort": 5050,
+              "name": "grpc"
+            }
+          ]
+        },
+        "resources": {
+          "requests": {
+            "cpu": "100m",
+            "memory": "64Mi"
+          },
+          "limits": {
+            "cpu": "200m",
+            "memory": "128Mi"
+          }
+        },
+        "security": {
+          "securityContext": {
+            "fsGroup": 1000,
+            "runAsGroup": 1000,
+            "runAsNonRoot": true,
+            "runAsUser": 1000
+          },
+          "serviceAccount": "checkoutservice"
+        },
+        "config": {
+          "env": [
+            {
+              "name": "PORT",
+              "value": "5050"
+            },
+            {
+              "name": "PRODUCT_CATALOG_SERVICE_ADDR",
+              "value": "productcatalogservice:3550"
+            },
+            {
+              "name": "SHIPPING_SERVICE_ADDR",
+              "value": "shippingservice:50051"
+            },
+            {
+              "name": "PAYMENT_SERVICE_ADDR",
+              "value": "paymentservice:50051"
+            },
+            {
+              "name": "EMAIL_SERVICE_ADDR",
+              "value": "emailservice:5000"
+            },
+            {
+              "name": "CURRENCY_SERVICE_ADDR",
+              "value": "currencyservice:7000"
+            },
+            {
+              "name": "CART_SERVICE_ADDR",
+              "value": "cartservice:7070"
+            }
+          ],
+          "volumes": []
+        },
+        "network": {
+          "ingress": false,
+          "egress": [],
+          "ports": [
+            5050
+          ]
+        }
+      },
+      "api": {
+        "protocol": "gRPC",
+        "endpoints": [],
+        "client_connections": [],
+        "server_endpoints": [
+          {
+            "name": "AddItem",
+            "request_type": "AddItemRequest",
+            "response_type": "Empty",
+            "service": "CartService"
+          },
+          {
+            "name": "ListRecommendations",
+            "request_type": "ListRecommendationsRequest",
+            "response_type": "ListRecommendationsResponse",
+            "service": "RecommendationService"
+          },
+          {
+            "name": "ListProducts",
+            "request_type": "Empty",
+            "response_type": "ListProductsResponse",
+            "service": "ProductCatalogService"
+          },
+          {
+            "name": "GetQuote",
+            "request_type": "GetQuoteRequest",
+            "response_type": "GetQuoteResponse",
+            "service": "ShippingService"
+          },
+          {
+            "name": "GetSupportedCurrencies",
+            "request_type": "Empty",
+            "response_type": "GetSupportedCurrenciesResponse",
+            "service": "CurrencyService"
+          },
+          {
+            "name": "Charge",
+            "request_type": "ChargeRequest",
+            "response_type": "ChargeResponse",
+            "service": "PaymentService"
+          },
+          {
+            "name": "SendOrderConfirmation",
+            "request_type": "SendOrderConfirmationRequest",
+            "response_type": "Empty",
+            "service": "EmailService"
+          },
+          {
+            "name": "PlaceOrder",
+            "request_type": "PlaceOrderRequest",
+            "response_type": "PlaceOrderResponse",
+            "service": "CheckoutService"
+          },
+          {
+            "name": "GetAds",
+            "request_type": "AdRequest",
+            "response_type": "AdResponse",
+            "service": "AdService"
+          },
+          {
+            "name": "Check",
+            "request_type": "HealthCheckRequest",
+            "response_type": "HealthCheckResponse",
+            "service": "Health"
+          }
+        ]
+      },
+      "code_metrics": {
+        "loc": 3669,
+        "files": 11,
+        "directories": 2,
+        "file_types": {
+          ".mod": 1,
+          ".sum": 1,
+          ".md": 1,
+          ".sh": 1,
+          ".go": 5
+        },
+        "complexity": "high",
+        "test_coverage": 0.0,
+        "documentation": "moderate"
+      },
+      "deployment": {
+        "container_registry": "checkoutservice",
+        "image_tag": "latest",
+        "deployment_strategy": "rolling-update",
+        "health_checks": {
+          "readiness": true,
+          "liveness": true
+        },
+        "scaling": {
+          "auto_scaling": false,
+          "min_replicas": 1,
+          "max_replicas": 1
+        },
+        "environment": "kubernetes"
+      }
+    },
+    {
+      "name": "recommendationservice",
+      "description": "Recommends related products",
+      "language": "Python",
+      "path": "src/recommendationservice",
+      "dependencies": [
+        {
+          "name": "backoff",
+          "version": "2.2.1",
+          "type": "production"
+        },
+        {
+          "name": "cachetools",
+          "version": "5.3.2",
+          "type": "production"
+        },
+        {
+          "name": "certifi",
+          "version": "2023.7.22",
+          "type": "production"
+        },
+        {
+          "name": "charset-normalizer",
+          "version": "3.3.2",
+          "type": "production"
+        },
+        {
+          "name": "deprecated",
+          "version": "1.2.14",
+          "type": "production"
+        },
+        {
+          "name": "google-api-core",
+          "version": "2.12.0",
+          "type": "production"
+        },
+        {
+          "name": "google-api-python-client",
+          "version": "2.107.0",
+          "type": "production"
+        },
+        {
+          "name": "google-auth",
+          "version": "2.23.4",
+          "type": "production"
+        },
+        {
+          "name": "google-auth-httplib2",
+          "version": "0.1.1",
+          "type": "production"
+        },
+        {
+          "name": "google-cloud-profiler",
+          "version": "4.1.0",
+          "type": "production"
+        },
+        {
+          "name": "googleapis-common-protos",
+          "version": "1.61.0",
+          "type": "production"
+        },
+        {
+          "name": "grpcio",
+          "version": "1.59.2",
+          "type": "production"
+        },
+        {
+          "name": "grpcio-health-checking",
+          "version": "1.59.2",
+          "type": "production"
+        },
+        {
+          "name": "httplib2",
+          "version": "0.22.0",
+          "type": "production"
+        },
+        {
+          "name": "idna",
+          "version": "3.4",
+          "type": "production"
+        },
+        {
+          "name": "importlib-metadata",
+          "version": "6.8.0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-api",
+          "version": "1.20.0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-distro",
+          "version": "0.41b0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-exporter-otlp-proto-common",
+          "version": "1.20.0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-exporter-otlp-proto-grpc",
+          "version": "1.20.0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-instrumentation",
+          "version": "0.41b0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-instrumentation-grpc",
+          "version": "0.41b0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-proto",
+          "version": "1.20.0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-sdk",
+          "version": "1.20.0",
+          "type": "production"
+        },
+        {
+          "name": "opentelemetry-semantic-conventions",
+          "version": "0.41b0",
+          "type": "production"
+        },
+        {
+          "name": "protobuf",
+          "version": "4.25.0",
+          "type": "production"
+        },
+        {
+          "name": "pyasn1",
+          "version": "0.5.0",
+          "type": "production"
+        },
+        {
+          "name": "pyasn1-modules",
+          "version": "0.3.0",
+          "type": "production"
+        },
+        {
+          "name": "pyparsing",
+          "version": "3.1.1",
+          "type": "production"
+        },
+        {
+          "name": "python-json-logger",
+          "version": "2.0.7",
+          "type": "production"
+        },
+        {
+          "name": "requests",
+          "version": "2.31.0",
+          "type": "production"
+        },
+        {
+          "name": "rsa",
+          "version": "4.9",
+          "type": "production"
+        },
+        {
+          "name": "typing-extensions",
+          "version": "4.8.0",
+          "type": "production"
+        },
+        {
+          "name": "uritemplate",
+          "version": "4.1.1",
+          "type": "production"
+        },
+        {
+          "name": "urllib3",
+          "version": "2.0.7",
+          "type": "production"
+        },
+        {
+          "name": "wrapt",
+          "version": "1.16.0",
+          "type": "production"
+        },
+        {
+          "name": "zipp",
+          "version": "3.17.0",
+          "type": "production"
+        }
+      ],
+      "infrastructure": {
+        "deployment": {
+          "type": "Kubernetes",
+          "replicas": 1,
+          "strategy": "RollingUpdate",
+          "containers": [
+            {
+              "name": "server",
+              "image": "recommendationservice",
+              "ports": [
+                {
+                  "containerPort": 8080,
+                  "name": "http"
+                }
+              ]
+            }
+          ]
+        },
+        "service": {
+          "type": "ClusterIP",
+          "ports": [
+            {
+              "port": 8080,
+              "targetPort": 8080,
+              "name": "grpc"
+            }
+          ]
+        },
+        "resources": {
+          "requests": {
+            "cpu": "100m",
+            "memory": "220Mi"
+          },
+          "limits": {
+            "cpu": "200m",
+            "memory": "450Mi"
+          }
+        },
+        "security": {
+          "securityContext": {
+            "fsGroup": 1000,
+            "runAsGroup": 1000,
+            "runAsNonRoot": true,
+            "runAsUser": 1000
+          },
+          "serviceAccount": "recommendationservice"
+        },
+        "config": {
+          "env": [
+            {
+              "name": "PORT",
+              "value": "8080"
+            },
+            {
+              "name": "PRODUCT_CATALOG_SERVICE_ADDR",
+              "value": "productcatalogservice:3550"
+            },
+            {
+              "name": "DISABLE_PROFILER",
+              "value": "1"
+            }
+          ],
+          "volumes": []
+        },
+        "network": {
+          "ingress": false,
+          "egress": [],
+          "ports": [
+            8080
+          ]
+        }
+      },
+      "api": {
+        "protocol": "gRPC",
+        "endpoints": [],
+        "client_connections": [],
+        "server_endpoints": [
+          {
+            "name": "AddItem",
+            "request_type": "AddItemRequest",
+            "response_type": "Empty",
+            "service": "CartService"
+          },
+          {
+            "name": "ListRecommendations",
+            "request_type": "ListRecommendationsRequest",
+            "response_type": "ListRecommendationsResponse",
+            "service": "RecommendationService"
+          },
+          {
+            "name": "ListProducts",
+            "request_type": "Empty",
+            "response_type": "ListProductsResponse",
+            "service": "ProductCatalogService"
+          },
+          {
+            "name": "GetQuote",
+            "request_type": "GetQuoteRequest",
+            "response_type": "GetQuoteResponse",
+            "service": "ShippingService"
+          },
+          {
+            "name": "GetSupportedCurrencies",
+            "request_type": "Empty",
+            "response_type": "GetSupportedCurrenciesResponse",
+            "service": "CurrencyService"
+          },
+          {
+            "name": "Charge",
+            "request_type": "ChargeRequest",
+            "response_type": "ChargeResponse",
+            "service": "PaymentService"
+          },
+          {
+            "name": "SendOrderConfirmation",
+            "request_type": "SendOrderConfirmationRequest",
+            "response_type": "Empty",
+            "service": "EmailService"
+          },
+          {
+            "name": "PlaceOrder",
+            "request_type": "PlaceOrderRequest",
+            "response_type": "PlaceOrderResponse",
+            "service": "CheckoutService"
+          },
+          {
+            "name": "GetAds",
+            "request_type": "AdRequest",
+            "response_type": "AdResponse",
+            "service": "AdService"
+          },
+          {
+            "name": "Check",
+            "request_type": "HealthCheckRequest",
+            "response_type": "HealthCheckResponse",
+            "service": "Health"
+          }
+        ]
+      },
+      "code_metrics": {
+        "loc": 888,
+        "files": 9,
+        "directories": 0,
+        "file_types": {
+          ".txt": 1,
+          ".py": 5,
+          ".sh": 1,
+          ".in": 1
+        },
+        "complexity": "medium",
+        "test_coverage": 0.0,
+        "documentation": "minimal"
+      },
+      "deployment": {
+        "container_registry": "recommendationservice",
+        "image_tag": "latest",
+        "deployment_strategy": "rolling-update",
+        "health_checks": {
+          "readiness": true,
+          "liveness": true
+        },
+        "scaling": {
+          "auto_scaling": false,
+          "min_replicas": 1,
+          "max_replicas": 1
+        },
+        "environment": "kubernetes"
+      }
+    },
+    {
+      "name": "adservice",
+      "description": "Provides text ads based on context",
+      "language": "Java",
+      "path": "src/adservice",
+      "dependencies": [
+        {
+          "name": "com.google.api.grpc:proto-google-common-protos",
+          "version": "2.60.0",
+          "type": "production"
+        }
+      ],
+      "infrastructure": {
+        "deployment": {
+          "type": "Kubernetes",
+          "replicas": 1,
+          "strategy": "RollingUpdate",
+          "containers": [
+            {
+              "name": "server",
+              "image": "adservice",
+              "ports": [
+                {
+                  "containerPort": 9555,
+                  "name": "http"
+                }
+              ]
+            }
+          ]
+        },
+        "service": {
+          "type": "ClusterIP",
+          "ports": [
+            {
+              "port": 9555,
+              "targetPort": 9555,
+              "name": "grpc"
+            }
+          ]
+        },
+        "resources": {
+          "requests": {
+            "cpu": "200m",
+            "memory": "180Mi"
+          },
+          "limits": {
+            "cpu": "300m",
+            "memory": "300Mi"
+          }
+        },
+        "security": {
+          "securityContext": {
+            "fsGroup": 1000,
+            "runAsGroup": 1000,
+            "runAsNonRoot": true,
+            "runAsUser": 1000
+          },
+          "serviceAccount": "adservice"
+        },
+        "config": {
+          "env": [
+            {
+              "name": "PORT",
+              "value": "9555"
+            }
+          ],
+          "volumes": []
+        },
+        "network": {
+          "ingress": false,
+          "egress": [],
+          "ports": [
+            9555
+          ]
+        }
+      },
+      "api": {
+        "protocol": "gRPC",
+        "endpoints": [],
+        "client_connections": [],
+        "server_endpoints": [
+          {
+            "name": "AddItem",
+            "request_type": "AddItemRequest",
+            "response_type": "Empty",
+            "service": "CartService"
+          },
+          {
+            "name": "ListRecommendations",
+            "request_type": "ListRecommendationsRequest",
+            "response_type": "ListRecommendationsResponse",
+            "service": "RecommendationService"
+          },
+          {
+            "name": "ListProducts",
+            "request_type": "Empty",
+            "response_type": "ListProductsResponse",
+            "service": "ProductCatalogService"
+          },
+          {
+            "name": "GetQuote",
+            "request_type": "GetQuoteRequest",
+            "response_type": "GetQuoteResponse",
+            "service": "ShippingService"
+          },
+          {
+            "name": "GetSupportedCurrencies",
+            "request_type": "Empty",
+            "response_type": "GetSupportedCurrenciesResponse",
+            "service": "CurrencyService"
+          },
+          {
+            "name": "Charge",
+            "request_type": "ChargeRequest",
+            "response_type": "ChargeResponse",
+            "service": "PaymentService"
+          },
+          {
+            "name": "SendOrderConfirmation",
+            "request_type": "SendOrderConfirmationRequest",
+            "response_type": "Empty",
+            "service": "EmailService"
+          },
+          {
+            "name": "PlaceOrder",
+            "request_type": "PlaceOrderRequest",
+            "response_type": "PlaceOrderResponse",
+            "service": "CheckoutService"
+          },
+          {
+            "name": "GetAds",
+            "request_type": "AdRequest",
+            "response_type": "AdResponse",
+            "service": "AdService"
+          }
+        ]
+      },
+      "code_metrics": {
+        "loc": 255,
+        "files": 13,
+        "directories": 8,
+        "file_types": {
+          ".md": 1,
+          ".sh": 1,
+          ".gradle": 2,
+          ".bat": 1,
+          ".jar": 1,
+          ".properties": 1,
+          ".proto": 1,
+          ".xml": 1,
+          ".java": 2
+        },
+        "complexity": "low",
+        "test_coverage": 0.0,
+        "documentation": "moderate"
+      },
+      "deployment": {
+        "container_registry": "adservice",
+        "image_tag": "latest",
+        "deployment_strategy": "rolling-update",
+        "health_checks": {
+          "readiness": true,
+          "liveness": true
+        },
+        "scaling": {
+          "auto_scaling": false,
+          "min_replicas": 1,
+          "max_replicas": 1
+        },
+        "environment": "kubernetes"
+      }
+    },
+    {
+      "name": "loadgenerator",
+      "description": "Simulates user traffic",
+      "language": "Python",
+      "path": "src/loadgenerator",
+      "dependencies": [
+        {
+          "name": "bidict",
+          "version": "0.23.1",
+          "type": "production"
+        },
+        {
+          "name": "blinker",
+          "version": "1.9.0",
+          "type": "production"
+        },
+        {
+          "name": "brotli",
+          "version": "1.1.0",
+          "type": "production"
+        },
+        {
+          "name": "certifi",
+          "version": "2023.7.22",
+          "type": "production"
+        },
+        {
+          "name": "charset-normalizer",
+          "version": "3.4.3",
+          "type": "production"
+        },
+        {
+          "name": "click",
+          "version": "8.2.1",
+          "type": "production"
+        },
+        {
+          "name": "configargparse",
+          "version": "1.7.1",
+          "type": "production"
+        },
+        {
+          "name": "faker",
+          "version": "18.13.0",
+          "type": "production"
+        },
+        {
+          "name": "flask",
+          "version": "3.1.2",
+          "type": "production"
+        },
+        {
+          "name": "flask-cors",
+          "version": "6.0.1",
+          "type": "production"
+        },
+        {
+          "name": "flask-login",
+          "version": "0.6.3",
+          "type": "production"
+        },
+        {
+          "name": "gevent",
+          "version": "25.5.1",
+          "type": "production"
+        },
+        {
+          "name": "geventhttpclient",
+          "version": "2.3.4",
+          "type": "production"
+        },
+        {
+          "name": "greenlet",
+          "version": "3.2.4",
+          "type": "production"
+        },
+        {
+          "name": "h11",
+          "version": "0.16.0",
+          "type": "production"
+        },
+        {
+          "name": "idna",
+          "version": "3.10",
+          "type": "production"
+        },
+        {
+          "name": "itsdangerous",
+          "version": "2.2.0",
+          "type": "production"
+        },
+        {
+          "name": "jinja2",
+          "version": "3.1.6",
+          "type": "production"
+        },
+        {
+          "name": "locust",
+          "version": "2.38.1",
+          "type": "production"
+        },
+        {
+          "name": "locust-cloud",
+          "version": "1.26.3",
+          "type": "production"
+        },
+        {
+          "name": "markupsafe",
+          "version": "3.0.2",
+          "type": "production"
+        },
+        {
+          "name": "msgpack",
+          "version": "1.1.1",
+          "type": "production"
+        },
+        {
+          "name": "platformdirs",
+          "version": "4.3.8",
+          "type": "production"
+        },
+        {
+          "name": "psutil",
+          "version": "7.0.0",
+          "type": "production"
+        },
+        {
+          "name": "python-engineio",
+          "version": "4.12.2",
+          "type": "production"
+        },
+        {
+          "name": "python-socketio[client]",
+          "version": "5.13.0",
+          "type": "production"
+        },
+        {
+          "name": "pyzmq",
+          "version": "27.0.2",
+          "type": "production"
+        },
+        {
+          "name": "requests",
+          "version": "2.32.4",
+          "type": "production"
+        },
+        {
+          "name": "simple-websocket",
+          "version": "1.1.0",
+          "type": "production"
+        },
+        {
+          "name": "tzdata",
+          "version": "2023.3",
+          "type": "production"
+        },
+        {
+          "name": "urllib3",
+          "version": "2.5.0",
+          "type": "production"
+        },
+        {
+          "name": "websocket-client",
+          "version": "1.8.0",
+          "type": "production"
+        },
+        {
+          "name": "werkzeug",
+          "version": "3.1.3",
+          "type": "production"
+        },
+        {
+          "name": "wsproto",
+          "version": "1.2.0",
+          "type": "production"
+        },
+        {
+          "name": "zope-event",
+          "version": "5.1.1",
+          "type": "production"
+        },
+        {
+          "name": "zope-interface",
+          "version": "7.2",
+          "type": "production"
+        }
+      ],
+      "infrastructure": {
+        "deployment": {
+          "type": "Kubernetes",
+          "replicas": 1,
+          "strategy": "RollingUpdate",
+          "containers": [
+            {
+              "name": "main",
+              "image": "loadgenerator",
+              "ports": []
+            }
+          ]
+        },
+        "service": {
+          "type": "ClusterIP",
+          "ports": []
+        },
+        "resources": {
+          "requests": {
+            "cpu": "300m",
+            "memory": "256Mi"
+          },
+          "limits": {
+            "cpu": "500m",
+            "memory": "512Mi"
+          }
+        },
+        "security": {
+          "securityContext": {
+            "fsGroup": 1000,
+            "runAsGroup": 1000,
+            "runAsNonRoot": true,
+            "runAsUser": 1000
+          },
+          "serviceAccount": "loadgenerator"
+        },
+        "config": {
+          "env": [
+            {
+              "name": "FRONTEND_ADDR",
+              "value": "frontend:80"
+            },
+            {
+              "name": "USERS",
+              "value": "10"
+            },
+            {
+              "name": "RATE",
+              "value": "1"
+            }
+          ],
+          "volumes": []
+        },
+        "network": {
+          "ingress": false,
+          "egress": [],
+          "ports": []
+        }
+      },
+      "api": {
+        "protocol": "gRPC",
+        "endpoints": [],
+        "client_connections": [],
+        "server_endpoints": [
+          {
+            "name": "AddItem",
+            "request_type": "AddItemRequest",
+            "response_type": "Empty",
+            "service": "CartService"
+          },
+          {
+            "name": "ListRecommendations",
+            "request_type": "ListRecommendationsRequest",
+            "response_type": "ListRecommendationsResponse",
+            "service": "RecommendationService"
+          },
+          {
+            "name": "ListProducts",
+            "request_type": "Empty",
+            "response_type": "ListProductsResponse",
+            "service": "ProductCatalogService"
+          },
+          {
+            "name": "GetQuote",
+            "request_type": "GetQuoteRequest",
+            "response_type": "GetQuoteResponse",
+            "service": "ShippingService"
+          },
+          {
+            "name": "GetSupportedCurrencies",
+            "request_type": "Empty",
+            "response_type": "GetSupportedCurrenciesResponse",
+            "service": "CurrencyService"
+          },
+          {
+            "name": "Charge",
+            "request_type": "ChargeRequest",
+            "response_type": "ChargeResponse",
+            "service": "PaymentService"
+          },
+          {
+            "name": "SendOrderConfirmation",
+            "request_type": "SendOrderConfirmationRequest",
+            "response_type": "Empty",
+            "service": "EmailService"
+          },
+          {
+            "name": "PlaceOrder",
+            "request_type": "PlaceOrderRequest",
+            "response_type": "PlaceOrderResponse",
+            "service": "CheckoutService"
+          },
+          {
+            "name": "GetAds",
+            "request_type": "AdRequest",
+            "response_type": "AdResponse",
+            "service": "AdService"
+          },
+          {
+            "name": "Check",
+            "request_type": "HealthCheckRequest",
+            "response_type": "HealthCheckResponse",
+            "service": "Health"
+          }
+        ]
+      },
+      "code_metrics": {
+        "loc": 62,
+        "files": 4,
+        "directories": 0,
+        "file_types": {
+          ".py": 1,
+          ".txt": 1,
+          ".in": 1
+        },
+        "complexity": "low",
+        "test_coverage": 0.0,
+        "documentation": "minimal"
+      },
+      "deployment": {
+        "container_registry": "loadgenerator",
+        "image_tag": "latest",
+        "deployment_strategy": "rolling-update",
+        "health_checks": {
+          "readiness": false,
+          "liveness": false
+        },
+        "scaling": {
+          "auto_scaling": false,
+          "min_replicas": 1,
+          "max_replicas": 1
+        },
+        "environment": "kubernetes"
+      }
+    },
+    {
+      "name": "shoppingassistantservice",
+      "description": "AI assistant for product suggestions",
+      "language": "Python",
+      "path": "src/shoppingassistantservice",
+      "dependencies": [
+        {
+          "name": "aiofiles",
+          "version": "24.1.0",
+          "type": "production"
+        },
+        {
+          "name": "aiohappyeyeballs",
+          "version": "2.6.1",
+          "type": "production"
+        },
+        {
+          "name": "aiohttp",
+          "version": "3.12.15",
+          "type": "production"
+        },
+        {
+          "name": "aiosignal",
+          "version": "1.4.0",
+          "type": "production"
+        },
+        {
+          "name": "annotated-types",
+          "version": "0.7.0",
+          "type": "production"
+        },
+        {
+          "name": "anyio",
+          "version": "4.10.0",
+          "type": "production"
+        },
+        {
+          "name": "asyncpg",
+          "version": "0.30.0",
+          "type": "production"
+        },
+        {
+          "name": "attrs",
+          "version": "25.3.0",
+          "type": "production"
+        },
+        {
+          "name": "blinker",
+          "version": "1.9.0",
+          "type": "production"
+        },
+        {
+          "name": "cachetools",
+          "version": "5.5.2",
+          "type": "production"
+        },
+        {
+          "name": "certifi",
+          "version": "2023.7.22",
+          "type": "production"
+        },
+        {
+          "name": "cffi",
+          "version": "1.17.1",
+          "type": "production"
+        },
+        {
+          "name": "charset-normalizer",
+          "version": "3.4.3",
+          "type": "production"
+        },
+        {
+          "name": "click",
+          "version": "8.2.1",
+          "type": "production"
+        },
+        {
+          "name": "cryptography",
+          "version": "45.0.6",
+          "type": "production"
+        },
+        {
+          "name": "filetype",
+          "version": "1.2.0",
+          "type": "production"
+        },
+        {
+          "name": "flask",
+          "version": "3.1.1",
+          "type": "production"
+        },
+        {
+          "name": "frozenlist",
+          "version": "1.7.0",
+          "type": "production"
+        },
+        {
+          "name": "google-ai-generativelanguage",
+          "version": "0.6.18",
+          "type": "production"
+        },
+        {
+          "name": "google-api-core[grpc]",
+          "version": "2.25.1",
+          "type": "production"
+        },
+        {
+          "name": "google-auth",
+          "version": "2.40.3",
+          "type": "production"
+        },
+        {
+          "name": "google-cloud-alloydb",
+          "version": "0.4.8",
+          "type": "production"
+        },
+        {
+          "name": "google-cloud-alloydb-connector[asyncpg]",
+          "version": "1.9.0",
+          "type": "production"
+        },
+        {
+          "name": "google-cloud-core",
+          "version": "2.4.3",
+          "type": "production"
+        },
+        {
+          "name": "google-cloud-secret-manager",
+          "version": "2.24.0",
+          "type": "production"
+        },
+        {
+          "name": "google-cloud-storage",
+          "version": "3.3.0",
+          "type": "production"
+        },
+        {
+          "name": "google-crc32c",
+          "version": "1.7.1",
+          "type": "production"
+        },
+        {
+          "name": "google-resumable-media",
+          "version": "2.7.2",
+          "type": "production"
+        },
+        {
+          "name": "googleapis-common-protos[grpc]",
+          "version": "1.70.0",
+          "type": "production"
+        },
+        {
+          "name": "greenlet",
+          "version": "3.2.4",
+          "type": "production"
+        },
+        {
+          "name": "grpc-google-iam-v1",
+          "version": "0.14.2",
+          "type": "production"
+        },
+        {
+          "name": "grpcio",
+          "version": "1.74.0",
+          "type": "production"
+        },
+        {
+          "name": "grpcio-status",
+          "version": "1.74.0",
+          "type": "production"
+        },
+        {
+          "name": "h11",
+          "version": "0.16.0",
+          "type": "production"
+        },
+        {
+          "name": "httpcore",
+          "version": "1.0.9",
+          "type": "production"
+        },
+        {
+          "name": "httpx",
+          "version": "0.28.1",
+          "type": "production"
+        },
+        {
+          "name": "idna",
+          "version": "3.10",
+          "type": "production"
+        },
+        {
+          "name": "itsdangerous",
+          "version": "2.2.0",
+          "type": "production"
+        },
+        {
+          "name": "jinja2",
+          "version": "3.1.6",
+          "type": "production"
+        },
+        {
+          "name": "jsonpatch",
+          "version": "1.33",
+          "type": "production"
+        },
+        {
+          "name": "jsonpointer",
+          "version": "3.0.0",
+          "type": "production"
+        },
+        {
+          "name": "langchain",
+          "version": "0.3.27",
+          "type": "production"
+        },
+        {
+          "name": "langchain-core",
+          "version": "0.3.74",
+          "type": "production"
+        },
+        {
+          "name": "langchain-google-alloydb-pg",
+          "version": "0.12.0",
+          "type": "production"
+        },
+        {
+          "name": "langchain-google-genai",
+          "version": "2.1.9",
+          "type": "production"
+        },
+        {
+          "name": "langchain-text-splitters",
+          "version": "0.3.9",
+          "type": "production"
+        },
+        {
+          "name": "langsmith",
+          "version": "0.4.16",
+          "type": "production"
+        },
+        {
+          "name": "markupsafe",
+          "version": "3.0.2",
+          "type": "production"
+        },
+        {
+          "name": "multidict",
+          "version": "6.6.4",
+          "type": "production"
+        },
+        {
+          "name": "numpy",
+          "version": "2.3.2",
+          "type": "production"
+        },
+        {
+          "name": "orjson",
+          "version": "3.11.2",
+          "type": "production"
+        },
+        {
+          "name": "packaging",
+          "version": "25.0",
+          "type": "production"
+        },
+        {
+          "name": "pgvector",
+          "version": "0.4.1",
+          "type": "production"
+        },
+        {
+          "name": "pillow",
+          "version": "11.3.0",
+          "type": "production"
+        },
+        {
+          "name": "propcache",
+          "version": "0.3.2",
+          "type": "production"
+        },
+        {
+          "name": "proto-plus",
+          "version": "1.26.1",
+          "type": "production"
+        },
+        {
+          "name": "protobuf",
+          "version": "6.32.0",
+          "type": "production"
+        },
+        {
+          "name": "pyasn1",
+          "version": "0.6.1",
+          "type": "production"
+        },
+        {
+          "name": "pyasn1-modules",
+          "version": "0.4.2",
+          "type": "production"
+        },
+        {
+          "name": "pycparser",
+          "version": "2.22",
+          "type": "production"
+        },
+        {
+          "name": "pydantic",
+          "version": "2.11.7",
+          "type": "production"
+        },
+        {
+          "name": "pydantic-core",
+          "version": "2.33.2",
+          "type": "production"
+        },
+        {
+          "name": "pyyaml",
+          "version": "6.0.2",
+          "type": "production"
+        },
+        {
+          "name": "requests",
+          "version": "2.32.4",
+          "type": "production"
+        },
+        {
+          "name": "requests-toolbelt",
+          "version": "1.0.0",
+          "type": "production"
+        },
+        {
+          "name": "rsa",
+          "version": "4.9",
+          "type": "production"
+        },
+        {
+          "name": "sniffio",
+          "version": "1.3.1",
+          "type": "production"
+        },
+        {
+          "name": "sqlalchemy[asyncio]",
+          "version": "2.0.43",
+          "type": "production"
+        },
+        {
+          "name": "tenacity",
+          "version": "9.1.2",
+          "type": "production"
+        },
+        {
+          "name": "typing-extensions",
+          "version": "4.14.1",
+          "type": "production"
+        },
+        {
+          "name": "typing-inspection",
+          "version": "0.4.1",
+          "type": "production"
+        },
+        {
+          "name": "urllib3",
+          "version": "2.5.0",
+          "type": "production"
+        },
+        {
+          "name": "werkzeug",
+          "version": "3.1.3",
+          "type": "production"
+        },
+        {
+          "name": "yarl",
+          "version": "1.20.1",
+          "type": "production"
+        },
+        {
+          "name": "zstandard",
+          "version": "0.24.0",
+          "type": "production"
+        }
+      ],
+      "infrastructure": {
+        "deployment": {
+          "type": "Kubernetes",
+          "replicas": 1,
+          "strategy": "RollingUpdate",
+          "containers": []
+        },
+        "service": {
+          "type": "ClusterIP",
+          "ports": []
+        },
+        "resources": {
+          "requests": {
+            "cpu": "100m",
+            "memory": "64Mi"
+          },
+          "limits": {
+            "cpu": "200m",
+            "memory": "128Mi"
+          }
+        },
+        "security": {
+          "securityContext": {},
+          "serviceAccount": "shoppingassistantservice"
+        },
+        "config": {
+          "env": [],
+          "volumes": []
+        },
+        "network": {
+          "ingress": false,
+          "egress": [],
+          "ports": []
+        }
+      },
+      "api": {
+        "protocol": "gRPC",
+        "endpoints": [],
+        "client_connections": [],
+        "server_endpoints": [
+          {
+            "name": "AddItem",
+            "request_type": "AddItemRequest",
+            "response_type": "Empty",
+            "service": "CartService"
+          },
+          {
+            "name": "ListRecommendations",
+            "request_type": "ListRecommendationsRequest",
+            "response_type": "ListRecommendationsResponse",
+            "service": "RecommendationService"
+          },
+          {
+            "name": "ListProducts",
+            "request_type": "Empty",
+            "response_type": "ListProductsResponse",
+            "service": "ProductCatalogService"
+          },
+          {
+            "name": "GetQuote",
+            "request_type": "GetQuoteRequest",
+            "response_type": "GetQuoteResponse",
+            "service": "ShippingService"
+          },
+          {
+            "name": "GetSupportedCurrencies",
+            "request_type": "Empty",
+            "response_type": "GetSupportedCurrenciesResponse",
+            "service": "CurrencyService"
+          },
+          {
+            "name": "Charge",
+            "request_type": "ChargeRequest",
+            "response_type": "ChargeResponse",
+            "service": "PaymentService"
+          },
+          {
+            "name": "SendOrderConfirmation",
+            "request_type": "SendOrderConfirmationRequest",
+            "response_type": "Empty",
+            "service": "EmailService"
+          },
+          {
+            "name": "PlaceOrder",
+            "request_type": "PlaceOrderRequest",
+            "response_type": "PlaceOrderResponse",
+            "service": "CheckoutService"
+          },
+          {
+            "name": "GetAds",
+            "request_type": "AdRequest",
+            "response_type": "AdResponse",
+            "service": "AdService"
+          },
+          {
+            "name": "Check",
+            "request_type": "HealthCheckRequest",
+            "response_type": "HealthCheckResponse",
+            "service": "Health"
+          }
+        ]
+      },
+      "code_metrics": {
+        "loc": 83,
+        "files": 4,
+        "directories": 0,
+        "file_types": {
+          ".txt": 1,
+          ".py": 1,
+          ".in": 1
+        },
+        "complexity": "low",
+        "test_coverage": 0.0,
+        "documentation": "minimal"
+      },
+      "deployment": {
+        "container_registry": "gcr.io/google-samples/microservices-demo",
+        "image_tag": "latest",
+        "deployment_strategy": "rolling-update",
+        "health_checks": {
+          "readiness": false,
+          "liveness": false
+        },
+        "scaling": {
+          "auto_scaling": false,
+          "min_replicas": 1,
+          "max_replicas": 1
+        },
+        "environment": "kubernetes"
+      }
+    }
+  ]
+}

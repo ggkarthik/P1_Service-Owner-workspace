@@ -1,0 +1,1251 @@
+{
+  "dependencies": [
+    {
+      "name": "testify",
+      "version": "1.5.12",
+      "latest_version": "1.8.16",
+      "type": "bundled",
+      "license": "AGPL-3.0",
+      "source": "go",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-39441",
+          "title": "Server-Side Request Forgery in testify",
+          "description": "A critical severity sql injection vulnerability was found in testify version 1.5.12 that allows attackers to escalate privileges.",
+          "severity": "Critical",
+          "affected_versions": "<= 1.5.12",
+          "fixed_version": null,
+          "published_date": "2025-01-09",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-39441",
+            "https://github.com/advisories/cve-2023-39441"
+          ]
+        },
+        {
+          "id": "CVE-2021-84666",
+          "title": "XML External Entity in testify",
+          "description": "A high severity path traversal vulnerability was found in testify version 1.5.12 that allows attackers to access sensitive information.",
+          "severity": "High",
+          "affected_versions": "<= 1.5.12",
+          "fixed_version": null,
+          "published_date": "2025-07-13",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-84666",
+            "https://github.com/advisories/cve-2021-84666"
+          ]
+        },
+        {
+          "id": "CVE-2021-73803",
+          "title": "Privilege Escalation in testify",
+          "description": "A medium severity privilege escalation vulnerability was found in testify version 1.5.12 that allows attackers to execute arbitrary code.",
+          "severity": "Medium",
+          "affected_versions": "<= 1.5.12",
+          "fixed_version": null,
+          "published_date": "2024-11-05",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-73803",
+            "https://github.com/advisories/cve-2021-73803"
+          ]
+        }
+      ],
+      "usage": [
+        {
+          "service": "api",
+          "file": "src/helpers.rb",
+          "type": "Transitive"
+        },
+        {
+          "service": "api",
+          "file": "src/views.php",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-05-04"
+    },
+    {
+      "name": "numpy",
+      "version": "0.0.0",
+      "latest_version": "0.1.4",
+      "type": "runtime",
+      "license": "BSD-3-Clause",
+      "source": "pip",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "scheduler",
+          "file": "src/app.go",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-07-16"
+    },
+    {
+      "name": "gorilla/mux",
+      "version": "2.12.10",
+      "latest_version": "2.14.17",
+      "type": "runtime",
+      "license": "GPL-3.0",
+      "source": "go",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "frontend",
+          "file": "src/controllers.php",
+          "type": "Transitive"
+        },
+        {
+          "service": "queue",
+          "file": "src/index.js",
+          "type": "Transitive"
+        },
+        {
+          "service": "api",
+          "file": "src/client.swift",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-05-31"
+    },
+    {
+      "name": "moment",
+      "version": "4.10.49",
+      "latest_version": "4.13.56",
+      "type": "peer",
+      "license": "EPL-2.0",
+      "source": "npm",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-24697",
+          "title": "Information Disclosure in moment",
+          "description": "A medium severity cross-site scripting vulnerability was found in moment version 4.10.49 that allows attackers to bypass authentication.",
+          "severity": "Medium",
+          "affected_versions": "<= 4.10.49",
+          "fixed_version": "4.10.50",
+          "published_date": "2024-12-24",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-24697",
+            "https://github.com/advisories/cve-2020-24697"
+          ]
+        },
+        {
+          "id": "CVE-2020-42893",
+          "title": "Insecure Deserialization in moment",
+          "description": "A low severity buffer overflow vulnerability was found in moment version 4.10.49 that allows attackers to cause denial of service.",
+          "severity": "Low",
+          "affected_versions": "<= 4.10.49",
+          "fixed_version": "4.10.50",
+          "published_date": "2025-04-24",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-42893",
+            "https://github.com/advisories/cve-2020-42893"
+          ]
+        }
+      ],
+      "usage": [
+        {
+          "service": "frontend",
+          "file": "src/app.php",
+          "type": "Direct"
+        },
+        {
+          "service": "queue",
+          "file": "src/models.rs",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-05-03"
+    },
+    {
+      "name": "kotlinx-datetime",
+      "version": "2.1.39",
+      "latest_version": "2.4.45",
+      "type": "optional",
+      "license": "Unlicense",
+      "source": "gradle",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "worker",
+          "file": "src/app.cs",
+          "type": "Transitive"
+        },
+        {
+          "service": "frontend",
+          "file": "src/index.cs",
+          "type": "Direct"
+        },
+        {
+          "service": "auth",
+          "file": "src/client.go",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-07-24"
+    },
+    {
+      "name": "entity-framework",
+      "version": "1.10.39",
+      "latest_version": "1.11.40",
+      "type": "peer",
+      "license": "MIT",
+      "source": "nuget",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "frontend",
+          "file": "src/controllers.swift",
+          "type": "Transitive"
+        },
+        {
+          "service": "database",
+          "file": "src/client.rs",
+          "type": "Transitive"
+        },
+        {
+          "service": "worker",
+          "file": "src/main.java",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-06-09"
+    },
+    {
+      "name": "sqlalchemy",
+      "version": "1.4.47",
+      "latest_version": "1.7.49",
+      "type": "bundled",
+      "license": "Apache-2.0",
+      "source": "pip",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "cache",
+          "file": "src/helpers.rb",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-08-21"
+    },
+    {
+      "name": "moq",
+      "version": "0.11.5",
+      "latest_version": "0.14.11",
+      "type": "bundled",
+      "license": "GPL-3.0",
+      "source": "nuget",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "scheduler",
+          "file": "src/index.ts",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-08-22"
+    },
+    {
+      "name": "xunit",
+      "version": "4.19.18",
+      "latest_version": "4.21.28",
+      "type": "peer",
+      "license": "EPL-2.0",
+      "source": "nuget",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-26059",
+          "title": "Server-Side Request Forgery in xunit",
+          "description": "A critical severity sql injection vulnerability was found in xunit version 4.19.18 that allows attackers to escalate privileges.",
+          "severity": "Critical",
+          "affected_versions": "<= 4.19.18",
+          "fixed_version": null,
+          "published_date": "2024-12-24",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-26059",
+            "https://github.com/advisories/cve-2023-26059"
+          ]
+        }
+      ],
+      "usage": [
+        {
+          "service": "worker",
+          "file": "src/models.php",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-09-14"
+    },
+    {
+      "name": "arrow",
+      "version": "0.17.32",
+      "latest_version": "0.20.34",
+      "type": "bundled",
+      "license": "LGPL-2.1",
+      "source": "gradle",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "cache",
+          "file": "src/main.php",
+          "type": "Direct"
+        },
+        {
+          "service": "api",
+          "file": "src/views.java",
+          "type": "Direct"
+        },
+        {
+          "service": "api",
+          "file": "src/utils.java",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-09-03"
+    },
+    {
+      "name": "newtonsoft.json",
+      "version": "4.4.16",
+      "latest_version": "4.7.19",
+      "type": "bundled",
+      "license": "GPL-3.0",
+      "source": "nuget",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "database",
+          "file": "src/views.java",
+          "type": "Transitive"
+        },
+        {
+          "service": "database",
+          "file": "src/client.java",
+          "type": "Direct"
+        },
+        {
+          "service": "api",
+          "file": "src/app.rs",
+          "type": "Direct"
+        },
+        {
+          "service": "backend",
+          "file": "src/app.ts",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-08-06"
+    },
+    {
+      "name": "redux",
+      "version": "1.3.30",
+      "latest_version": "1.6.35",
+      "type": "development",
+      "license": "Apache-2.0",
+      "source": "npm",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "frontend",
+          "file": "src/main.java",
+          "type": "Direct"
+        },
+        {
+          "service": "api",
+          "file": "src/index.js",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-05-12"
+    },
+    {
+      "name": "serde",
+      "version": "0.8.26",
+      "latest_version": "0.11.32",
+      "type": "bundled",
+      "license": "GPL-3.0",
+      "source": "cargo",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-27643",
+          "title": "Path Traversal in serde",
+          "description": "A low severity xml external entity vulnerability was found in serde version 0.8.26 that allows attackers to cause denial of service.",
+          "severity": "Low",
+          "affected_versions": "<= 0.8.26",
+          "fixed_version": "0.8.30",
+          "published_date": "2025-03-19",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-27643",
+            "https://github.com/advisories/cve-2020-27643"
+          ]
+        },
+        {
+          "id": "CVE-2020-37249",
+          "title": "XML External Entity in serde",
+          "description": "A low severity insecure deserialization vulnerability was found in serde version 0.8.26 that allows attackers to access sensitive information.",
+          "severity": "Low",
+          "affected_versions": "<= 0.8.26",
+          "fixed_version": null,
+          "published_date": "2025-03-09",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-37249",
+            "https://github.com/advisories/cve-2020-37249"
+          ]
+        },
+        {
+          "id": "CVE-2020-43192",
+          "title": "Server-Side Request Forgery in serde",
+          "description": "A critical severity memory leak vulnerability was found in serde version 0.8.26 that allows attackers to escalate privileges.",
+          "severity": "Critical",
+          "affected_versions": "<= 0.8.26",
+          "fixed_version": null,
+          "published_date": "2025-08-11",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-43192",
+            "https://github.com/advisories/cve-2020-43192"
+          ]
+        }
+      ],
+      "usage": [
+        {
+          "service": "backend",
+          "file": "src/client.rs",
+          "type": "Transitive"
+        },
+        {
+          "service": "backend",
+          "file": "src/helpers.ts",
+          "type": "Transitive"
+        },
+        {
+          "service": "queue",
+          "file": "src/client.rs",
+          "type": "Transitive"
+        },
+        {
+          "service": "worker",
+          "file": "src/utils.rs",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-05-04"
+    },
+    {
+      "name": "numpy",
+      "version": "3.8.26",
+      "latest_version": "3.11.33",
+      "type": "optional",
+      "license": "AGPL-3.0",
+      "source": "pip",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "api",
+          "file": "src/app.py",
+          "type": "Direct"
+        },
+        {
+          "service": "scheduler",
+          "file": "src/main.rb",
+          "type": "Transitive"
+        },
+        {
+          "service": "notification",
+          "file": "src/server.rb",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-04-11"
+    },
+    {
+      "name": "entity-framework",
+      "version": "2.0.12",
+      "latest_version": "2.0.14",
+      "type": "runtime",
+      "license": "Apache-2.0",
+      "source": "nuget",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-15851",
+          "title": "Denial of Service in entity-framework",
+          "description": "A critical severity server-side request forgery vulnerability was found in entity-framework version 2.0.12 that allows attackers to cause denial of service.",
+          "severity": "Critical",
+          "affected_versions": "<= 2.0.12",
+          "fixed_version": null,
+          "published_date": "2025-03-22",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-15851",
+            "https://github.com/advisories/cve-2020-15851"
+          ]
+        },
+        {
+          "id": "CVE-2022-72846",
+          "title": "Cross-Site Scripting in entity-framework",
+          "description": "A low severity sql injection vulnerability was found in entity-framework version 2.0.12 that allows attackers to execute arbitrary code.",
+          "severity": "Low",
+          "affected_versions": "<= 2.0.12",
+          "fixed_version": null,
+          "published_date": "2024-10-11",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-72846",
+            "https://github.com/advisories/cve-2022-72846"
+          ]
+        }
+      ],
+      "usage": [
+        {
+          "service": "frontend",
+          "file": "src/models.py",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-08-31"
+    },
+    {
+      "name": "express",
+      "version": "1.19.49",
+      "latest_version": "1.20.52",
+      "type": "runtime",
+      "license": "GPL-3.0",
+      "source": "npm",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "frontend",
+          "file": "src/main.cs",
+          "type": "Transitive"
+        },
+        {
+          "service": "notification",
+          "file": "src/client.rs",
+          "type": "Direct"
+        },
+        {
+          "service": "database",
+          "file": "src/utils.java",
+          "type": "Direct"
+        },
+        {
+          "service": "queue",
+          "file": "src/views.rb",
+          "type": "Transitive"
+        },
+        {
+          "service": "notification",
+          "file": "src/client.rs",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-08-20"
+    },
+    {
+      "name": "fiber",
+      "version": "4.10.38",
+      "latest_version": "4.11.47",
+      "type": "bundled",
+      "license": "ISC",
+      "source": "go",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2022-65899",
+          "title": "Buffer Overflow in fiber",
+          "description": "A high severity cross-site scripting vulnerability was found in fiber version 4.10.38 that allows attackers to bypass authentication.",
+          "severity": "High",
+          "affected_versions": "<= 4.10.38",
+          "fixed_version": "4.10.41",
+          "published_date": "2025-02-07",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-65899",
+            "https://github.com/advisories/cve-2022-65899"
+          ]
+        }
+      ],
+      "usage": [
+        {
+          "service": "worker",
+          "file": "src/client.js",
+          "type": "Direct"
+        },
+        {
+          "service": "worker",
+          "file": "src/server.cs",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-07-07"
+    },
+    {
+      "name": "axios",
+      "version": "0.3.32",
+      "latest_version": "0.6.35",
+      "type": "peer",
+      "license": "AGPL-3.0",
+      "source": "npm",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "cache",
+          "file": "src/models.cs",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-06-02"
+    },
+    {
+      "name": "coroutines",
+      "version": "3.16.22",
+      "latest_version": "3.16.23",
+      "type": "development",
+      "license": "Apache-2.0",
+      "source": "gradle",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "scheduler",
+          "file": "src/main.swift",
+          "type": "Direct"
+        },
+        {
+          "service": "queue",
+          "file": "src/index.go",
+          "type": "Transitive"
+        },
+        {
+          "service": "auth",
+          "file": "src/client.java",
+          "type": "Direct"
+        },
+        {
+          "service": "frontend",
+          "file": "src/helpers.swift",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-06-16"
+    },
+    {
+      "name": "clap",
+      "version": "2.10.11",
+      "latest_version": "2.10.12",
+      "type": "development",
+      "license": "Unlicense",
+      "source": "cargo",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-45644",
+          "title": "Insecure Deserialization in clap",
+          "description": "A medium severity sql injection vulnerability was found in clap version 2.10.11 that allows attackers to execute arbitrary code.",
+          "severity": "Medium",
+          "affected_versions": "<= 2.10.11",
+          "fixed_version": null,
+          "published_date": "2024-10-05",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-45644",
+            "https://github.com/advisories/cve-2020-45644"
+          ]
+        },
+        {
+          "id": "CVE-2023-35962",
+          "title": "Insecure Deserialization in clap",
+          "description": "A low severity buffer overflow vulnerability was found in clap version 2.10.11 that allows attackers to escalate privileges.",
+          "severity": "Low",
+          "affected_versions": "<= 2.10.11",
+          "fixed_version": null,
+          "published_date": "2024-12-04",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-35962",
+            "https://github.com/advisories/cve-2023-35962"
+          ]
+        },
+        {
+          "id": "CVE-2020-27918",
+          "title": "XML External Entity in clap",
+          "description": "A critical severity insecure deserialization vulnerability was found in clap version 2.10.11 that allows attackers to cause denial of service.",
+          "severity": "Critical",
+          "affected_versions": "<= 2.10.11",
+          "fixed_version": null,
+          "published_date": "2024-12-24",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-27918",
+            "https://github.com/advisories/cve-2020-27918"
+          ]
+        }
+      ],
+      "usage": [
+        {
+          "service": "scheduler",
+          "file": "src/main.rb",
+          "type": "Transitive"
+        },
+        {
+          "service": "frontend",
+          "file": "src/views.go",
+          "type": "Direct"
+        },
+        {
+          "service": "frontend",
+          "file": "src/main.java",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-04-01"
+    },
+    {
+      "name": "nginx",
+      "version": "1.10.50",
+      "latest_version": "1.13.52",
+      "type": "development",
+      "license": "Unlicense",
+      "source": "docker",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "auth",
+          "file": "src/helpers.swift",
+          "type": "Direct"
+        },
+        {
+          "service": "worker",
+          "file": "src/index.ts",
+          "type": "Transitive"
+        },
+        {
+          "service": "auth",
+          "file": "src/utils.ts",
+          "type": "Direct"
+        },
+        {
+          "service": "notification",
+          "file": "src/helpers.go",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-03-31"
+    },
+    {
+      "name": "vue",
+      "version": "4.0.32",
+      "latest_version": "4.0.35",
+      "type": "peer",
+      "license": "Unlicense",
+      "source": "npm",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2021-75489",
+          "title": "Privilege Escalation in vue",
+          "description": "A critical severity information disclosure vulnerability was found in vue version 4.0.32 that allows attackers to execute arbitrary code.",
+          "severity": "Critical",
+          "affected_versions": "<= 4.0.32",
+          "fixed_version": "4.0.36",
+          "published_date": "2024-11-22",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-75489",
+            "https://github.com/advisories/cve-2021-75489"
+          ]
+        }
+      ],
+      "usage": [
+        {
+          "service": "auth",
+          "file": "src/controllers.rs",
+          "type": "Transitive"
+        },
+        {
+          "service": "frontend",
+          "file": "src/helpers.rs",
+          "type": "Transitive"
+        },
+        {
+          "service": "auth",
+          "file": "src/utils.cs",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-06-16"
+    },
+    {
+      "name": "gin-gonic/gin",
+      "version": "4.13.9",
+      "latest_version": "4.13.15",
+      "type": "development",
+      "license": "ISC",
+      "source": "go",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "database",
+          "file": "src/views.ts",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-04-12"
+    },
+    {
+      "name": "coroutines",
+      "version": "3.4.49",
+      "latest_version": "3.5.59",
+      "type": "peer",
+      "license": "BSD-3-Clause",
+      "source": "gradle",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-78059",
+          "title": "Path Traversal in coroutines",
+          "description": "A high severity buffer overflow vulnerability was found in coroutines version 3.4.49 that allows attackers to execute arbitrary code.",
+          "severity": "High",
+          "affected_versions": "<= 3.4.49",
+          "fixed_version": "3.4.52",
+          "published_date": "2025-01-17",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-78059",
+            "https://github.com/advisories/cve-2023-78059"
+          ]
+        },
+        {
+          "id": "CVE-2022-69964",
+          "title": "Buffer Overflow in coroutines",
+          "description": "A high severity cross-site scripting vulnerability was found in coroutines version 3.4.49 that allows attackers to cause denial of service.",
+          "severity": "High",
+          "affected_versions": "<= 3.4.49",
+          "fixed_version": null,
+          "published_date": "2025-02-23",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-69964",
+            "https://github.com/advisories/cve-2022-69964"
+          ]
+        }
+      ],
+      "usage": [
+        {
+          "service": "cache",
+          "file": "src/controllers.rs",
+          "type": "Transitive"
+        },
+        {
+          "service": "database",
+          "file": "src/utils.py",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-04-03"
+    },
+    {
+      "name": "bootstrap",
+      "version": "1.16.3",
+      "latest_version": "1.16.9",
+      "type": "development",
+      "license": "ISC",
+      "source": "npm",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "frontend",
+          "file": "src/main.swift",
+          "type": "Transitive"
+        },
+        {
+          "service": "notification",
+          "file": "src/server.swift",
+          "type": "Transitive"
+        },
+        {
+          "service": "worker",
+          "file": "src/utils.ts",
+          "type": "Direct"
+        },
+        {
+          "service": "frontend",
+          "file": "src/client.js",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-08-13"
+    },
+    {
+      "name": "gorm",
+      "version": "2.13.48",
+      "latest_version": "2.15.54",
+      "type": "development",
+      "license": "AGPL-3.0",
+      "source": "go",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "database",
+          "file": "src/index.rs",
+          "type": "Direct"
+        },
+        {
+          "service": "frontend",
+          "file": "src/index.rs",
+          "type": "Transitive"
+        },
+        {
+          "service": "notification",
+          "file": "src/models.ts",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-08-31"
+    },
+    {
+      "name": "ruby",
+      "version": "5.4.47",
+      "latest_version": "5.7.51",
+      "type": "peer",
+      "license": "AGPL-3.0",
+      "source": "docker",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "api",
+          "file": "src/app.rb",
+          "type": "Transitive"
+        },
+        {
+          "service": "queue",
+          "file": "src/views.rs",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-05-21"
+    },
+    {
+      "name": "nginx",
+      "version": "3.13.34",
+      "latest_version": "3.14.38",
+      "type": "peer",
+      "license": "GPL-3.0",
+      "source": "docker",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "queue",
+          "file": "src/main.py",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-05-31"
+    },
+    {
+      "name": "hibernate",
+      "version": "1.12.12",
+      "latest_version": "1.15.21",
+      "type": "development",
+      "license": "ISC",
+      "source": "maven",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "cache",
+          "file": "src/utils.php",
+          "type": "Transitive"
+        },
+        {
+          "service": "queue",
+          "file": "src/index.php",
+          "type": "Direct"
+        },
+        {
+          "service": "worker",
+          "file": "src/helpers.php",
+          "type": "Transitive"
+        },
+        {
+          "service": "auth",
+          "file": "src/app.php",
+          "type": "Direct"
+        },
+        {
+          "service": "queue",
+          "file": "src/main.js",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-09-22"
+    },
+    {
+      "name": "guava",
+      "version": "3.16.32",
+      "latest_version": "3.18.35",
+      "type": "optional",
+      "license": "BSD-3-Clause",
+      "source": "maven",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "api",
+          "file": "src/utils.php",
+          "type": "Transitive"
+        },
+        {
+          "service": "queue",
+          "file": "src/client.js",
+          "type": "Direct"
+        },
+        {
+          "service": "notification",
+          "file": "src/app.ts",
+          "type": "Direct"
+        },
+        {
+          "service": "queue",
+          "file": "src/utils.cs",
+          "type": "Direct"
+        },
+        {
+          "service": "frontend",
+          "file": "src/utils.go",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-04-15"
+    },
+    {
+      "name": "mockito",
+      "version": "2.5.43",
+      "latest_version": "2.6.49",
+      "type": "bundled",
+      "license": "EPL-2.0",
+      "source": "maven",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "database",
+          "file": "src/models.go",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-04-17"
+    },
+    {
+      "name": "serde",
+      "version": "0.16.13",
+      "latest_version": "0.19.16",
+      "type": "bundled",
+      "license": "Unlicense",
+      "source": "cargo",
+      "is_vulnerable": false,
+      "is_outdated": true,
+      "vulnerabilities": [],
+      "usage": [
+        {
+          "service": "auth",
+          "file": "src/utils.ts",
+          "type": "Transitive"
+        },
+        {
+          "service": "cache",
+          "file": "src/server.swift",
+          "type": "Direct"
+        },
+        {
+          "service": "cache",
+          "file": "src/views.swift",
+          "type": "Direct"
+        },
+        {
+          "service": "queue",
+          "file": "src/server.js",
+          "type": "Transitive"
+        }
+      ],
+      "last_updated": "2025-08-31"
+    },
+    {
+      "name": "gorm",
+      "version": "5.13.21",
+      "latest_version": "5.14.24",
+      "type": "bundled",
+      "license": "ISC",
+      "source": "go",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-96976",
+          "title": "SQL Injection in gorm",
+          "description": "A medium severity cross-site scripting vulnerability was found in gorm version 5.13.21 that allows attackers to escalate privileges.",
+          "severity": "Medium",
+          "affected_versions": "<= 5.13.21",
+          "fixed_version": "5.13.25",
+          "published_date": "2025-07-17",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-96976",
+            "https://github.com/advisories/cve-2020-96976"
+          ]
+        }
+      ],
+      "usage": [
+        {
+          "service": "backend",
+          "file": "src/controllers.rb",
+          "type": "Direct"
+        },
+        {
+          "service": "frontend",
+          "file": "src/helpers.py",
+          "type": "Transitive"
+        },
+        {
+          "service": "frontend",
+          "file": "src/main.py",
+          "type": "Direct"
+        },
+        {
+          "service": "api",
+          "file": "src/helpers.go",
+          "type": "Transitive"
+        },
+        {
+          "service": "frontend",
+          "file": "src/main.js",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-03-30"
+    },
+    {
+      "name": "scipy",
+      "version": "5.9.27",
+      "latest_version": "5.11.34",
+      "type": "development",
+      "license": "LGPL-2.1",
+      "source": "pip",
+      "is_vulnerable": true,
+      "is_outdated": true,
+      "vulnerabilities": [
+        {
+          "id": "CVE-2022-25495",
+          "title": "Privilege Escalation in scipy",
+          "description": "A high severity server-side request forgery vulnerability was found in scipy version 5.9.27 that allows attackers to access sensitive information.",
+          "severity": "High",
+          "affected_versions": "<= 5.9.27",
+          "fixed_version": "5.9.32",
+          "published_date": "2025-08-07",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-25495",
+            "https://github.com/advisories/cve-2022-25495"
+          ]
+        },
+        {
+          "id": "CVE-2022-56936",
+          "title": "SQL Injection in scipy",
+          "description": "A high severity memory leak vulnerability was found in scipy version 5.9.27 that allows attackers to execute arbitrary code.",
+          "severity": "High",
+          "affected_versions": "<= 5.9.27",
+          "fixed_version": "5.9.29",
+          "published_date": "2024-12-18",
+          "references": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2022-56936",
+            "https://github.com/advisories/cve-2022-56936"
+          ]
+        }
+      ],
+      "usage": [
+        {
+          "service": "api",
+          "file": "src/index.js",
+          "type": "Direct"
+        },
+        {
+          "service": "api",
+          "file": "src/main.java",
+          "type": "Direct"
+        }
+      ],
+      "last_updated": "2025-07-04"
+    }
+  ],
+  "total_count": 34,
+  "vulnerable_count": 11,
+  "outdated_count": 34,
+  "license_distribution": {
+    "AGPL-3.0": 5,
+    "BSD-3-Clause": 3,
+    "GPL-3.0": 6,
+    "EPL-2.0": 3,
+    "Unlicense": 5,
+    "MIT": 1,
+    "Apache-2.0": 4,
+    "LGPL-2.1": 2,
+    "ISC": 5
+  },
+  "source_distribution": {
+    "go": 6,
+    "pip": 4,
+    "npm": 6,
+    "gradle": 4,
+    "nuget": 5,
+    "cargo": 3,
+    "docker": 3,
+    "maven": 3
+  },
+  "type_distribution": {
+    "bundled": 10,
+    "runtime": 4,
+    "peer": 8,
+    "optional": 3,
+    "development": 9
+  },
+  "timestamp": "2025-09-22T21:00:01.736995"
+}

@@ -1,0 +1,216 @@
+{
+  "images": [
+    {
+      "name": "gcr.io/google-samples/microservices-demo/adservice",
+      "tags": [
+        "latest",
+        "v0.3.9"
+      ],
+      "size": "150MB",
+      "created": "2023-03-15T10:30:00Z",
+      "baseImage": "openjdk:11",
+      "packages": [
+        {
+          "name": "openjdk",
+          "version": "11",
+          "type": "base"
+        },
+        {
+          "name": "maven",
+          "version": "3.8",
+          "type": "build"
+        },
+        {
+          "name": "grpc",
+          "version": "1.54.0",
+          "type": "dependency"
+        }
+      ]
+    },
+    {
+      "name": "gcr.io/google-samples/microservices-demo/cartservice",
+      "tags": [
+        "latest",
+        "v0.3.9"
+      ],
+      "size": "180MB",
+      "created": "2023-03-15T11:30:00Z",
+      "baseImage": "dotnet:7.0",
+      "packages": [
+        {
+          "name": "dotnet",
+          "version": "7.0",
+          "type": "base"
+        },
+        {
+          "name": "grpc",
+          "version": "2.52.0",
+          "type": "dependency"
+        },
+        {
+          "name": "redis-sharp",
+          "version": "2.6.104",
+          "type": "dependency"
+        }
+      ]
+    },
+    {
+      "name": "gcr.io/google-samples/microservices-demo/frontend",
+      "tags": [
+        "latest",
+        "v0.3.9"
+      ],
+      "size": "130MB",
+      "created": "2023-03-15T09:30:00Z",
+      "baseImage": "golang:1.19",
+      "packages": [
+        {
+          "name": "golang",
+          "version": "1.19",
+          "type": "base"
+        },
+        {
+          "name": "grpc",
+          "version": "1.54.0",
+          "type": "dependency"
+        },
+        {
+          "name": "alpine",
+          "version": "3.17",
+          "type": "base"
+        }
+      ]
+    },
+    {
+      "name": "gcr.io/google-samples/microservices-demo/emailservice",
+      "tags": [
+        "latest",
+        "v0.3.9"
+      ],
+      "size": "120MB",
+      "created": "2023-03-15T09:45:00Z",
+      "baseImage": "python:3.10",
+      "packages": [
+        {
+          "name": "python",
+          "version": "3.10",
+          "type": "base"
+        },
+        {
+          "name": "grpc",
+          "version": "1.53.0",
+          "type": "dependency"
+        }
+      ]
+    },
+    {
+      "name": "gcr.io/google-samples/microservices-demo/paymentservice",
+      "tags": [
+        "latest",
+        "v0.3.9"
+      ],
+      "size": "110MB",
+      "created": "2023-03-15T10:15:00Z",
+      "baseImage": "node:18",
+      "packages": [
+        {
+          "name": "node",
+          "version": "18",
+          "type": "base"
+        },
+        {
+          "name": "grpc",
+          "version": "1.8.13",
+          "type": "dependency"
+        }
+      ]
+    }
+  ],
+  "infrastructure": {
+    "clusters": 2,
+    "nodes": 6,
+    "namespaces": 3
+  },
+  "baseImageInsights": {
+    "golang:1.19": {
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-24534",
+          "severity": "high",
+          "description": "Buffer overflow in crypto/tls"
+        },
+        {
+          "id": "CVE-2023-24538",
+          "severity": "medium",
+          "description": "Path traversal in archive/zip"
+        }
+      ]
+    },
+    "openjdk:11": {
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-21930",
+          "severity": "critical",
+          "description": "Vulnerability in JDK"
+        },
+        {
+          "id": "CVE-2023-21937",
+          "severity": "high",
+          "description": "Vulnerability in Java SE"
+        },
+        {
+          "id": "CVE-2023-21938",
+          "severity": "medium",
+          "description": "Vulnerability in Java SE"
+        }
+      ]
+    },
+    "dotnet:7.0": {
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-28260",
+          "severity": "medium",
+          "description": "Denial of Service in .NET"
+        }
+      ]
+    },
+    "python:3.10": {
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-24329",
+          "severity": "high",
+          "description": "Buffer overflow in multiprocessing"
+        },
+        {
+          "id": "CVE-2023-24328",
+          "severity": "medium",
+          "description": "Path traversal in tarfile"
+        }
+      ]
+    },
+    "node:18": {
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-23918",
+          "severity": "critical",
+          "description": "Prototype pollution in Node.js"
+        },
+        {
+          "id": "CVE-2023-23919",
+          "severity": "high",
+          "description": "HTTP Request Smuggling in Node.js"
+        },
+        {
+          "id": "CVE-2023-23920",
+          "severity": "medium",
+          "description": "Denial of Service in Node.js"
+        },
+        {
+          "id": "CVE-2023-23921",
+          "severity": "low",
+          "description": "Information disclosure in Node.js"
+        }
+      ]
+    }
+  }
+}

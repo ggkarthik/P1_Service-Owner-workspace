@@ -1,0 +1,1525 @@
+{
+  "summary": {
+    "total_findings": 91,
+    "critical": 23,
+    "high": 15,
+    "medium": 33,
+    "low": 20,
+    "by_type": {
+      "SCA": 34,
+      "Image Scan": 20,
+      "SAST": 10,
+      "Runtime Findings": 10,
+      "Secrets": 8,
+      "Misconfiguration": 9
+    },
+    "by_service": {
+      "adservice": 9,
+      "cartservice": 10,
+      "checkoutservice": 8,
+      "currencyservice": 6,
+      "emailservice": 7,
+      "frontend": 9,
+      "loadgenerator": 5,
+      "paymentservice": 8,
+      "productcatalogservice": 6,
+      "recommendationservice": 5,
+      "shippingservice": 11,
+      "shoppingassistantservice": 7
+    },
+    "by_stage": {
+      "code": 32,
+      "build": 40,
+      "runtime": 19
+    }
+  },
+  "services": [
+    {
+      "name": "adservice",
+      "language": "Java",
+      "findings_count": 9,
+      "findings": [
+        {
+          "id": "sca-adservice-645ce870",
+          "chain_id": "645ce870",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Outdated library with known vulnerabilities",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "DevOps Team",
+          "file": "adservice/adservice_main.java",
+          "line": 484,
+          "connected_to": [
+            "image scan-adservice-645ce870"
+          ]
+        },
+        {
+          "id": "image scan-adservice-645ce870",
+          "chain_id": "645ce870",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Unnecessary package increasing attack surface",
+          "severity": "Critical",
+          "source": "Trivy",
+          "owner": "Development Team",
+          "image": "gcr.io/google-samples/microservices-demo/adservice:latest",
+          "connected_to": [
+            "sca-adservice-645ce870"
+          ]
+        },
+        {
+          "id": "sast-adservice-748f214d",
+          "chain_id": "748f214d",
+          "stage": "code",
+          "type": "SAST",
+          "description": "Cross-Site Scripting (XSS) detected",
+          "severity": "Critical",
+          "source": "CodeQL",
+          "owner": "Security Team",
+          "file": "adservice/adservice_main.java",
+          "line": 78,
+          "connected_to": [
+            "sca-adservice-748f214d"
+          ]
+        },
+        {
+          "id": "sca-adservice-748f214d",
+          "chain_id": "748f214d",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Critical update required for package",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "Development Team",
+          "image": "gcr.io/google-samples/microservices-demo/adservice:latest",
+          "connected_to": [
+            "sast-adservice-748f214d"
+          ]
+        },
+        {
+          "id": "sca-adservice-standalone-0",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Security patch missing in dependency",
+          "severity": "Critical",
+          "source": "Dependabot",
+          "owner": "Development Team",
+          "file": "adservice/models.java",
+          "line": 147,
+          "connected_to": []
+        },
+        {
+          "id": "image scan-adservice-standalone-1",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Outdated package in container",
+          "severity": "Medium",
+          "source": "Trivy",
+          "owner": "Development Team",
+          "image": "gcr.io/google-samples/microservices-demo/adservice:latest",
+          "connected_to": []
+        },
+        {
+          "id": "image scan-adservice-standalone-2",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Outdated package in container",
+          "severity": "Medium",
+          "source": "Trivy",
+          "owner": "Security Team",
+          "image": "gcr.io/google-samples/microservices-demo/adservice:latest",
+          "connected_to": []
+        },
+        {
+          "id": "sca-adservice-standalone-3",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Library with unsupported version used",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "DevOps Team",
+          "file": "adservice/models.java",
+          "line": 491,
+          "connected_to": []
+        },
+        {
+          "id": "runtime findings-adservice-standalone-4",
+          "stage": "runtime",
+          "type": "Runtime Findings",
+          "description": "Unusual process execution detected",
+          "severity": "Low",
+          "source": "Falco",
+          "owner": "Platform Team",
+          "pod_name": "adservice-pod-1414",
+          "connected_to": []
+        }
+      ],
+      "connected_findings": [
+        {
+          "chain_id": "645ce870",
+          "file": "adservice/adservice_main.java",
+          "image": "gcr.io/google-samples/microservices-demo/adservice:latest",
+          "findings": [
+            "sca-adservice-645ce870",
+            "image scan-adservice-645ce870"
+          ]
+        },
+        {
+          "chain_id": "748f214d",
+          "file": "adservice/adservice_main.java",
+          "image": "gcr.io/google-samples/microservices-demo/adservice:latest",
+          "findings": [
+            "sast-adservice-748f214d",
+            "sca-adservice-748f214d"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cartservice",
+      "language": "C#",
+      "findings_count": 10,
+      "findings": [
+        {
+          "id": "sast-cartservice-b62ccb89",
+          "chain_id": "b62ccb89",
+          "stage": "code",
+          "type": "SAST",
+          "description": "Command Injection risk",
+          "severity": "High",
+          "source": "CodeQL",
+          "owner": "Development Team",
+          "file": "cartservice/cartservice_main.cs",
+          "line": 163,
+          "connected_to": [
+            "sca-cartservice-b62ccb89"
+          ]
+        },
+        {
+          "id": "sca-cartservice-b62ccb89",
+          "chain_id": "b62ccb89",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Outdated library with known vulnerabilities",
+          "severity": "Critical",
+          "source": "Dependabot",
+          "owner": "Security Team",
+          "image": "gcr.io/google-samples/microservices-demo/cartservice:latest",
+          "connected_to": [
+            "sast-cartservice-b62ccb89"
+          ]
+        },
+        {
+          "id": "secrets-cartservice-88b6b086",
+          "chain_id": "88b6b086",
+          "stage": "code",
+          "type": "Secrets",
+          "description": "Potential password in code",
+          "severity": "Low",
+          "source": "TruffleHog",
+          "owner": "Platform Team",
+          "file": "cartservice/cartservice_main.cs",
+          "line": 334,
+          "connected_to": [
+            "sca-cartservice-88b6b086"
+          ]
+        },
+        {
+          "id": "sca-cartservice-88b6b086",
+          "chain_id": "88b6b086",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Security patch missing in dependency",
+          "severity": "Critical",
+          "source": "Dependabot",
+          "owner": "DevOps Team",
+          "image": "gcr.io/google-samples/microservices-demo/cartservice:latest",
+          "connected_to": [
+            "secrets-cartservice-88b6b086"
+          ]
+        },
+        {
+          "id": "sast-cartservice-8f7384b3",
+          "chain_id": "8f7384b3",
+          "stage": "code",
+          "type": "SAST",
+          "description": "Command Injection risk",
+          "severity": "Low",
+          "source": "CodeQL",
+          "owner": "Development Team",
+          "file": "cartservice/cartservice_main.cs",
+          "line": 491,
+          "connected_to": [
+            "sca-cartservice-8f7384b3"
+          ]
+        },
+        {
+          "id": "sca-cartservice-8f7384b3",
+          "chain_id": "8f7384b3",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Outdated library with known vulnerabilities",
+          "severity": "Critical",
+          "source": "Dependabot",
+          "owner": "Security Team",
+          "image": "gcr.io/google-samples/microservices-demo/cartservice:latest",
+          "connected_to": [
+            "sast-cartservice-8f7384b3"
+          ]
+        },
+        {
+          "id": "sca-cartservice-standalone-0",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Outdated library with known vulnerabilities",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "DevOps Team",
+          "image": "gcr.io/google-samples/microservices-demo/cartservice:latest",
+          "connected_to": []
+        },
+        {
+          "id": "runtime findings-cartservice-standalone-1",
+          "stage": "runtime",
+          "type": "Runtime Findings",
+          "description": "Privilege escalation attempt",
+          "severity": "Critical",
+          "source": "Falco",
+          "owner": "Platform Team",
+          "pod_name": "cartservice-pod-1231",
+          "connected_to": []
+        },
+        {
+          "id": "misconfiguration-cartservice-standalone-2",
+          "stage": "runtime",
+          "type": "Misconfiguration",
+          "description": "Insecure port exposed",
+          "severity": "Low",
+          "source": "Kube-bench",
+          "owner": "Development Team",
+          "pod_name": "cartservice-pod-5476",
+          "connected_to": []
+        },
+        {
+          "id": "sca-cartservice-standalone-3",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Vulnerable dependency found",
+          "severity": "Low",
+          "source": "Dependabot",
+          "owner": "Security Team",
+          "image": "gcr.io/google-samples/microservices-demo/cartservice:latest",
+          "connected_to": []
+        }
+      ],
+      "connected_findings": [
+        {
+          "chain_id": "b62ccb89",
+          "file": "cartservice/cartservice_main.cs",
+          "image": "gcr.io/google-samples/microservices-demo/cartservice:latest",
+          "findings": [
+            "sast-cartservice-b62ccb89",
+            "sca-cartservice-b62ccb89"
+          ]
+        },
+        {
+          "chain_id": "88b6b086",
+          "file": "cartservice/cartservice_main.cs",
+          "image": "gcr.io/google-samples/microservices-demo/cartservice:latest",
+          "findings": [
+            "secrets-cartservice-88b6b086",
+            "sca-cartservice-88b6b086"
+          ]
+        },
+        {
+          "chain_id": "8f7384b3",
+          "file": "cartservice/cartservice_main.cs",
+          "image": "gcr.io/google-samples/microservices-demo/cartservice:latest",
+          "findings": [
+            "sast-cartservice-8f7384b3",
+            "sca-cartservice-8f7384b3"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "checkoutservice",
+      "language": "Go",
+      "findings_count": 8,
+      "findings": [
+        {
+          "id": "misconfiguration-checkoutservice-475ad898",
+          "chain_id": "475ad898",
+          "stage": "runtime",
+          "type": "Misconfiguration",
+          "description": "Insecure port exposed",
+          "severity": "Critical",
+          "source": "Kube-bench",
+          "owner": "DevOps Team",
+          "pod_name": "checkoutservice-pod-2264",
+          "connected_to": [
+            "sca-checkoutservice-475ad898"
+          ]
+        },
+        {
+          "id": "sca-checkoutservice-475ad898",
+          "chain_id": "475ad898",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Library with unsupported version used",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "Security Team",
+          "file": "checkoutservice/checkoutservice_main.go",
+          "line": 404,
+          "connected_to": [
+            "sca-checkoutservice-475ad898"
+          ]
+        },
+        {
+          "id": "sca-checkoutservice-475ad898",
+          "chain_id": "475ad898",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Vulnerable dependency found",
+          "severity": "Low",
+          "source": "Dependabot",
+          "owner": "Development Team",
+          "image": "gcr.io/google-samples/microservices-demo/checkoutservice:latest",
+          "connected_to": [
+            "sca-checkoutservice-475ad898",
+            "misconfiguration-checkoutservice-475ad898"
+          ]
+        },
+        {
+          "id": "misconfiguration-checkoutservice-standalone-0",
+          "stage": "runtime",
+          "type": "Misconfiguration",
+          "description": "Excessive permissions in deployment",
+          "severity": "Critical",
+          "source": "Kube-bench",
+          "owner": "Platform Team",
+          "pod_name": "checkoutservice-pod-1198",
+          "connected_to": []
+        },
+        {
+          "id": "secrets-checkoutservice-standalone-1",
+          "stage": "code",
+          "type": "Secrets",
+          "description": "Potential password in code",
+          "severity": "High",
+          "source": "TruffleHog",
+          "owner": "Platform Team",
+          "file": "checkoutservice/controllers.go",
+          "line": 38,
+          "connected_to": []
+        },
+        {
+          "id": "sca-checkoutservice-standalone-2",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Outdated library with known vulnerabilities",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "Development Team",
+          "file": "checkoutservice/controllers.go",
+          "line": 28,
+          "connected_to": []
+        },
+        {
+          "id": "sast-checkoutservice-standalone-3",
+          "stage": "code",
+          "type": "SAST",
+          "description": "Path Traversal vulnerability",
+          "severity": "High",
+          "source": "CodeQL",
+          "owner": "Platform Team",
+          "file": "checkoutservice/helpers.go",
+          "line": 149,
+          "connected_to": []
+        },
+        {
+          "id": "image scan-checkoutservice-standalone-4",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Unnecessary package increasing attack surface",
+          "severity": "High",
+          "source": "Trivy",
+          "owner": "Platform Team",
+          "image": "gcr.io/google-samples/microservices-demo/checkoutservice:latest",
+          "connected_to": []
+        }
+      ],
+      "connected_findings": [
+        {
+          "chain_id": "475ad898",
+          "file": "checkoutservice/checkoutservice_main.go",
+          "image": "gcr.io/google-samples/microservices-demo/checkoutservice:latest",
+          "findings": [
+            "sca-checkoutservice-475ad898",
+            "sca-checkoutservice-475ad898",
+            "misconfiguration-checkoutservice-475ad898"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "currencyservice",
+      "language": "Node.js",
+      "findings_count": 6,
+      "findings": [
+        {
+          "id": "sca-currencyservice-5bcd79cf",
+          "chain_id": "5bcd79cf",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Security patch missing in dependency",
+          "severity": "Low",
+          "source": "Dependabot",
+          "owner": "Security Team",
+          "file": "currencyservice/currencyservice_main.js",
+          "line": 78,
+          "connected_to": [
+            "image scan-currencyservice-5bcd79cf"
+          ]
+        },
+        {
+          "id": "image scan-currencyservice-5bcd79cf",
+          "chain_id": "5bcd79cf",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Insecure configuration in image",
+          "severity": "Low",
+          "source": "Trivy",
+          "owner": "Development Team",
+          "image": "gcr.io/google-samples/microservices-demo/currencyservice:latest",
+          "connected_to": [
+            "sca-currencyservice-5bcd79cf"
+          ]
+        },
+        {
+          "id": "sca-currencyservice-standalone-0",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Outdated library with known vulnerabilities",
+          "severity": "Low",
+          "source": "Dependabot",
+          "owner": "Security Team",
+          "image": "gcr.io/google-samples/microservices-demo/currencyservice:latest",
+          "connected_to": []
+        },
+        {
+          "id": "runtime findings-currencyservice-standalone-1",
+          "stage": "runtime",
+          "type": "Runtime Findings",
+          "description": "Privilege escalation attempt",
+          "severity": "Medium",
+          "source": "Falco",
+          "owner": "DevOps Team",
+          "pod_name": "currencyservice-pod-1276",
+          "connected_to": []
+        },
+        {
+          "id": "image scan-currencyservice-standalone-2",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Unnecessary package increasing attack surface",
+          "severity": "Medium",
+          "source": "Trivy",
+          "owner": "Development Team",
+          "image": "gcr.io/google-samples/microservices-demo/currencyservice:latest",
+          "connected_to": []
+        },
+        {
+          "id": "secrets-currencyservice-standalone-3",
+          "stage": "code",
+          "type": "Secrets",
+          "description": "Potential password in code",
+          "severity": "Low",
+          "source": "TruffleHog",
+          "owner": "Security Team",
+          "file": "currencyservice/utils.js",
+          "line": 204,
+          "connected_to": []
+        }
+      ],
+      "connected_findings": [
+        {
+          "chain_id": "5bcd79cf",
+          "file": "currencyservice/currencyservice_main.js",
+          "image": "gcr.io/google-samples/microservices-demo/currencyservice:latest",
+          "findings": [
+            "sca-currencyservice-5bcd79cf",
+            "image scan-currencyservice-5bcd79cf"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "emailservice",
+      "language": "Python",
+      "findings_count": 7,
+      "findings": [
+        {
+          "id": "sast-emailservice-21d2b166",
+          "chain_id": "21d2b166",
+          "stage": "code",
+          "type": "SAST",
+          "description": "Command Injection risk",
+          "severity": "Medium",
+          "source": "CodeQL",
+          "owner": "DevOps Team",
+          "file": "emailservice/emailservice_main.py",
+          "line": 375,
+          "connected_to": [
+            "image scan-emailservice-21d2b166"
+          ]
+        },
+        {
+          "id": "image scan-emailservice-21d2b166",
+          "chain_id": "21d2b166",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "OS vulnerability in base image",
+          "severity": "Low",
+          "source": "Trivy",
+          "owner": "Security Team",
+          "image": "gcr.io/google-samples/microservices-demo/emailservice:latest",
+          "connected_to": [
+            "sast-emailservice-21d2b166"
+          ]
+        },
+        {
+          "id": "misconfiguration-emailservice-9a72ec5f",
+          "chain_id": "9a72ec5f",
+          "stage": "runtime",
+          "type": "Misconfiguration",
+          "description": "Missing network policy",
+          "severity": "Medium",
+          "source": "Kube-bench",
+          "owner": "Security Team",
+          "pod_name": "emailservice-pod-3232",
+          "connected_to": [
+            "image scan-emailservice-9a72ec5f"
+          ]
+        },
+        {
+          "id": "secrets-emailservice-9a72ec5f",
+          "chain_id": "9a72ec5f",
+          "stage": "code",
+          "type": "Secrets",
+          "description": "Authentication credentials found",
+          "severity": "Medium",
+          "source": "TruffleHog",
+          "owner": "Security Team",
+          "file": "emailservice/emailservice_main.py",
+          "line": 306,
+          "connected_to": [
+            "image scan-emailservice-9a72ec5f"
+          ]
+        },
+        {
+          "id": "image scan-emailservice-9a72ec5f",
+          "chain_id": "9a72ec5f",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Malware signature detected",
+          "severity": "Medium",
+          "source": "Trivy",
+          "owner": "DevOps Team",
+          "image": "gcr.io/google-samples/microservices-demo/emailservice:latest",
+          "connected_to": [
+            "secrets-emailservice-9a72ec5f",
+            "misconfiguration-emailservice-9a72ec5f"
+          ]
+        },
+        {
+          "id": "sca-emailservice-standalone-0",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Library with unsupported version used",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "Platform Team",
+          "file": "emailservice/models.py",
+          "line": 424,
+          "connected_to": []
+        },
+        {
+          "id": "image scan-emailservice-standalone-1",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Malware signature detected",
+          "severity": "High",
+          "source": "Trivy",
+          "owner": "DevOps Team",
+          "image": "gcr.io/google-samples/microservices-demo/emailservice:latest",
+          "connected_to": []
+        }
+      ],
+      "connected_findings": [
+        {
+          "chain_id": "21d2b166",
+          "file": "emailservice/emailservice_main.py",
+          "image": "gcr.io/google-samples/microservices-demo/emailservice:latest",
+          "findings": [
+            "sast-emailservice-21d2b166",
+            "image scan-emailservice-21d2b166"
+          ]
+        },
+        {
+          "chain_id": "9a72ec5f",
+          "file": "emailservice/emailservice_main.py",
+          "image": "gcr.io/google-samples/microservices-demo/emailservice:latest",
+          "findings": [
+            "secrets-emailservice-9a72ec5f",
+            "image scan-emailservice-9a72ec5f",
+            "misconfiguration-emailservice-9a72ec5f"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "frontend",
+      "language": "Go",
+      "findings_count": 9,
+      "findings": [
+        {
+          "id": "secrets-frontend-c6c647b1",
+          "chain_id": "c6c647b1",
+          "stage": "code",
+          "type": "Secrets",
+          "description": "Hardcoded API key detected",
+          "severity": "Critical",
+          "source": "TruffleHog",
+          "owner": "Security Team",
+          "file": "frontend/frontend_main.go",
+          "line": 467,
+          "connected_to": [
+            "image scan-frontend-c6c647b1"
+          ]
+        },
+        {
+          "id": "image scan-frontend-c6c647b1",
+          "chain_id": "c6c647b1",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Unnecessary package increasing attack surface",
+          "severity": "Medium",
+          "source": "Trivy",
+          "owner": "Development Team",
+          "image": "gcr.io/google-samples/microservices-demo/frontend:latest",
+          "connected_to": [
+            "secrets-frontend-c6c647b1"
+          ]
+        },
+        {
+          "id": "sca-frontend-44313bb3",
+          "chain_id": "44313bb3",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Library with unsupported version used",
+          "severity": "Critical",
+          "source": "Dependabot",
+          "owner": "Security Team",
+          "file": "frontend/frontend_main.go",
+          "line": 251,
+          "connected_to": [
+            "sca-frontend-44313bb3"
+          ]
+        },
+        {
+          "id": "sca-frontend-44313bb3",
+          "chain_id": "44313bb3",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Critical update required for package",
+          "severity": "Critical",
+          "source": "Dependabot",
+          "owner": "Platform Team",
+          "image": "gcr.io/google-samples/microservices-demo/frontend:latest",
+          "connected_to": [
+            "sca-frontend-44313bb3"
+          ]
+        },
+        {
+          "id": "sca-frontend-standalone-0",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Library with unsupported version used",
+          "severity": "High",
+          "source": "Dependabot",
+          "owner": "Platform Team",
+          "image": "gcr.io/google-samples/microservices-demo/frontend:latest",
+          "connected_to": []
+        },
+        {
+          "id": "runtime findings-frontend-standalone-1",
+          "stage": "runtime",
+          "type": "Runtime Findings",
+          "description": "Privilege escalation attempt",
+          "severity": "Critical",
+          "source": "Falco",
+          "owner": "Development Team",
+          "pod_name": "frontend-pod-3067",
+          "connected_to": []
+        },
+        {
+          "id": "misconfiguration-frontend-standalone-2",
+          "stage": "runtime",
+          "type": "Misconfiguration",
+          "description": "Excessive permissions in deployment",
+          "severity": "Medium",
+          "source": "Kube-bench",
+          "owner": "Security Team",
+          "pod_name": "frontend-pod-4838",
+          "connected_to": []
+        },
+        {
+          "id": "sca-frontend-standalone-3",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Security patch missing in dependency",
+          "severity": "Low",
+          "source": "Dependabot",
+          "owner": "Platform Team",
+          "file": "frontend/models.go",
+          "line": 373,
+          "connected_to": []
+        },
+        {
+          "id": "sast-frontend-standalone-4",
+          "stage": "code",
+          "type": "SAST",
+          "description": "Insecure Deserialization",
+          "severity": "Critical",
+          "source": "CodeQL",
+          "owner": "Development Team",
+          "file": "frontend/helpers.go",
+          "line": 335,
+          "connected_to": []
+        }
+      ],
+      "connected_findings": [
+        {
+          "chain_id": "c6c647b1",
+          "file": "frontend/frontend_main.go",
+          "image": "gcr.io/google-samples/microservices-demo/frontend:latest",
+          "findings": [
+            "secrets-frontend-c6c647b1",
+            "image scan-frontend-c6c647b1"
+          ]
+        },
+        {
+          "chain_id": "44313bb3",
+          "file": "frontend/frontend_main.go",
+          "image": "gcr.io/google-samples/microservices-demo/frontend:latest",
+          "findings": [
+            "sca-frontend-44313bb3",
+            "sca-frontend-44313bb3"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "loadgenerator",
+      "language": "Python",
+      "findings_count": 5,
+      "findings": [
+        {
+          "id": "misconfiguration-loadgenerator-ce7f1d9d",
+          "chain_id": "ce7f1d9d",
+          "stage": "runtime",
+          "type": "Misconfiguration",
+          "description": "Resource quota not defined",
+          "severity": "Medium",
+          "source": "Kube-bench",
+          "owner": "DevOps Team",
+          "pod_name": "loadgenerator-pod-5281",
+          "connected_to": [
+            "sca-loadgenerator-ce7f1d9d"
+          ]
+        },
+        {
+          "id": "sast-loadgenerator-ce7f1d9d",
+          "chain_id": "ce7f1d9d",
+          "stage": "code",
+          "type": "SAST",
+          "description": "SQL Injection vulnerability",
+          "severity": "Critical",
+          "source": "CodeQL",
+          "owner": "Platform Team",
+          "file": "loadgenerator/loadgenerator_main.py",
+          "line": 268,
+          "connected_to": [
+            "sca-loadgenerator-ce7f1d9d"
+          ]
+        },
+        {
+          "id": "sca-loadgenerator-ce7f1d9d",
+          "chain_id": "ce7f1d9d",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Security patch missing in dependency",
+          "severity": "Low",
+          "source": "Dependabot",
+          "owner": "Development Team",
+          "image": "gcr.io/google-samples/microservices-demo/loadgenerator:latest",
+          "connected_to": [
+            "sast-loadgenerator-ce7f1d9d",
+            "misconfiguration-loadgenerator-ce7f1d9d"
+          ]
+        },
+        {
+          "id": "image scan-loadgenerator-standalone-0",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Insecure configuration in image",
+          "severity": "High",
+          "source": "Trivy",
+          "owner": "Platform Team",
+          "image": "gcr.io/google-samples/microservices-demo/loadgenerator:latest",
+          "connected_to": []
+        },
+        {
+          "id": "sca-loadgenerator-standalone-1",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Outdated library with known vulnerabilities",
+          "severity": "High",
+          "source": "Dependabot",
+          "owner": "Platform Team",
+          "image": "gcr.io/google-samples/microservices-demo/loadgenerator:latest",
+          "connected_to": []
+        }
+      ],
+      "connected_findings": [
+        {
+          "chain_id": "ce7f1d9d",
+          "file": "loadgenerator/loadgenerator_main.py",
+          "image": "gcr.io/google-samples/microservices-demo/loadgenerator:latest",
+          "findings": [
+            "sast-loadgenerator-ce7f1d9d",
+            "sca-loadgenerator-ce7f1d9d",
+            "misconfiguration-loadgenerator-ce7f1d9d"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "paymentservice",
+      "language": "Node.js",
+      "findings_count": 8,
+      "findings": [
+        {
+          "id": "sca-paymentservice-50dc9b79",
+          "chain_id": "50dc9b79",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Vulnerable dependency found",
+          "severity": "Low",
+          "source": "Dependabot",
+          "owner": "Platform Team",
+          "file": "paymentservice/paymentservice_main.js",
+          "line": 331,
+          "connected_to": [
+            "sca-paymentservice-50dc9b79"
+          ]
+        },
+        {
+          "id": "sca-paymentservice-50dc9b79",
+          "chain_id": "50dc9b79",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Library with unsupported version used",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "Security Team",
+          "image": "gcr.io/google-samples/microservices-demo/paymentservice:latest",
+          "connected_to": [
+            "sca-paymentservice-50dc9b79"
+          ]
+        },
+        {
+          "id": "sca-paymentservice-95a77874",
+          "chain_id": "95a77874",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Security patch missing in dependency",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "Platform Team",
+          "file": "paymentservice/paymentservice_main.js",
+          "line": 248,
+          "connected_to": [
+            "image scan-paymentservice-95a77874"
+          ]
+        },
+        {
+          "id": "image scan-paymentservice-95a77874",
+          "chain_id": "95a77874",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Malware signature detected",
+          "severity": "High",
+          "source": "Trivy",
+          "owner": "Platform Team",
+          "image": "gcr.io/google-samples/microservices-demo/paymentservice:latest",
+          "connected_to": [
+            "sca-paymentservice-95a77874"
+          ]
+        },
+        {
+          "id": "sca-paymentservice-52a91a3a",
+          "chain_id": "52a91a3a",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Critical update required for package",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "DevOps Team",
+          "file": "paymentservice/paymentservice_main.js",
+          "line": 170,
+          "connected_to": [
+            "image scan-paymentservice-52a91a3a"
+          ]
+        },
+        {
+          "id": "image scan-paymentservice-52a91a3a",
+          "chain_id": "52a91a3a",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Outdated package in container",
+          "severity": "Medium",
+          "source": "Trivy",
+          "owner": "Development Team",
+          "image": "gcr.io/google-samples/microservices-demo/paymentservice:latest",
+          "connected_to": [
+            "sca-paymentservice-52a91a3a"
+          ]
+        },
+        {
+          "id": "image scan-paymentservice-standalone-0",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Malware signature detected",
+          "severity": "High",
+          "source": "Trivy",
+          "owner": "Platform Team",
+          "image": "gcr.io/google-samples/microservices-demo/paymentservice:latest",
+          "connected_to": []
+        },
+        {
+          "id": "runtime findings-paymentservice-standalone-1",
+          "stage": "runtime",
+          "type": "Runtime Findings",
+          "description": "File system modification alert",
+          "severity": "Critical",
+          "source": "Falco",
+          "owner": "Development Team",
+          "pod_name": "paymentservice-pod-8512",
+          "connected_to": []
+        }
+      ],
+      "connected_findings": [
+        {
+          "chain_id": "50dc9b79",
+          "file": "paymentservice/paymentservice_main.js",
+          "image": "gcr.io/google-samples/microservices-demo/paymentservice:latest",
+          "findings": [
+            "sca-paymentservice-50dc9b79",
+            "sca-paymentservice-50dc9b79"
+          ]
+        },
+        {
+          "chain_id": "95a77874",
+          "file": "paymentservice/paymentservice_main.js",
+          "image": "gcr.io/google-samples/microservices-demo/paymentservice:latest",
+          "findings": [
+            "sca-paymentservice-95a77874",
+            "image scan-paymentservice-95a77874"
+          ]
+        },
+        {
+          "chain_id": "52a91a3a",
+          "file": "paymentservice/paymentservice_main.js",
+          "image": "gcr.io/google-samples/microservices-demo/paymentservice:latest",
+          "findings": [
+            "sca-paymentservice-52a91a3a",
+            "image scan-paymentservice-52a91a3a"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "productcatalogservice",
+      "language": "Go",
+      "findings_count": 6,
+      "findings": [
+        {
+          "id": "sast-productcatalogservice-cfd19824",
+          "chain_id": "cfd19824",
+          "stage": "code",
+          "type": "SAST",
+          "description": "Path Traversal vulnerability",
+          "severity": "Medium",
+          "source": "CodeQL",
+          "owner": "Development Team",
+          "file": "productcatalogservice/productcatalogservice_main.go",
+          "line": 143,
+          "connected_to": [
+            "image scan-productcatalogservice-cfd19824"
+          ]
+        },
+        {
+          "id": "image scan-productcatalogservice-cfd19824",
+          "chain_id": "cfd19824",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Unnecessary package increasing attack surface",
+          "severity": "Medium",
+          "source": "Trivy",
+          "owner": "DevOps Team",
+          "image": "gcr.io/google-samples/microservices-demo/productcatalogservice:latest",
+          "connected_to": [
+            "sast-productcatalogservice-cfd19824"
+          ]
+        },
+        {
+          "id": "misconfiguration-productcatalogservice-standalone-0",
+          "stage": "runtime",
+          "type": "Misconfiguration",
+          "description": "Resource quota not defined",
+          "severity": "Medium",
+          "source": "Kube-bench",
+          "owner": "Platform Team",
+          "pod_name": "productcatalogservice-pod-5792",
+          "connected_to": []
+        },
+        {
+          "id": "sca-productcatalogservice-standalone-1",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Security patch missing in dependency",
+          "severity": "Low",
+          "source": "Dependabot",
+          "owner": "DevOps Team",
+          "file": "productcatalogservice/models.go",
+          "line": 26,
+          "connected_to": []
+        },
+        {
+          "id": "runtime findings-productcatalogservice-standalone-2",
+          "stage": "runtime",
+          "type": "Runtime Findings",
+          "description": "File system modification alert",
+          "severity": "Critical",
+          "source": "Falco",
+          "owner": "DevOps Team",
+          "pod_name": "productcatalogservice-pod-7003",
+          "connected_to": []
+        },
+        {
+          "id": "image scan-productcatalogservice-standalone-3",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Unnecessary package increasing attack surface",
+          "severity": "Critical",
+          "source": "Trivy",
+          "owner": "DevOps Team",
+          "image": "gcr.io/google-samples/microservices-demo/productcatalogservice:latest",
+          "connected_to": []
+        }
+      ],
+      "connected_findings": [
+        {
+          "chain_id": "cfd19824",
+          "file": "productcatalogservice/productcatalogservice_main.go",
+          "image": "gcr.io/google-samples/microservices-demo/productcatalogservice:latest",
+          "findings": [
+            "sast-productcatalogservice-cfd19824",
+            "image scan-productcatalogservice-cfd19824"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "recommendationservice",
+      "language": "Python",
+      "findings_count": 5,
+      "findings": [
+        {
+          "id": "runtime findings-recommendationservice-aa6c628b",
+          "chain_id": "aa6c628b",
+          "stage": "runtime",
+          "type": "Runtime Findings",
+          "description": "File system modification alert",
+          "severity": "Medium",
+          "source": "Falco",
+          "owner": "Development Team",
+          "pod_name": "recommendationservice-pod-4504",
+          "connected_to": [
+            "sca-recommendationservice-aa6c628b"
+          ]
+        },
+        {
+          "id": "secrets-recommendationservice-aa6c628b",
+          "chain_id": "aa6c628b",
+          "stage": "code",
+          "type": "Secrets",
+          "description": "Encryption key in source code",
+          "severity": "High",
+          "source": "TruffleHog",
+          "owner": "Platform Team",
+          "file": "recommendationservice/recommendationservice_main.py",
+          "line": 446,
+          "connected_to": [
+            "sca-recommendationservice-aa6c628b"
+          ]
+        },
+        {
+          "id": "sca-recommendationservice-aa6c628b",
+          "chain_id": "aa6c628b",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Outdated library with known vulnerabilities",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "DevOps Team",
+          "image": "gcr.io/google-samples/microservices-demo/recommendationservice:latest",
+          "connected_to": [
+            "secrets-recommendationservice-aa6c628b",
+            "runtime findings-recommendationservice-aa6c628b"
+          ]
+        },
+        {
+          "id": "sca-recommendationservice-standalone-0",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Outdated library with known vulnerabilities",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "DevOps Team",
+          "image": "gcr.io/google-samples/microservices-demo/recommendationservice:latest",
+          "connected_to": []
+        },
+        {
+          "id": "sca-recommendationservice-standalone-1",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Library with unsupported version used",
+          "severity": "Low",
+          "source": "Dependabot",
+          "owner": "Security Team",
+          "image": "gcr.io/google-samples/microservices-demo/recommendationservice:latest",
+          "connected_to": []
+        }
+      ],
+      "connected_findings": [
+        {
+          "chain_id": "aa6c628b",
+          "file": "recommendationservice/recommendationservice_main.py",
+          "image": "gcr.io/google-samples/microservices-demo/recommendationservice:latest",
+          "findings": [
+            "secrets-recommendationservice-aa6c628b",
+            "sca-recommendationservice-aa6c628b",
+            "runtime findings-recommendationservice-aa6c628b"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "shippingservice",
+      "language": "Go",
+      "findings_count": 11,
+      "findings": [
+        {
+          "id": "sca-shippingservice-b48dcf71",
+          "chain_id": "b48dcf71",
+          "stage": "code",
+          "type": "SCA",
+          "description": "Vulnerable dependency found",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "Development Team",
+          "file": "shippingservice/shippingservice_main.go",
+          "line": 480,
+          "connected_to": [
+            "image scan-shippingservice-b48dcf71"
+          ]
+        },
+        {
+          "id": "image scan-shippingservice-b48dcf71",
+          "chain_id": "b48dcf71",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "OS vulnerability in base image",
+          "severity": "Low",
+          "source": "Trivy",
+          "owner": "Development Team",
+          "image": "gcr.io/google-samples/microservices-demo/shippingservice:latest",
+          "connected_to": [
+            "sca-shippingservice-b48dcf71"
+          ]
+        },
+        {
+          "id": "runtime findings-shippingservice-1107c47e",
+          "chain_id": "1107c47e",
+          "stage": "runtime",
+          "type": "Runtime Findings",
+          "description": "Privilege escalation attempt",
+          "severity": "Critical",
+          "source": "Falco",
+          "owner": "DevOps Team",
+          "pod_name": "shippingservice-pod-7540",
+          "connected_to": [
+            "sca-shippingservice-1107c47e"
+          ]
+        },
+        {
+          "id": "secrets-shippingservice-1107c47e",
+          "chain_id": "1107c47e",
+          "stage": "code",
+          "type": "Secrets",
+          "description": "Potential password in code",
+          "severity": "Medium",
+          "source": "TruffleHog",
+          "owner": "Security Team",
+          "file": "shippingservice/shippingservice_main.go",
+          "line": 351,
+          "connected_to": [
+            "sca-shippingservice-1107c47e"
+          ]
+        },
+        {
+          "id": "sca-shippingservice-1107c47e",
+          "chain_id": "1107c47e",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Security patch missing in dependency",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "DevOps Team",
+          "image": "gcr.io/google-samples/microservices-demo/shippingservice:latest",
+          "connected_to": [
+            "secrets-shippingservice-1107c47e",
+            "runtime findings-shippingservice-1107c47e"
+          ]
+        },
+        {
+          "id": "runtime findings-shippingservice-516bdb42",
+          "chain_id": "516bdb42",
+          "stage": "runtime",
+          "type": "Runtime Findings",
+          "description": "Privilege escalation attempt",
+          "severity": "Critical",
+          "source": "Falco",
+          "owner": "Platform Team",
+          "pod_name": "shippingservice-pod-7265",
+          "connected_to": [
+            "image scan-shippingservice-516bdb42"
+          ]
+        },
+        {
+          "id": "sast-shippingservice-516bdb42",
+          "chain_id": "516bdb42",
+          "stage": "code",
+          "type": "SAST",
+          "description": "Path Traversal vulnerability",
+          "severity": "Critical",
+          "source": "CodeQL",
+          "owner": "Development Team",
+          "file": "shippingservice/shippingservice_main.go",
+          "line": 99,
+          "connected_to": [
+            "image scan-shippingservice-516bdb42"
+          ]
+        },
+        {
+          "id": "image scan-shippingservice-516bdb42",
+          "chain_id": "516bdb42",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "OS vulnerability in base image",
+          "severity": "High",
+          "source": "Trivy",
+          "owner": "DevOps Team",
+          "image": "gcr.io/google-samples/microservices-demo/shippingservice:latest",
+          "connected_to": [
+            "sast-shippingservice-516bdb42",
+            "runtime findings-shippingservice-516bdb42"
+          ]
+        },
+        {
+          "id": "misconfiguration-shippingservice-standalone-0",
+          "stage": "runtime",
+          "type": "Misconfiguration",
+          "description": "Excessive permissions in deployment",
+          "severity": "Critical",
+          "source": "Kube-bench",
+          "owner": "Security Team",
+          "pod_name": "shippingservice-pod-7145",
+          "connected_to": []
+        },
+        {
+          "id": "runtime findings-shippingservice-standalone-1",
+          "stage": "runtime",
+          "type": "Runtime Findings",
+          "description": "File system modification alert",
+          "severity": "Critical",
+          "source": "Falco",
+          "owner": "Platform Team",
+          "pod_name": "shippingservice-pod-6849",
+          "connected_to": []
+        },
+        {
+          "id": "sca-shippingservice-standalone-2",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Library with unsupported version used",
+          "severity": "Medium",
+          "source": "Dependabot",
+          "owner": "Platform Team",
+          "image": "gcr.io/google-samples/microservices-demo/shippingservice:latest",
+          "connected_to": []
+        }
+      ],
+      "connected_findings": [
+        {
+          "chain_id": "b48dcf71",
+          "file": "shippingservice/shippingservice_main.go",
+          "image": "gcr.io/google-samples/microservices-demo/shippingservice:latest",
+          "findings": [
+            "sca-shippingservice-b48dcf71",
+            "image scan-shippingservice-b48dcf71"
+          ]
+        },
+        {
+          "chain_id": "1107c47e",
+          "file": "shippingservice/shippingservice_main.go",
+          "image": "gcr.io/google-samples/microservices-demo/shippingservice:latest",
+          "findings": [
+            "secrets-shippingservice-1107c47e",
+            "sca-shippingservice-1107c47e",
+            "runtime findings-shippingservice-1107c47e"
+          ]
+        },
+        {
+          "chain_id": "516bdb42",
+          "file": "shippingservice/shippingservice_main.go",
+          "image": "gcr.io/google-samples/microservices-demo/shippingservice:latest",
+          "findings": [
+            "sast-shippingservice-516bdb42",
+            "image scan-shippingservice-516bdb42",
+            "runtime findings-shippingservice-516bdb42"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "shoppingassistantservice",
+      "language": "Python",
+      "findings_count": 7,
+      "findings": [
+        {
+          "id": "sast-shoppingassistantservice-a920ae50",
+          "chain_id": "a920ae50",
+          "stage": "code",
+          "type": "SAST",
+          "description": "SQL Injection vulnerability",
+          "severity": "High",
+          "source": "CodeQL",
+          "owner": "DevOps Team",
+          "file": "shoppingassistantservice/shoppingassistantservice_main.py",
+          "line": 166,
+          "connected_to": [
+            "image scan-shoppingassistantservice-a920ae50"
+          ]
+        },
+        {
+          "id": "image scan-shoppingassistantservice-a920ae50",
+          "chain_id": "a920ae50",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "OS vulnerability in base image",
+          "severity": "High",
+          "source": "Trivy",
+          "owner": "Development Team",
+          "image": "gcr.io/google-samples/microservices-demo/shoppingassistantservice:latest",
+          "connected_to": [
+            "sast-shoppingassistantservice-a920ae50"
+          ]
+        },
+        {
+          "id": "sca-shoppingassistantservice-standalone-0",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Library with unsupported version used",
+          "severity": "Low",
+          "source": "Dependabot",
+          "owner": "DevOps Team",
+          "image": "gcr.io/google-samples/microservices-demo/shoppingassistantservice:latest",
+          "connected_to": []
+        },
+        {
+          "id": "secrets-shoppingassistantservice-standalone-1",
+          "stage": "code",
+          "type": "Secrets",
+          "description": "Authentication credentials found",
+          "severity": "Medium",
+          "source": "TruffleHog",
+          "owner": "DevOps Team",
+          "file": "shoppingassistantservice/controllers.py",
+          "line": 20,
+          "connected_to": []
+        },
+        {
+          "id": "image scan-shoppingassistantservice-standalone-2",
+          "stage": "build",
+          "type": "Image Scan",
+          "description": "Insecure configuration in image",
+          "severity": "High",
+          "source": "Trivy",
+          "owner": "DevOps Team",
+          "image": "gcr.io/google-samples/microservices-demo/shoppingassistantservice:latest",
+          "connected_to": []
+        },
+        {
+          "id": "sca-shoppingassistantservice-standalone-3",
+          "stage": "build",
+          "type": "SCA",
+          "description": "Vulnerable dependency found",
+          "severity": "Low",
+          "source": "Dependabot",
+          "owner": "Development Team",
+          "image": "gcr.io/google-samples/microservices-demo/shoppingassistantservice:latest",
+          "connected_to": []
+        },
+        {
+          "id": "misconfiguration-shoppingassistantservice-standalone-4",
+          "stage": "runtime",
+          "type": "Misconfiguration",
+          "description": "Privileged container execution",
+          "severity": "Low",
+          "source": "Kube-bench",
+          "owner": "Security Team",
+          "pod_name": "shoppingassistantservice-pod-9711",
+          "connected_to": []
+        }
+      ],
+      "connected_findings": [
+        {
+          "chain_id": "a920ae50",
+          "file": "shoppingassistantservice/shoppingassistantservice_main.py",
+          "image": "gcr.io/google-samples/microservices-demo/shoppingassistantservice:latest",
+          "findings": [
+            "sast-shoppingassistantservice-a920ae50",
+            "image scan-shoppingassistantservice-a920ae50"
+          ]
+        }
+      ]
+    }
+  ],
+  "timestamp": "2025-09-22T21:00:01.527930"
+}

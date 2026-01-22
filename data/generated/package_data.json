@@ -1,0 +1,778 @@
+{
+  "packages": [
+    {
+      "name": "chardet",
+      "description": "Universal encoding detector for Python 3",
+      "package_manager": "pypi",
+      "version": "5.1.0",
+      "license": "LGPL-2.1-only",
+      "tags": [
+        "encoding",
+        "linguistic",
+        "i18n"
+      ],
+      "popularity": 76,
+      "contributors": 48,
+      "security": 92,
+      "repository_url": "https://github.com/chardet/chardet",
+      "used_by": [
+        "emailservice",
+        "recommendationservice",
+        "loadgenerator",
+        "shoppingassistantservice"
+      ],
+      "used_in_files": [
+        "emailservice/requirements.txt",
+        "recommendationservice/requirements.txt",
+        "shoppingassistantservice/requirements.txt"
+      ],
+      "vulnerabilities": []
+    },
+    {
+      "name": "axios",
+      "description": "Promise based HTTP client for the browser and node.js",
+      "package_manager": "npm",
+      "version": "0.21.4",
+      "license": "MIT",
+      "tags": [
+        "http",
+        "request",
+        "ajax",
+        "promise"
+      ],
+      "popularity": 92,
+      "contributors": 325,
+      "security": 78,
+      "repository_url": "https://github.com/axios/axios",
+      "used_by": [
+        "currencyservice",
+        "paymentservice"
+      ],
+      "used_in_files": [
+        "currencyservice/package.json",
+        "paymentservice/package.json"
+      ],
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-45857",
+          "severity": "Medium",
+          "description": "Axios vulnerable to ReDoS via malicious server",
+          "fixed_in": "1.6.0"
+        }
+      ]
+    },
+    {
+      "name": "lodash",
+      "description": "Lodash modular utilities",
+      "package_manager": "npm",
+      "version": "4.17.20",
+      "license": "MIT",
+      "tags": [
+        "utility",
+        "javascript",
+        "library",
+        "functional"
+      ],
+      "popularity": 98,
+      "contributors": 292,
+      "security": 75,
+      "repository_url": "https://github.com/lodash/lodash",
+      "used_by": [
+        "currencyservice",
+        "paymentservice"
+      ],
+      "used_in_files": [
+        "currencyservice/package.json",
+        "paymentservice/package.json"
+      ],
+      "vulnerabilities": [
+        {
+          "id": "CVE-2021-23337",
+          "severity": "High",
+          "description": "Command Injection in lodash",
+          "fixed_in": "4.17.21"
+        }
+      ]
+    },
+    {
+      "name": "protobuf",
+      "description": "Protocol Buffers - Google's data interchange format",
+      "package_manager": "nuget",
+      "version": "3.19.4",
+      "license": "BSD-3-Clause",
+      "tags": [
+        "protobuf",
+        "serialization",
+        "grpc"
+      ],
+      "popularity": 85,
+      "contributors": 64,
+      "security": 89,
+      "repository_url": "https://github.com/protocolbuffers/protobuf",
+      "used_by": [
+        "cartservice"
+      ],
+      "used_in_files": [
+        "cartservice/cartservice.csproj"
+      ],
+      "vulnerabilities": []
+    },
+    {
+      "name": "Newtonsoft.Json",
+      "description": "Json.NET is a popular high-performance JSON framework for .NET",
+      "package_manager": "nuget",
+      "version": "13.0.1",
+      "license": "MIT",
+      "tags": [
+        "json",
+        "serialization",
+        "parser"
+      ],
+      "popularity": 96,
+      "contributors": 148,
+      "security": 90,
+      "repository_url": "https://github.com/JamesNK/Newtonsoft.Json",
+      "used_by": [
+        "cartservice"
+      ],
+      "used_in_files": [
+        "cartservice/cartservice.csproj"
+      ],
+      "vulnerabilities": []
+    },
+    {
+      "name": "grpc",
+      "description": "gRPC - high performance, open source, general RPC framework",
+      "package_manager": "pypi",
+      "version": "1.44.0",
+      "license": "Apache-2.0",
+      "tags": [
+        "grpc",
+        "rpc",
+        "microservices"
+      ],
+      "popularity": 88,
+      "contributors": 573,
+      "security": 85,
+      "repository_url": "https://github.com/grpc/grpc",
+      "used_by": [
+        "emailservice",
+        "recommendationservice",
+        "shoppingassistantservice"
+      ],
+      "used_in_files": [
+        "emailservice/requirements.txt",
+        "recommendationservice/requirements.txt",
+        "shoppingassistantservice/requirements.txt"
+      ],
+      "vulnerabilities": []
+    },
+    {
+      "name": "com.google.protobuf:protobuf-java",
+      "description": "Core Protocol Buffers library for Java",
+      "package_manager": "maven",
+      "version": "3.19.4",
+      "license": "BSD-3-Clause",
+      "tags": [
+        "protobuf",
+        "serialization",
+        "grpc"
+      ],
+      "popularity": 82,
+      "contributors": 64,
+      "security": 87,
+      "repository_url": "https://github.com/protocolbuffers/protobuf",
+      "used_by": [
+        "adservice"
+      ],
+      "used_in_files": [
+        "adservice/pom.xml"
+      ],
+      "vulnerabilities": []
+    },
+    {
+      "name": "golang.org/x/net",
+      "description": "Go supplementary network libraries",
+      "package_manager": "go",
+      "version": "v0.5.0",
+      "license": "BSD-3-Clause",
+      "tags": [
+        "go",
+        "network",
+        "http2",
+        "websocket"
+      ],
+      "popularity": 90,
+      "contributors": 278,
+      "security": 81,
+      "repository_url": "https://github.com/golang/net",
+      "used_by": [
+        "frontend",
+        "checkoutservice",
+        "productcatalogservice",
+        "shippingservice"
+      ],
+      "used_in_files": [
+        "frontend/go.mod",
+        "checkoutservice/go.mod",
+        "productcatalogservice/go.mod",
+        "shippingservice/go.mod"
+      ],
+      "vulnerabilities": [
+        {
+          "id": "CVE-2023-3978",
+          "severity": "Medium",
+          "description": "Improper handling of abnormal packets in golang.org/x/net/html",
+          "fixed_in": "v0.8.0"
+        }
+      ]
+    },
+    {
+      "name": "google.golang.org/grpc",
+      "description": "The Go language implementation of gRPC",
+      "package_manager": "go",
+      "version": "v1.44.0",
+      "license": "Apache-2.0",
+      "tags": [
+        "grpc",
+        "rpc",
+        "go"
+      ],
+      "popularity": 91,
+      "contributors": 432,
+      "security": 88,
+      "repository_url": "https://github.com/grpc/grpc-go",
+      "used_by": [
+        "frontend",
+        "checkoutservice",
+        "productcatalogservice",
+        "shippingservice"
+      ],
+      "used_in_files": [
+        "frontend/go.mod",
+        "checkoutservice/go.mod",
+        "productcatalogservice/go.mod",
+        "shippingservice/go.mod"
+      ],
+      "vulnerabilities": []
+    },
+    {
+      "name": "express",
+      "description": "Fast, unopinionated, minimalist web framework for Node.js",
+      "package_manager": "npm",
+      "version": "4.17.1",
+      "license": "MIT",
+      "tags": [
+        "web",
+        "framework",
+        "http",
+        "rest",
+        "api"
+      ],
+      "popularity": 97,
+      "contributors": 262,
+      "security": 83,
+      "repository_url": "https://github.com/expressjs/express",
+      "used_by": [
+        "currencyservice",
+        "paymentservice"
+      ],
+      "used_in_files": [
+        "currencyservice/package.json",
+        "paymentservice/package.json"
+      ],
+      "vulnerabilities": []
+    },
+    {
+      "name": "pandas",
+      "description": "Random package 1 for npm",
+      "package_manager": "npm",
+      "version": "0.14.18",
+      "license": "MIT",
+      "tags": [
+        "frontend",
+        "testing",
+        "vue",
+        "react"
+      ],
+      "popularity": 32,
+      "contributors": 217,
+      "security": 84,
+      "repository_url": "https://github.com/example/pandas",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "sphinx",
+      "description": "Random package 2 for go",
+      "package_manager": "go",
+      "version": "2.5.5",
+      "license": "MPL-2.0",
+      "tags": [
+        "golang"
+      ],
+      "popularity": 70,
+      "contributors": 287,
+      "security": 69,
+      "repository_url": "https://github.com/example/sphinx",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "chai",
+      "description": "Random package 3 for cargo",
+      "package_manager": "cargo",
+      "version": "5.11.0",
+      "license": "GPL-3.0",
+      "tags": [
+        "cli",
+        "rust",
+        "web",
+        "api"
+      ],
+      "popularity": 95,
+      "contributors": 233,
+      "security": 65,
+      "repository_url": "https://github.com/example/chai",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-9248",
+          "severity": "Critical",
+          "description": "Random security vulnerability in chai",
+          "fixed_in": "5.11.5"
+        },
+        {
+          "id": "CVE-2023-4438",
+          "severity": "Critical",
+          "description": "Random security vulnerability in chai",
+          "fixed_in": "5.11.1"
+        }
+      ]
+    },
+    {
+      "name": "jest",
+      "description": "Random package 4 for nuget",
+      "package_manager": "nuget",
+      "version": "4.1.7",
+      "license": "Apache-2.0",
+      "tags": [
+        "xamarin",
+        "unity"
+      ],
+      "popularity": 85,
+      "contributors": 221,
+      "security": 94,
+      "repository_url": "https://github.com/example/jest",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "moment",
+      "description": "Random package 5 for cargo",
+      "package_manager": "cargo",
+      "version": "5.9.15",
+      "license": "Apache-2.0",
+      "tags": [
+        "async",
+        "testing",
+        "rust"
+      ],
+      "popularity": 60,
+      "contributors": 132,
+      "security": 79,
+      "repository_url": "https://github.com/example/moment",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "pytest",
+      "description": "Random package 6 for maven",
+      "package_manager": "maven",
+      "version": "3.13.14",
+      "license": "GPL-3.0",
+      "tags": [
+        "logging",
+        "android"
+      ],
+      "popularity": 47,
+      "contributors": 176,
+      "security": 89,
+      "repository_url": "https://github.com/example/pytest",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "autopep8",
+      "description": "Random package 7 for cargo",
+      "package_manager": "cargo",
+      "version": "1.12.18",
+      "license": "MPL-2.0",
+      "tags": [
+        "rust",
+        "database",
+        "testing"
+      ],
+      "popularity": 46,
+      "contributors": 121,
+      "security": 57,
+      "repository_url": "https://github.com/example/autopep8",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-8986",
+          "severity": "Medium",
+          "description": "Random security vulnerability in autopep8",
+          "fixed_in": "1.12.20"
+        }
+      ]
+    },
+    {
+      "name": "eslint",
+      "description": "Random package 8 for go",
+      "package_manager": "go",
+      "version": "4.3.7",
+      "license": "MPL-2.0",
+      "tags": [
+        "api",
+        "cli",
+        "database",
+        "golang"
+      ],
+      "popularity": 99,
+      "contributors": 27,
+      "security": 88,
+      "repository_url": "https://github.com/example/eslint",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "pytest",
+      "description": "Random package 9 for cargo",
+      "package_manager": "cargo",
+      "version": "5.7.20",
+      "license": "MIT",
+      "tags": [
+        "testing",
+        "web",
+        "async",
+        "rust"
+      ],
+      "popularity": 23,
+      "contributors": 145,
+      "security": 86,
+      "repository_url": "https://github.com/example/pytest",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "bootstrap",
+      "description": "Random package 10 for cargo",
+      "package_manager": "cargo",
+      "version": "4.3.13",
+      "license": "BSD-3-Clause",
+      "tags": [
+        "rust",
+        "cli",
+        "testing",
+        "api"
+      ],
+      "popularity": 32,
+      "contributors": 304,
+      "security": 98,
+      "repository_url": "https://github.com/example/bootstrap",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "prettier",
+      "description": "Random package 11 for maven",
+      "package_manager": "maven",
+      "version": "3.13.14",
+      "license": "BSD-3-Clause",
+      "tags": [
+        "logging",
+        "api",
+        "database"
+      ],
+      "popularity": 78,
+      "contributors": 74,
+      "security": 75,
+      "repository_url": "https://github.com/example/prettier",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "flask",
+      "description": "Random package 12 for nuget",
+      "package_manager": "nuget",
+      "version": "5.7.13",
+      "license": "Apache-2.0",
+      "tags": [
+        "testing"
+      ],
+      "popularity": 23,
+      "contributors": 249,
+      "security": 98,
+      "repository_url": "https://github.com/example/flask",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "webpack",
+      "description": "Random package 13 for pypi",
+      "package_manager": "pypi",
+      "version": "1.7.2",
+      "license": "Apache-2.0",
+      "tags": [
+        "async",
+        "testing"
+      ],
+      "popularity": 83,
+      "contributors": 130,
+      "security": 89,
+      "repository_url": "https://github.com/example/webpack",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "pylint",
+      "description": "Random package 15 for pypi",
+      "package_manager": "pypi",
+      "version": "5.10.5",
+      "license": "LGPL-2.1",
+      "tags": [
+        "python",
+        "async",
+        "testing",
+        "data"
+      ],
+      "popularity": 96,
+      "contributors": 24,
+      "security": 84,
+      "repository_url": "https://github.com/example/pylint",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "webpack",
+      "description": "Random package 17 for npm",
+      "package_manager": "npm",
+      "version": "1.11.18",
+      "license": "LGPL-2.1",
+      "tags": [
+        "angular",
+        "frontend",
+        "node"
+      ],
+      "popularity": 86,
+      "contributors": 337,
+      "security": 68,
+      "repository_url": "https://github.com/example/webpack",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "bootstrap",
+      "description": "Random package 18 for nuget",
+      "package_manager": "nuget",
+      "version": "2.2.5",
+      "license": "BSD-3-Clause",
+      "tags": [
+        "testing",
+        "aspnet",
+        "dotnet"
+      ],
+      "popularity": 40,
+      "contributors": 246,
+      "security": 74,
+      "repository_url": "https://github.com/example/bootstrap",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-6450",
+          "severity": "Critical",
+          "description": "Random security vulnerability in bootstrap",
+          "fixed_in": "2.2.10"
+        },
+        {
+          "id": "CVE-2021-6431",
+          "severity": "Medium",
+          "description": "Random security vulnerability in bootstrap",
+          "fixed_in": "2.2.9"
+        }
+      ]
+    },
+    {
+      "name": "mocha",
+      "description": "Random package 21 for maven",
+      "package_manager": "maven",
+      "version": "0.3.7",
+      "license": "MIT",
+      "tags": [
+        "testing",
+        "android",
+        "logging",
+        "api"
+      ],
+      "popularity": 40,
+      "contributors": 228,
+      "security": 52,
+      "repository_url": "https://github.com/example/mocha",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "chai",
+      "description": "Random package 22 for go",
+      "package_manager": "go",
+      "version": "3.0.6",
+      "license": "MPL-2.0",
+      "tags": [
+        "cli",
+        "api"
+      ],
+      "popularity": 59,
+      "contributors": 329,
+      "security": 71,
+      "repository_url": "https://github.com/example/chai",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "jquery",
+      "description": "Random package 23 for go",
+      "package_manager": "go",
+      "version": "1.15.7",
+      "license": "LGPL-2.1",
+      "tags": [
+        "testing",
+        "api",
+        "database",
+        "golang"
+      ],
+      "popularity": 67,
+      "contributors": 163,
+      "security": 81,
+      "repository_url": "https://github.com/example/jquery",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "prettier",
+      "description": "Random package 24 for npm",
+      "package_manager": "npm",
+      "version": "3.3.7",
+      "license": "MIT",
+      "tags": [
+        "vue",
+        "frontend"
+      ],
+      "popularity": 82,
+      "contributors": 199,
+      "security": 89,
+      "repository_url": "https://github.com/example/prettier",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": [
+        {
+          "id": "CVE-2019-8741",
+          "severity": "Low",
+          "description": "Random security vulnerability in prettier",
+          "fixed_in": "3.3.11"
+        },
+        {
+          "id": "CVE-2020-7088",
+          "severity": "Low",
+          "description": "Random security vulnerability in prettier",
+          "fixed_in": "3.3.11"
+        },
+        {
+          "id": "CVE-2023-4843",
+          "severity": "Critical",
+          "description": "Random security vulnerability in prettier",
+          "fixed_in": "3.3.9"
+        }
+      ]
+    },
+    {
+      "name": "flask",
+      "description": "Random package 25 for cargo",
+      "package_manager": "cargo",
+      "version": "0.10.17",
+      "license": "GPL-3.0",
+      "tags": [
+        "database",
+        "rust",
+        "testing",
+        "web"
+      ],
+      "popularity": 39,
+      "contributors": 28,
+      "security": 88,
+      "repository_url": "https://github.com/example/flask",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "webpack",
+      "description": "Random package 26 for maven",
+      "package_manager": "maven",
+      "version": "0.14.13",
+      "license": "Apache-2.0",
+      "tags": [
+        "android",
+        "logging",
+        "database",
+        "testing"
+      ],
+      "popularity": 65,
+      "contributors": 131,
+      "security": 90,
+      "repository_url": "https://github.com/example/webpack",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    },
+    {
+      "name": "bootstrap",
+      "description": "Random package 27 for npm",
+      "package_manager": "npm",
+      "version": "2.2.10",
+      "license": "MIT",
+      "tags": [
+        "javascript",
+        "ui",
+        "frontend",
+        "angular"
+      ],
+      "popularity": 25,
+      "contributors": 73,
+      "security": 78,
+      "repository_url": "https://github.com/example/bootstrap",
+      "used_by": [],
+      "used_in_files": [],
+      "vulnerabilities": []
+    }
+  ]
+}

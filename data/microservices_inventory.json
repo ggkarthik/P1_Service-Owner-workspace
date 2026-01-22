@@ -1,0 +1,914 @@
+{
+  "repository": {
+    "name": "microservices-demo",
+    "full_name": "GoogleCloudPlatform/microservices-demo",
+    "description": "Sample cloud-first application with 10 microservices showcasing Kubernetes, Istio, and gRPC.",
+    "owner": "GoogleCloudPlatform",
+    "private": false,
+    "fork": false,
+    "size": 35945,
+    "stargazers_count": 14500,
+    "forks_count": 3200,
+    "open_issues_count": 42,
+    "created_at": "2018-08-03T18:32:18Z",
+    "updated_at": "2025-09-03T08:56:31Z",
+    "pushed_at": "2025-08-26T20:41:12Z",
+    "default_branch": "main",
+    "topics": [
+      "gcp",
+      "gke",
+      "google-cloud",
+      "grpc",
+      "istio",
+      "kubernetes",
+      "kustomize",
+      "sample-application",
+      "samples",
+      "skaffold",
+      "terraform"
+    ],
+    "license": {
+      "key": "apache-2.0",
+      "name": "Apache License 2.0"
+    },
+    "url": "https://github.com/GoogleCloudPlatform/microservices-demo",
+    "clone_url": "https://github.com/GoogleCloudPlatform/microservices-demo.git"
+  },
+  "technologies": {
+    "languages": {
+      "Go": 400000,
+      "C#": 100000,
+      "Node.js": 200000,
+      "Python": 400000,
+      "Java": 100000
+    },
+    "frameworks": [
+      {
+        "name": "gRPC",
+        "category": "framework",
+        "confidence": 1.0
+      },
+      {
+        "name": "Gin",
+        "category": "framework",
+        "confidence": 0.85
+      },
+      {
+        "name": "Gorilla/Mux",
+        "category": "framework",
+        "confidence": 0.75
+      },
+      {
+        "name": "Flask",
+        "category": "framework",
+        "confidence": 0.9
+      },
+      {
+        "name": "Protobuf",
+        "category": "serialization",
+        "confidence": 0.95
+      },
+      {
+        "name": "OpenTelemetry",
+        "category": "observability",
+        "confidence": 0.8
+      },
+      {
+        "name": "Express",
+        "category": "framework",
+        "confidence": 0.9
+      },
+      {
+        "name": "gRPC-js",
+        "category": "communication",
+        "confidence": 0.95
+      },
+      {
+        "name": "Pino",
+        "category": "logging",
+        "confidence": 0.7
+      },
+      {
+        "name": "Spring Boot",
+        "category": "framework",
+        "confidence": 0.9
+      },
+      {
+        "name": "gRPC-Java",
+        "category": "communication",
+        "confidence": 0.95
+      },
+      {
+        "name": "Hibernate",
+        "category": "ORM",
+        "confidence": 0.6
+      },
+      {
+        "name": ".NET Core",
+        "category": "framework",
+        "confidence": 1.0
+      },
+      {
+        "name": "gRPC-dotnet",
+        "category": "communication",
+        "confidence": 0.95
+      },
+      {
+        "name": "Entity Framework",
+        "category": "ORM",
+        "confidence": 0.7
+      }
+    ],
+    "databases": [
+      {
+        "name": "Redis",
+        "category": "database",
+        "confidence": 0.9
+      },
+      {
+        "name": "MongoDB",
+        "category": "database",
+        "confidence": 0.6
+      },
+      {
+        "name": "PostgreSQL",
+        "category": "database",
+        "confidence": 0.5
+      }
+    ],
+    "cloud_platforms": [
+      {
+        "name": "Google Cloud Platform",
+        "category": "cloud",
+        "confidence": 0.9
+      },
+      {
+        "name": "Kubernetes",
+        "category": "orchestration",
+        "confidence": 1.0
+      },
+      {
+        "name": "Google Kubernetes Engine",
+        "category": "cloud",
+        "confidence": 0.85
+      },
+      {
+        "name": "Cloud Run",
+        "category": "serverless",
+        "confidence": 0.7
+      }
+    ],
+    "tools": [
+      {
+        "name": "Docker",
+        "category": "container",
+        "confidence": 1.0
+      },
+      {
+        "name": "Kubernetes",
+        "category": "orchestration",
+        "confidence": 1.0
+      },
+      {
+        "name": "gRPC",
+        "category": "communication",
+        "confidence": 1.0
+      },
+      {
+        "name": "Redis",
+        "category": "database",
+        "confidence": 0.9
+      },
+      {
+        "name": "Istio",
+        "category": "service-mesh",
+        "confidence": 0.8
+      },
+      {
+        "name": "Skaffold",
+        "category": "development",
+        "confidence": 0.9
+      },
+      {
+        "name": "Kustomize",
+        "category": "deployment",
+        "confidence": 0.9
+      },
+      {
+        "name": "Prometheus",
+        "category": "monitoring",
+        "confidence": 0.85
+      },
+      {
+        "name": "Grafana",
+        "category": "visualization",
+        "confidence": 0.8
+      },
+      {
+        "name": "Jaeger",
+        "category": "tracing",
+        "confidence": 0.75
+      },
+      {
+        "name": "Helm",
+        "category": "package-manager",
+        "confidence": 0.7
+      },
+      {
+        "name": "GitHub Actions",
+        "category": "ci-cd",
+        "confidence": 0.95
+      },
+      {
+        "name": "Terraform",
+        "category": "infrastructure",
+        "confidence": 0.6
+      }
+    ],
+    "primary_language": "Go",
+    "language_distribution": {
+      "Go": 33.33333333333333,
+      "C#": 8.333333333333332,
+      "Node.js": 16.666666666666664,
+      "Python": 33.33333333333333,
+      "Java": 8.333333333333332
+    }
+  },
+  "dependencies": {
+    "dependencies": [
+      {
+        "name": "grpc",
+        "version": "v1.38.0",
+        "type": "direct",
+        "source": "go",
+        "is_vulnerable": false,
+        "is_outdated": true
+      },
+      {
+        "name": "protobuf",
+        "version": "v1.28.0",
+        "type": "direct",
+        "source": "go",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "gin-gonic/gin",
+        "version": "v1.7.4",
+        "type": "direct",
+        "source": "go",
+        "is_vulnerable": true,
+        "is_outdated": true
+      },
+      {
+        "name": "gorilla/mux",
+        "version": "v1.8.0",
+        "type": "direct",
+        "source": "go",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "go-redis/redis",
+        "version": "v8.11.4",
+        "type": "direct",
+        "source": "go",
+        "is_vulnerable": false,
+        "is_outdated": true
+      },
+      {
+        "name": "opentracing/opentracing-go",
+        "version": "v1.2.0",
+        "type": "direct",
+        "source": "go",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "grpcio",
+        "version": "1.44.0",
+        "type": "direct",
+        "source": "pip",
+        "is_vulnerable": false,
+        "is_outdated": true
+      },
+      {
+        "name": "protobuf",
+        "version": "3.19.4",
+        "type": "direct",
+        "source": "pip",
+        "is_vulnerable": true,
+        "is_outdated": true
+      },
+      {
+        "name": "flask",
+        "version": "2.0.1",
+        "type": "direct",
+        "source": "pip",
+        "is_vulnerable": false,
+        "is_outdated": true
+      },
+      {
+        "name": "requests",
+        "version": "2.27.1",
+        "type": "direct",
+        "source": "pip",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "opentelemetry-api",
+        "version": "1.9.1",
+        "type": "direct",
+        "source": "pip",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "opentelemetry-sdk",
+        "version": "1.9.1",
+        "type": "direct",
+        "source": "pip",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "redis",
+        "version": "4.1.4",
+        "type": "direct",
+        "source": "pip",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "@grpc/grpc-js",
+        "version": "1.6.7",
+        "type": "direct",
+        "source": "npm",
+        "is_vulnerable": false,
+        "is_outdated": true
+      },
+      {
+        "name": "google-protobuf",
+        "version": "3.20.0",
+        "type": "direct",
+        "source": "npm",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "express",
+        "version": "4.17.3",
+        "type": "direct",
+        "source": "npm",
+        "is_vulnerable": true,
+        "is_outdated": true
+      },
+      {
+        "name": "pino",
+        "version": "7.8.0",
+        "type": "direct",
+        "source": "npm",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "redis",
+        "version": "4.0.4",
+        "type": "direct",
+        "source": "npm",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "axios",
+        "version": "0.26.1",
+        "type": "direct",
+        "source": "npm",
+        "is_vulnerable": true,
+        "is_outdated": true
+      },
+      {
+        "name": "io.grpc:grpc-netty",
+        "version": "1.45.1",
+        "type": "direct",
+        "source": "maven",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "io.grpc:grpc-protobuf",
+        "version": "1.45.1",
+        "type": "direct",
+        "source": "maven",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "org.springframework.boot:spring-boot-starter-web",
+        "version": "2.6.4",
+        "type": "direct",
+        "source": "maven",
+        "is_vulnerable": false,
+        "is_outdated": true
+      },
+      {
+        "name": "org.springframework.boot:spring-boot-starter-data-redis",
+        "version": "2.6.4",
+        "type": "direct",
+        "source": "maven",
+        "is_vulnerable": false,
+        "is_outdated": true
+      },
+      {
+        "name": "io.opentelemetry:opentelemetry-api",
+        "version": "1.12.0",
+        "type": "direct",
+        "source": "maven",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "io.opentelemetry:opentelemetry-sdk",
+        "version": "1.12.0",
+        "type": "direct",
+        "source": "maven",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "org.hibernate:hibernate-core",
+        "version": "5.6.5.Final",
+        "type": "direct",
+        "source": "maven",
+        "is_vulnerable": true,
+        "is_outdated": true
+      },
+      {
+        "name": "Grpc.Net.Client",
+        "version": "2.45.0",
+        "type": "direct",
+        "source": "nuget",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "Google.Protobuf",
+        "version": "3.20.0",
+        "type": "direct",
+        "source": "nuget",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "Microsoft.AspNetCore.App",
+        "version": "6.0.3",
+        "type": "direct",
+        "source": "nuget",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "Microsoft.EntityFrameworkCore",
+        "version": "6.0.3",
+        "type": "direct",
+        "source": "nuget",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "StackExchange.Redis",
+        "version": "2.5.43",
+        "type": "direct",
+        "source": "nuget",
+        "is_vulnerable": false,
+        "is_outdated": false
+      },
+      {
+        "name": "Newtonsoft.Json",
+        "version": "13.0.1",
+        "type": "direct",
+        "source": "nuget",
+        "is_vulnerable": true,
+        "is_outdated": false
+      },
+      {
+        "name": "log4j-core",
+        "version": "2.14.1",
+        "type": "transitive",
+        "source": "maven",
+        "is_vulnerable": true,
+        "is_outdated": true
+      },
+      {
+        "name": "minimist",
+        "version": "1.2.5",
+        "type": "transitive",
+        "source": "npm",
+        "is_vulnerable": true,
+        "is_outdated": true
+      },
+      {
+        "name": "lodash",
+        "version": "4.17.19",
+        "type": "transitive",
+        "source": "npm",
+        "is_vulnerable": true,
+        "is_outdated": true
+      },
+      {
+        "name": "urllib3",
+        "version": "1.26.8",
+        "type": "transitive",
+        "source": "pip",
+        "is_vulnerable": false,
+        "is_outdated": true
+      },
+      {
+        "name": "github.com/pkg/errors",
+        "version": "v0.9.1",
+        "type": "transitive",
+        "source": "go",
+        "is_vulnerable": false,
+        "is_outdated": false
+      }
+    ],
+    "total_count": 37,
+    "vulnerable_count": 9,
+    "outdated_count": 16,
+    "license_distribution": {
+      "Apache-2.0": 45,
+      "MIT": 30,
+      "BSD-3-Clause": 15,
+      "GPL-3.0": 5,
+      "LGPL-2.1": 3,
+      "Proprietary": 2
+    },
+    "source_distribution": {
+      "go": 20,
+      "pip": 25,
+      "npm": 20,
+      "maven": 25,
+      "nuget": 10
+    }
+  },
+  "apis": {
+    "endpoints": [
+      {
+        "path": "/frontend/v1",
+        "method": "gRPC",
+        "description": "Exposes an HTTP server to serve the website. Does not require signup/login and generates session IDs for all users automatically."
+      },
+      {
+        "path": "/cartservice/v1",
+        "method": "gRPC",
+        "description": "Stores the items in the user's shopping cart in Redis and retrieves it."
+      },
+      {
+        "path": "/productcatalogservice/v1",
+        "method": "gRPC",
+        "description": "Provides the list of products from a JSON file and ability to search products and get individual products."
+      },
+      {
+        "path": "/currencyservice/v1",
+        "method": "gRPC",
+        "description": "Converts one money amount to another currency. Uses real values fetched from European Central Bank. It's the highest QPS service."
+      },
+      {
+        "path": "/paymentservice/v1",
+        "method": "gRPC",
+        "description": "Charges the given credit card info (mock) with the given amount and returns a transaction ID."
+      },
+      {
+        "path": "/shippingservice/v1",
+        "method": "gRPC",
+        "description": "Gives shipping cost estimates based on the shopping cart. Ships items to the given address (mock)."
+      },
+      {
+        "path": "/emailservice/v1",
+        "method": "gRPC",
+        "description": "Sends users an order confirmation email (mock)."
+      },
+      {
+        "path": "/checkoutservice/v1",
+        "method": "gRPC",
+        "description": "Retrieves user cart, prepares order and orchestrates the payment, shipping and the email notification."
+      },
+      {
+        "path": "/recommendationservice/v1",
+        "method": "gRPC",
+        "description": "Recommends other products based on what's given in the cart."
+      },
+      {
+        "path": "/adservice/v1",
+        "method": "gRPC",
+        "description": "Provides text ads based on given context words."
+      },
+      {
+        "path": "/loadgenerator/v1",
+        "method": "gRPC",
+        "description": "Continuously sends requests imitating realistic user shopping flows to the frontend."
+      },
+      {
+        "path": "/shoppingassistantservice/v1",
+        "method": "gRPC",
+        "description": "AI assistant that suggests products to purchase based on an image using Gemini."
+      }
+    ],
+    "rest_apis": [],
+    "graphql_schemas": [],
+    "grpc_services": [
+      {
+        "path": "/frontend/v1",
+        "method": "gRPC",
+        "description": "Exposes an HTTP server to serve the website. Does not require signup/login and generates session IDs for all users automatically."
+      },
+      {
+        "path": "/cartservice/v1",
+        "method": "gRPC",
+        "description": "Stores the items in the user's shopping cart in Redis and retrieves it."
+      },
+      {
+        "path": "/productcatalogservice/v1",
+        "method": "gRPC",
+        "description": "Provides the list of products from a JSON file and ability to search products and get individual products."
+      },
+      {
+        "path": "/currencyservice/v1",
+        "method": "gRPC",
+        "description": "Converts one money amount to another currency. Uses real values fetched from European Central Bank. It's the highest QPS service."
+      },
+      {
+        "path": "/paymentservice/v1",
+        "method": "gRPC",
+        "description": "Charges the given credit card info (mock) with the given amount and returns a transaction ID."
+      },
+      {
+        "path": "/shippingservice/v1",
+        "method": "gRPC",
+        "description": "Gives shipping cost estimates based on the shopping cart. Ships items to the given address (mock)."
+      },
+      {
+        "path": "/emailservice/v1",
+        "method": "gRPC",
+        "description": "Sends users an order confirmation email (mock)."
+      },
+      {
+        "path": "/checkoutservice/v1",
+        "method": "gRPC",
+        "description": "Retrieves user cart, prepares order and orchestrates the payment, shipping and the email notification."
+      },
+      {
+        "path": "/recommendationservice/v1",
+        "method": "gRPC",
+        "description": "Recommends other products based on what's given in the cart."
+      },
+      {
+        "path": "/adservice/v1",
+        "method": "gRPC",
+        "description": "Provides text ads based on given context words."
+      },
+      {
+        "path": "/loadgenerator/v1",
+        "method": "gRPC",
+        "description": "Continuously sends requests imitating realistic user shopping flows to the frontend."
+      },
+      {
+        "path": "/shoppingassistantservice/v1",
+        "method": "gRPC",
+        "description": "AI assistant that suggests products to purchase based on an image using Gemini."
+      }
+    ],
+    "openapi_specs": []
+  },
+  "security": {
+    "sensitive_data": [],
+    "sensitive_data_count": 0,
+    "security_issues": []
+  },
+  "infrastructure": {
+    "pipelines": [
+      {
+        "name": "CI/CD Pipeline",
+        "type": "github-actions",
+        "path": ".github/workflows/ci.yml",
+        "status": "active"
+      },
+      {
+        "name": "Release Pipeline",
+        "type": "github-actions",
+        "path": ".github/workflows/release.yml",
+        "status": "active"
+      },
+      {
+        "name": "Nightly Build",
+        "type": "github-actions",
+        "path": ".github/workflows/nightly.yml",
+        "status": "inactive"
+      },
+      {
+        "name": "Integration Tests",
+        "type": "jenkins",
+        "path": "Jenkinsfile",
+        "status": "active"
+      },
+      {
+        "name": "Performance Tests",
+        "type": "gitlab-ci",
+        "path": ".gitlab-ci.yml",
+        "status": "active"
+      }
+    ],
+    "artifacts": [
+      {
+        "name": "frontend",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/frontend"
+      },
+      {
+        "name": "cartservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/cartservice"
+      },
+      {
+        "name": "productcatalogservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/productcatalogservice"
+      },
+      {
+        "name": "currencyservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/currencyservice"
+      },
+      {
+        "name": "paymentservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/paymentservice"
+      },
+      {
+        "name": "shippingservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/shippingservice"
+      },
+      {
+        "name": "emailservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/emailservice"
+      },
+      {
+        "name": "checkoutservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/checkoutservice"
+      },
+      {
+        "name": "recommendationservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/recommendationservice"
+      },
+      {
+        "name": "adservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/adservice"
+      },
+      {
+        "name": "loadgenerator",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/loadgenerator"
+      },
+      {
+        "name": "shoppingassistantservice",
+        "type": "docker",
+        "path": "gcr.io/microservices-demo/shoppingassistantservice"
+      }
+    ],
+    "infrastructure": [
+      {
+        "type": "kubernetes",
+        "resources": [
+          "Deployment",
+          "Service"
+        ],
+        "providers": [
+          "GKE"
+        ],
+        "environments": [
+          "dev",
+          "prod"
+        ]
+      }
+    ]
+  },
+  "services": {
+    "services": [
+      {
+        "name": "frontend",
+        "language": "Go",
+        "description": "Exposes an HTTP server to serve the website. Does not require signup/login and generates session IDs for all users automatically.",
+        "markers": [
+          "microservice"
+        ],
+        "path": "/src/frontend"
+      },
+      {
+        "name": "cartservice",
+        "language": "C#",
+        "description": "Stores the items in the user's shopping cart in Redis and retrieves it.",
+        "markers": [
+          "microservice"
+        ],
+        "path": "/src/cartservice"
+      },
+      {
+        "name": "productcatalogservice",
+        "language": "Go",
+        "description": "Provides the list of products from a JSON file and ability to search products and get individual products.",
+        "markers": [
+          "microservice"
+        ],
+        "path": "/src/productcatalogservice"
+      },
+      {
+        "name": "currencyservice",
+        "language": "Node.js",
+        "description": "Converts one money amount to another currency. Uses real values fetched from European Central Bank. It's the highest QPS service.",
+        "markers": [
+          "microservice"
+        ],
+        "path": "/src/currencyservice"
+      },
+      {
+        "name": "paymentservice",
+        "language": "Node.js",
+        "description": "Charges the given credit card info (mock) with the given amount and returns a transaction ID.",
+        "markers": [
+          "microservice"
+        ],
+        "path": "/src/paymentservice"
+      },
+      {
+        "name": "shippingservice",
+        "language": "Go",
+        "description": "Gives shipping cost estimates based on the shopping cart. Ships items to the given address (mock).",
+        "markers": [
+          "microservice"
+        ],
+        "path": "/src/shippingservice"
+      },
+      {
+        "name": "emailservice",
+        "language": "Python",
+        "description": "Sends users an order confirmation email (mock).",
+        "markers": [
+          "microservice"
+        ],
+        "path": "/src/emailservice"
+      },
+      {
+        "name": "checkoutservice",
+        "language": "Go",
+        "description": "Retrieves user cart, prepares order and orchestrates the payment, shipping and the email notification.",
+        "markers": [
+          "microservice"
+        ],
+        "path": "/src/checkoutservice"
+      },
+      {
+        "name": "recommendationservice",
+        "language": "Python",
+        "description": "Recommends other products based on what's given in the cart.",
+        "markers": [
+          "microservice"
+        ],
+        "path": "/src/recommendationservice"
+      },
+      {
+        "name": "adservice",
+        "language": "Java",
+        "description": "Provides text ads based on given context words.",
+        "markers": [
+          "microservice"
+        ],
+        "path": "/src/adservice"
+      },
+      {
+        "name": "loadgenerator",
+        "language": "Python/Locust",
+        "description": "Continuously sends requests imitating realistic user shopping flows to the frontend.",
+        "markers": [
+          "microservice"
+        ],
+        "path": "/src/loadgenerator"
+      },
+      {
+        "name": "shoppingassistantservice",
+        "language": "Python",
+        "description": "AI assistant that suggests products to purchase based on an image using Gemini.",
+        "markers": [
+          "microservice"
+        ],
+        "path": "/src/shoppingassistantservice"
+      }
+    ]
+  },
+  "analysis_timestamp": "2025-09-06T19:58:02.456096"
+}
