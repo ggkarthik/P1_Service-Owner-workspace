@@ -13,7 +13,6 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build-and-push:
@@ -21,15 +20,22 @@ jobs:
     permissions:
       contents: read
       packages: write
+      attestations: write
+      id-token: write
       
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Compute image repository
+        id: image-ref
+        run: echo "repository=${REGISTRY}/${GITHUB_REPOSITORY,,}" >> "$GITHUB_OUTPUT"
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
       - name: Log in to GitHub Container Registry
+        if: github.event_name != 'pull_request'
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
@@ -40,7 +46,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ steps.image-ref.outputs.repository }}
           tags: |
             type=ref,event=branch
             type=ref,event=pr
@@ -50,18 +56,65 @@ jobs:
             type=sha,prefix={{branch}}-
             type=raw,value=latest,enable={{is_default_branch}}
 
-      - name: Build and push Docker image
+      - name: Build Docker image
+        id: build
         uses: docker/build-push-action@v5
         with:
           context: ./react-dashboard
           file: ./react-dashboard/Dockerfile
-          push: true
+          push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: Generate image SBOM
+        if: github.event_name != 'pull_request'
+        uses: anchore/sbom-action@v0
+        with:
+          image: ${{ steps.image-ref.outputs.repository }}@${{ steps.build.outputs.digest }}
+          format: spdx-json
+          output-file: sbom.spdx.json
+
+      - name: Attach SBOM attestation to GHCR image
+        if: github.event_name != 'pull_request'
+        uses: actions/attest-sbom@v2
+        with:
+          subject-name: ${{ steps.image-ref.outputs.repository }}
+          subject-digest: ${{ steps.build.outputs.digest }}
+          sbom-path: sbom.spdx.json
+          push-to-registry: true
+
+      - name: Push image digest to NoScan
+        if: github.event_name != 'pull_request' && secrets.NOSCAN_URL != '' && secrets.NOSCAN_API_KEY != ''
+        env:
+          NOSCAN_URL: ${{ secrets.NOSCAN_URL }}
+          NOSCAN_API_KEY: ${{ secrets.NOSCAN_API_KEY }}
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
+          REPOSITORY_NAME: ${{ github.event.repository.name }}
+          IMAGE_REPOSITORY: ${{ steps.image-ref.outputs.repository }}
+          IMAGE_DIGEST: ${{ steps.build.outputs.digest }}
+        run: |
+          set -eu
+          NOSCAN_BASE_URL="${NOSCAN_URL%/}"
+
+          cat > noscan-attestation.json <<EOF
+          {
+            "owner": "${REPOSITORY_OWNER}",
+            "repo": "${REPOSITORY_NAME}",
+            "imageRepository": "${IMAGE_REPOSITORY}",
+            "subjectDigest": "${IMAGE_DIGEST}"
+          }
+          EOF
+
+          curl --fail-with-body -sS \
+            -X POST "${NOSCAN_BASE_URL}/api/sbom-fetch/github/attestation" \
+            -H "X-API-Key: ${NOSCAN_API_KEY}" \
+            -H "Content-Type: application/json" \
+            --data @noscan-attestation.json
+
       - name: Generate deployment manifest
+        if: github.event_name != 'pull_request'
         run: |
           cat > k8s-deployment.yaml <<EOF
           apiVersion: apps/v1
@@ -82,7 +135,7 @@ jobs:
               spec:
                 containers:
                 - name: dashboard
-                  image: ${{ steps.meta.outputs.tags }}
+                  image: ${{ steps.image-ref.outputs.repository }}@${{ steps.build.outputs.digest }}
                   ports:
                   - containerPort: 80
                   resources:
@@ -120,6 +173,7 @@ jobs:
           EOF
 
       - name: Upload deployment manifest
+        if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: k8s-deployment

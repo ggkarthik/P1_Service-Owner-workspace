@@ -22,8 +22,11 @@ Automatically builds and pushes the Docker image to GitHub Container Registry (G
    - Branch names - for other branches
    - SHA - for specific commits
 3. Pushes to `ghcr.io/ggkarthik/p1_service-owner-workspace`
-4. Generates Kubernetes deployment manifest
-5. Uses GitHub Actions cache for faster builds
+4. Generates an SPDX SBOM for the pushed image
+5. Attaches that SBOM to GHCR as an SBOM attestation
+6. Posts the pushed image digest to NoScan so the app can ingest the attested SBOM automatically
+7. Generates Kubernetes deployment manifest
+8. Uses GitHub Actions cache for faster builds
 
 **Image Location:**
 ```
@@ -88,8 +91,19 @@ The workflow automatically creates these tags:
 The workflow requires these permissions:
 - **contents: read** - To checkout the repository
 - **packages: write** - To push to GHCR
+- **attestations: write** - To publish the SBOM attestation
+- **id-token: write** - To sign the attestation via GitHub OIDC
 
 These are automatically granted via `GITHUB_TOKEN`.
+
+## Required Secrets for NoScan
+
+Add these repository secrets if you want every pushed image digest to be sent to NoScan automatically:
+
+- `NOSCAN_URL` - Base URL of your NoScan backend, for example `https://noscan.example.com`
+- `NOSCAN_API_KEY` - API key used by NoScan for `X-API-Key`
+
+If either secret is missing, the workflow still builds, pushes, and attests the image, but it skips the NoScan callback step.
 
 ## Viewing Published Images
 
