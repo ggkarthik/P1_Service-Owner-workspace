@@ -64,10 +64,13 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: Set lowercase image reference
+        run: echo "IMAGE_REF=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.push.outputs.digest }}" | tr '[:upper:]' '[:lower:]' >> $GITHUB_ENV
+
       - name: Generate SBOM
         uses: anchore/sbom-action@v0
         with:
-          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.push.outputs.digest }}
+          image: ${{ env.IMAGE_REF }}
           format: spdx-json
           output-file: sbom.spdx.json
           upload-artifact: false
