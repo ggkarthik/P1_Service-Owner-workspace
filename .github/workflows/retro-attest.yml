@@ -1,0 +1,57 @@
+name: Retrospective SBOM Attestation
+
+on:
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_REPO: ggkarthik/p1_service-owner-workspace
+
+jobs:
+  attest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      attestations: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - digest: sha256:56326f15b1255b7ac8d5a8ccbc7b9a76577e5bcb9271ac556d51c266fa69385f
+            tag: main-68b883c
+          - digest: sha256:2fdea9770a29cb1cb52f3960558c52d899eb7349baa8c640096c95282a7ced38
+            tag: main-0589c11
+          - digest: sha256:aebcadc9fabc0192caaea36a2ebb1e220c95633a45e42a070721261defac7fec
+            tag: main-6f98231
+          - digest: sha256:54840e4868acdf4d0465856769c34fa26420ad84b8067461fd42597bebe051e7
+            tag: main-eb4b141
+
+    steps:
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Syft
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
+
+      - name: Generate SBOM
+        run: |
+          IMAGE_REF="${{ env.REGISTRY }}/${{ env.IMAGE_REPO }}@${{ matrix.digest }}"
+          syft "$IMAGE_REF" -o spdx-json --file sbom.spdx.json
+          echo "SBOM generated for ${{ matrix.tag }} (${{ matrix.digest }})"
+          wc -c sbom.spdx.json
+
+      - name: Attest SBOM
+        uses: actions/attest-sbom@v2
+        with:
+          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_REPO }}
+          subject-digest: ${{ matrix.digest }}
+          sbom-path: sbom.spdx.json
+          push-to-registry: true
